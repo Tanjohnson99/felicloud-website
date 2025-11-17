@@ -163,8 +163,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                <Link href="/en/checkout?plan=500GB_Monthly&billing=monthly&storage=500GB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -204,8 +204,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold">
+                <Link href="/en/checkout?plan=1TB_Monthly&billing=monthly&storage=1TB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -242,8 +242,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                <Link href="/en/checkout?plan=2TB_Monthly&billing=monthly&storage=2TB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -290,8 +290,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                <Link href="/en/checkout?plan=500GB_Annual&billing=annual&storage=500GB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -336,8 +336,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold">
+                <Link href="/en/checkout?plan=1TB_Annual&billing=annual&storage=1TB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -379,8 +379,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                <Link href="/en/checkout?plan=2TB_Annual&billing=annual&storage=2TB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -427,8 +427,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                <Link href="/en/checkout?plan=500GB_Lifetime&billing=lifetime&storage=500GB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -473,8 +473,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold">
+                <Link href="/en/checkout?plan=1TB_Lifetime&billing=lifetime&storage=1TB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -516,8 +516,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                <Link href="/en/checkout?plan=2TB_Lifetime&billing=lifetime&storage=2TB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
