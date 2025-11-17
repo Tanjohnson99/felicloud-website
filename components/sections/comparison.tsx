@@ -1,3 +1,9 @@
+import { useTranslation } from '@/lib/hooks/useTranslation';
+
+interface ComparisonProps {
+  lang?: string;
+}
+
 const Check = () => (
   <svg className="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -10,13 +16,15 @@ const Cross = () => (
   </svg>
 );
 
-export function Comparison() {
+export function Comparison({ lang = 'en' }: ComparisonProps) {
+  const { t } = useTranslation(lang);
+
   const features = [
-    { name: 'Privacy First', felicloud: true, gdrive: false, dropbox: false },
-    { name: 'EU Hosting', felicloud: true, gdrive: false, dropbox: false },
-    { name: 'Lifetime Plans', felicloud: true, gdrive: false, dropbox: false },
-    { name: 'Open Source', felicloud: true, gdrive: false, dropbox: false },
-    { name: 'No Tracking', felicloud: true, gdrive: false, dropbox: false },
+    { name: t('comparison.privacyFirst'), felicloud: true, gdrive: false, dropbox: false },
+    { name: t('comparison.euHosting'), felicloud: true, gdrive: false, dropbox: false },
+    { name: t('comparison.lifetimePlans'), felicloud: true, gdrive: false, dropbox: false },
+    { name: t('comparison.openSource'), felicloud: true, gdrive: false, dropbox: false },
+    { name: t('comparison.noTracking'), felicloud: true, gdrive: false, dropbox: false },
   ];
 
   return (
@@ -24,7 +32,7 @@ export function Comparison() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Felicloud vs The Rest
+            {t('comparison.title')}
           </h2>
         </div>
         <div className="mx-auto mt-16 max-w-4xl">
@@ -33,9 +41,9 @@ export function Comparison() {
               <thead>
                 <tr className="bg-gray-50">
                   <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900"></th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-primary">Felicloud</th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">Google Drive</th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">Dropbox</th>
+                  <th className="px-6 py-4 text-center text-sm font-semibold text-primary">{t('comparison.felicloud')}</th>
+                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">{t('comparison.googleDrive')}</th>
+                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">{t('comparison.dropbox')}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">

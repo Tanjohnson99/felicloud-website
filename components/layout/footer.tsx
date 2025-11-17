@@ -1,14 +1,21 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslation } from '@/lib/hooks/useTranslation';
 
-export function Footer() {
+interface FooterProps {
+  lang?: string;
+}
+
+export function Footer({ lang = 'en' }: FooterProps) {
+  const { t } = useTranslation(lang);
+
   const languages = [
-    { code: 'en', name: 'English', href: '/en' },
-    { code: 'fr', name: 'Français', href: '/fr' },
-    { code: 'pt', name: 'Português', href: '/pt' },
-    { code: 'es', name: 'Español', href: '/es' },
-    { code: 'it', name: 'Italiano', href: '/it' },
-    { code: 'de', name: 'Deutsch', href: '/de' },
+    { code: 'en', name: t('languages.en'), href: '/en' },
+    { code: 'fr', name: t('languages.fr'), href: '/fr' },
+    { code: 'pt', name: t('languages.pt'), href: '/pt' },
+    { code: 'es', name: t('languages.es'), href: '/es' },
+    { code: 'it', name: t('languages.it'), href: '/it' },
+    { code: 'de', name: t('languages.de'), href: '/de' },
   ];
 
   return (
@@ -17,18 +24,18 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
           {/* Logo, description and social media */}
           <div className="col-span-2">
-            <Link href="/en" className="flex items-center gap-2">
+            <Link href={`/${lang}`} className="flex items-center gap-2">
               <Image
                 src="/logo.svg"
-                alt="Felicloud"
+                alt={t('common.brandName')}
                 width={40}
                 height={40}
                 className="h-10 w-auto"
               />
-              <span className="text-xl font-bold text-gray-900">Felicloud</span>
+              <span className="text-xl font-bold text-gray-900">{t('common.brandName')}</span>
             </Link>
             <p className="mt-4 text-sm text-gray-600">
-              Secure European Cloud Storage
+              {t('common.tagline')}
             </p>
 
             {/* Social media */}
@@ -60,21 +67,21 @@ export function Footer() {
 
           {/* Product */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-900">Product</h3>
+            <h3 className="text-sm font-semibold text-gray-900">{t('footer.product')}</h3>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link href="/en/features" className="text-sm text-gray-600 hover:text-primary transition-colors">
-                  Features
+                <Link href={`/${lang}/features`} className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  {t('nav.features')}
                 </Link>
               </li>
               <li>
-                <Link href="/en/pricing" className="text-sm text-gray-600 hover:text-primary transition-colors">
-                  Pricing
+                <Link href={`/${lang}/pricing`} className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  {t('nav.pricing')}
                 </Link>
               </li>
               <li>
-                <Link href="/en/download" className="text-sm text-gray-600 hover:text-primary transition-colors">
-                  Download
+                <Link href={`/${lang}/download`} className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  {t('nav.download')}
                 </Link>
               </li>
             </ul>
@@ -82,21 +89,21 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-900">Company</h3>
+            <h3 className="text-sm font-semibold text-gray-900">{t('footer.company')}</h3>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link href="/en/about" className="text-sm text-gray-600 hover:text-primary transition-colors">
-                  About
+                <Link href={`/${lang}/about`} className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  {t('nav.about')}
                 </Link>
               </li>
               <li>
-                <Link href="/en/contact" className="text-sm text-gray-600 hover:text-primary transition-colors">
-                  Contact
+                <Link href={`/${lang}/contact`} className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  {t('nav.contact')}
                 </Link>
               </li>
               <li>
-                <Link href="/en/blog" className="text-sm text-gray-600 hover:text-primary transition-colors">
-                  Blog
+                <Link href={`/${lang}/blog`} className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  {t('nav.blog')}
                 </Link>
               </li>
             </ul>
@@ -104,21 +111,21 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-900">Legal</h3>
+            <h3 className="text-sm font-semibold text-gray-900">{t('footer.legal')}</h3>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link href="/en/legal/terms" className="text-sm text-gray-600 hover:text-primary transition-colors">
-                  Terms of Service
+                <Link href={`/${lang}/legal/terms`} className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  {t('footer.termsOfService')}
                 </Link>
               </li>
               <li>
-                <Link href="/en/legal/privacy" className="text-sm text-gray-600 hover:text-primary transition-colors">
-                  Privacy Policy
+                <Link href={`/${lang}/legal/privacy`} className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  {t('footer.privacyPolicy')}
                 </Link>
               </li>
               <li>
-                <Link href="/en/legal/gdpr" className="text-sm text-gray-600 hover:text-primary transition-colors">
-                  GDPR
+                <Link href={`/${lang}/legal/gdpr`} className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  {t('footer.gdpr')}
                 </Link>
               </li>
             </ul>
@@ -128,7 +135,7 @@ export function Footer() {
         {/* Bottom section with language selector and copyright */}
         <div className="mt-12 border-t border-gray-200 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-center text-sm text-gray-600">
-            © 2024 Felicloud. All rights reserved.
+            {t('common.copyright')}
           </p>
 
           {/* Language selector */}
@@ -138,20 +145,20 @@ export function Footer() {
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
               </svg>
-              <span>EN</span>
+              <span>{lang.toUpperCase()}</span>
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
               </svg>
             </button>
             <div className="absolute bottom-full right-0 mb-2 w-40 origin-bottom-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
               <div className="py-1">
-                {languages.map((lang) => (
+                {languages.map((l) => (
                   <Link
-                    key={lang.code}
-                    href={lang.href}
+                    key={l.code}
+                    href={l.href}
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
-                    {lang.name}
+                    {l.name}
                   </Link>
                 ))}
               </div>

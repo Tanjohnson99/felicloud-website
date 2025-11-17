@@ -1,0 +1,123 @@
+{
+  "common": {
+    "brandName": "Felicloud",
+    "tagline": "Secure European Cloud Storage",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "language": "Language",
+    "copyright": "© 2024 Felicloud. All rights reserved."
+  },
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "download": "Download",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog",
+    "help": "Help",
+    "support": "Support"
+  },
+  "footer": {
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy",
+    "gdpr": "GDPR",
+    "socialMediaDescription": "Follow us on social media"
+  },
+  "hero": {
+    "title": "European Cloud Storage You Can Trust",
+    "subtitle": "Secure file sync, photo backup, and document management powered by Nextcloud",
+    "cta": "Get 10 GB Free Forever",
+    "viewPricing": "View Pricing",
+    "fileSyncTitle": "File Sync & Share",
+    "fileSyncDescription": "Access your files from anywhere. Automatic sync across all devices with secure sharing and full control.",
+    "fileSyncFeature1": "Real-time synchronization",
+    "fileSyncFeature2": "Access from anywhere",
+    "fileSyncFeature3": "End-to-end encryption",
+    "photoBackupTitle": "Photo & Video Backup",
+    "photoBackupDescription": "Automatic photo and video upload from all your devices. Never lose a memory with secure cloud backup.",
+    "photoBackupFeature1": "Auto-upload from mobile",
+    "photoBackupFeature2": "Timeline and album view",
+    "photoBackupFeature3": "Face recognition",
+    "documentManagementTitle": "Document Management",
+    "documentManagementDescription": "Organize, edit, and collaborate on documents. Work together in real-time with full version history.",
+    "documentManagementFeature1": "Online document editing",
+    "documentManagementFeature2": "Perfect organization",
+    "documentManagementFeature3": "Real-time collaboration",
+    "securityTitle": "Built with Security in Mind",
+    "securityE2ETitle": "End-to-End Encryption",
+    "securityE2EDescription": "Your files are encrypted before upload",
+    "security2FATitle": "Two-Factor Authentication",
+    "security2FADescription": "Extra layer of account security",
+    "securityEUTitle": "100% EU Hosted",
+    "securityEUDescription": "GDPR compliant by design"
+  },
+  "features": {
+    "title": "Why Choose Felicloud?",
+    "subtitle": "Secure, private, and built for your freedom",
+    "militaryGradeTitle": "Military-Grade Encryption",
+    "militaryGradeDescription": "Your files are protected with end-to-end encryption. Only you have access to your data.",
+    "euHostedTitle": "100% EU Hosted",
+    "euHostedDescription": "All servers located in Europe. GDPR compliant and subject to strict European privacy laws.",
+    "allDevicesTitle": "All Your Devices",
+    "allDevicesDescription": "Access your files anywhere: mobile, desktop, web. Automatic sync across all platforms.",
+    "unlimitedSpeedTitle": "Unlimited Speed",
+    "unlimitedSpeedDescription": "No throttling, no bandwidth limits. Upload and download at maximum speed.",
+    "lifetimePlansTitle": "Lifetime Plans",
+    "lifetimePlansDescription": "Pay once, use forever. No recurring fees, no surprises.",
+    "openSourceTitle": "Open Source",
+    "openSourceDescription": "Powered by Nextcloud. Transparent, auditable, and community-driven."
+  },
+  "comparison": {
+    "title": "Felicloud vs The Rest",
+    "felicloud": "Felicloud",
+    "googleDrive": "Google Drive",
+    "dropbox": "Dropbox",
+    "privacyFirst": "Privacy First",
+    "euHosting": "EU Hosting",
+    "lifetimePlans": "Lifetime Plans",
+    "openSource": "Open Source",
+    "noTracking": "No Tracking"
+  },
+  "socialProof": {
+    "title": "Trusted by thousands across Europe",
+    "subtitle": "Join our growing community of users who value privacy and security",
+    "activeUsers": "Active Users",
+    "uptimeSLA": "Uptime SLA",
+    "countries": "Countries",
+    "dataStored": "Data Stored",
+    "testimonial1Quote": "Felicloud is exactly what I was looking for. Secure, private, and hosted in Europe. The lifetime plan is unbeatable!",
+    "testimonial1Author": "Marie Dubois",
+    "testimonial1Role": "Freelance Designer",
+    "testimonial2Quote": "We switched from Google Drive to Felicloud for GDPR compliance. The migration was seamless and support was excellent.",
+    "testimonial2Author": "Thomas Schmidt",
+    "testimonial2Role": "IT Manager",
+    "testimonial3Quote": "The best cloud storage investment I've made. One payment, lifetime access. No regrets!",
+    "testimonial3Author": "Sofia Romano",
+    "testimonial3Role": "Photographer",
+    "gdprCompliant": "GDPR Compliant",
+    "e2eEncryption": "End-to-End Encryption",
+    "euHosted": "100% EU Hosted"
+  },
+  "cta": {
+    "title": "Start Your Lifetime Cloud Today",
+    "subtitle": "Join thousands of users who trust Felicloud with their data",
+    "button": "Get Started Free"
+  },
+  "languages": {
+    "en": "English",
+    "fr": "Français",
+    "pt": "Português",
+    "es": "Español",
+    "it": "Italiano",
+    "de": "Deutsch"
+  },
+  "meta": {
+    "defaultTitle": "Felicloud - Secure European Cloud Storage",
+    "defaultDescription": "Lifetime cloud storage plans with GDPR compliance. 10 GB free forever. 100% EU hosted servers."
+  }
+}
