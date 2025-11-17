@@ -6,6 +6,9 @@ export function Footer() {
     { code: 'en', name: 'English', href: '/en' },
     { code: 'fr', name: 'Français', href: '/fr' },
     { code: 'pt', name: 'Português', href: '/pt' },
+    { code: 'es', name: 'Español', href: '/es' },
+    { code: 'it', name: 'Italiano', href: '/it' },
+    { code: 'de', name: 'Deutsch', href: '/de' },
   ];
 
   return (
