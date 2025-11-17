@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "about": "About",
+    "signup": "Sign Up",
+    "login": "Login"
+  },
+  "hero": {
+    "title": "European Cloud Storage You Can Trust",
+    "subtitle": "Lifetime plans • GDPR compliant • 100% EU hosted",
+    "cta_primary": "Get 10 GB Free Forever",
+    "cta_secondary": "View Pricing"
+  },
+  "features": {
+    "title": "Why Choose Felicloud?",
+    "subtitle": "Secure, private, and built for your freedom",
+    "encryption": {
+      "title": "Military-Grade Encryption",
+      "description": "Your files are protected with end-to-end encryption. Only you have access to your data."
+    },
+    "eu_hosted": {
+      "title": "100% EU Hosted",
+      "description": "All servers located in Europe. GDPR compliant and subject to strict European privacy laws."
+    },
+    "devices": {
+      "title": "All Your Devices",
+      "description": "Access your files anywhere: mobile, desktop, web. Automatic sync across all platforms."
+    },
+    "speed": {
+      "title": "Unlimited Speed",
+      "description": "No throttling, no bandwidth limits. Upload and download at maximum speed."
+    },
+    "lifetime": {
+      "title": "Lifetime Plans",
+      "description": "Pay once, use forever. No recurring fees, no surprises."
+    },
+    "opensource": {
+      "title": "Open Source",
+      "description": "Powered by Nextcloud. Transparent, auditable, and community-driven."
+    }
+  },
+  "social_proof": {
+    "title": "Trusted by Thousands",
+    "users": "10,000+ users trust Felicloud"
+  },
+  "comparison": {
+    "title": "Felicloud vs The Rest",
+    "felicloud": "Felicloud",
+    "gdrive": "Google Drive",
+    "dropbox": "Dropbox",
+    "privacy": "Privacy First",
+    "eu_hosting": "EU Hosting",
+    "lifetime": "Lifetime Plans",
+    "opensource": "Open Source",
+    "no_tracking": "No Tracking"
+  },
+  "cta": {
+    "title": "Start Your Lifetime Cloud Today",
+    "subtitle": "Join thousands of users who trust Felicloud with their data",
+    "button": "Get Started Free"
+  },
+  "footer": {
+    "tagline": "Secure European Cloud Storage",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "support": "Support",
+    "copyright": "© 2024 Felicloud. All rights reserved."
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Choose the plan that's right for you. All plans include full features.",
+    "free": {
+      "name": "Free",
+      "price": "0",
+      "storage": "10 GB",
+      "description": "Perfect for getting started"
+    },
+    "starter": {
+      "name": "Starter",
+      "price": "29",
+      "storage": "100 GB",
+      "description": "Great for personal use"
+    },
+    "plus": {
+      "name": "Plus",
+      "price": "99",
+      "storage": "500 GB",
+      "description": "Perfect for power users"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "199",
+      "storage": "2 TB",
+      "description": "For professionals and teams"
+    },
+    "per_year": "/year",
+    "lifetime": "Lifetime",
+    "popular": "Most Popular",
+    "select": "Get Started",
+    "features": {
+      "storage": "Cloud Storage",
+      "encryption": "End-to-End Encryption",
+      "devices": "Unlimited Devices",
+      "sync": "Auto Sync",
+      "support": "Email Support",
+      "priority_support": "Priority Support",
+      "sharing": "File Sharing",
+      "versioning": "File Versioning",
+      "apps": "Mobile & Desktop Apps"
+    }
+  },
+  "signup": {
+    "title": "Create Your Free Account",
+    "subtitle": "Get 10 GB of secure cloud storage, free forever. No credit card required.",
+    "form": {
+      "email": "Email address",
+      "email_placeholder": "you@example.com",
+      "full_name": "Full name (optional)",
+      "full_name_placeholder": "John Doe",
+      "terms": "I agree to the Terms of Service and Privacy Policy",
+      "submit": "Create Account",
+      "submitting": "Creating account..."
+    },
+    "success": {
+      "title": "Account Created!",
+      "message": "Check your email to complete your registration.",
+      "login": "Go to Login"
+    },
+    "errors": {
+      "email_required": "Email is required",
+      "email_invalid": "Please enter a valid email address",
+      "terms_required": "You must agree to the terms",
+      "general": "Something went wrong. Please try again."
+    }
+  }
+}

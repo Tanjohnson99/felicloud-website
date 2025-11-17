@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "features": "Recursos",
+    "pricing": "Preços",
+    "about": "Sobre",
+    "signup": "Registar",
+    "login": "Entrar"
+  },
+  "hero": {
+    "title": "Armazenamento na Nuvem Europeia de Confiança",
+    "subtitle": "Planos vitalícios • Conforme RGPD • 100% hospedado na UE",
+    "cta_primary": "10 GB Grátis Para Sempre",
+    "cta_secondary": "Ver Preços"
+  },
+  "features": {
+    "title": "Por Que Escolher Felicloud?",
+    "subtitle": "Seguro, privado e feito para sua liberdade",
+    "encryption": {
+      "title": "Criptografia de Nível Militar",
+      "description": "Seus arquivos são protegidos com criptografia de ponta a ponta. Só você tem acesso aos seus dados."
+    },
+    "eu_hosted": {
+      "title": "100% Hospedado na UE",
+      "description": "Todos os servidores localizados na Europa. Conforme RGPD e sujeito às rigorosas leis europeias de privacidade."
+    },
+    "devices": {
+      "title": "Todos os Seus Dispositivos",
+      "description": "Acesse seus arquivos em qualquer lugar: celular, computador, web. Sincronização automática em todas as plataformas."
+    },
+    "speed": {
+      "title": "Velocidade Ilimitada",
+      "description": "Sem limitação, sem limite de largura de banda. Faça upload e download na velocidade máxima."
+    },
+    "lifetime": {
+      "title": "Planos Vitalícios",
+      "description": "Pague uma vez, use para sempre. Sem taxas recorrentes, sem surpresas."
+    },
+    "opensource": {
+      "title": "Código Aberto",
+      "description": "Alimentado pelo Nextcloud. Transparente, auditável e orientado pela comunidade."
+    }
+  },
+  "social_proof": {
+    "title": "Confiado por Milhares",
+    "users": "Mais de 10.000 usuários confiam no Felicloud"
+  },
+  "comparison": {
+    "title": "Felicloud vs O Resto",
+    "felicloud": "Felicloud",
+    "gdrive": "Google Drive",
+    "dropbox": "Dropbox",
+    "privacy": "Privacidade em Primeiro",
+    "eu_hosting": "Hospedagem UE",
+    "lifetime": "Planos Vitalícios",
+    "opensource": "Código Aberto",
+    "no_tracking": "Sem Rastreamento"
+  },
+  "cta": {
+    "title": "Comece Sua Nuvem Vitalícia Hoje",
+    "subtitle": "Junte-se a milhares de usuários que confiam no Felicloud",
+    "button": "Começar Grátis"
+  },
+  "footer": {
+    "tagline": "Armazenamento na Nuvem Europeia Segura",
+    "product": "Produto",
+    "company": "Empresa",
+    "legal": "Legal",
+    "support": "Suporte",
+    "copyright": "© 2024 Felicloud. Todos os direitos reservados."
+  },
+  "pricing": {
+    "title": "Preços Simples e Transparentes",
+    "subtitle": "Escolha o plano certo para você. Todos os recursos incluídos.",
+    "free": {
+      "name": "Grátis",
+      "price": "0",
+      "storage": "10 GB",
+      "description": "Perfeito para começar"
+    },
+    "starter": {
+      "name": "Iniciante",
+      "price": "29",
+      "storage": "100 GB",
+      "description": "Ótimo para uso pessoal"
+    },
+    "plus": {
+      "name": "Plus",
+      "price": "99",
+      "storage": "500 GB",
+      "description": "Perfeito para usuários avançados"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "199",
+      "storage": "2 TB",
+      "description": "Para profissionais e equipes"
+    },
+    "per_year": "/ano",
+    "lifetime": "Vitalício",
+    "popular": "Mais Popular",
+    "select": "Começar",
+    "features": {
+      "storage": "Armazenamento na Nuvem",
+      "encryption": "Criptografia Ponta a Ponta",
+      "devices": "Dispositivos Ilimitados",
+      "sync": "Sincronização Automática",
+      "support": "Suporte por Email",
+      "priority_support": "Suporte Prioritário",
+      "sharing": "Compartilhamento de Arquivos",
+      "versioning": "Versionamento de Arquivos",
+      "apps": "Apps Móvel & Desktop"
+    }
+  },
+  "signup": {
+    "title": "Crie Sua Conta Gratuita",
+    "subtitle": "Obtenha 10 GB de armazenamento na nuvem seguro, grátis para sempre. Sem cartão de crédito.",
+    "form": {
+      "email": "Endereço de email",
+      "email_placeholder": "voce@exemplo.com",
+      "full_name": "Nome completo (opcional)",
+      "full_name_placeholder": "João Silva",
+      "terms": "Eu concordo com os Termos de Serviço e Política de Privacidade",
+      "submit": "Criar Conta",
+      "submitting": "Criando conta..."
+    },
+    "success": {
+      "title": "Conta Criada!",
+      "message": "Verifique seu email para completar seu registro.",
+      "login": "Ir para Login"
+    },
+    "errors": {
+      "email_required": "Email é obrigatório",
+      "email_invalid": "Por favor, insira um endereço de email válido",
+      "terms_required": "Você deve concordar com os termos",
+      "general": "Algo deu errado. Por favor, tente novamente."
+    }
+  }
+}

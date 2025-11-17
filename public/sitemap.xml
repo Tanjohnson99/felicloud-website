@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- English -->
+  <url><loc>https://felicloud.com/en</loc><priority>1.0</priority></url>
+  <url><loc>https://felicloud.com/en/features</loc><priority>0.8</priority></url>
+  <url><loc>https://felicloud.com/en/pricing</loc><priority>0.8</priority></url>
+  <url><loc>https://felicloud.com/en/about</loc><priority>0.8</priority></url>
+  <url><loc>https://felicloud.com/en/signup</loc><priority>0.8</priority></url>
+  <url><loc>https://felicloud.com/en/legal/terms</loc><priority>0.5</priority></url>
+  <url><loc>https://felicloud.com/en/legal/privacy</loc><priority>0.5</priority></url>
+  <url><loc>https://felicloud.com/en/legal/gdpr</loc><priority>0.5</priority></url>
+
+  <!-- French -->
+  <url><loc>https://felicloud.com/fr</loc><priority>1.0</priority></url>
+  <url><loc>https://felicloud.com/fr/features</loc><priority>0.8</priority></url>
+  <url><loc>https://felicloud.com/fr/pricing</loc><priority>0.8</priority></url>
+  <url><loc>https://felicloud.com/fr/about</loc><priority>0.8</priority></url>
+  <url><loc>https://felicloud.com/fr/signup</loc><priority>0.8</priority></url>
+  <url><loc>https://felicloud.com/fr/legal/terms</loc><priority>0.5</priority></url>
+  <url><loc>https://felicloud.com/fr/legal/privacy</loc><priority>0.5</priority></url>
+  <url><loc>https://felicloud.com/fr/legal/gdpr</loc><priority>0.5</priority></url>
+
+  <!-- Portuguese -->
+  <url><loc>https://felicloud.com/pt</loc><priority>1.0</priority></url>
+  <url><loc>https://felicloud.com/pt/features</loc><priority>0.8</priority></url>
+  <url><loc>https://felicloud.com/pt/pricing</loc><priority>0.8</priority></url>
+  <url><loc>https://felicloud.com/pt/about</loc><priority>0.8</priority></url>
+  <url><loc>https://felicloud.com/pt/signup</loc><priority>0.8</priority></url>
+  <url><loc>https://felicloud.com/pt/legal/terms</loc><priority>0.5</priority></url>
+  <url><loc>https://felicloud.com/pt/legal/privacy</loc><priority>0.5</priority></url>
+  <url><loc>https://felicloud.com/pt/legal/gdpr</loc><priority>0.5</priority></url>
+</urlset>
