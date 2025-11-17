@@ -29,7 +29,7 @@ export function Footer({ lang = 'en' }: FooterProps) {
           <div className="col-span-2">
             <Link href={`/${lang}`} className="flex items-center gap-2">
               <Image
-                src="/logo.svg"
+                src="/images/logo.svg"
                 alt={t('common.brandName')}
                 width={40}
                 height={40}

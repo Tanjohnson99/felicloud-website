@@ -43,7 +43,7 @@ export function Header({ lang = 'en' }: HeaderProps) {
           <Link href={`/${lang}`} className="-m-1.5 p-1.5 flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
             <Image
               className="h-10 w-auto"
-              src="/logo.svg"
+              src="/images/logo.svg"
               alt={t('common.brandName')}
               width={40}
               height={40}
