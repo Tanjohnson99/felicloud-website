@@ -37,7 +37,7 @@ export function Footer() {
                 href="https://facebook.com/felicloud"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary transition-colors"
+                className="text-gray-600 hover:text-primary transition-colors cursor-pointer"
                 aria-label="Facebook"
               >
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -45,10 +45,10 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://instagram.com/felicloud"
+                href="https://www.instagram.com/felicloudsecurecloudstorage/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary transition-colors"
+                className="text-gray-600 hover:text-primary transition-colors cursor-pointer"
                 aria-label="Instagram"
               >
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">

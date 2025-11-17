@@ -82,16 +82,16 @@ export default function PricingPage() {
       </section>
 
       {/* Plan Selector */}
-      <section className="py-12">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="py-12 overflow-x-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Need More Space?</h2>
-            <p className="text-lg text-gray-600 mb-8">Choose from our flexible plans</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Need More Space?</h2>
+            <p className="text-base sm:text-lg text-gray-600 mb-8">Choose from our flexible plans</p>
 
-            <div className="inline-flex rounded-xl border-2 border-gray-200 p-2 bg-gray-50">
+            <div className="inline-flex rounded-xl border-2 border-gray-200 p-1.5 sm:p-2 bg-gray-50 max-w-full">
               <button
                 onClick={() => setSelectedPlan('monthly')}
-                className={`px-8 py-3 rounded-lg text-base font-semibold transition-all ${
+                className={`px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold transition-all cursor-pointer whitespace-nowrap ${
                   selectedPlan === 'monthly'
                     ? 'bg-primary text-white shadow-lg'
                     : 'text-gray-700 hover:text-gray-900'
@@ -101,25 +101,25 @@ export default function PricingPage() {
               </button>
               <button
                 onClick={() => setSelectedPlan('annual')}
-                className={`px-8 py-3 rounded-lg text-base font-semibold transition-all ${
+                className={`px-2 sm:px-4 lg:px-6 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold transition-all cursor-pointer whitespace-nowrap ${
                   selectedPlan === 'annual'
                     ? 'bg-primary text-white shadow-lg'
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
               >
                 <span>Annual</span>
-                <span className="ml-2 text-sm text-green-600 font-bold">Save 16%</span>
+                <span className={`ml-1 sm:ml-2 text-xs sm:text-sm font-bold ${selectedPlan === 'annual' ? 'text-green-200' : 'text-green-600'}`}>Save 16%</span>
               </button>
               <button
                 onClick={() => setSelectedPlan('lifetime')}
-                className={`px-8 py-3 rounded-lg text-base font-semibold transition-all ${
+                className={`px-2 sm:px-4 lg:px-6 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base font-semibold transition-all cursor-pointer whitespace-nowrap ${
                   selectedPlan === 'lifetime'
                     ? 'bg-primary text-white shadow-lg'
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
               >
                 <span>Lifetime</span>
-                <span className="ml-2 text-sm text-green-600 font-bold">Best Deal!</span>
+                <span className={`ml-1 sm:ml-2 text-xs sm:text-sm font-bold ${selectedPlan === 'lifetime' ? 'text-green-200' : 'text-green-600'}`}>Best Deal!</span>
               </button>
             </div>
           </div>
@@ -163,8 +163,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                <Link href="/en/checkout?plan=500GB_Monthly&billing=monthly&storage=500GB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -204,8 +204,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold">
+                <Link href="/en/checkout?plan=1TB_Monthly&billing=monthly&storage=1TB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -242,8 +242,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                <Link href="/en/checkout?plan=2TB_Monthly&billing=monthly&storage=2TB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -290,8 +290,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                <Link href="/en/checkout?plan=500GB_Annual&billing=annual&storage=500GB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -336,8 +336,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold">
+                <Link href="/en/checkout?plan=1TB_Annual&billing=annual&storage=1TB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -379,8 +379,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                <Link href="/en/checkout?plan=2TB_Annual&billing=annual&storage=2TB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -427,8 +427,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                <Link href="/en/checkout?plan=500GB_Lifetime&billing=lifetime&storage=500GB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -473,8 +473,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold">
+                <Link href="/en/checkout?plan=1TB_Lifetime&billing=lifetime&storage=1TB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>
@@ -516,8 +516,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
 
-                <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                <Link href="/en/checkout?plan=2TB_Lifetime&billing=lifetime&storage=2TB" className="mt-8 block">
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
                     Get Started
                   </button>
                 </Link>

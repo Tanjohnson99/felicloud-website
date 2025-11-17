@@ -1,10 +1,16 @@
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-20 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20 sm:py-32">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      <div className="absolute left-0 top-0 -z-10 h-full w-full">
+        <div className="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6" aria-hidden="true">
+          <div className="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-primary to-secondary opacity-20" style={{clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)'}}></div>
+        </div>
+      </div>
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
             European Cloud Storage You Can Trust
@@ -13,11 +19,11 @@ export function Hero() {
             Secure file sync, photo backup, and document management powered by Nextcloud
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Link href="/en/signup">
-              <Button size="lg">Get 10 GB Free Forever</Button>
+            <Link href="/en/signup" className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors">
+              Get 10 GB Free Forever
             </Link>
-            <Link href="/en/pricing">
-              <Button size="lg" variant="outline">View Pricing</Button>
+            <Link href="/en/pricing" className="inline-flex items-center justify-center rounded-md border-2 border-gray-300 bg-white px-8 py-3 text-base font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600 transition-colors">
+              View Pricing
             </Link>
           </div>
         </div>
