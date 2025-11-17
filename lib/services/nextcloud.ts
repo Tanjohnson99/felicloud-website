@@ -10,6 +10,7 @@ interface CreateUserParams {
   email: string;
   displayName: string;
   groups?: string[];
+  quota?: number; // Quota in bytes
 }
 
 interface NextcloudResponse {
@@ -32,6 +33,7 @@ export async function createNextcloudUser({
   email,
   displayName,
   groups = [],
+  quota,
 }: CreateUserParams): Promise<{ success: boolean; message: string }> {
   // Validate environment variables
   if (!process.env.NEXTCLOUD_URL || !process.env.NEXTCLOUD_ADMIN_USER || !process.env.NEXTCLOUD_ADMIN_PASSWORD) {
@@ -90,6 +92,14 @@ export async function createNextcloudUser({
           groupid: group,
         }),
       });
+    }
+
+    // Step 3: Set quota if provided
+    if (quota) {
+      const quotaResult = await setUserQuota(username, `${quota} B`);
+      if (!quotaResult.success) {
+        console.warn(`User created but quota setting failed: ${quotaResult.message}`);
+      }
     }
 
     return {
@@ -178,4 +188,11 @@ export async function setUserQuota(username: string, quota: string): Promise<{ s
       message: error instanceof Error ? error.message : 'Unknown error',
     };
   }
+}
+
+/**
+ * Update user quota (wrapper for setUserQuota with bytes input)
+ */
+export async function updateUserQuota(username: string, quotaInBytes: number): Promise<{ success: boolean; message: string }> {
+  return setUserQuota(username, `${quotaInBytes} B`);
 }

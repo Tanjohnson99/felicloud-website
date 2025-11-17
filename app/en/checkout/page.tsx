@@ -32,31 +32,35 @@ function CheckoutContent() {
     setIsLoading(true);
 
     try {
-      // TODO: Call API to check if user exists
-      // const response = await fetch('/api/auth/check-email', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ email }),
-      // });
-      // const data = await response.json();
-
-      // For now, we'll simulate the check and route to signup
-      // In production, this would check the database
-
-      // Simulate API delay
-      await new Promise(resolve => setTimeout(resolve, 500));
-
-      // Route to signup page with plan and email pre-filled
-      const signupUrl = new URLSearchParams({
-        email,
-        plan,
-        billing,
+      // Check if user exists in Nextcloud
+      const response = await fetch('/api/auth/check-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
       });
 
-      router.push(`/en/signup?${signupUrl.toString()}`);
+      if (!response.ok) {
+        throw new Error('Failed to verify email');
+      }
+
+      const data = await response.json();
+      const isUpgrade = data.exists; // true = upgrade, false = new account
+
+      // Build Stripe Checkout URL with customer data
+      const { getStripeCheckoutUrl } = await import('@/lib/config/stripe');
+
+      const stripeUrl = getStripeCheckoutUrl(plan, email, {
+        action: isUpgrade ? 'upgrade' : 'create',
+        plan,
+        billing,
+        storage,
+      });
+
+      // Redirect to Stripe Checkout
+      window.location.href = stripeUrl;
     } catch (err) {
+      console.error('Checkout error:', err);
       setError('An error occurred. Please try again.');
-    } finally {
       setIsLoading(false);
     }
   };
