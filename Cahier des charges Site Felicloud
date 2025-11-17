@@ -1,0 +1,806 @@
+📋 CAHIER DES CHARGES - FELICLOUD.COM
+Site Marketing React Multilingue
+
+🎯 1. VISION & OBJECTIFS
+1.1 Objectif principal
+Créer un site marketing moderne, rapide et performant pour vendre les services cloud Felicloud et convertir les visiteurs en utilisateurs.
+1.2 Objectifs spécifiques
+
+✅ Abandonner WordPress pour un stack moderne React
+✅ SEO optimisé pour le référencement naturel (SSR/SSG)
+✅ Multilingue (EN, FR, PT minimum)
+✅ Performance maximale (Score Lighthouse 95+)
+✅ Design moderne reflétant la sécurité et la confiance européenne
+✅ Conversion optimisée vers les inscriptions gratuites 10 GB
+
+1.3 Séparation claire des domaines
+felicloud.com          → Site marketing (nouveau site React)
+cloud.felicloud.com    → Nextcloud (existant, indépendant)
+
+🏗️ 2. ARCHITECTURE TECHNIQUE
+2.1 Stack technologique recommandé
+javascript// Framework principal
+Next.js 14+ (App Router)      // SSR/SSG pour SEO optimal
+React 18+                       // UI moderne
+TypeScript                      // Type safety
+
+// Styling
+Tailwind CSS                    // Utility-first CSS
+Framer Motion                   // Animations fluides
+Radix UI / shadcn/ui           // Components accessibles
+
+// Internationalisation
+next-intl                       // i18n optimisé pour Next.js
+ou next-i18next                 // Alternative éprouvée
+
+// SEO & Analytics
+next-seo                        // Meta tags optimisés
+Google Analytics 4              // Tracking
+Plausible Analytics            // Alternative privacy-first (recommandé)
+
+// Forms & API
+React Hook Form                 // Gestion des formulaires
+Zod                            // Validation des données
+Axios ou fetch                 // Appels API
+
+// CMS (optionnel)
+Sanity.io ou Strapi            // Si vous voulez éditer le contenu facilement
+Markdown + MDX                  // Alternative simple pour le blog
+
+// Hosting & Deployment
+Vercel ou Netlify              // Déploiement automatique
+Cloudflare Pages               // Alternative européenne
+```
+
+### 2.2 Architecture des dossiers
+```
+felicloud-website/
+├── app/                          # Next.js App Router
+│   ├── [locale]/                 # Routes internationalisées
+│   │   ├── page.tsx             # Homepage
+│   │   ├── pricing/             # Page tarifs
+│   │   ├── features/            # Fonctionnalités
+│   │   ├── about/               # À propos
+│   │   ├── blog/                # Blog (optionnel)
+│   │   ├── legal/               # CGV, Confidentialité, RGPD
+│   │   └── signup/              # Inscription 10 GB gratuit
+│   ├── api/                     # API Routes
+│   │   ├── signup/route.ts     # Connexion vers WP API
+│   │   └── newsletter/route.ts # Newsletter (optionnel)
+│   └── layout.tsx               # Layout global
+├── components/
+│   ├── ui/                      # Composants UI réutilisables
+│   ├── sections/                # Sections de pages (Hero, Features, etc.)
+│   ├── forms/                   # Formulaires
+│   └── layout/                  # Header, Footer, Nav
+├── lib/
+│   ├── api/                     # Clients API
+│   ├── i18n/                    # Configuration i18n
+│   └── utils/                   # Utilitaires
+├── public/
+│   ├── locales/                 # Fichiers de traduction
+│   │   ├── en/
+│   │   ├── fr/
+│   │   └── pt/
+│   └── assets/                  # Images, logos
+├── styles/                      # CSS global si nécessaire
+├── messages/                    # Traductions (alternative)
+└── middleware.ts                # Middleware Next.js (i18n routing)
+```
+
+---
+
+## 📄 3. PAGES & CONTENU
+
+### 3.1 Pages principales
+
+#### 🏠 **Homepage** (`/`)
+**Objectif** : Convertir immédiatement avec proposition de valeur claire
+
+**Sections** :
+1. **Hero Section**
+   - Titre accrocheur : "European Cloud Storage You Can Trust"
+   - Sous-titre : "Lifetime plans • GDPR compliant • 100% EU hosted"
+   - CTA principal : "Get 10 GB Free Forever"
+   - CTA secondaire : "View Pricing"
+   - Image/Illustration : Dashboard Nextcloud ou illustration cloud sécurisé
+
+2. **Social Proof**
+   - Témoignages clients (ceux que vous avez déjà)
+   - Logos partenaires/certifications (GDPR, EU hosted)
+   - Stats : "10,000+ users trust Felicloud"
+
+3. **Features Grid** (3-4 fonctionnalités clés)
+   - 🔒 Military-grade encryption
+   - 🇪🇺 100% EU hosted servers
+   - 📱 All devices (mobile, desktop, web)
+   - ⚡ Unlimited transfer speed
+
+4. **Comparison Table**
+   - Felicloud vs Google Drive vs Dropbox
+   - Focus sur : Privacy, Lifetime plans, EU hosting
+
+5. **Pricing Preview**
+   - Mise en avant du plan gratuit 10 GB
+   - Lien vers page pricing complète
+
+6. **Trust Section**
+   - "Your data is YOURS"
+   - Open-source (powered by Nextcloud)
+   - No tracking, no ads, no AI training
+
+7. **CTA Final**
+   - "Start Your Lifetime Cloud Today"
+   - Formulaire d'inscription directement ou redirection
+
+#### 💰 **Pricing** (`/pricing`)
+**Objectif** : Clarté totale sur les offres
+
+**Sections** :
+1. **Pricing Cards**
+```
+   FREE          STARTER       PLUS          PRO
+   10 GB         50 GB         500 GB        2 TB
+   €0            €X/month      €Y/month      €Z/month
+   Lifetime      or €X/year    or €Y/year    or €Z/year
+                 or €XX once   or €YY once   or €ZZ once
+
+Features Comparison Table
+
+Tableau détaillé de toutes les fonctionnalités par plan
+
+
+FAQ Pricing
+
+"What happens with lifetime plans?"
+"Can I upgrade later?"
+"Do you offer refunds?"
+
+
+Money-back Guarantee
+
+Badge "30-Day Money-Back Guarantee"
+
+
+
+⚡ Features (/features)
+Objectif : Démontrer la puissance de la plateforme
+Sections :
+
+File Storage & Sync
+
+Automatic sync across devices
+Offline access
+File versioning
+
+
+Collaboration
+
+File sharing with password protection
+Team folders
+Comments & notifications
+
+
+Security & Privacy
+
+End-to-end encryption
+Two-factor authentication
+GDPR compliant
+
+
+Platform Features
+
+Calendar integration
+Contacts sync
+Notes & tasks
+Photo backup
+Video/audio streaming
+
+
+Developer Features
+
+WebDAV support
+API access
+Third-party integrations
+
+
+
+📝 Signup (/signup)
+Objectif : Inscription ultra-simple au plan gratuit 10 GB
+Sections :
+
+Formulaire d'inscription
+
+javascript   - Email (required)
+   - Full Name (optional)
+   - reCAPTCHA v3 (invisible)
+   - CGV checkbox
+   - Submit button
+```
+
+2. **Avantages du plan gratuit**
+   - Liste des fonctionnalités incluses
+
+3. **Processus transparent**
+   - "1. Enter your email"
+   - "2. Check your inbox"
+   - "3. Set your password"
+   - "4. Start using Felicloud"
+
+#### ℹ️ **About** (`/about`)
+**Objectif** : Raconter votre histoire et construire la confiance
+
+**Sections** :
+1. **Mission Statement**
+   - Votre contenu actuel "Traditional providers lock users..."
+
+2. **Team** (optionnel)
+   - Photos et bios si vous voulez être transparents
+
+3. **Values**
+   - Privacy-first
+   - Transparency (open-source)
+   - European values
+
+4. **Timeline** (optionnel)
+   - Histoire de Felicloud
+
+#### 📰 **Blog** (`/blog`) - OPTIONNEL
+**Objectif** : SEO et autorité
+
+**Sujets potentiels** :
+- "How to migrate from Google Drive to Felicloud"
+- "Understanding GDPR and cloud storage"
+- "Why lifetime cloud plans make sense"
+- "Nextcloud tips and tricks"
+
+#### ⚖️ **Legal** (`/legal`)
+- Terms of Service (`/legal/terms`)
+- Privacy Policy (`/legal/privacy`)
+- GDPR Compliance (`/legal/gdpr`)
+- Cookie Policy (`/legal/cookies`)
+
+### 3.2 Pages secondaires
+
+- `/download` - Apps download (avec liens vers stores)
+- `/contact` - Formulaire de contact / support
+- `/faq` - Questions fréquentes
+- `/compare` - Felicloud vs Competitors
+- `/security` - Détails sur la sécurité
+
+---
+
+## 🌍 4. INTERNATIONALISATION (i18n)
+
+### 4.1 Langues supportées
+
+**Phase 1 (MVP)** :
+- 🇬🇧 English (par défaut, langue internationale)
+- 🇫🇷 Français
+- 🇵🇹 Português
+
+**Phase 2 (expansion)** :
+- 🇪🇸 Español
+- 🇩🇪 Deutsch
+- 🇮🇹 Italiano
+
+### 4.2 Stratégie URL
+```
+// Option 1 : Sous-répertoires (RECOMMANDÉ pour SEO)
+felicloud.com/en/
+felicloud.com/fr/
+felicloud.com/pt/
+
+// Option 2 : Sous-domaines (alternative)
+en.felicloud.com
+fr.felicloud.com
+pt.felicloud.com
+4.3 Configuration i18n
+typescript// lib/i18n/config.ts
+export const locales = ['en', 'fr', 'pt'] as const;
+export const defaultLocale = 'en' as const;
+
+export const localeNames = {
+  en: 'English',
+  fr: 'Français',
+  pt: 'Português',
+};
+
+export const localeFlags = {
+  en: '🇬🇧',
+  fr: '🇫🇷',
+  pt: '🇵🇹',
+};
+4.4 Structure des traductions
+json// public/locales/en/common.json
+{
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "about": "About",
+    "signup": "Sign Up"
+  },
+  "hero": {
+    "title": "European Cloud Storage You Can Trust",
+    "subtitle": "Lifetime plans • GDPR compliant • 100% EU hosted",
+    "cta_primary": "Get 10 GB Free Forever",
+    "cta_secondary": "View Pricing"
+  },
+  "features": {
+    "encryption": {
+      "title": "Military-grade encryption",
+      "description": "Your files are protected with..."
+    }
+  }
+}
+
+🎨 5. DESIGN & UX
+5.1 Direction artistique
+Style général :
+
+Modern & Clean
+Professional but friendly
+Trust-building (security focus)
+European aesthetic (not too corporate)
+
+Palette de couleurs :
+css/* Couleurs actuelles Felicloud */
+--primary: #2B7FFF;      /* Bleu Felicloud */
+--primary-dark: #1E5FCC;
+--secondary: #6C63FF;     /* Violet/pourpre */
+
+/* Neutres */
+--gray-50: #F9FAFB;
+--gray-100: #F3F4F6;
+--gray-900: #111827;
+
+/* Sémantiques */
+--success: #10B981;
+--warning: #F59E0B;
+--error: #EF4444;
+
+/* Modes */
+light mode: background blanc/gris très clair
+dark mode: background #0B0F14 (comme votre email)
+Typographie :
+css/* Headers */
+font-family: 'Inter', 'Segoe UI', sans-serif;
+font-weight: 600-700;
+
+/* Body */
+font-family: 'Inter', 'Segoe UI', sans-serif;
+font-weight: 400-500;
+
+/* Code/monospace (si nécessaire) */
+font-family: 'Fira Code', monospace;
+5.2 Composants UI principaux
+
+Header/Navigation
+
+Logo Felicloud (current logo)
+Navigation principale
+Language switcher
+CTA "Get Started"
+Mobile responsive (hamburger menu)
+
+
+Hero Sections
+
+Grand titre + sous-titre
+2 CTAs (primary + secondary)
+Image/illustration ou animation
+
+
+Feature Cards
+
+Icon + Title + Description
+Hover effects
+Grille responsive (3 colonnes desktop, 1 mobile)
+
+
+Pricing Cards
+
+Plan name + price
+Features list avec checkmarks
+CTA button
+"Most Popular" badge
+Hover effects (élévation)
+
+
+Testimonials
+
+Photo + nom + localisation
+Citation
+Rating stars (5/5)
+
+
+Footer
+
+Logo + tagline
+Links sections (Product, Company, Legal, Support)
+Social media icons
+Language selector
+Copyright
+
+
+
+5.3 Animations
+Avec Framer Motion :
+
+Fade in on scroll
+Parallax effects (subtils)
+Hover states (cards, buttons)
+Page transitions
+Loading states
+
+Règles :
+
+Subtiles et rapides (200-400ms)
+Améliorer l'UX, pas distraire
+Respecter prefers-reduced-motion
+
+
+🔌 6. INTÉGRATION API
+6.1 Endpoint d'inscription
+typescript// app/api/signup/route.ts
+import { NextRequest, NextResponse } from 'next/server';
+
+export async function POST(request: NextRequest) {
+  const body = await request.json();
+  
+  // Validation
+  const { email, fullName, locale } = body;
+  
+  // Appel vers votre API WordPress existante
+  const response = await fetch('https://felicloud.com/wp-json/felicloud/v1/create', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email,
+      full_name: fullName,
+      form_secret: process.env.FELICLOUD_FORM_SECRET,
+      recaptcha_token: body.recaptchaToken,
+    }),
+  });
+  
+  const data = await response.json();
+  return NextResponse.json(data);
+}
+6.2 Variables d'environnement
+bash# .env.local
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=6LcXXXXXXXXXXX
+FELICLOUD_FORM_SECRET=votre_secret_64_caracteres
+FELICLOUD_API_URL=https://felicloud.com/wp-json/felicloud/v1
+
+# Analytics
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_PLAUSIBLE_DOMAIN=felicloud.com
+
+# Email (si newsletter)
+SENDGRID_API_KEY=SG.xxxxxxxxxxxxx
+```
+
+### 6.3 Architecture de transition
+```
+┌─────────────────────────────────────────────┐
+│         felicloud.com (React/Next.js)       │
+│                                              │
+│  ┌────────────┐         ┌────────────┐     │
+│  │  Homepage  │         │   Pricing  │     │
+│  └────────────┘         └────────────┘     │
+│                                              │
+│  ┌────────────────────────────────────┐    │
+│  │      Signup Form Component          │    │
+│  │  - Email input                      │    │
+│  │  - reCAPTCHA v3                     │    │
+│  │  - Submit                           │    │
+│  └──────────────┬──────────────────────┘    │
+└─────────────────┼───────────────────────────┘
+                  │
+                  │ POST /api/signup
+                  ▼
+┌─────────────────────────────────────────────┐
+│     Next.js API Route (Bridge Layer)        │
+│     /app/api/signup/route.ts                │
+└──────────────────┬──────────────────────────┘
+                   │
+                   │ POST avec form_secret
+                   ▼
+┌─────────────────────────────────────────────┐
+│     WordPress REST API (existant)           │
+│     /wp-json/felicloud/v1/create            │
+│                                              │
+│  ┌────────────────────────────────────┐    │
+│  │  Felicloud Provisioning Plugin     │    │
+│  │  - Validation                       │    │
+│  │  - Rate limiting                    │    │
+│  │  - reCAPTCHA                        │    │
+│  └──────────────┬──────────────────────┘    │
+└─────────────────┼───────────────────────────┘
+                  │
+                  │ OCS API calls
+                  ▼
+┌─────────────────────────────────────────────┐
+│     cloud.felicloud.com (Nextcloud)         │
+│     - Création compte                       │
+│     - Quota 10 GB                           │
+│     - Groupe "Free Users"                   │
+└─────────────────────────────────────────────┘
+
+🚀 7. SEO & PERFORMANCE
+7.1 Optimisations SEO
+Meta tags (avec next-seo) :
+typescript// app/[locale]/page.tsx
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Felicloud - Secure European Cloud Storage',
+  description: 'Lifetime cloud storage plans with GDPR compliance. 10 GB free forever. 100% EU hosted servers. Alternative to Google Drive and Dropbox.',
+  keywords: ['cloud storage', 'EU hosting', 'GDPR', 'lifetime plans', 'Nextcloud'],
+  openGraph: {
+    title: 'Felicloud - Secure European Cloud Storage',
+    description: 'Lifetime cloud storage with GDPR compliance',
+    images: ['/og-image.jpg'],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Felicloud - Secure European Cloud Storage',
+    description: 'Lifetime cloud storage with GDPR compliance',
+    images: ['/twitter-image.jpg'],
+  },
+};
+Structured Data (JSON-LD) :
+typescript// components/StructuredData.tsx
+export function OrganizationSchema() {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Felicloud',
+          url: 'https://felicloud.com',
+          logo: 'https://felicloud.com/logo.png',
+          description: 'Secure European cloud storage with lifetime plans',
+          foundingDate: '2024',
+          address: {
+            '@type': 'PostalAddress',
+            addressCountry: 'PT',
+          },
+        }),
+      }}
+    />
+  );
+}
+Sitemap :
+xml<!-- Généré automatiquement par Next.js -->
+app/sitemap.ts
+```
+
+**Robots.txt** :
+```
+User-agent: *
+Allow: /
+
+Sitemap: https://felicloud.com/sitemap.xml
+7.2 Performance
+Objectifs Lighthouse :
+
+Performance: 95+
+Accessibility: 100
+Best Practices: 100
+SEO: 100
+
+Optimisations :
+
+✅ Image optimization (Next.js Image component)
+✅ Lazy loading
+✅ Code splitting automatique (Next.js)
+✅ Static generation (SSG) pour pages statiques
+✅ CDN (Vercel Edge Network ou Cloudflare)
+✅ Compression Brotli/Gzip
+✅ Preload critical resources
+✅ Minimize JavaScript bundle
+
+
+🔒 8. SÉCURITÉ
+8.1 Mesures de sécurité
+
+HTTPS obligatoire
+
+Redirect HTTP → HTTPS
+HSTS header
+
+
+Headers de sécurité
+
+typescript// next.config.js
+module.exports = {
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          { key: 'X-Frame-Options', value: 'DENY' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+        ],
+      },
+    ];
+  },
+};
+
+Rate limiting côté Next.js
+
+Limiter les appels API signup
+
+
+Validation des données
+
+Zod schemas
+Server-side validation
+
+
+Secrets management
+
+Variables d'environnement uniquement
+Jamais de secrets dans le code
+
+
+
+8.2 RGPD & Cookies
+Cookie banner :
+
+Consentement explicite
+Cookies essentiels uniquement par défaut
+Opt-in pour analytics
+
+Privacy by design :
+
+Minimisation des données collectées
+Pas de trackers tiers (sauf analytics avec consentement)
+Liens clairs vers Privacy Policy
+
+
+📊 9. ANALYTICS & MONITORING
+9.1 Analytics
+Option 1 : Plausible Analytics (RECOMMANDÉ - privacy-first)
+typescript// app/layout.tsx
+<Script
+  defer
+  data-domain="felicloud.com"
+  src="https://plausible.io/js/script.js"
+/>
+Option 2 : Google Analytics 4
+typescript// lib/analytics/gtag.ts
+export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID;
+
+export const pageview = (url: string) => {
+  window.gtag('config', GA_TRACKING_ID, {
+    page_path: url,
+  });
+};
+9.2 Événements à tracker
+typescript// Événements importants
+- signup_initiated
+- signup_completed
+- pricing_page_viewed
+- plan_selected
+- download_clicked
+- language_changed
+- feature_explored
+9.3 Monitoring
+Sentry (error tracking) :
+typescript// sentry.client.config.ts
+Sentry.init({
+  dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
+  environment: process.env.NODE_ENV,
+  tracesSampleRate: 0.1,
+});
+Uptime monitoring :
+
+UptimeRobot ou Pingdom
+Alerts email/SMS si down
+
+
+🧪 10. TESTING & QUALITÉ
+10.1 Tests
+typescript// Jest + React Testing Library
+npm install --save-dev jest @testing-library/react @testing-library/jest-dom
+
+// Exemple de test
+// __tests__/components/Hero.test.tsx
+import { render, screen } from '@testing-library/react';
+import Hero from '@/components/Hero';
+
+describe('Hero', () => {
+  it('renders hero title', () => {
+    render(<Hero />);
+    expect(screen.getByText(/European Cloud Storage/i)).toBeInTheDocument();
+  });
+});
+10.2 Linting & Formatting
+json// package.json
+{
+  "scripts": {
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "type-check": "tsc --noEmit"
+  }
+}
+10.3 CI/CD
+yaml# .github/workflows/ci.yml
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run type-check
+      - run: npm test
+      - run: npm run build
+```
+
+---
+
+## 📅 11. PLANNING & PHASES
+
+### Phase 1 : MVP (4-6 semaines)
+**Semaine 1-2 : Setup & Foundation**
+- ✅ Setup projet Next.js + TypeScript
+- ✅ Configuration i18n (EN, FR, PT)
+- ✅ Design system (Tailwind + composants de base)
+- ✅ Header + Footer
+- ✅ Homepage (Hero + Features + CTA)
+
+**Semaine 3-4 : Pages principales**
+- ✅ Pricing page
+- ✅ Features page
+- ✅ Signup form + API integration
+- ✅ Legal pages (Terms, Privacy)
+
+**Semaine 5-6 : Polish & Launch**
+- ✅ SEO optimization
+- ✅ Performance optimization
+- ✅ Testing (mobile, browsers)
+- ✅ Analytics setup
+- ✅ Deployment production
+
+### Phase 2 : Optimisations (2-3 semaines)
+- ✅ Blog/CMS integration
+- ✅ Advanced animations
+- ✅ A/B testing setup
+- ✅ Enhanced analytics
+- ✅ Customer testimonials section
+
+### Phase 3 : Expansion (ongoing)
+- ✅ More languages (ES, DE, IT)
+- ✅ Advanced features showcase
+- ✅ Case studies
+- ✅ Partner program page
+- ✅ Affiliate system
+
+---
+
+## 💰 12. BUDGET & RESSOURCES
+
+### 12.1 Services externes
+```
+Hosting (Vercel Pro)        : ~20€/mois
+Domain (felicloud.com)      : ~15€/an (déjà payé)
+Analytics (Plausible)       : ~9€/mois (ou self-hosted gratuit)
+reCAPTCHA v3               : Gratuit
+Email (SendGrid)           : Gratuit (jusqu'à 100 emails/jour)
+Monitoring (Sentry)        : Gratuit (jusqu'à 5k events/mois)
+
+TOTAL: ~30€/mois
