@@ -27,7 +27,19 @@ jobs:
       - name: Build Next.js application
         run: npm run build
 
+      - name: Check FTP Secrets
+        id: check-secrets
+        run: |
+          if [ -z "${{ secrets.FTP_SERVER }}" ]; then
+            echo "configured=false" >> $GITHUB_OUTPUT
+            echo "⚠️ FTP secrets not configured. Skipping deployment."
+          else
+            echo "configured=true" >> $GITHUB_OUTPUT
+            echo "✅ FTP secrets found. Will deploy."
+          fi
+
       - name: Deploy to FTP
+        if: steps.check-secrets.outputs.configured == 'true'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -36,3 +48,11 @@ jobs:
           local-dir: ./out/
           server-dir: /
           dangerous-clean-slate: false
+
+      - name: Upload build artifacts
+        if: steps.check-secrets.outputs.configured == 'false'
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-build
+          path: ./out/
+          retention-days: 30
