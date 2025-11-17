@@ -1,7 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
-
 const features = [
   {
     title: 'Military-Grade Encryption',
@@ -73,13 +69,9 @@ export function Features() {
         </div>
         <div className="mx-auto mt-16 max-w-7xl">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, index) => (
-              <motion.div
+            {features.map((feature) => (
+              <div
                 key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative rounded-2xl border border-gray-200 bg-white p-8 hover:shadow-lg transition-shadow"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-white">
@@ -91,7 +83,7 @@ export function Features() {
                 <p className="mt-4 text-gray-600">
                   {feature.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
