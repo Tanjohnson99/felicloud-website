@@ -5,6 +5,7 @@ on:
     branches:
       - claude/start-felicloud-development-018e7239nZbgQA5UbpJnWEpi
       - claude/fix-bugs-homepage-01DMhH7jSk2BdxquD7ezXmvc
+      - claude/cleanup-translations-structure-012mWfvuNk1e7wezmgPEv38p
       - main
   workflow_dispatch:
 
