@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felicloud - Secure European Cloud Storage</title>
+    <meta name="description" content="Lifetime cloud storage plans with GDPR compliance. 10 GB free forever. 100% EU hosted servers.">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+        }
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+        }
+    </style>
+    <script>
+        // Detect browser language and redirect
+        (function() {
+            var lang = navigator.language.split('-')[0];
+            var supportedLangs = ['en', 'fr', 'pt'];
+            var defaultLang = 'en';
+            var targetLang = supportedLangs.indexOf(lang) !== -1 ? lang : defaultLang;
+            window.location.replace('/' + targetLang + '/');
+        })();
+    </script>
+</head>
+<body>
+    <div class="loader">
+        <p>Loading Felicloud...</p>
+    </div>
+    <noscript>
+        <p>Please enable JavaScript or visit <a href="/en/">Felicloud English</a></p>
+    </noscript>
+</body>
+</html>
