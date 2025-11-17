@@ -21,13 +21,16 @@ export function Header({ lang = 'en' }: HeaderProps) {
     { name: t('nav.about'), href: `/${lang}/about` },
   ];
 
+  // Only show languages that have routes available
+  // TODO: Add other languages when their routes are created
   const languages = [
     { code: 'en', name: t('languages.en'), href: '/en' },
-    { code: 'fr', name: t('languages.fr'), href: '/fr' },
-    { code: 'pt', name: t('languages.pt'), href: '/pt' },
-    { code: 'es', name: t('languages.es'), href: '/es' },
-    { code: 'it', name: t('languages.it'), href: '/it' },
-    { code: 'de', name: t('languages.de'), href: '/de' },
+    // Uncomment when ready:
+    // { code: 'fr', name: t('languages.fr'), href: '/fr' },
+    // { code: 'pt', name: t('languages.pt'), href: '/pt' },
+    // { code: 'es', name: t('languages.es'), href: '/es' },
+    // { code: 'it', name: t('languages.it'), href: '/it' },
+    // { code: 'de', name: t('languages.de'), href: '/de' },
   ];
 
   const currentLang = languages.find(l => l.code === lang) || languages[0];
