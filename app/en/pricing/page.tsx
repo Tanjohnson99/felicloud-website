@@ -108,7 +108,7 @@ export default function PricingPage() {
                 }`}
               >
                 <span>Annual</span>
-                <span className="ml-2 text-sm text-green-600 font-bold">Save 16%</span>
+                <span className={`ml-2 text-sm font-bold ${selectedPlan === 'annual' ? 'text-green-200' : 'text-green-600'}`}>Save 16%</span>
               </button>
               <button
                 onClick={() => setSelectedPlan('lifetime')}
@@ -119,7 +119,7 @@ export default function PricingPage() {
                 }`}
               >
                 <span>Lifetime</span>
-                <span className="ml-2 text-sm text-green-600 font-bold">Best Deal!</span>
+                <span className={`ml-2 text-sm font-bold ${selectedPlan === 'lifetime' ? 'text-green-200' : 'text-green-600'}`}>Best Deal!</span>
               </button>
             </div>
           </div>
