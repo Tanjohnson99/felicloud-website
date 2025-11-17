@@ -1,16 +1,18 @@
+import Link from 'next/link';
+
 export default function DownloadPage() {
+  const webAccess = {
+    name: 'Web Access',
+    icon: (
+      <svg className="h-16 w-16" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+      </svg>
+    ),
+    description: 'Access Felicloud from any web browser without installing anything',
+    url: 'https://cloud.felicloud.com',
+  };
+
   const platforms = [
-    {
-      name: 'Web Access',
-      icon: (
-        <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-        </svg>
-      ),
-      description: 'Access from any web browser',
-      downloadLink: 'https://cloud.felicloud.com',
-      isWeb: true,
-    },
     {
       name: 'Windows',
       icon: (
@@ -69,7 +71,7 @@ export default function DownloadPage() {
         </svg>
       ),
       description: 'Connect any WebDAV client',
-      downloadLink: '#',
+      tutorialLink: '/en/support/webdav-tutorial',
     },
   ];
 
@@ -89,9 +91,53 @@ export default function DownloadPage() {
         </div>
       </section>
 
-      {/* Platforms */}
+      {/* Web Access - Featured */}
+      <section className="py-12 bg-gradient-to-r from-primary to-secondary">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="flex-shrink-0">
+                <div className="flex h-32 w-32 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  {webAccess.icon}
+                </div>
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <h2 className="text-3xl font-bold text-gray-900">{webAccess.name}</h2>
+                <p className="mt-4 text-lg text-gray-600">{webAccess.description}</p>
+                <p className="mt-2 text-sm text-gray-500">
+                  No installation required • Works on any device • Instant access
+                </p>
+                <div className="mt-8">
+                  <a
+                    href={webAccess.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-white hover:bg-primary-dark transition-colors shadow-xl"
+                  >
+                    Access Now
+                    <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Other Platforms */}
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Native Apps
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Download our apps for the best experience on your device
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {platforms.map((platform) => (
               <div
@@ -104,14 +150,21 @@ export default function DownloadPage() {
                   </div>
                   <h3 className="mt-6 text-2xl font-bold text-gray-900">{platform.name}</h3>
                   <p className="mt-2 text-sm text-gray-600">{platform.description}</p>
-                  <a
-                    href={platform.downloadLink}
-                    className="mt-6 inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-base font-semibold text-white hover:bg-primary-dark transition-colors shadow-lg"
-                    target={platform.isWeb ? "_blank" : undefined}
-                    rel={platform.isWeb ? "noopener noreferrer" : undefined}
-                  >
-                    {platform.isWeb ? 'Access Now' : 'Download'}
-                  </a>
+                  {platform.tutorialLink ? (
+                    <Link
+                      href={platform.tutorialLink}
+                      className="mt-6 inline-flex items-center justify-center rounded-lg bg-secondary px-6 py-3 text-base font-semibold text-white hover:bg-secondary-dark transition-colors shadow-lg"
+                    >
+                      Tutorial
+                    </Link>
+                  ) : (
+                    <a
+                      href={platform.downloadLink}
+                      className="mt-6 inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-base font-semibold text-white hover:bg-primary-dark transition-colors shadow-lg"
+                    >
+                      Download
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
@@ -119,91 +172,27 @@ export default function DownloadPage() {
         </div>
       </section>
 
-      {/* Installation Instructions */}
-      <section className="bg-gray-50 py-24 sm:py-32">
+      {/* Support Links */}
+      <section className="bg-gray-50 py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
-              Installation Instructions
-            </h2>
-
-            <div className="space-y-8">
-              <div className="rounded-lg bg-white p-6 shadow">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Desktop (Windows, Mac, Linux)</h3>
-                <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                  <li>Download the installer for your platform</li>
-                  <li>Run the installer and follow the setup wizard</li>
-                  <li>Login with your Felicloud account</li>
-                  <li>Choose which folders to sync</li>
-                </ol>
-              </div>
-
-              <div className="rounded-lg bg-white p-6 shadow">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Mobile (Android & iOS)</h3>
-                <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                  <li>Download from Google Play or App Store</li>
-                  <li>Open the app and login</li>
-                  <li>Enable automatic photo upload (optional)</li>
-                  <li>Access your files on the go</li>
-                </ol>
-              </div>
-
-              <div className="rounded-lg bg-white p-6 shadow">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">WebDAV</h3>
-                <p className="text-gray-600 mb-3">
-                  Connect any WebDAV-compatible client using these settings:
-                </p>
-                <div className="bg-gray-50 p-4 rounded font-mono text-sm">
-                  <div>Server: <span className="text-primary">https://dav.felicloud.com</span></div>
-                  <div>Username: <span className="text-primary">your@email.com</span></div>
-                  <div>Password: <span className="text-primary">your_password</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* System Requirements */}
-      <section className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
-              System Requirements
-            </h2>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <div className="rounded-lg border border-gray-200 p-6">
-                <h3 className="font-semibold text-gray-900 mb-3">Windows</h3>
-                <ul className="space-y-1 text-sm text-gray-600">
-                  <li>• Windows 10 or later</li>
-                  <li>• 100 MB free disk space</li>
-                  <li>• Internet connection</li>
-                </ul>
-              </div>
-              <div className="rounded-lg border border-gray-200 p-6">
-                <h3 className="font-semibold text-gray-900 mb-3">macOS</h3>
-                <ul className="space-y-1 text-sm text-gray-600">
-                  <li>• macOS 10.15 or later</li>
-                  <li>• 100 MB free disk space</li>
-                  <li>• Internet connection</li>
-                </ul>
-              </div>
-              <div className="rounded-lg border border-gray-200 p-6">
-                <h3 className="font-semibold text-gray-900 mb-3">Linux</h3>
-                <ul className="space-y-1 text-sm text-gray-600">
-                  <li>• Ubuntu 20.04+ / Debian 10+</li>
-                  <li>• Fedora 33+ / openSUSE 15+</li>
-                  <li>• 100 MB free disk space</li>
-                </ul>
-              </div>
-              <div className="rounded-lg border border-gray-200 p-6">
-                <h3 className="font-semibold text-gray-900 mb-3">Mobile</h3>
-                <ul className="space-y-1 text-sm text-gray-600">
-                  <li>• Android 8.0 or later</li>
-                  <li>• iOS 13.0 or later</li>
-                  <li>• Internet connection</li>
-                </ul>
-              </div>
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Need help?</h3>
+            <p className="text-gray-600 mb-8">
+              Visit our support center for installation guides and system requirements
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/en/support"
+                className="inline-flex items-center rounded-lg border-2 border-primary px-6 py-3 font-semibold text-primary hover:bg-primary hover:text-white transition-colors"
+              >
+                Installation Guides
+              </Link>
+              <Link
+                href="/en/support"
+                className="inline-flex items-center rounded-lg border-2 border-primary px-6 py-3 font-semibold text-primary hover:bg-primary hover:text-white transition-colors"
+              >
+                System Requirements
+              </Link>
             </div>
           </div>
         </div>

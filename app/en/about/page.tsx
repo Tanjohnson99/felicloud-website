@@ -37,6 +37,32 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Organization */}
+      <section className="bg-gradient-to-r from-primary/5 to-secondary/5 py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
+              Part of a Trusted Group
+            </h2>
+            <div className="rounded-2xl bg-white p-8 shadow-xl border-2 border-primary/20">
+              <p className="text-xl text-gray-900 font-semibold mb-4">
+                Felicloud is a <span className="text-primary">FELIDATA</span> project
+              </p>
+              <p className="text-lg text-gray-600 mb-6">
+                Member of the <span className="font-bold text-gray-900">BTJT Group</span>
+              </p>
+              <div className="border-t border-gray-200 pt-6 mt-6">
+                <p className="text-gray-600">
+                  FELIDATA is dedicated to providing privacy-focused, European data solutions. As part of BTJT Group,
+                  we benefit from years of expertise in data management, security, and European compliance, ensuring
+                  that Felicloud meets the highest standards of quality and reliability.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Values */}
       <section className="bg-gray-50 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

@@ -19,15 +19,81 @@ export default function PricingPage() {
               Choose the plan that fits your needs. All plans include unlimited transfer speed and EU hosting.
             </p>
           </div>
+        </div>
+      </section>
 
-          {/* Plan Selector */}
-          <div className="mt-10 flex justify-center">
-            <div className="inline-flex rounded-lg border border-gray-300 p-1 bg-gray-50">
+      {/* Free Plan Banner - Featured */}
+      <section className="py-16">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-secondary p-12 shadow-2xl">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 -mt-4 -mr-4 h-32 w-32 rounded-full bg-white/10 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 -mb-8 -ml-8 h-40 w-40 rounded-full bg-white/5 blur-3xl"></div>
+
+            <div className="relative">
+              <div className="flex items-center justify-center mb-6">
+                <span className="text-6xl">🎉</span>
+              </div>
+
+              <h2 className="text-center text-4xl font-bold text-white mb-4">
+                Start Free, Stay Free Forever
+              </h2>
+
+              <p className="text-center text-xl text-blue-50 max-w-3xl mx-auto mb-8">
+                Get 10 GB of secure, encrypted cloud storage - completely free, no credit card required
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-10">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl font-bold text-white mb-2">10 GB</div>
+                  <div className="text-blue-100 text-sm">Lifetime Storage</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl font-bold text-white mb-2">50 GB</div>
+                  <div className="text-blue-100 text-sm">Monthly Traffic</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl font-bold text-white mb-2">Unlimited</div>
+                  <div className="text-blue-100 text-sm">Transfer Speed</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl font-bold text-white mb-2">100% EU</div>
+                  <div className="text-blue-100 text-sm">Hosted Servers</div>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <Link href="/en/signup">
+                  <button className="inline-flex items-center justify-center rounded-xl bg-white px-10 py-5 text-xl font-bold text-primary hover:bg-gray-50 transition-all shadow-2xl hover:scale-105 transform">
+                    Create Free Account
+                    <svg className="ml-3 h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </button>
+                </Link>
+
+                <p className="mt-6 text-sm text-blue-100">
+                  ⚠️ Free accounts are subject to approval and may take up to 24 hours to activate
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Plan Selector */}
+      <section className="py-12">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Need More Space?</h2>
+            <p className="text-lg text-gray-600 mb-8">Choose from our flexible plans</p>
+
+            <div className="inline-flex rounded-xl border-2 border-gray-200 p-2 bg-gray-50">
               <button
                 onClick={() => setSelectedPlan('monthly')}
-                className={`px-6 py-2 rounded-md text-sm font-semibold transition-all ${
+                className={`px-8 py-3 rounded-lg text-base font-semibold transition-all ${
                   selectedPlan === 'monthly'
-                    ? 'bg-white text-primary shadow-sm'
+                    ? 'bg-primary text-white shadow-lg'
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
               >
@@ -35,98 +101,41 @@ export default function PricingPage() {
               </button>
               <button
                 onClick={() => setSelectedPlan('annual')}
-                className={`px-6 py-2 rounded-md text-sm font-semibold transition-all ${
+                className={`px-8 py-3 rounded-lg text-base font-semibold transition-all ${
                   selectedPlan === 'annual'
-                    ? 'bg-white text-primary shadow-sm'
+                    ? 'bg-primary text-white shadow-lg'
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
               >
-                Annual
+                <span>Annual</span>
+                <span className="ml-2 text-sm text-green-600 font-bold">Save 16%</span>
               </button>
               <button
                 onClick={() => setSelectedPlan('lifetime')}
-                className={`px-6 py-2 rounded-md text-sm font-semibold transition-all ${
+                className={`px-8 py-3 rounded-lg text-base font-semibold transition-all ${
                   selectedPlan === 'lifetime'
-                    ? 'bg-white text-primary shadow-sm'
+                    ? 'bg-primary text-white shadow-lg'
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
               >
-                Lifetime
+                <span>Lifetime</span>
+                <span className="ml-2 text-sm text-green-600 font-bold">Best Deal!</span>
               </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Free Plan Banner */}
-      <section className="py-12 bg-gradient-to-r from-primary to-secondary">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0">
-                <div className="text-4xl">🎉</div>
-              </div>
-              <div className="flex-1">
-                <h2 className="text-2xl font-bold text-gray-900">Get your free cloud account!</h2>
-                <p className="mt-2 text-lg text-gray-600">
-                  Enjoy 10 GB of secure cloud storage for free, forever!
-                </p>
-                <ul className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <li className="flex items-center text-gray-700">
-                    <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    10 GB lifetime storage
-                  </li>
-                  <li className="flex items-center text-gray-700">
-                    <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    50 GB traffic / month
-                  </li>
-                  <li className="flex items-center text-gray-700">
-                    <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    Unlimited transfer speed
-                  </li>
-                  <li className="flex items-center text-gray-700">
-                    <svg className="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    Secure servers hosted in Europe
-                  </li>
-                </ul>
-                <p className="mt-4 text-sm text-gray-500">
-                  Perfect to discover Felicloud with zero risk.
-                </p>
-                <p className="mt-2 text-sm text-amber-600 flex items-start gap-2">
-                  <span>⚠️</span>
-                  <span>Free accounts are subject to approval and may take up to 24h to be activated.</span>
-                </p>
-                <div className="mt-6">
-                  <Link href="/en/signup">
-                    <button className="inline-flex items-center justify-center rounded-lg font-semibold px-8 py-3 bg-primary text-white hover:bg-primary-dark transition-colors shadow-lg">
-                      Get 10 GB Free
-                    </button>
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-24 sm:py-32">
+      <section className="pb-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Monthly Plans */}
           {selectedPlan === 'monthly' && (
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
               {/* 500 GB Monthly */}
-              <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900">500 GB Plan</h3>
-                <p className="mt-2 text-sm font-semibold text-primary uppercase">Monthly</p>
+              <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="text-2xl font-bold text-gray-900">500 GB</h3>
+                <p className="mt-2 text-sm font-semibold text-primary uppercase">Monthly Plan</p>
                 <div className="mt-6">
                   <span className="text-5xl font-bold text-gray-900">€4.99</span>
                   <span className="text-gray-600 ml-2">/ month</span>
@@ -144,19 +153,19 @@ export default function PricingPage() {
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">500 GB Shared traffic /month</span>
+                    <span className="ml-3 text-gray-600">500 GB Traffic / month</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited transfer speed</span>
+                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
                   </li>
                 </ul>
 
                 <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors">
-                    Get started
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                    Get Started
                   </button>
                 </Link>
               </div>
@@ -166,8 +175,8 @@ export default function PricingPage() {
                 <div className="absolute -top-5 left-0 right-0 mx-auto w-fit rounded-full bg-primary px-4 py-1 text-sm font-semibold text-white">
                   Most Popular
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">1 TB Plan</h3>
-                <p className="mt-2 text-sm font-semibold text-primary uppercase">Monthly</p>
+                <h3 className="text-2xl font-bold text-gray-900">1 TB</h3>
+                <p className="mt-2 text-sm font-semibold text-primary uppercase">Monthly Plan</p>
                 <div className="mt-6">
                   <span className="text-5xl font-bold text-gray-900">€7.99</span>
                   <span className="text-gray-600 ml-2">/ month</span>
@@ -185,27 +194,27 @@ export default function PricingPage() {
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">1 TB Shared traffic /month</span>
+                    <span className="ml-3 text-gray-600">1 TB Traffic / month</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited transfer speed</span>
+                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
                   </li>
                 </ul>
 
                 <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg">
-                    Get started
+                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold">
+                    Get Started
                   </button>
                 </Link>
               </div>
 
               {/* 2 TB Monthly */}
-              <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900">2 TB Plan</h3>
-                <p className="mt-2 text-sm font-semibold text-primary uppercase">Monthly</p>
+              <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="text-2xl font-bold text-gray-900">2 TB</h3>
+                <p className="mt-2 text-sm font-semibold text-primary uppercase">Monthly Plan</p>
                 <div className="mt-6">
                   <span className="text-5xl font-bold text-gray-900">€9.99</span>
                   <span className="text-gray-600 ml-2">/ month</span>
@@ -223,19 +232,19 @@ export default function PricingPage() {
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">2 TB Shared traffic /month</span>
+                    <span className="ml-3 text-gray-600">2 TB Traffic / month</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited transfer speed</span>
+                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
                   </li>
                 </ul>
 
                 <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors">
-                    Get started
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                    Get Started
                   </button>
                 </Link>
               </div>
@@ -246,13 +255,16 @@ export default function PricingPage() {
           {selectedPlan === 'annual' && (
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
               {/* 500 GB Annual */}
-              <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900">500 GB Plan</h3>
-                <p className="mt-2 text-sm font-semibold text-primary uppercase">Annual</p>
+              <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="absolute -top-4 right-4 rounded-full bg-green-500 px-3 py-1 text-xs font-bold text-white">
+                  Save 16%
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">500 GB</h3>
+                <p className="mt-2 text-sm font-semibold text-primary uppercase">Annual Plan</p>
                 <div className="mt-6">
                   <div className="flex items-baseline gap-3">
                     <span className="text-5xl font-bold text-gray-900">€49.99</span>
-                    <span className="text-2xl text-gray-400 line-through">€59.88</span>
+                    <span className="text-xl text-gray-400 line-through">€59.88</span>
                   </div>
                 </div>
                 <p className="mt-2 text-sm text-green-600 font-semibold">Yearly Payment</p>
@@ -268,19 +280,19 @@ export default function PricingPage() {
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">500 GB Shared traffic /month</span>
+                    <span className="ml-3 text-gray-600">500 GB Traffic / month</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited transfer speed</span>
+                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
                   </li>
                 </ul>
 
                 <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors">
-                    Get started
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                    Get Started
                   </button>
                 </Link>
               </div>
@@ -290,12 +302,15 @@ export default function PricingPage() {
                 <div className="absolute -top-5 left-0 right-0 mx-auto w-fit rounded-full bg-primary px-4 py-1 text-sm font-semibold text-white">
                   Most Popular
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">1 TB Plan</h3>
-                <p className="mt-2 text-sm font-semibold text-primary uppercase">Annual</p>
+                <div className="absolute -top-4 right-4 rounded-full bg-green-500 px-3 py-1 text-xs font-bold text-white">
+                  Save 16%
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">1 TB</h3>
+                <p className="mt-2 text-sm font-semibold text-primary uppercase">Annual Plan</p>
                 <div className="mt-6">
                   <div className="flex items-baseline gap-3">
                     <span className="text-5xl font-bold text-gray-900">€79.99</span>
-                    <span className="text-2xl text-gray-400 line-through">€95.88</span>
+                    <span className="text-xl text-gray-400 line-through">€95.88</span>
                   </div>
                 </div>
                 <p className="mt-2 text-sm text-green-600 font-semibold">Yearly Payment</p>
@@ -311,31 +326,34 @@ export default function PricingPage() {
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">1 TB Shared traffic /month</span>
+                    <span className="ml-3 text-gray-600">1 TB Traffic / month</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited transfer speed</span>
+                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
                   </li>
                 </ul>
 
                 <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg">
-                    Get started
+                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold">
+                    Get Started
                   </button>
                 </Link>
               </div>
 
               {/* 2 TB Annual */}
-              <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900">2 TB Plan</h3>
-                <p className="mt-2 text-sm font-semibold text-primary uppercase">Annual</p>
+              <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="absolute -top-4 right-4 rounded-full bg-green-500 px-3 py-1 text-xs font-bold text-white">
+                  Save 16%
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">2 TB</h3>
+                <p className="mt-2 text-sm font-semibold text-primary uppercase">Annual Plan</p>
                 <div className="mt-6">
                   <div className="flex items-baseline gap-3">
                     <span className="text-5xl font-bold text-gray-900">€99.99</span>
-                    <span className="text-2xl text-gray-400 line-through">€119.88</span>
+                    <span className="text-xl text-gray-400 line-through">€119.88</span>
                   </div>
                 </div>
                 <p className="mt-2 text-sm text-green-600 font-semibold">Yearly Payment</p>
@@ -351,19 +369,19 @@ export default function PricingPage() {
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">2 TB Shared traffic /month</span>
+                    <span className="ml-3 text-gray-600">2 TB Traffic / month</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited transfer speed</span>
+                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
                   </li>
                 </ul>
 
                 <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors">
-                    Get started
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                    Get Started
                   </button>
                 </Link>
               </div>
@@ -374,13 +392,16 @@ export default function PricingPage() {
           {selectedPlan === 'lifetime' && (
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
               {/* 500 GB Lifetime */}
-              <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900">500 GB Plan</h3>
+              <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="absolute -top-4 right-4 rounded-full bg-green-500 px-3 py-1 text-xs font-bold text-white">
+                  Save 74%
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">500 GB</h3>
                 <p className="mt-2 text-sm font-semibold text-primary uppercase">Lifetime</p>
                 <div className="mt-6">
                   <div className="flex items-baseline gap-3">
                     <span className="text-5xl font-bold text-gray-900">€79</span>
-                    <span className="text-2xl text-gray-400 line-through">€299.40</span>
+                    <span className="text-xl text-gray-400 line-through">€299.40</span>
                   </div>
                 </div>
                 <p className="mt-2 text-sm text-green-600 font-semibold">ONE-TIME PAYMENT</p>
@@ -396,19 +417,19 @@ export default function PricingPage() {
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">500 GB Shared traffic /month</span>
+                    <span className="ml-3 text-gray-600">500 GB Traffic / month</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited transfer speed</span>
+                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
                   </li>
                 </ul>
 
                 <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors">
-                    Get started
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                    Get Started
                   </button>
                 </Link>
               </div>
@@ -418,12 +439,15 @@ export default function PricingPage() {
                 <div className="absolute -top-5 left-0 right-0 mx-auto w-fit rounded-full bg-primary px-4 py-1 text-sm font-semibold text-white">
                   Most Popular
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">1 TB Plan</h3>
+                <div className="absolute -top-4 right-4 rounded-full bg-green-500 px-3 py-1 text-xs font-bold text-white">
+                  Save 58%
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">1 TB</h3>
                 <p className="mt-2 text-sm font-semibold text-primary uppercase">Lifetime</p>
                 <div className="mt-6">
                   <div className="flex items-baseline gap-3">
                     <span className="text-5xl font-bold text-gray-900">€199</span>
-                    <span className="text-2xl text-gray-400 line-through">€479.40</span>
+                    <span className="text-xl text-gray-400 line-through">€479.40</span>
                   </div>
                 </div>
                 <p className="mt-2 text-sm text-green-600 font-semibold">ONE-TIME PAYMENT</p>
@@ -439,31 +463,34 @@ export default function PricingPage() {
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">1 TB Shared traffic /month</span>
+                    <span className="ml-3 text-gray-600">1 TB Traffic / month</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited transfer speed</span>
+                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
                   </li>
                 </ul>
 
                 <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg">
-                    Get started
+                  <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold">
+                    Get Started
                   </button>
                 </Link>
               </div>
 
               {/* 2 TB Lifetime */}
-              <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900">2 TB Plan</h3>
+              <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="absolute -top-4 right-4 rounded-full bg-green-500 px-3 py-1 text-xs font-bold text-white">
+                  Save 38%
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">2 TB</h3>
                 <p className="mt-2 text-sm font-semibold text-primary uppercase">Lifetime</p>
                 <div className="mt-6">
                   <div className="flex items-baseline gap-3">
                     <span className="text-5xl font-bold text-gray-900">€369</span>
-                    <span className="text-2xl text-gray-400 line-through">€599.40</span>
+                    <span className="text-xl text-gray-400 line-through">€599.40</span>
                   </div>
                 </div>
                 <p className="mt-2 text-sm text-green-600 font-semibold">ONE-TIME PAYMENT</p>
@@ -479,19 +506,19 @@ export default function PricingPage() {
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">2 TB Shared traffic /month</span>
+                    <span className="ml-3 text-gray-600">2 TB Traffic / month</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited transfer speed</span>
+                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
                   </li>
                 </ul>
 
                 <Link href="/en/signup" className="mt-8 block">
-                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors">
-                    Get started
+                  <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold">
+                    Get Started
                   </button>
                 </Link>
               </div>
