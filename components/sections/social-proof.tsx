@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslation } from '@/lib/hooks/useTranslation';
 
 interface SocialProofProps {
