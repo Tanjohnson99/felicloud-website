@@ -101,6 +101,32 @@ export async function POST(request: NextRequest) {
         automatic_tax: {
           enabled: true,
         },
+        // Legal compliance: Collect complete customer information
+        billing_address_collection: 'required',
+        phone_number_collection: {
+          enabled: true,
+        },
+        customer_creation: 'always', // Always create a Stripe customer
+        custom_fields: [
+          {
+            key: 'company_name',
+            label: {
+              type: 'custom',
+              custom: 'Company Name (if applicable)',
+            },
+            type: 'text',
+            optional: true,
+          },
+          {
+            key: 'vat_number',
+            label: {
+              type: 'custom',
+              custom: 'VAT Number (if applicable)',
+            },
+            type: 'text',
+            optional: true,
+          },
+        ],
       };
     } else {
       // Recurring payment (Monthly/Annual plans)
@@ -129,6 +155,32 @@ export async function POST(request: NextRequest) {
         automatic_tax: {
           enabled: true,
         },
+        // Legal compliance: Collect complete customer information
+        billing_address_collection: 'required',
+        phone_number_collection: {
+          enabled: true,
+        },
+        customer_creation: 'always', // Always create a Stripe customer
+        custom_fields: [
+          {
+            key: 'company_name',
+            label: {
+              type: 'custom',
+              custom: 'Company Name (if applicable)',
+            },
+            type: 'text',
+            optional: true,
+          },
+          {
+            key: 'vat_number',
+            label: {
+              type: 'custom',
+              custom: 'VAT Number (if applicable)',
+            },
+            type: 'text',
+            optional: true,
+          },
+        ],
       };
     }
 
