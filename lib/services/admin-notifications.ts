@@ -95,6 +95,104 @@ You will receive another notification when the account is actually created.`;
 }
 
 /**
+ * Send notification to admin when a customer initiates a payment
+ */
+export async function notifyAdminPaymentInitiated(
+  email: string,
+  plan: string,
+  billing: string,
+  storage: string,
+  isUpgrade: boolean
+): Promise<void> {
+  const adminEmail = process.env.ADMIN_EMAIL;
+
+  if (!adminEmail) {
+    console.warn('ADMIN_EMAIL not set, skipping admin notification');
+    return;
+  }
+
+  const timestamp = new Date().toLocaleString('en-US', {
+    dateStyle: 'full',
+    timeStyle: 'long',
+  });
+
+  const actionType = isUpgrade ? 'Upgrade' : 'New Purchase';
+  const actionColor = isUpgrade ? '#f59e0b' : '#3b82f6';
+
+  const html = `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <h1 style="color: ${actionColor};">Payment Initiated - ${actionType}</h1>
+
+      <div style="background-color: #fef3c7; border-left: 4px solid #f59e0b; padding: 20px; margin: 20px 0; border-radius: 4px;">
+        <h2 style="margin-top: 0; color: #92400e;">🛒 Lead Alert</h2>
+        <p style="color: #78350f;">A customer has initiated the checkout process. This is a potential lead even if they don't complete the purchase.</p>
+      </div>
+
+      <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <h3 style="margin-top: 0; color: #1f2937;">Customer Information</h3>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr>
+            <td style="padding: 8px 0; color: #6b7280;"><strong>Email:</strong></td>
+            <td style="padding: 8px 0; color: #1f2937;">${email}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #6b7280;"><strong>Action:</strong></td>
+            <td style="padding: 8px 0; color: #1f2937;">${actionType}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #6b7280;"><strong>Plan:</strong></td>
+            <td style="padding: 8px 0; color: #1f2937;">${plan}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #6b7280;"><strong>Billing:</strong></td>
+            <td style="padding: 8px 0; color: #1f2937;">${billing}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #6b7280;"><strong>Storage:</strong></td>
+            <td style="padding: 8px 0; color: #1f2937;">${storage}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #6b7280;"><strong>Date:</strong></td>
+            <td style="padding: 8px 0; color: #1f2937;">${timestamp}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
+        <p style="color: #6b7280; font-size: 14px; margin: 0;">
+          The customer has been redirected to Stripe for payment. You will receive another notification if the payment is completed.
+        </p>
+      </div>
+    </div>
+  `;
+
+  const text = `Payment Initiated - ${actionType}
+
+Customer Information:
+- Email: ${email}
+- Action: ${actionType}
+- Plan: ${plan}
+- Billing: ${billing}
+- Storage: ${storage}
+- Date: ${timestamp}
+
+The customer has been redirected to Stripe for payment. You will receive another notification if the payment is completed.`;
+
+  try {
+    await sendEmail({
+      to: adminEmail,
+      subject: `Payment Initiated - ${email} (${actionType})`,
+      html,
+      text,
+    });
+    console.log(`Admin notification sent for payment initiation: ${email}`);
+  } catch (error) {
+    console.error('Failed to send admin notification for payment initiation:', error);
+    // Don't throw - we don't want to fail the checkout if admin email fails
+  }
+}
+
+/**
  * Send notification to admin when an account is successfully created
  */
 export async function notifyAdminAccountCreated(
