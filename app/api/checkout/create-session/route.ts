@@ -130,6 +130,7 @@ export async function POST(request: NextRequest) {
       };
     } else {
       // Recurring payment (Monthly/Annual plans)
+      // Note: customer_creation is NOT supported in subscription mode (Stripe creates customer automatically)
       sessionParams = {
         mode: 'subscription',
         line_items: [
@@ -160,7 +161,7 @@ export async function POST(request: NextRequest) {
         phone_number_collection: {
           enabled: true,
         },
-        customer_creation: 'always', // Always create a Stripe customer
+        // customer_creation is automatically 'always' for subscription mode, no need to specify
         custom_fields: [
           {
             key: 'company_name',
