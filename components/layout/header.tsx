@@ -40,7 +40,7 @@ export function Header({ lang = 'en' }: HeaderProps) {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         {/* Logo horizontal */}
         <div className="flex lg:flex-1">
-          <Link href={`/${lang}`} className="-m-1.5 p-1.5 flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
+          <Link href={`/${lang}`} className="-m-1.5 p-1.5 flex items-center cursor-pointer hover:opacity-80 transition-opacity">
             <Image
               className="h-10 w-auto"
               src="/images/logo.svg"
@@ -48,7 +48,6 @@ export function Header({ lang = 'en' }: HeaderProps) {
               width={40}
               height={40}
             />
-            <span className="text-xl font-bold text-gray-900">{t('common.brandName')}</span>
           </Link>
         </div>
 
