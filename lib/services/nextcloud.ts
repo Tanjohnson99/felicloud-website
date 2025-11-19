@@ -222,3 +222,138 @@ export async function setUserQuota(username: string, quota: string): Promise<{ s
 export async function updateUserQuota(username: string, quotaInBytes: number): Promise<{ success: boolean; message: string }> {
   return setUserQuota(username, `${quotaInBytes} B`);
 }
+
+/**
+ * Remove user from a group
+ */
+export async function removeUserFromGroup(username: string, groupName: string): Promise<{ success: boolean; message: string }> {
+  if (!process.env.NEXTCLOUD_URL || !process.env.NEXTCLOUD_ADMIN_USER || !process.env.NEXTCLOUD_ADMIN_PASSWORD) {
+    throw new Error('Nextcloud configuration is missing');
+  }
+
+  const nextcloudUrl = process.env.NEXTCLOUD_URL;
+  const adminUser = process.env.NEXTCLOUD_ADMIN_USER;
+  const adminPassword = process.env.NEXTCLOUD_ADMIN_PASSWORD;
+
+  try {
+    const auth = Buffer.from(`${adminUser}:${adminPassword}`).toString('base64');
+
+    const response = await fetch(`${nextcloudUrl}/ocs/v2.php/cloud/users/${username}/groups`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Basic ${auth}`,
+        'OCS-APIRequest': 'true',
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        groupid: groupName,
+      }),
+    });
+
+    const result: NextcloudResponse = await response.json();
+
+    return {
+      success: result.ocs.meta.statuscode === 200,
+      message: result.ocs.meta.message,
+    };
+  } catch (error) {
+    console.error('Error removing user from group:', error);
+    return {
+      success: false,
+      message: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+}
+
+/**
+ * Add user to a group
+ */
+export async function addUserToGroup(username: string, groupName: string): Promise<{ success: boolean; message: string }> {
+  if (!process.env.NEXTCLOUD_URL || !process.env.NEXTCLOUD_ADMIN_USER || !process.env.NEXTCLOUD_ADMIN_PASSWORD) {
+    throw new Error('Nextcloud configuration is missing');
+  }
+
+  const nextcloudUrl = process.env.NEXTCLOUD_URL;
+  const adminUser = process.env.NEXTCLOUD_ADMIN_USER;
+  const adminPassword = process.env.NEXTCLOUD_ADMIN_PASSWORD;
+
+  try {
+    const auth = Buffer.from(`${adminUser}:${adminPassword}`).toString('base64');
+
+    const response = await fetch(`${nextcloudUrl}/ocs/v2.php/cloud/users/${username}/groups`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Basic ${auth}`,
+        'OCS-APIRequest': 'true',
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        groupid: groupName,
+      }),
+    });
+
+    const result: NextcloudResponse = await response.json();
+
+    return {
+      success: result.ocs.meta.statuscode === 200,
+      message: result.ocs.meta.message,
+    };
+  } catch (error) {
+    console.error('Error adding user to group:', error);
+    return {
+      success: false,
+      message: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+}
+
+/**
+ * Get user's current groups
+ */
+export async function getUserGroups(username: string): Promise<{ success: boolean; groups: string[]; message: string }> {
+  if (!process.env.NEXTCLOUD_URL || !process.env.NEXTCLOUD_ADMIN_USER || !process.env.NEXTCLOUD_ADMIN_PASSWORD) {
+    throw new Error('Nextcloud configuration is missing');
+  }
+
+  const nextcloudUrl = process.env.NEXTCLOUD_URL;
+  const adminUser = process.env.NEXTCLOUD_ADMIN_USER;
+  const adminPassword = process.env.NEXTCLOUD_ADMIN_PASSWORD;
+
+  try {
+    const auth = Buffer.from(`${adminUser}:${adminPassword}`).toString('base64');
+
+    const response = await fetch(`${nextcloudUrl}/ocs/v2.php/cloud/users/${username}/groups`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Basic ${auth}`,
+        'OCS-APIRequest': 'true',
+        'Accept': 'application/json',
+      },
+    });
+
+    const result: NextcloudResponse = await response.json();
+
+    if (result.ocs.meta.statuscode === 200) {
+      return {
+        success: true,
+        groups: result.ocs.data.groups || [],
+        message: 'Groups retrieved successfully',
+      };
+    } else {
+      return {
+        success: false,
+        groups: [],
+        message: result.ocs.meta.message,
+      };
+    }
+  } catch (error) {
+    console.error('Error getting user groups:', error);
+    return {
+      success: false,
+      groups: [],
+      message: error instanceof Error ? error.message : 'Unknown error',
+    };
+  }
+}
