@@ -123,12 +123,20 @@ export async function POST(request: NextRequest) {
           const tempPassword = generateRandomPassword();
           const creationTime = new Date();
 
+          // Determine Nextcloud groups for paid users
+          // 1. "Paid Users" - to distinguish from free accounts
+          // 2. Storage tier - for capacity management ("500GB", "1TB", "2TB")
+          const groups = ['Paid Users', storage];
+
+          console.log('Assigning user to groups:', groups);
+
           const result = await createNextcloudUser({
             username: customerEmail,
             password: tempPassword,
             email: customerEmail,
             displayName: customerEmail.split('@')[0],
             quota: quotaInBytes,
+            groups: groups,
           });
 
           if (result.success) {
