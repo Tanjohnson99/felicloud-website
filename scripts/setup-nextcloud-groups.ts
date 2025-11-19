@@ -69,17 +69,24 @@ async function createGroup(groupName: string): Promise<boolean> {
 async function setupGroups() {
   console.log('🚀 Setting up Nextcloud groups for Felicloud...\n');
 
-  // Required groups:
-  // 1. "Paid Users" - distinguishes paid from free accounts
-  // 2. Storage tier groups - for capacity management
+  // Required groups - Option A: One group per plan
+  // This provides maximum granularity for user management
   const requiredGroups = [
-    'Paid Users',
-    '500GB',
-    '1TB',
-    '2TB',
+    // Monthly Plans
+    '500GB_Monthly',
+    '1TB_Monthly',
+    '2TB_Monthly',
+    // Annual Plans
+    '500GB_Annual',
+    '1TB_Annual',
+    '2TB_Annual',
+    // Lifetime Plans
+    '500GB_Lifetime',
+    '1TB_Lifetime',
+    '2TB_Lifetime',
   ];
 
-  console.log('Groups to create:');
+  console.log('Groups to create (Option A - One group per plan):');
   requiredGroups.forEach(group => console.log(`  - ${group}`));
   console.log('');
 

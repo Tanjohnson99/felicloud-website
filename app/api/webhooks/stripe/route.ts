@@ -124,11 +124,11 @@ export async function POST(request: NextRequest) {
           const creationTime = new Date();
 
           // Determine Nextcloud groups for paid users
-          // 1. "Paid Users" - to distinguish from free accounts
-          // 2. Storage tier - for capacity management ("500GB", "1TB", "2TB")
-          const groups = ['Paid Users', storage];
+          // Option A: One group per plan for maximum granularity
+          // This allows filtering by exact plan (e.g., "1TB_Lifetime" vs "1TB_Monthly")
+          const groups = [plan]; // e.g., "1TB_Lifetime", "500GB_Monthly", etc.
 
-          console.log('Assigning user to groups:', groups);
+          console.log('Assigning user to group:', groups);
 
           const result = await createNextcloudUser({
             username: customerEmail,
