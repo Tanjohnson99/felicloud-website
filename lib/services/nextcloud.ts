@@ -79,7 +79,8 @@ export async function createNextcloudUser({
       message: createResult.ocs.meta.message,
     });
 
-    if (createResult.ocs.meta.statuscode !== 100) {
+    // API v2 returns statuscode 200 for success (not 100 like v1)
+    if (createResult.ocs.meta.statuscode !== 200) {
       console.error('Nextcloud user creation failed:', {
         statuscode: createResult.ocs.meta.statuscode,
         message: createResult.ocs.meta.message,
@@ -107,8 +108,11 @@ export async function createNextcloudUser({
         }),
       });
       const groupResult: NextcloudResponse = await groupResponse.json();
-      if (groupResult.ocs.meta.statuscode !== 100) {
+      // API v2 returns statuscode 200 for success
+      if (groupResult.ocs.meta.statuscode !== 200) {
         console.warn(`Failed to add user to group ${group}:`, groupResult.ocs.meta.message);
+      } else {
+        console.log(`Successfully added user to group ${group}`);
       }
     }
 
@@ -161,8 +165,8 @@ export async function checkUserExists(username: string): Promise<boolean> {
 
     const result: NextcloudResponse = await response.json();
 
-    // Status code 100 means user exists
-    return result.ocs.meta.statuscode === 100;
+    // API v2: statuscode 200 means user exists, 404 means not found
+    return result.ocs.meta.statuscode === 200;
   } catch (error) {
     console.error('Error checking user existence:', error);
     return false;
@@ -200,8 +204,9 @@ export async function setUserQuota(username: string, quota: string): Promise<{ s
 
     const result: NextcloudResponse = await response.json();
 
+    // API v2 returns statuscode 200 for success
     return {
-      success: result.ocs.meta.statuscode === 100,
+      success: result.ocs.meta.statuscode === 200,
       message: result.ocs.meta.message,
     };
   } catch (error) {
