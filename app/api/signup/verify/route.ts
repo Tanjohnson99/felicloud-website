@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getVerificationToken, markTokenAsVerified, deleteTokensByEmail } from '@/lib/db/email-verifications';
 import { createNextcloudUser, checkUserExists } from '@/lib/services/nextcloud';
-import { sendWelcomeEmail } from '@/lib/services/email';
 import { notifyAdminAccountCreated } from '@/lib/services/admin-notifications';
 
 /**
@@ -135,13 +134,9 @@ export async function POST(request: NextRequest) {
       // Don't fail the signup - account is already created
     }
 
-    // Send welcome email (don't fail if this fails)
-    try {
-      await sendWelcomeEmail(verificationData.email, verificationData.full_name);
-    } catch (emailError) {
-      console.error('Failed to send welcome email:', emailError);
-      // Don't fail - account is created
-    }
+    // Note: We don't send a welcome email for free signups because
+    // the user already knows their credentials (they just created them).
+    // Welcome emails are only sent for paid accounts with temporary passwords.
 
     // Send admin notification (don't fail if this fails)
     try {
