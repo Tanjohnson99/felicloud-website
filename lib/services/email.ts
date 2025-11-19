@@ -62,6 +62,78 @@ export async function sendContactEmail(name: string, email: string, message: str
 }
 
 /**
+ * Send email verification link to new user
+ */
+export async function sendVerificationEmail(email: string, fullName: string, verificationToken: string) {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://felicloud.com';
+  const verificationUrl = `${baseUrl}/en/signup/verify?token=${verificationToken}`;
+
+  const html = `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <h1 style="color: #3b82f6;">Vérifiez votre adresse email</h1>
+      <p>Bonjour ${fullName},</p>
+      <p>Merci de votre intérêt pour Felicloud!</p>
+
+      <p>Pour finaliser votre inscription et créer votre compte gratuit de 10 GB, veuillez cliquer sur le bouton ci-dessous:</p>
+
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="${verificationUrl}" style="background-color: #3b82f6; color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; display: inline-block; font-weight: bold;">
+          Finaliser mon inscription
+        </a>
+      </div>
+
+      <p style="color: #6b7280; font-size: 14px;">
+        Ou copiez ce lien dans votre navigateur:
+      </p>
+      <p style="color: #3b82f6; font-size: 14px; word-break: break-all;">
+        ${verificationUrl}
+      </p>
+
+      <div style="background-color: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; margin: 20px 0; border-radius: 4px;">
+        <p style="color: #92400e; margin: 0; font-size: 14px;">
+          ⏱️ Ce lien est valide pendant <strong>24 heures</strong>.
+        </p>
+      </div>
+
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
+        <p style="color: #6b7280; font-size: 14px;">
+          Si vous n'avez pas demandé cette inscription, vous pouvez ignorer cet email en toute sécurité.
+        </p>
+        <p style="color: #6b7280; font-size: 14px;">
+          Cordialement,<br>
+          L'équipe Felicloud
+        </p>
+      </div>
+    </div>
+  `;
+
+  const text = `Vérifiez votre adresse email - Felicloud
+
+Bonjour ${fullName},
+
+Merci de votre intérêt pour Felicloud!
+
+Pour finaliser votre inscription et créer votre compte gratuit de 10 GB,
+veuillez cliquer sur le lien ci-dessous:
+
+${verificationUrl}
+
+⏱️ Ce lien est valide pendant 24 heures.
+
+Si vous n'avez pas demandé cette inscription, vous pouvez ignorer cet email en toute sécurité.
+
+Cordialement,
+L'équipe Felicloud`;
+
+  return sendEmail({
+    to: email,
+    subject: 'Vérifiez votre adresse email - Felicloud',
+    html,
+    text,
+  });
+}
+
+/**
  * Send welcome email to new user
  */
 export async function sendWelcomeEmail(email: string, username: string, tempPassword?: string) {

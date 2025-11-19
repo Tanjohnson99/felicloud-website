@@ -33,6 +33,22 @@ Si tu obtiens une erreur "SSL routines: wrong version number", c'est que tu as m
 ADMIN_EMAIL=contact@felicloud.com
 ```
 
+### PostgreSQL Database
+```env
+DATABASE_URL=postgresql://felicloud_user:MOT_DE_PASSE@postgres:5432/postgres
+```
+- Nécessaire pour la vérification d'email (tokens de vérification)
+- Le hostname `postgres` est pour le réseau Docker interne de Coolify
+- Remplace `MOT_DE_PASSE` par le mot de passe généré par Coolify
+
+### Site URL (Public)
+```env
+NEXT_PUBLIC_SITE_URL=https://felicloud.com
+```
+- URL publique du site (utilisée pour générer les liens de vérification d'email)
+- DOIT commencer par `https://`
+- Pas de slash à la fin
+
 ## 🟡 RECOMMANDÉES (Pour Stripe paiements)
 
 ```env
@@ -81,6 +97,10 @@ SMTP_FROM_NAME=Felicloud
 
 # === ADMIN ===
 ADMIN_EMAIL=contact@felicloud.com
+
+# === DATABASE ===
+DATABASE_URL=postgresql://felicloud_user:CHANGE_ME@postgres:5432/postgres
+NEXT_PUBLIC_SITE_URL=https://felicloud.com
 
 # === STRIPE (optionnel pour l'instant) ===
 STRIPE_SECRET_KEY=sk_live_CHANGE_ME
