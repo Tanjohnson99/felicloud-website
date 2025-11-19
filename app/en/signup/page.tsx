@@ -102,26 +102,26 @@ export default function SignupPage() {
               </div>
 
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                Vérifiez votre email
+                Check Your Email
               </h1>
 
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Nous avons envoyé un email de vérification à <strong>{formData.email}</strong>
+                We've sent a verification email to <strong>{formData.email}</strong>
               </p>
 
               <div className="mt-8 rounded-lg bg-blue-50 p-6">
-                <h2 className="text-lg font-semibold text-blue-900 mb-2">Prochaines étapes:</h2>
+                <h2 className="text-lg font-semibold text-blue-900 mb-2">Next Steps:</h2>
                 <ol className="text-left text-sm text-blue-800 space-y-2 list-decimal list-inside">
-                  <li>Vérifiez votre boîte mail (et vos spams!)</li>
-                  <li>Cliquez sur le lien de vérification</li>
-                  <li>Créez votre mot de passe et acceptez les conditions</li>
-                  <li>Accédez à votre cloud gratuit de 10 GB!</li>
+                  <li>Check your inbox (and spam folder!)</li>
+                  <li>Click the verification link</li>
+                  <li>Set your password and accept the terms</li>
+                  <li>Access your free 10 GB cloud!</li>
                 </ol>
               </div>
 
               <div className="mt-8 rounded-lg bg-yellow-50 p-4 border-l-4 border-yellow-400">
                 <p className="text-sm text-yellow-800">
-                  ⏱️ Le lien de vérification est valide pendant <strong>24 heures</strong>
+                  ⏱️ The verification link is valid for <strong>24 hours</strong>
                 </p>
               </div>
 
@@ -130,7 +130,7 @@ export default function SignupPage() {
                   href="/"
                   className="text-sm font-semibold text-primary hover:text-primary/80"
                 >
-                  ← Retour à l'accueil
+                  ← Back to homepage
                 </Link>
               </div>
             </div>

@@ -20,26 +20,25 @@ export async function notifyAdminSignupRequest(
     return;
   }
 
-  const timestamp = new Date().toLocaleString('fr-FR', {
-    timeZone: 'Europe/Paris',
+  const timestamp = new Date().toLocaleString('en-US', {
     dateStyle: 'full',
     timeStyle: 'long',
   });
 
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h1 style="color: #3b82f6;">Nouvelle demande d'inscription</h1>
+      <h1 style="color: #3b82f6;">New Signup Request</h1>
 
       <div style="background-color: #fef3c7; border-left: 4px solid #f59e0b; padding: 20px; margin: 20px 0; border-radius: 4px;">
-        <h2 style="margin-top: 0; color: #92400e;">🕐 En attente de validation</h2>
-        <p style="color: #78350f;">Une nouvelle demande d'inscription a été créée et attend que l'utilisateur valide son email.</p>
+        <h2 style="margin-top: 0; color: #92400e;">🕐 Pending Validation</h2>
+        <p style="color: #78350f;">A new signup request has been created and is waiting for the user to verify their email.</p>
       </div>
 
       <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
-        <h3 style="margin-top: 0; color: #1f2937;">Informations de la demande</h3>
+        <h3 style="margin-top: 0; color: #1f2937;">Request Information</h3>
         <table style="width: 100%; border-collapse: collapse;">
           <tr>
-            <td style="padding: 8px 0; color: #6b7280;"><strong>Nom complet:</strong></td>
+            <td style="padding: 8px 0; color: #6b7280;"><strong>Full Name:</strong></td>
             <td style="padding: 8px 0; color: #1f2937;">${fullName}</td>
           </tr>
           <tr>
@@ -52,7 +51,7 @@ export async function notifyAdminSignupRequest(
           </tr>
           ${ipAddress ? `
           <tr>
-            <td style="padding: 8px 0; color: #6b7280;"><strong>Adresse IP:</strong></td>
+            <td style="padding: 8px 0; color: #6b7280;"><strong>IP Address:</strong></td>
             <td style="padding: 8px 0; color: #1f2937;">${ipAddress}</td>
           </tr>
           ` : ''}
@@ -61,30 +60,30 @@ export async function notifyAdminSignupRequest(
 
       <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
         <p style="color: #6b7280; font-size: 14px; margin: 0;">
-          Ce compte sera créé une fois que l'utilisateur aura validé son email et complété le formulaire d'inscription.
+          This account will be created once the user has verified their email and completed the registration form.
         </p>
         <p style="color: #6b7280; font-size: 14px; margin: 10px 0 0 0;">
-          Vous recevrez une autre notification lors de la création effective du compte.
+          You will receive another notification when the account is actually created.
         </p>
       </div>
     </div>
   `;
 
-  const text = `Nouvelle demande d'inscription - EN ATTENTE DE VALIDATION
+  const text = `New Signup Request - PENDING VALIDATION
 
-Informations de la demande:
-- Nom complet: ${fullName}
+Request Information:
+- Full Name: ${fullName}
 - Email: ${email}
 - Date: ${timestamp}
-${ipAddress ? `- Adresse IP: ${ipAddress}` : ''}
+${ipAddress ? `- IP Address: ${ipAddress}` : ''}
 
-Ce compte sera créé une fois que l'utilisateur aura validé son email et complété le formulaire d'inscription.
-Vous recevrez une autre notification lors de la création effective du compte.`;
+This account will be created once the user has verified their email and completed the registration form.
+You will receive another notification when the account is actually created.`;
 
   try {
     await sendEmail({
       to: adminEmail,
-      subject: `Nouvelle demande d'inscription - ${fullName}`,
+      subject: `New Signup Request - ${fullName}`,
       html,
       text,
     });
@@ -111,14 +110,12 @@ export async function notifyAdminAccountCreated(
     return;
   }
 
-  const requestTimestamp = requestedAt.toLocaleString('fr-FR', {
-    timeZone: 'Europe/Paris',
+  const requestTimestamp = requestedAt.toLocaleString('en-US', {
     dateStyle: 'full',
     timeStyle: 'long',
   });
 
-  const createdTimestamp = new Date().toLocaleString('fr-FR', {
-    timeZone: 'Europe/Paris',
+  const createdTimestamp = new Date().toLocaleString('en-US', {
     dateStyle: 'full',
     timeStyle: 'long',
   });
@@ -128,18 +125,18 @@ export async function notifyAdminAccountCreated(
 
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h1 style="color: #10b981;">Nouveau compte créé</h1>
+      <h1 style="color: #10b981;">New Account Created</h1>
 
       <div style="background-color: #d1fae5; border-left: 4px solid #10b981; padding: 20px; margin: 20px 0; border-radius: 4px;">
-        <h2 style="margin-top: 0; color: #065f46;">✓ Compte actif</h2>
-        <p style="color: #047857;">Un nouveau compte Felicloud a été créé avec succès et est maintenant accessible.</p>
+        <h2 style="margin-top: 0; color: #065f46;">✓ Account Active</h2>
+        <p style="color: #047857;">A new Felicloud account has been successfully created and is now accessible.</p>
       </div>
 
       <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
-        <h3 style="margin-top: 0; color: #1f2937;">Informations du compte</h3>
+        <h3 style="margin-top: 0; color: #1f2937;">Account Information</h3>
         <table style="width: 100%; border-collapse: collapse;">
           <tr>
-            <td style="padding: 8px 0; color: #6b7280;"><strong>Nom complet:</strong></td>
+            <td style="padding: 8px 0; color: #6b7280;"><strong>Full Name:</strong></td>
             <td style="padding: 8px 0; color: #1f2937;">${fullName}</td>
           </tr>
           <tr>
@@ -151,7 +148,7 @@ export async function notifyAdminAccountCreated(
             <td style="padding: 8px 0; color: #1f2937;">${quota}</td>
           </tr>
           <tr>
-            <td style="padding: 8px 0; color: #6b7280;"><strong>Groupe:</strong></td>
+            <td style="padding: 8px 0; color: #6b7280;"><strong>Group:</strong></td>
             <td style="padding: 8px 0; color: #1f2937;">${groupName}</td>
           </tr>
         </table>
@@ -160,41 +157,41 @@ export async function notifyAdminAccountCreated(
       <div style="background-color: #f9fafb; padding: 15px; border-radius: 8px; margin: 20px 0;">
         <h3 style="margin-top: 0; color: #1f2937; font-size: 16px;">Timeline</h3>
         <p style="color: #6b7280; font-size: 14px; margin: 5px 0;">
-          <strong>Demande d'inscription:</strong> ${requestTimestamp}
+          <strong>Signup Requested:</strong> ${requestTimestamp}
         </p>
         <p style="color: #6b7280; font-size: 14px; margin: 5px 0;">
-          <strong>Compte créé:</strong> ${createdTimestamp}
+          <strong>Account Created:</strong> ${createdTimestamp}
         </p>
       </div>
 
       <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
         <p style="color: #6b7280; font-size: 14px; margin: 0;">
-          Le compte est maintenant accessible sur: <a href="${nextcloudUrl}" style="color: #3b82f6;">${nextcloudUrl}</a>
+          The account is now accessible at: <a href="${nextcloudUrl}" style="color: #3b82f6;">${nextcloudUrl}</a>
         </p>
       </div>
     </div>
   `;
 
-  const text = `Nouveau compte créé - ACTIF ✓
+  const text = `New Account Created - ACTIVE ✓
 
-Un nouveau compte Felicloud a été créé avec succès:
+A new Felicloud account has been successfully created:
 
-Informations du compte:
-- Nom complet: ${fullName}
+Account Information:
+- Full Name: ${fullName}
 - Email: ${email}
 - Quota: ${quota}
-- Groupe: ${groupName}
+- Group: ${groupName}
 
 Timeline:
-- Demande d'inscription: ${requestTimestamp}
-- Compte créé: ${createdTimestamp}
+- Signup Requested: ${requestTimestamp}
+- Account Created: ${createdTimestamp}
 
-Le compte est maintenant accessible sur: ${nextcloudUrl}`;
+The account is now accessible at: ${nextcloudUrl}`;
 
   try {
     await sendEmail({
       to: adminEmail,
-      subject: `Nouveau compte créé - ${email}`,
+      subject: `New Account Created - ${email}`,
       html,
       text,
     });
