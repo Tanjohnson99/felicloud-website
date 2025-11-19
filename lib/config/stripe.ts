@@ -28,7 +28,7 @@ export const STRIPE_CHECKOUT_LINKS = {
 
   // Lifetime Plans - REPLACE WITH YOUR TEST LINKS
   '500GB_Lifetime': 'https://buy.stripe.com/test/xxxxxxxxxxxxx', // TODO: Replace
-  '1TB_Lifetime': 'https://buy.stripe.com/test/xxxxxxxxxxxxx',   // TODO: Replace
+  '1TB_Lifetime': 'https://buy.stripe.com/test_7sY14n6ey1704Ae5yhfbq00',   // ✅ TEST CONFIGURED
   '2TB_Lifetime': 'https://buy.stripe.com/test/xxxxxxxxxxxxx',   // TODO: Replace
 } as const;
 
