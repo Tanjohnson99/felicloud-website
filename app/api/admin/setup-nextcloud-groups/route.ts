@@ -7,7 +7,12 @@ import { NextRequest, NextResponse } from 'next/server';
  * This endpoint should be called once during initial setup
  *
  * Security: Protected by admin secret token
+ *
+ * IMPORTANT: Set SETUP_COMPLETED to true after first successful run
  */
+
+// 🔒 SECURITY: Set to true after initial setup to disable this endpoint
+const SETUP_COMPLETED = true;
 
 interface NextcloudResponse {
   ocs: {
@@ -66,6 +71,17 @@ async function createGroup(groupName: string): Promise<{ success: boolean; messa
 
 export async function POST(request: NextRequest) {
   try {
+    // Security check: Endpoint disabled after initial setup
+    if (SETUP_COMPLETED) {
+      return NextResponse.json(
+        {
+          error: 'Setup already completed',
+          message: 'This endpoint has been disabled for security. All groups have been created successfully.',
+        },
+        { status: 403 }
+      );
+    }
+
     // Security: Verify admin secret token
     const authHeader = request.headers.get('authorization');
     const adminSecret = process.env.ADMIN_SECRET;
