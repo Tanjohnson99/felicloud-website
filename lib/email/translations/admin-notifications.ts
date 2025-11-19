@@ -3,6 +3,17 @@
  */
 
 interface AdminNotificationTranslations {
+  signupRequest: {
+    subject: string;
+    title: string;
+    intro: string;
+    detailsTitle: string;
+    fullName: string;
+    email: string;
+    date: string;
+    ipAddress: string;
+    note: string;
+  };
   accountCreated: {
     subject: string;
     title: string;
@@ -30,6 +41,17 @@ interface AdminNotificationTranslations {
 
 const translations: Record<string, AdminNotificationTranslations> = {
   en: {
+    signupRequest: {
+      subject: 'New Signup Request',
+      title: 'New Signup Request - Pending Validation',
+      intro: 'A new signup request has been created and is waiting for the user to verify their email.',
+      detailsTitle: 'Request Information',
+      fullName: 'Full Name',
+      email: 'Email',
+      date: 'Date',
+      ipAddress: 'IP Address',
+      note: 'This account will be created once the user has verified their email and completed the registration form. You will receive another notification when the account is actually created.',
+    },
     accountCreated: {
       subject: 'New Account Created',
       title: 'New Account Created Successfully',
@@ -55,6 +77,17 @@ const translations: Record<string, AdminNotificationTranslations> = {
     },
   },
   fr: {
+    signupRequest: {
+      subject: 'Nouvelle demande d\'inscription',
+      title: 'Nouvelle demande d\'inscription - En attente de validation',
+      intro: 'Une nouvelle demande d\'inscription a été créée et attend que l\'utilisateur vérifie son e-mail.',
+      detailsTitle: 'Informations de la demande',
+      fullName: 'Nom complet',
+      email: 'Email',
+      date: 'Date',
+      ipAddress: 'Adresse IP',
+      note: 'Ce compte sera créé une fois que l\'utilisateur aura vérifié son e-mail et complété le formulaire d\'inscription. Vous recevrez une autre notification lorsque le compte sera effectivement créé.',
+    },
     accountCreated: {
       subject: 'Nouveau compte créé',
       title: 'Nouveau compte créé avec succès',
