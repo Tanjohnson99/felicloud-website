@@ -56,11 +56,16 @@ export async function POST(request: NextRequest) {
     }
 
     // Create user in Nextcloud (server-side only)
+    // Free accounts get 10 GB quota by default
+    const freeQuotaGB = parseInt(process.env.FREE_ACCOUNT_QUOTA_GB || '10');
+    const freeQuotaBytes = freeQuotaGB * 1024 * 1024 * 1024;
+
     const result = await createNextcloudUser({
       username,
       password,
       email,
       displayName: displayName || username,
+      quota: freeQuotaBytes,
     });
 
     if (!result.success) {

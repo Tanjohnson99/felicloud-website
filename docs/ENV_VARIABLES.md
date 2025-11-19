@@ -38,11 +38,13 @@ STRIPE_WEBHOOK_SECRET=whsec_xxxxxxxxxxxxxxxxxxxxx
 
 ## 🟢 OPTIONNELLES (Pas nécessaires)
 
-### Nextcloud - Groupe par défaut
+### Nextcloud - Groupe et quota par défaut
 ```env
 NEXTCLOUD_FREE_GROUP=10GB Free
+FREE_ACCOUNT_QUOTA_GB=10
 ```
-Si pas défini, les utilisateurs gratuits ne seront pas ajoutés à un groupe spécifique.
+- `NEXTCLOUD_FREE_GROUP`: Groupe pour les comptes gratuits (optionnel)
+- `FREE_ACCOUNT_QUOTA_GB`: Quota en GB pour les comptes gratuits (défaut: 10 GB)
 
 ### Node.js
 ```env
@@ -60,6 +62,7 @@ NEXTCLOUD_URL=https://cloud.felicloud.com
 NEXTCLOUD_ADMIN_USER=admin
 NEXTCLOUD_ADMIN_PASSWORD=CHANGE_ME
 NEXTCLOUD_FREE_GROUP=10GB Free
+FREE_ACCOUNT_QUOTA_GB=10
 
 # === SMTP ===
 SMTP_HOST=smtp.felicloud.com

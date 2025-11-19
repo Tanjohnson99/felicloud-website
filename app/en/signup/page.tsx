@@ -5,14 +5,16 @@ import Link from 'next/link';
 
 export default function SignupPage() {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    username: '',
     email: '',
-    phone: '',
+    password: '',
+    confirmPassword: '',
   });
 
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -20,18 +22,82 @@ export default function SignupPage() {
       ...prev,
       [name]: value,
     }));
+    // Clear error for this field
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors: Record<string, string> = {};
+
+    // Username validation
+    if (!formData.username) {
+      newErrors.username = 'Username is required';
+    } else if (!/^[a-zA-Z0-9_-]{3,20}$/.test(formData.username)) {
+      newErrors.username = 'Username must be 3-20 alphanumeric characters';
+    }
+
+    // Email validation
+    if (!formData.email) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Invalid email address';
+    }
+
+    // Password validation
+    if (!formData.password) {
+      newErrors.password = 'Password is required';
+    } else if (formData.password.length < 8) {
+      newErrors.password = 'Password must be at least 8 characters';
+    }
+
+    // Confirm password validation
+    if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = 'Passwords do not match';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError('');
+
+    if (!validateForm()) {
+      return;
+    }
+
     setIsSubmitting(true);
 
-    // TODO: Implement actual account creation with Nextcloud
-    // For now, just simulate submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch('/api/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: formData.username,
+          email: formData.email,
+          password: formData.password,
+          displayName: formData.username,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to create account');
+      }
+
       setSubmitSuccess(true);
-    }, 1500);
+    } catch (error) {
+      console.error('Signup error:', error);
+      setSubmitError(error instanceof Error ? error.message : 'Failed to create account. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitSuccess) {
@@ -44,20 +110,25 @@ export default function SignupPage() {
             </svg>
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Account Request Submitted!
+            Account Created Successfully!
           </h2>
           <p className="text-lg text-gray-600 mb-6">
-            Thank you for signing up! Your account request has been submitted successfully.
+            Your free 10 GB Felicloud account has been created.
           </p>
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
             <p className="text-sm text-blue-900">
-              <strong>What's next?</strong><br />
-              Our team will review your request and activate your account within 24 hours.
-              You'll receive an email at <strong>{formData.email}</strong> with your login credentials.
+              <strong>Check your email!</strong><br />
+              We've sent your login credentials to <strong>{formData.email}</strong>.
+              You can now access your cloud storage.
             </p>
           </div>
+          <a href={process.env.NEXT_PUBLIC_NEXTCLOUD_URL || 'https://cloud.felicloud.com'} target="_blank" rel="noopener noreferrer">
+            <button className="rounded-lg bg-primary px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-primary/90 transition-colors mb-4 w-full">
+              Access Your Cloud
+            </button>
+          </a>
           <Link href="/en/">
-            <button className="rounded-lg bg-primary px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-primary-dark transition-colors">
+            <button className="rounded-lg border-2 border-gray-300 bg-white px-6 py-3 text-base font-semibold text-gray-900 hover:bg-gray-50 transition-colors w-full">
               Return to Home
             </button>
           </Link>
@@ -118,41 +189,40 @@ export default function SignupPage() {
             </ul>
           </div>
 
+          {/* Error Alert */}
+          {submitError && (
+            <div className="mb-6 bg-red-50 border border-red-200 rounded-lg p-4">
+              <div className="flex">
+                <svg className="h-5 w-5 text-red-600 mr-3 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                </svg>
+                <p className="text-sm text-red-800">{submitError}</p>
+              </div>
+            </div>
+          )}
+
           {/* Form */}
           <div className="rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* First Name */}
+              {/* Username */}
               <div>
-                <label htmlFor="firstName" className="block text-sm font-semibold text-gray-900 mb-2">
-                  First Name <span className="text-red-500">*</span>
+                <label htmlFor="username" className="block text-sm font-semibold text-gray-900 mb-2">
+                  Username <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
-                  id="firstName"
-                  name="firstName"
+                  id="username"
+                  name="username"
                   required
-                  value={formData.firstName}
+                  value={formData.username}
                   onChange={handleChange}
-                  className="block w-full rounded-lg border-2 border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-0 transition-colors"
-                  placeholder="John"
+                  className={`block w-full rounded-lg border-2 ${errors.username ? 'border-red-500' : 'border-gray-300'} px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-0 transition-colors`}
+                  placeholder="johndoe"
                 />
-              </div>
-
-              {/* Last Name */}
-              <div>
-                <label htmlFor="lastName" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Last Name <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  required
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  className="block w-full rounded-lg border-2 border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-0 transition-colors"
-                  placeholder="Doe"
-                />
+                {errors.username && <p className="mt-2 text-sm text-red-600">{errors.username}</p>}
+                <p className="mt-2 text-sm text-gray-500">
+                  This will be your login username (3-20 characters, letters, numbers, _ or -)
+                </p>
               </div>
 
               {/* Email */}
@@ -167,32 +237,52 @@ export default function SignupPage() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="block w-full rounded-lg border-2 border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-0 transition-colors"
+                  className={`block w-full rounded-lg border-2 ${errors.email ? 'border-red-500' : 'border-gray-300'} px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-0 transition-colors`}
                   placeholder="john.doe@example.com"
                 />
+                {errors.email && <p className="mt-2 text-sm text-red-600">{errors.email}</p>}
                 <p className="mt-2 text-sm text-gray-500">
-                  This will be your username for logging in
+                  We'll send your credentials to this email
                 </p>
               </div>
 
-              {/* Phone */}
+              {/* Password */}
               <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Phone Number <span className="text-red-500">*</span>
+                <label htmlFor="password" className="block text-sm font-semibold text-gray-900 mb-2">
+                  Password <span className="text-red-500">*</span>
                 </label>
                 <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
+                  type="password"
+                  id="password"
+                  name="password"
                   required
-                  value={formData.phone}
+                  value={formData.password}
                   onChange={handleChange}
-                  className="block w-full rounded-lg border-2 border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-0 transition-colors"
-                  placeholder="+33 1 23 45 67 89"
+                  className={`block w-full rounded-lg border-2 ${errors.password ? 'border-red-500' : 'border-gray-300'} px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-0 transition-colors`}
+                  placeholder="••••••••"
                 />
+                {errors.password && <p className="mt-2 text-sm text-red-600">{errors.password}</p>}
                 <p className="mt-2 text-sm text-gray-500">
-                  For account verification and support
+                  Minimum 8 characters
                 </p>
+              </div>
+
+              {/* Confirm Password */}
+              <div>
+                <label htmlFor="confirmPassword" className="block text-sm font-semibold text-gray-900 mb-2">
+                  Confirm Password <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  required
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  className={`block w-full rounded-lg border-2 ${errors.confirmPassword ? 'border-red-500' : 'border-gray-300'} px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-0 transition-colors`}
+                  placeholder="••••••••"
+                />
+                {errors.confirmPassword && <p className="mt-2 text-sm text-red-600">{errors.confirmPassword}</p>}
               </div>
 
               {/* Terms and Conditions */}
@@ -219,7 +309,7 @@ export default function SignupPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full rounded-lg bg-primary px-6 py-4 text-lg font-bold text-white shadow-lg hover:bg-primary-dark transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] transform"
+                className="w-full rounded-lg bg-primary px-6 py-4 text-lg font-bold text-white shadow-lg hover:bg-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] transform"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center">
@@ -235,14 +325,13 @@ export default function SignupPage() {
               </button>
 
               {/* Notice */}
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                 <div className="flex">
-                  <svg className="h-5 w-5 text-yellow-600 mr-3 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                  <svg className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
                   </svg>
-                  <p className="text-sm text-yellow-800">
-                    <strong>Account Activation:</strong> Free accounts are manually reviewed for security.
-                    Your account will be activated within 24 hours. You'll receive an email with your credentials.
+                  <p className="text-sm text-blue-900">
+                    <strong>Instant activation!</strong> Your account will be created immediately and credentials sent to your email.
                   </p>
                 </div>
               </div>
@@ -253,48 +342,10 @@ export default function SignupPage() {
           <div className="mt-8 text-center">
             <p className="text-gray-600">
               Already have an account?{' '}
-              <a href="https://cloud.felicloud.com" className="text-primary hover:underline font-semibold">
+              <a href={process.env.NEXT_PUBLIC_NEXTCLOUD_URL || 'https://cloud.felicloud.com'} className="text-primary hover:underline font-semibold">
                 Sign in here
               </a>
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="bg-gray-50 py-16">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-6">
-            <div className="bg-white rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Why does account activation take 24 hours?
-              </h3>
-              <p className="text-gray-600">
-                We manually review all free account requests to prevent abuse and ensure the best service
-                quality for our users. This helps us maintain a secure and reliable platform.
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Is the free account really free forever?
-              </h3>
-              <p className="text-gray-600">
-                Yes! Your 10 GB free account is yours to keep forever with no hidden fees or time limits.
-                You can upgrade to a larger plan anytime if you need more space.
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                What happens to my data?
-              </h3>
-              <p className="text-gray-600">
-                Your data is encrypted end-to-end and stored on servers located in Europe. We cannot access
-                your files, and we never share your data with third parties. Full GDPR compliance guaranteed.
-              </p>
-            </div>
           </div>
         </div>
       </section>
