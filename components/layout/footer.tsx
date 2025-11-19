@@ -29,7 +29,7 @@ export function Footer({ lang = 'en' }: FooterProps) {
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
           {/* Logo, description and social media */}
           <div className="col-span-2">
-            <Link href={`/${lang}`} className="flex items-center gap-2">
+            <Link href={`/${lang}`} className="flex items-center">
               <Image
                 src="/images/logo.svg"
                 alt={t('common.brandName')}
@@ -37,7 +37,6 @@ export function Footer({ lang = 'en' }: FooterProps) {
                 height={40}
                 className="h-10 w-auto"
               />
-              <span className="text-xl font-bold text-gray-900">{t('common.brandName')}</span>
             </Link>
             <p className="mt-4 text-sm text-gray-600">
               {t('common.tagline')}
