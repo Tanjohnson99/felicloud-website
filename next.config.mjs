@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Removed 'output: export' to enable API routes and server-side features
-  // This allows secure handling of SMTP and Nextcloud API calls
+  // Server mode enabled for API routes, webhooks, and secure backend operations
   trailingSlash: true,
   images: {
     unoptimized: true,
