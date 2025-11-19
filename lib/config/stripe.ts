@@ -3,23 +3,33 @@
  *
  * This file contains all Stripe Checkout links for Felicloud plans.
  * These links are used throughout the application for payment processing.
+ *
+ * IMPORTANT: Replace these with your TEST links when testing
+ * Get test links from: https://dashboard.stripe.com/test/products
+ *
+ * METADATA CONFIGURATION:
+ * Each product in Stripe Dashboard must have these metadata fields:
+ * - action: "create" (or "upgrade" for upgrade flows)
+ * - plan: The key from this object (e.g., "1TB_Lifetime")
+ * - billing: "monthly", "annual", or "lifetime"
+ * - storage: The storage size (e.g., "1TB", "500GB")
  */
 
 export const STRIPE_CHECKOUT_LINKS = {
-  // Monthly Plans
-  '500GB_Monthly': 'https://buy.stripe.com/14A8wP7iCbLE4Ae2m5fbq05',
-  '1TB_Monthly': 'https://buy.stripe.com/4gMbJ10Ue6rkc2Gd0Jfbq0a',
-  '2TB_Monthly': 'https://buy.stripe.com/4gMdR9dH0cPI8Qu8Ktfbq0b',
+  // Monthly Plans - REPLACE WITH YOUR TEST LINKS
+  '500GB_Monthly': 'https://buy.stripe.com/test/xxxxxxxxxxxxx', // TODO: Replace
+  '1TB_Monthly': 'https://buy.stripe.com/test/xxxxxxxxxxxxx',   // TODO: Replace
+  '2TB_Monthly': 'https://buy.stripe.com/test/xxxxxxxxxxxxx',   // TODO: Replace
 
-  // Annual Plans
-  '500GB_Annual': 'https://buy.stripe.com/aFaaEX9qK6rk2s66Clfbq06',
-  '1TB_Annual': 'https://buy.stripe.com/aFaeVd6ey5nggiWf8Rfbq09',
-  '2TB_Annual': 'https://buy.stripe.com/9B628rauO2b45EiaSBfbq0c',
+  // Annual Plans - REPLACE WITH YOUR TEST LINKS
+  '500GB_Annual': 'https://buy.stripe.com/test/xxxxxxxxxxxxx',  // TODO: Replace
+  '1TB_Annual': 'https://buy.stripe.com/test/xxxxxxxxxxxxx',    // TODO: Replace
+  '2TB_Annual': 'https://buy.stripe.com/test/xxxxxxxxxxxxx',    // TODO: Replace
 
-  // Lifetime Plans
-  '500GB_Lifetime': 'https://buy.stripe.com/3cI7sL7iC6rk4Ae4udfbq07',
-  '1TB_Lifetime': 'https://buy.stripe.com/3cIfZhdH06rk6Im9Oxfbq08',
-  '2TB_Lifetime': 'https://buy.stripe.com/5kQeVd0UecPI8Qu4udfbq0d',
+  // Lifetime Plans - REPLACE WITH YOUR TEST LINKS
+  '500GB_Lifetime': 'https://buy.stripe.com/test/xxxxxxxxxxxxx', // TODO: Replace
+  '1TB_Lifetime': 'https://buy.stripe.com/test/xxxxxxxxxxxxx',   // TODO: Replace
+  '2TB_Lifetime': 'https://buy.stripe.com/test/xxxxxxxxxxxxx',   // TODO: Replace
 } as const;
 
 export type StripePlanKey = keyof typeof STRIPE_CHECKOUT_LINKS;
