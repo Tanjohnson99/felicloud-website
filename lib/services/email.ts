@@ -158,3 +158,31 @@ export async function sendWelcomeEmail(
     html,
   });
 }
+
+/**
+ * Send upgrade confirmation email to existing user
+ * Uses professional email template - NO PASSWORD (user keeps existing password)
+ */
+export async function sendUpgradeEmail(
+  email: string,
+  username: string,
+  newQuota: string,
+  newPlan: string,
+  locale: string = 'en'
+) {
+  const { renderUpgradeEmail } = await import('../email/templates/upgrade-email');
+
+  const { subject, html } = renderUpgradeEmail({
+    username,
+    displayName: username.split('@')[0],
+    newQuota,
+    newPlan,
+    locale,
+  });
+
+  return sendEmail({
+    to: email,
+    subject,
+    html,
+  });
+}

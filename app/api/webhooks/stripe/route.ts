@@ -1,9 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { headers } from 'next/headers';
 import Stripe from 'stripe';
-import { createNextcloudUser, updateUserQuota } from '@/lib/services/nextcloud';
-import { sendWelcomeEmail } from '@/lib/services/email';
-import { notifyAdminAccountCreated } from '@/lib/services/admin-notifications';
+import {
+  createNextcloudUser,
+  updateUserQuota,
+  checkUserExists,
+  getUserGroups,
+  removeUserFromGroup,
+  addUserToGroup,
+} from '@/lib/services/nextcloud';
+import { sendWelcomeEmail, sendUpgradeEmail } from '@/lib/services/email';
+import { notifyAdminAccountCreated, notifyAdminAccountUpgraded } from '@/lib/services/admin-notifications';
 
 /**
  * POST /api/webhooks/stripe
@@ -16,6 +23,10 @@ import { notifyAdminAccountCreated } from '@/lib/services/admin-notifications';
  *
  * Events handled:
  * - checkout.session.completed: Create/upgrade account after payment
+ *
+ * Automatic Detection:
+ * - If user exists: Upgrade (update quota, change group, keep password, send upgrade email)
+ * - If user doesn't exist: Create (new account, temp password, send welcome email)
  */
 export async function POST(request: NextRequest) {
   try {
@@ -115,13 +126,68 @@ export async function POST(request: NextRequest) {
         // Parse storage quota (e.g., "1TB" -> 1099511627776 bytes)
         const quotaInBytes = parseStorageToBytes(storage);
 
-        if (action === 'create') {
-          // Create new Nextcloud account with paid quota
-          console.log('Creating new account for:', customerEmail);
+        // Check if user already exists (automatic detection)
+        const userExists = await checkUserExists(customerEmail);
+        const timestamp = new Date();
+        const quotaDisplay = storage || `${Math.round(quotaInBytes / 1024 / 1024 / 1024)}GB`;
+
+        if (userExists) {
+          // UPGRADE PATH: User exists, upgrade their account
+          console.log('User exists, upgrading account for:', customerEmail);
+
+          // Get current groups to determine old plan
+          const currentGroupsResult = await getUserGroups(customerEmail);
+          const oldPlan = currentGroupsResult.groups[0] || 'Unknown';
+
+          console.log('Current groups:', currentGroupsResult.groups);
+          console.log('Old plan:', oldPlan);
+          console.log('New plan:', plan);
+
+          // Remove user from all current groups
+          for (const oldGroup of currentGroupsResult.groups) {
+            const removeResult = await removeUserFromGroup(customerEmail, oldGroup);
+            if (removeResult.success) {
+              console.log(`Removed user from group: ${oldGroup}`);
+            } else {
+              console.warn(`Failed to remove user from group ${oldGroup}:`, removeResult.message);
+            }
+          }
+
+          // Add user to new plan group
+          const addResult = await addUserToGroup(customerEmail, plan);
+          if (addResult.success) {
+            console.log(`Added user to new group: ${plan}`);
+          } else {
+            console.error(`Failed to add user to group ${plan}:`, addResult.message);
+          }
+
+          // Update quota
+          const quotaResult = await updateUserQuota(customerEmail, quotaInBytes);
+          if (quotaResult.success) {
+            console.log(`Quota updated to: ${quotaDisplay}`);
+          } else {
+            console.error('Failed to update quota:', quotaResult.message);
+          }
+
+          // Send upgrade confirmation email (NO PASSWORD)
+          await sendUpgradeEmail(customerEmail, customerEmail, quotaDisplay, plan);
+
+          // Notify admin of upgrade
+          await notifyAdminAccountUpgraded(
+            customerEmail,
+            oldPlan,
+            plan,
+            quotaDisplay,
+            timestamp
+          );
+
+          console.log('Account upgraded successfully for:', customerEmail);
+        } else {
+          // CREATE PATH: User doesn't exist, create new account
+          console.log('User does not exist, creating new account for:', customerEmail);
 
           // Generate a random password (user will reset it via email)
           const tempPassword = generateRandomPassword();
-          const creationTime = new Date();
 
           // Determine Nextcloud groups for paid users
           // Option A: One group per plan for maximum granularity
@@ -144,30 +210,16 @@ export async function POST(request: NextRequest) {
             await sendWelcomeEmail(customerEmail, customerEmail, tempPassword);
 
             // Notify admin that account was created
-            const quotaDisplay = storage || `${Math.round(quotaInBytes / 1024 / 1024 / 1024)}GB`;
             await notifyAdminAccountCreated(
               customerEmail.split('@')[0], // fullName (use email prefix as fallback)
               customerEmail,
-              creationTime,
+              timestamp,
               quotaDisplay
             );
 
             console.log('Account created successfully for:', customerEmail);
           } else {
             console.error('Failed to create account:', result.message);
-          }
-        } else if (action === 'upgrade') {
-          // Upgrade existing account quota
-          console.log('Upgrading account for:', customerEmail);
-
-          const result = await updateUserQuota(customerEmail, quotaInBytes);
-
-          if (result.success) {
-            // Send upgrade confirmation email
-            // TODO: Create sendUpgradeEmail function
-            console.log('Account upgraded successfully for:', customerEmail);
-          } else {
-            console.error('Failed to upgrade account:', result.message);
           }
         }
 
