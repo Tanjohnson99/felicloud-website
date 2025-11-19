@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createNextcloudUser, checkUserExists } from '@/lib/services/nextcloud';
-import { sendWelcomeEmail } from '@/lib/services/email';
 
 /**
  * POST /api/signup
@@ -98,13 +97,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Send welcome email
-    try {
-      await sendWelcomeEmail(email, username);
-    } catch (emailError) {
-      console.error('Failed to send welcome email:', emailError);
-      // Don't fail the signup if email fails
-    }
+    // Note: We don't send a welcome email for free signups because
+    // the user already knows their credentials (they just created them).
+    // Welcome emails are only sent for paid accounts with temporary passwords.
 
     return NextResponse.json(
       {
