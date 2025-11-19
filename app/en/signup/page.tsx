@@ -152,6 +152,9 @@ export default function SignupPage() {
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Get 10 GB of secure cloud storage for free. No credit card required.
             </p>
+            <p className="mt-2 text-sm leading-6 text-gray-500 italic">
+              Once your free account is created, you can upgrade to a larger plan anytime.
+            </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
