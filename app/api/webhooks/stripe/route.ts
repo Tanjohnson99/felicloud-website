@@ -67,7 +67,12 @@ export async function POST(request: NextRequest) {
         const session = event.data.object as Stripe.Checkout.Session;
 
         // Extract customer data from session
-        const customerEmail = session.customer_email || session.client_reference_id;
+        // Try multiple sources for email (Stripe can put it in different places)
+        const customerEmail =
+          session.customer_email ||
+          session.client_reference_id ||
+          session.customer_details?.email;
+
         const metadata = session.metadata || {};
         const action = metadata.action; // 'create' or 'upgrade'
         const plan = metadata.plan;
@@ -78,12 +83,30 @@ export async function POST(request: NextRequest) {
           action,
           plan,
           storage,
+          sessionId: session.id,
+          paymentStatus: session.payment_status,
         });
 
         if (!customerEmail) {
           console.error('No customer email found in session');
+          console.error('Session data:', {
+            customer_email: session.customer_email,
+            client_reference_id: session.client_reference_id,
+            customer_details: session.customer_details,
+          });
           return NextResponse.json(
             { error: 'No customer email' },
+            { status: 400 }
+          );
+        }
+
+        // Check if metadata is present
+        if (!action || !storage) {
+          console.error('Missing required metadata in session');
+          console.error('Metadata:', metadata);
+          console.error('⚠️ IMPORTANT: Configure metadata in Stripe product settings');
+          return NextResponse.json(
+            { error: 'Missing metadata: action and storage are required' },
             { status: 400 }
           );
         }
