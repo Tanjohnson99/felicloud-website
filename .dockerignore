@@ -1,0 +1,47 @@
+# Coolify / Docker - Ignore unnecessary files during build
+
+# Dependencies (will be installed in Docker)
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Next.js build output (will be rebuilt in Docker)
+.next
+out
+build
+
+# Development files
+.git
+.github
+.vscode
+.idea
+
+# Environment files (set in Coolify dashboard)
+.env
+.env*.local
+.env.development
+.env.production
+
+# Testing
+coverage
+.nyc_output
+
+# Misc
+.DS_Store
+*.pem
+*.log
+*.zip
+*.tar.gz
+
+# Documentation (not needed in production)
+README.md
+docs/*.md
+
+# Scripts (not needed in production container)
+scripts
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts

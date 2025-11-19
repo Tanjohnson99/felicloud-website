@@ -1,6 +1,0 @@
-<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="200" height="200" rx="20" fill="#2B7FFF"/>
-  <path d="M100 50C77.9086 50 60 67.9086 60 90C60 98.2843 62.7614 105.929 67.5 112L67.5 140C67.5 143.314 70.1863 146 73.5 146H126.5C129.814 146 132.5 143.314 132.5 140V112C137.239 105.929 140 98.2843 140 90C140 67.9086 122.091 50 100 50Z" fill="white"/>
-  <circle cx="100" cy="90" r="20" fill="#2B7FFF"/>
-  <text x="100" y="175" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">FELICLOUD</text>
-</svg>

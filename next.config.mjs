@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Server mode enabled for API routes, webhooks, and secure backend operations
   trailingSlash: true,
   images: {
     unoptimized: true,

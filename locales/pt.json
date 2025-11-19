@@ -1,0 +1,19 @@
+{
+  "common": {},
+  "nav": {},
+  "footer": {},
+  "hero": {},
+  "features": {},
+  "comparison": {},
+  "socialProof": {},
+  "cta": {},
+  "languages": {
+    "en": "English",
+    "fr": "Français",
+    "pt": "Português",
+    "es": "Español",
+    "it": "Italiano",
+    "de": "Deutsch"
+  },
+  "meta": {}
+}

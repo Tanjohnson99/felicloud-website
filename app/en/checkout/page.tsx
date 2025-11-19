@@ -32,31 +32,65 @@ function CheckoutContent() {
     setIsLoading(true);
 
     try {
-      // TODO: Call API to check if user exists
-      // const response = await fetch('/api/auth/check-email', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ email }),
-      // });
-      // const data = await response.json();
-
-      // For now, we'll simulate the check and route to signup
-      // In production, this would check the database
-
-      // Simulate API delay
-      await new Promise(resolve => setTimeout(resolve, 500));
-
-      // Route to signup page with plan and email pre-filled
-      const signupUrl = new URLSearchParams({
-        email,
-        plan,
-        billing,
+      // Check if user exists in Nextcloud
+      const response = await fetch('/api/auth/check-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
       });
 
-      router.push(`/en/signup?${signupUrl.toString()}`);
+      if (!response.ok) {
+        throw new Error('Failed to verify email');
+      }
+
+      const data = await response.json();
+      const isUpgrade = data.exists; // true = upgrade, false = new account
+
+      // Notify admin that payment is being initiated (lead tracking)
+      try {
+        await fetch('/api/checkout/notify-initiation', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            plan,
+            billing,
+            storage,
+            isUpgrade,
+          }),
+        });
+      } catch (notifyError) {
+        // Don't fail checkout if notification fails
+        console.error('Failed to send notification:', notifyError);
+      }
+
+      // Create Stripe Checkout session dynamically via API
+      const sessionResponse = await fetch('/api/checkout/create-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plan,
+          email,
+          isUpgrade,
+        }),
+      });
+
+      if (!sessionResponse.ok) {
+        const errorData = await sessionResponse.json();
+        throw new Error(errorData.error || 'Failed to create checkout session');
+      }
+
+      const sessionData = await sessionResponse.json();
+
+      // Redirect to Stripe Checkout
+      if (sessionData.url) {
+        window.location.href = sessionData.url;
+      } else {
+        throw new Error('No checkout URL received');
+      }
     } catch (err) {
+      console.error('Checkout error:', err);
       setError('An error occurred. Please try again.');
-    } finally {
       setIsLoading(false);
     }
   };
@@ -189,6 +223,16 @@ function CheckoutContent() {
               </svg>
               <span>GDPR Compliant</span>
             </div>
+          </div>
+
+          {/* Stripe payment info */}
+          <div className="mt-6 text-center">
+            <p className="text-xs text-gray-500 flex items-center justify-center gap-1.5">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+              </svg>
+              <span>Payments securely processed by <strong>Stripe</strong>, trusted by millions worldwide</span>
+            </p>
           </div>
         </div>
 

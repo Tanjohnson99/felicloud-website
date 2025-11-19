@@ -1,17 +1,17 @@
-import { Hero } from '@/components/sections/hero-en';
-import { Features } from '@/components/sections/features-en';
-import { SocialProof } from '@/components/sections/social-proof-en';
-import { Comparison } from '@/components/sections/comparison-en';
-import { CTA } from '@/components/sections/cta-en';
+import { Hero } from '@/components/sections/hero';
+import { Features } from '@/components/sections/features';
+import { SocialProof } from '@/components/sections/social-proof';
+import { Comparison } from '@/components/sections/comparison';
+import { CTA } from '@/components/sections/cta';
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <Features />
-      <SocialProof />
-      <Comparison />
-      <CTA />
+      <Hero lang="en" />
+      <Features lang="en" />
+      <SocialProof lang="en" />
+      <Comparison lang="en" />
+      <CTA lang="en" />
     </>
   );
 }

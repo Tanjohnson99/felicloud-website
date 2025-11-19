@@ -136,6 +136,38 @@ export default function DownloadPage() {
             <p className="mt-4 text-lg text-gray-600">
               Download our apps for the best experience on your device
             </p>
+
+            {/* Nextcloud info box */}
+            <div className="mt-8 rounded-lg bg-blue-50 border-2 border-blue-200 p-6 text-left">
+              <div className="flex items-start gap-3">
+                <svg className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                </svg>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-2">About the Apps</h3>
+                  <p className="text-sm text-gray-700 mb-3">
+                    The applications you'll download are called <strong>Nextcloud</strong>, the open-source platform that powers Felicloud.
+                    These apps are 100% compatible with our service and provide seamless access to your files.
+                  </p>
+                  <p className="text-sm text-gray-700 mb-4">
+                    <strong>First time setup?</strong> When you open the app, you'll be asked for a server URL.
+                    Don't worry, we've got you covered!
+                  </p>
+                  <Link
+                    href="/en/help"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                    </svg>
+                    View setup guide & server URL
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
