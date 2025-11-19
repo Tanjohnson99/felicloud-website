@@ -119,9 +119,8 @@ npm start
 
 **Si tu veux personnaliser**, va dans **Advanced** → **Build Command**:
 ```bash
-npm run build:raw
+npm run build
 ```
-(pour éviter le script de nettoyage si problème)
 
 ### 7. Health Check (Optionnel mais recommandé)
 
