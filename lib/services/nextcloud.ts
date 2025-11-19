@@ -55,11 +55,12 @@ export async function createNextcloudUser({
     const auth = Buffer.from(`${adminUser}:${adminPassword}`).toString('base64');
 
     // Step 1: Create the user
-    const createUserResponse = await fetch(`${nextcloudUrl}/ocs/v1.php/cloud/users`, {
+    const createUserResponse = await fetch(`${nextcloudUrl}/ocs/v2.php/cloud/users`, {
       method: 'POST',
       headers: {
         'Authorization': `Basic ${auth}`,
         'OCS-APIRequest': 'true',
+        'Accept': 'application/json',
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams({
@@ -81,11 +82,12 @@ export async function createNextcloudUser({
 
     // Step 2: Add user to groups (if any)
     for (const group of groups) {
-      await fetch(`${nextcloudUrl}/ocs/v1.php/cloud/users/${username}/groups`, {
+      await fetch(`${nextcloudUrl}/ocs/v2.php/cloud/users/${username}/groups`, {
         method: 'POST',
         headers: {
           'Authorization': `Basic ${auth}`,
           'OCS-APIRequest': 'true',
+          'Accept': 'application/json',
           'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: new URLSearchParams({
@@ -130,10 +132,11 @@ export async function checkUserExists(username: string): Promise<boolean> {
   try {
     const auth = Buffer.from(`${adminUser}:${adminPassword}`).toString('base64');
 
-    const response = await fetch(`${nextcloudUrl}/ocs/v1.php/cloud/users/${username}`, {
+    const response = await fetch(`${nextcloudUrl}/ocs/v2.php/cloud/users/${username}`, {
       headers: {
         'Authorization': `Basic ${auth}`,
         'OCS-APIRequest': 'true',
+        'Accept': 'application/json',
       },
     });
 
@@ -162,11 +165,12 @@ export async function setUserQuota(username: string, quota: string): Promise<{ s
   try {
     const auth = Buffer.from(`${adminUser}:${adminPassword}`).toString('base64');
 
-    const response = await fetch(`${nextcloudUrl}/ocs/v1.php/cloud/users/${username}`, {
+    const response = await fetch(`${nextcloudUrl}/ocs/v2.php/cloud/users/${username}`, {
       method: 'PUT',
       headers: {
         'Authorization': `Basic ${auth}`,
         'OCS-APIRequest': 'true',
+        'Accept': 'application/json',
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams({
