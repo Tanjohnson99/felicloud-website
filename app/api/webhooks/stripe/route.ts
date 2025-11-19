@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { headers } from 'next/headers';
+import Stripe from 'stripe';
 import { createNextcloudUser, updateUserQuota } from '@/lib/services/nextcloud';
 import { sendWelcomeEmail } from '@/lib/services/email';
 
@@ -29,24 +30,41 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // TODO: Verify Stripe webhook signature
-    // For production, you MUST verify the signature using Stripe library
-    // const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-    // const event = stripe.webhooks.constructEvent(
-    //   body,
-    //   signature,
-    //   process.env.STRIPE_WEBHOOK_SECRET
-    // );
+    // Verify environment variables
+    const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
-    // For now, parse the body directly (INSECURE - fix before production)
-    const event = JSON.parse(body);
+    if (!stripeSecretKey || !webhookSecret) {
+      console.error('Missing Stripe configuration');
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      );
+    }
 
-    console.log('Stripe webhook event:', event.type);
+    // Initialize Stripe
+    const stripe = new Stripe(stripeSecretKey, {
+      apiVersion: '2025-11-17.clover',
+    });
+
+    // Verify webhook signature (SECURE)
+    let event: Stripe.Event;
+    try {
+      event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
+      console.log('✅ Webhook signature verified:', event.type);
+    } catch (err) {
+      const error = err as Error;
+      console.error('❌ Webhook signature verification failed:', error.message);
+      return NextResponse.json(
+        { error: `Webhook signature verification failed: ${error.message}` },
+        { status: 400 }
+      );
+    }
 
     // Handle the event
     switch (event.type) {
       case 'checkout.session.completed': {
-        const session = event.data.object;
+        const session = event.data.object as Stripe.Checkout.Session;
 
         // Extract customer data from session
         const customerEmail = session.customer_email || session.client_reference_id;
