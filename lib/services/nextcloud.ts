@@ -73,7 +73,18 @@ export async function createNextcloudUser({
 
     const createResult: NextcloudResponse = await createUserResponse.json();
 
+    console.log('Nextcloud API Response:', {
+      statuscode: createResult.ocs.meta.statuscode,
+      status: createResult.ocs.meta.status,
+      message: createResult.ocs.meta.message,
+    });
+
     if (createResult.ocs.meta.statuscode !== 100) {
+      console.error('Nextcloud user creation failed:', {
+        statuscode: createResult.ocs.meta.statuscode,
+        message: createResult.ocs.meta.message,
+        username,
+      });
       return {
         success: false,
         message: createResult.ocs.meta.message || 'Failed to create user',
@@ -82,7 +93,8 @@ export async function createNextcloudUser({
 
     // Step 2: Add user to groups (if any)
     for (const group of groups) {
-      await fetch(`${nextcloudUrl}/ocs/v2.php/cloud/users/${username}/groups`, {
+      console.log(`Adding user ${username} to group: ${group}`);
+      const groupResponse = await fetch(`${nextcloudUrl}/ocs/v2.php/cloud/users/${username}/groups`, {
         method: 'POST',
         headers: {
           'Authorization': `Basic ${auth}`,
@@ -94,13 +106,20 @@ export async function createNextcloudUser({
           groupid: group,
         }),
       });
+      const groupResult: NextcloudResponse = await groupResponse.json();
+      if (groupResult.ocs.meta.statuscode !== 100) {
+        console.warn(`Failed to add user to group ${group}:`, groupResult.ocs.meta.message);
+      }
     }
 
     // Step 3: Set quota if provided
     if (quota) {
+      console.log(`Setting quota for user ${username}: ${quota} bytes`);
       const quotaResult = await setUserQuota(username, `${quota} B`);
       if (!quotaResult.success) {
         console.warn(`User created but quota setting failed: ${quotaResult.message}`);
+      } else {
+        console.log(`Quota set successfully for user ${username}`);
       }
     }
 

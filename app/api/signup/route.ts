@@ -38,10 +38,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate password strength (min 8 chars)
-    if (password.length < 8) {
+    // Validate password strength (min 10 chars - Nextcloud requirement)
+    if (password.length < 10) {
       return NextResponse.json(
-        { error: 'Password must be at least 8 characters' },
+        { error: 'Password must be at least 10 characters' },
         { status: 400 }
       );
     }
@@ -69,6 +69,11 @@ export async function POST(request: NextRequest) {
     });
 
     if (!result.success) {
+      console.error('Nextcloud user creation failed:', {
+        username,
+        email,
+        error: result.message,
+      });
       return NextResponse.json(
         { error: result.message },
         { status: 500 }

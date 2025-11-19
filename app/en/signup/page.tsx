@@ -48,8 +48,8 @@ export default function SignupPage() {
     // Password validation
     if (!formData.password) {
       newErrors.password = 'Password is required';
-    } else if (formData.password.length < 8) {
-      newErrors.password = 'Password must be at least 8 characters';
+    } else if (formData.password.length < 10) {
+      newErrors.password = 'Password must be at least 10 characters';
     }
 
     // Confirm password validation
@@ -263,7 +263,7 @@ export default function SignupPage() {
                 />
                 {errors.password && <p className="mt-2 text-sm text-red-600">{errors.password}</p>}
                 <p className="mt-2 text-sm text-gray-500">
-                  Minimum 8 characters
+                  Minimum 10 characters (required by Nextcloud)
                 </p>
               </div>
 
