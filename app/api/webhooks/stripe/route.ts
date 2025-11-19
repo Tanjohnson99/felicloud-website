@@ -3,6 +3,7 @@ import { headers } from 'next/headers';
 import Stripe from 'stripe';
 import { createNextcloudUser, updateUserQuota } from '@/lib/services/nextcloud';
 import { sendWelcomeEmail } from '@/lib/services/email';
+import { notifyAdminAccountCreated } from '@/lib/services/admin-notifications';
 
 /**
  * POST /api/webhooks/stripe
@@ -120,6 +121,7 @@ export async function POST(request: NextRequest) {
 
           // Generate a random password (user will reset it via email)
           const tempPassword = generateRandomPassword();
+          const creationTime = new Date();
 
           const result = await createNextcloudUser({
             username: customerEmail,
@@ -132,6 +134,16 @@ export async function POST(request: NextRequest) {
           if (result.success) {
             // Send welcome email with credentials
             await sendWelcomeEmail(customerEmail, customerEmail, tempPassword);
+
+            // Notify admin that account was created
+            const quotaDisplay = storage || `${Math.round(quotaInBytes / 1024 / 1024 / 1024)}GB`;
+            await notifyAdminAccountCreated(
+              customerEmail.split('@')[0], // fullName (use email prefix as fallback)
+              customerEmail,
+              creationTime,
+              quotaDisplay
+            );
+
             console.log('Account created successfully for:', customerEmail);
           } else {
             console.error('Failed to create account:', result.message);
