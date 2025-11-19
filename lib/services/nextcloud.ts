@@ -44,11 +44,9 @@ export async function createNextcloudUser({
   const adminUser = process.env.NEXTCLOUD_ADMIN_USER;
   const adminPassword = process.env.NEXTCLOUD_ADMIN_PASSWORD;
 
-  // Add free group if specified in env
-  const defaultGroup = process.env.NEXTCLOUD_FREE_GROUP;
-  if (defaultGroup && !groups.includes(defaultGroup)) {
-    groups.push(defaultGroup);
-  }
+  // Note: Groups are now passed explicitly from the calling function
+  // Free users get "Free Users" group, paid users get their plan group (e.g., "1TB_Lifetime")
+  // No automatic group addition here
 
   try {
     // Create basic auth header

@@ -19,8 +19,8 @@ export function renderBaseEmailLayout({
 }: BaseLayoutProps): string {
   // Use absolute URL for logo in emails
   const logoUrl = process.env.NEXT_PUBLIC_SITE_URL
-    ? `${process.env.NEXT_PUBLIC_SITE_URL}/logo.svg`
-    : 'https://felicloud.com/logo.svg';
+    ? `${process.env.NEXT_PUBLIC_SITE_URL}/images/logo.svg`
+    : 'https://felicloud.com/images/logo.svg';
 
   return `
 <!DOCTYPE html>

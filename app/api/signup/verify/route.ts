@@ -109,6 +109,7 @@ export async function POST(request: NextRequest) {
         email: verificationData.email,
         displayName: verificationData.full_name,
         quota: freeQuotaBytes,
+        groups: ['Free Users'], // Free accounts go to "Free Users" group
       });
     } catch (nextcloudError) {
       console.error('Nextcloud user creation error:', nextcloudError);
