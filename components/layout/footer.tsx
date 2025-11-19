@@ -26,9 +26,9 @@ export function Footer({ lang = 'en' }: FooterProps) {
   return (
     <footer className="bg-gray-50 border-t border-gray-200">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
           {/* Logo, description and social media */}
-          <div className="col-span-2">
+          <div className="md:col-span-2 lg:col-span-1">
             <Link href={`/${lang}`} className="flex items-center">
               <Image
                 src="/images/logo.svg"
