@@ -45,11 +45,17 @@ export default function SignupPage() {
       newErrors.email = 'Invalid email address';
     }
 
-    // Password validation
+    // Password validation (Nextcloud requirements)
     if (!formData.password) {
       newErrors.password = 'Password is required';
     } else if (formData.password.length < 10) {
       newErrors.password = 'Password must be at least 10 characters';
+    } else if (!/[a-z]/.test(formData.password)) {
+      newErrors.password = 'Password must contain at least one lowercase letter';
+    } else if (!/[A-Z]/.test(formData.password)) {
+      newErrors.password = 'Password must contain at least one uppercase letter';
+    } else if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(formData.password)) {
+      newErrors.password = 'Password must contain at least one special character (!@#$%^&* etc.)';
     }
 
     // Confirm password validation
@@ -263,7 +269,7 @@ export default function SignupPage() {
                 />
                 {errors.password && <p className="mt-2 text-sm text-red-600">{errors.password}</p>}
                 <p className="mt-2 text-sm text-gray-500">
-                  Minimum 10 characters (required by Nextcloud)
+                  Must contain: 10+ characters, uppercase, lowercase, and special character (!@#$%^&* etc.)
                 </p>
               </div>
 

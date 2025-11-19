@@ -20,7 +20,7 @@ FREE_ACCOUNT_QUOTA_GB=10
 
 SMTP_HOST=smtp.felicloud.com
 SMTP_PORT=587
-SMTP_SECURE=true
+SMTP_SECURE=false
 SMTP_USER=noreply@felicloud.com
 SMTP_PASSWORD=ton_smtp_password
 SMTP_FROM_EMAIL=noreply@felicloud.com

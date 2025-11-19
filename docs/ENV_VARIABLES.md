@@ -15,12 +15,18 @@ NEXTCLOUD_ADMIN_PASSWORD=ton_mot_de_passe_admin_ici
 ```env
 SMTP_HOST=smtp.felicloud.com
 SMTP_PORT=587
-SMTP_SECURE=true
+SMTP_SECURE=false
 SMTP_USER=noreply@felicloud.com
 SMTP_PASSWORD=ton_mot_de_passe_smtp_ici
 SMTP_FROM_EMAIL=noreply@felicloud.com
 SMTP_FROM_NAME=Felicloud
 ```
+
+**⚠️ IMPORTANT - SMTP_SECURE:**
+- **Port 587 (STARTTLS)**: `SMTP_SECURE=false` ← **Utilise ça dans la plupart des cas**
+- **Port 465 (SSL/TLS)**: `SMTP_SECURE=true`
+
+Si tu obtiens une erreur "SSL routines: wrong version number", c'est que tu as mis `SMTP_SECURE=true` avec le port 587. Change-le à `false`.
 
 ### Admin
 ```env
@@ -67,7 +73,7 @@ FREE_ACCOUNT_QUOTA_GB=10
 # === SMTP ===
 SMTP_HOST=smtp.felicloud.com
 SMTP_PORT=587
-SMTP_SECURE=true
+SMTP_SECURE=false
 SMTP_USER=noreply@felicloud.com
 SMTP_PASSWORD=CHANGE_ME
 SMTP_FROM_EMAIL=noreply@felicloud.com
