@@ -21,12 +21,17 @@
   },
   "footer": {
     "product": "Product",
+    "support": "Support",
     "company": "Company",
     "legal": "Legal",
     "termsOfService": "Terms of Service",
     "privacyPolicy": "Privacy Policy",
     "gdpr": "GDPR",
-    "socialMediaDescription": "Follow us on social media"
+    "socialMediaDescription": "Follow us on social media",
+    "helpCenter": "Help Center",
+    "contactSupport": "Contact Support",
+    "downloadApps": "Download Apps",
+    "faq": "FAQ"
   },
   "hero": {
     "title": "European Cloud Storage You Can Trust",

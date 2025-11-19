@@ -91,6 +91,33 @@ export function Footer({ lang = 'en' }: FooterProps) {
             </ul>
           </div>
 
+          {/* Support */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900">{t('footer.support')}</h3>
+            <ul className="mt-4 space-y-2">
+              <li>
+                <Link href={`/${lang}/help`} className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  {t('footer.helpCenter')}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/contact`} className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  {t('footer.contactSupport')}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/download`} className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  {t('footer.downloadApps')}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/faq`} className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  {t('footer.faq')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Company */}
           <div>
             <h3 className="text-sm font-semibold text-gray-900">{t('footer.company')}</h3>
