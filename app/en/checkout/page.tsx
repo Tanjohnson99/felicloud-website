@@ -64,18 +64,30 @@ function CheckoutContent() {
         console.error('Failed to send notification:', notifyError);
       }
 
-      // Build Stripe Checkout URL with customer data
-      const { getStripeCheckoutUrl } = await import('@/lib/config/stripe');
-
-      const stripeUrl = getStripeCheckoutUrl(plan, email, {
-        action: isUpgrade ? 'upgrade' : 'create',
-        plan,
-        billing,
-        storage,
+      // Create Stripe Checkout session dynamically via API
+      const sessionResponse = await fetch('/api/checkout/create-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plan,
+          email,
+          isUpgrade,
+        }),
       });
 
+      if (!sessionResponse.ok) {
+        const errorData = await sessionResponse.json();
+        throw new Error(errorData.error || 'Failed to create checkout session');
+      }
+
+      const sessionData = await sessionResponse.json();
+
       // Redirect to Stripe Checkout
-      window.location.href = stripeUrl;
+      if (sessionData.url) {
+        window.location.href = sessionData.url;
+      } else {
+        throw new Error('No checkout URL received');
+      }
     } catch (err) {
       console.error('Checkout error:', err);
       setError('An error occurred. Please try again.');
