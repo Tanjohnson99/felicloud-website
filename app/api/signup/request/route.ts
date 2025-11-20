@@ -3,13 +3,27 @@ import { createVerificationToken, getPendingTokenByEmail } from '@/lib/db/email-
 import { checkUserExists } from '@/lib/services/nextcloud';
 import { sendVerificationEmail } from '@/lib/services/email';
 import { notifyAdminSignupRequest } from '@/lib/services/admin-notifications';
+import { rateLimiters } from '@/lib/utils/rate-limit';
 
 /**
  * POST /api/signup/request
  * Step 1: Request account creation (send verification email)
+ *
+ * Security: Rate limited to 3 requests per hour per IP
  */
 export async function POST(request: NextRequest) {
   try {
+    // Apply rate limiting (3 requests per hour)
+    const rateLimitResult = await rateLimiters.signup.check(request);
+    if (!rateLimitResult.success) {
+      const response = NextResponse.json(
+        { error: rateLimitResult.error },
+        { status: 429 }
+      );
+      rateLimiters.signup.addHeaders(response.headers, rateLimitResult);
+      return response;
+    }
+
     const body = await request.json();
     const { fullName, email } = body;
 

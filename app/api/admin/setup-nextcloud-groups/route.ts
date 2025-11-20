@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { createRateLimiter } from '@/lib/utils/rate-limit';
 
 /**
  * POST /api/admin/setup-nextcloud-groups
@@ -6,13 +7,20 @@ import { NextRequest, NextResponse } from 'next/server';
  * Creates all required Nextcloud groups for Felicloud paid plans
  * This endpoint should be called once during initial setup
  *
- * Security: Protected by admin secret token
+ * Security:
+ * - Protected by admin secret token (Authorization: Bearer YOUR_ADMIN_SECRET)
+ * - Rate limited to 1 request per hour
+ * - Can be permanently disabled via ADMIN_SETUP_COMPLETED env variable
+ * - Optional IP whitelist via ADMIN_ALLOWED_IPS
  *
- * IMPORTANT: Set SETUP_COMPLETED to true after first successful run
+ * IMPORTANT: Set ADMIN_SETUP_COMPLETED=true in .env after first successful run
  */
 
-// 🔒 SECURITY: Set to true after initial setup to disable this endpoint
-const SETUP_COMPLETED = true;
+// Very strict rate limiter for admin endpoints (1 request per hour)
+const adminRateLimiter = createRateLimiter({
+  maxRequests: 1,
+  windowMs: 60 * 60 * 1000, // 1 hour
+});
 
 interface NextcloudResponse {
   ocs: {
@@ -71,18 +79,47 @@ async function createGroup(groupName: string): Promise<{ success: boolean; messa
 
 export async function POST(request: NextRequest) {
   try {
-    // Security check: Endpoint disabled after initial setup
-    if (SETUP_COMPLETED) {
+    // Security check 1: Apply rate limiting (1 request per hour)
+    const rateLimitResult = await adminRateLimiter.check(request, '/api/admin');
+    if (!rateLimitResult.success) {
+      const response = NextResponse.json(
+        { error: 'Too many admin requests', message: rateLimitResult.error },
+        { status: 429 }
+      );
+      adminRateLimiter.addHeaders(response.headers, rateLimitResult);
+      return response;
+    }
+
+    // Security check 2: Endpoint disabled after initial setup
+    const setupCompleted = process.env.ADMIN_SETUP_COMPLETED === 'true';
+    if (setupCompleted) {
       return NextResponse.json(
         {
           error: 'Setup already completed',
           message: 'This endpoint has been disabled for security. All groups have been created successfully.',
+          hint: 'Set ADMIN_SETUP_COMPLETED=false in .env to re-enable temporarily.',
         },
         { status: 403 }
       );
     }
 
-    // Security: Verify admin secret token
+    // Security check 3: Optional IP whitelist
+    const allowedIps = process.env.ADMIN_ALLOWED_IPS?.split(',').map(ip => ip.trim());
+    if (allowedIps && allowedIps.length > 0) {
+      const clientIp = request.headers.get('x-forwarded-for')?.split(',')[0].trim() ||
+                       request.headers.get('x-real-ip') ||
+                       'unknown';
+
+      if (!allowedIps.includes(clientIp)) {
+        console.warn(`⚠️ Admin access denied from unauthorized IP: ${clientIp}`);
+        return NextResponse.json(
+          { error: 'Access denied', message: 'Your IP address is not whitelisted for admin access.' },
+          { status: 403 }
+        );
+      }
+    }
+
+    // Security check 4: Verify admin secret token
     const authHeader = request.headers.get('authorization');
     const adminSecret = process.env.ADMIN_SECRET;
 
@@ -94,6 +131,7 @@ export async function POST(request: NextRequest) {
     }
 
     if (!authHeader || authHeader !== `Bearer ${adminSecret}`) {
+      console.warn('⚠️ Invalid admin authentication attempt');
       return NextResponse.json(
         { error: 'Unauthorized: Invalid or missing admin secret' },
         { status: 401 }

@@ -1,15 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { getPricingPlan, isValidPlanKey } from '@/lib/config/pricing';
+import { rateLimiters } from '@/lib/utils/rate-limit';
 
 /**
  * POST /api/checkout/create-session
  *
  * Creates a Stripe Checkout session dynamically with correct metadata
  * This replaces the need for Payment Links configured in Stripe Dashboard
+ *
+ * Security: Rate limited to 5 requests per 15 minutes per IP
  */
 export async function POST(request: NextRequest) {
   try {
+    // Apply rate limiting (5 requests per 15 minutes)
+    const rateLimitResult = await rateLimiters.checkout.check(request);
+    if (!rateLimitResult.success) {
+      const response = NextResponse.json(
+        { error: rateLimitResult.error },
+        { status: 429 }
+      );
+      rateLimiters.checkout.addHeaders(response.headers, rateLimitResult);
+      return response;
+    }
+
     const body = await request.json();
     const { plan, email, isUpgrade } = body;
 

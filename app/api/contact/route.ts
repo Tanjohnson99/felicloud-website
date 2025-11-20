@@ -1,13 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sendContactEmail } from '@/lib/services/email';
+import { rateLimiters } from '@/lib/utils/rate-limit';
 
 /**
  * POST /api/contact
  * Handle contact form submissions
  * This route runs on the SERVER - SMTP credentials are never exposed
+ *
+ * Security: Rate limited to 5 requests per 15 minutes per IP
  */
 export async function POST(request: NextRequest) {
   try {
+    // Apply rate limiting (5 requests per 15 minutes)
+    const rateLimitResult = await rateLimiters.contact.check(request);
+    if (!rateLimitResult.success) {
+      const response = NextResponse.json(
+        { error: rateLimitResult.error },
+        { status: 429 }
+      );
+      rateLimiters.contact.addHeaders(response.headers, rateLimitResult);
+      return response;
+    }
+
     const body = await request.json();
     const { name, email, message } = body;
 
