@@ -12,12 +12,11 @@ export function Footer({ lang = 'en' }: FooterProps) {
   const { t } = useTranslation(lang);
 
   // Only show languages that have routes available
-  // TODO: Add other languages when their routes are created
   const languages = [
     { code: 'en', name: t('languages.en'), href: '/en' },
-    // Uncomment when ready:
-    // { code: 'fr', name: t('languages.fr'), href: '/fr' },
-    // { code: 'pt', name: t('languages.pt'), href: '/pt' },
+    { code: 'fr', name: t('languages.fr'), href: '/fr' },
+    { code: 'pt', name: t('languages.pt'), href: '/pt' },
+    // TODO: Add other languages when their routes are created
     // { code: 'es', name: t('languages.es'), href: '/es' },
     // { code: 'it', name: t('languages.it'), href: '/it' },
     // { code: 'de', name: t('languages.de'), href: '/de' },
