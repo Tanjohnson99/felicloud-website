@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { useTranslation } from '@/lib/hooks/useTranslation';
 
@@ -11,6 +12,7 @@ interface HeaderProps {
 
 export function Header({ lang = 'en' }: HeaderProps) {
   const { t } = useTranslation(lang);
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileLangOpen, setMobileLangOpen] = useState(false);
 
@@ -21,15 +23,24 @@ export function Header({ lang = 'en' }: HeaderProps) {
     { name: t('nav.about'), href: `/${lang}/about` },
   ];
 
+  // Helper function to get the current path in a different language
+  const getLocalizedPath = (newLang: string) => {
+    if (!pathname) return `/${newLang}`;
+    // Replace the current language with the new one
+    // e.g., /en/pricing -> /fr/pricing
+    const pathWithoutLang = pathname.replace(/^\/(en|fr|pt)(\/|$)/, '/');
+    return `/${newLang}${pathWithoutLang === '/' ? '' : pathWithoutLang}`;
+  };
+
   // Only show languages that have routes available
   const languages = [
-    { code: 'en', name: t('languages.en'), href: '/en' },
-    { code: 'fr', name: t('languages.fr'), href: '/fr' },
-    { code: 'pt', name: t('languages.pt'), href: '/pt' },
+    { code: 'en', name: t('languages.en'), href: getLocalizedPath('en') },
+    { code: 'fr', name: t('languages.fr'), href: getLocalizedPath('fr') },
+    { code: 'pt', name: t('languages.pt'), href: getLocalizedPath('pt') },
     // TODO: Add other languages when their routes are created
-    // { code: 'es', name: t('languages.es'), href: '/es' },
-    // { code: 'it', name: t('languages.it'), href: '/it' },
-    // { code: 'de', name: t('languages.de'), href: '/de' },
+    // { code: 'es', name: t('languages.es'), href: getLocalizedPath('es') },
+    // { code: 'it', name: t('languages.it'), href: getLocalizedPath('it') },
+    // { code: 'de', name: t('languages.de'), href: getLocalizedPath('de') },
   ];
 
   const currentLang = languages.find(l => l.code === lang) || languages[0];
