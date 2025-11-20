@@ -198,21 +198,47 @@
       "invalidEmail": "Adresse e-mail invalide",
       "passwordRequired": "Le mot de passe est requis",
       "passwordTooShort": "Le mot de passe doit contenir au moins 10 caractères",
-      "passwordNoLowercase": "Le mot de passe doit contenir au moins une minuscule",
-      "passwordNoUppercase": "Le mot de passe doit contenir au moins une majuscule",
-      "passwordNoSpecial": "Le mot de passe doit contenir au moins un caractère spécial"
+      "passwordNoLowercase": "Le mot de passe doit contenir au moins une lettre minuscule",
+      "passwordNoUppercase": "Le mot de passe doit contenir au moins une lettre majuscule",
+      "passwordNoSpecial": "Le mot de passe doit contenir au moins un caractère spécial (!@#$%^&* etc.)",
+      "passwordsDoNotMatch": "Les mots de passe ne correspondent pas",
+      "mustAcceptTerms": "Vous devez accepter les Conditions d'utilisation",
+      "mustAcceptPrivacy": "Vous devez accepter la Politique de confidentialité",
+      "invalidVerificationLink": "Lien de vérification invalide. Veuillez en demander un nouveau.",
+      "accountCreationFailed": "Échec de la création du compte",
+      "accountCreationFailedRetry": "Échec de la création du compte. Veuillez réessayer."
     },
     "verification": {
-      "title": "Définissez Votre Mot de Passe",
-      "subtitle": "Créez un mot de passe sécurisé pour votre compte Felicloud",
+      "title": "Finalisez Votre Compte",
+      "subtitle": "Vous y êtes presque ! Créez votre mot de passe et acceptez nos conditions.",
       "passwordLabel": "Mot de passe",
-      "passwordPlaceholder": "Entrez un mot de passe fort",
-      "requirements": "Exigences du mot de passe",
+      "passwordPlaceholder": "••••••••••",
+      "confirmPasswordLabel": "Confirmez le mot de passe",
+      "confirmPasswordPlaceholder": "••••••••••",
+      "requirements": "Doit contenir : 10+ caractères, majuscule, minuscule et caractère spécial (!@#$%^&* etc.)",
       "requirement10Chars": "Au moins 10 caractères",
       "requirementLowercase": "Une lettre minuscule",
       "requirementUppercase": "Une lettre majuscule",
       "requirementSpecial": "Un caractère spécial (!@#$%^&*)",
-      "createAccountButton": "Créer Mon Compte"
+      "createAccountButton": "Créer un Compte Gratuit",
+      "creatingAccount": "Création du compte...",
+      "invalidLinkTitle": "Lien Invalide",
+      "invalidLinkMessage": "Ce lien de vérification est invalide ou manquant.",
+      "requestNewLink": "Demander un nouvel e-mail de vérification",
+      "accountCreatedTitle": "Compte Créé !",
+      "accountCreatedEmoji": "🎉",
+      "accountCreatedMessage": "Votre compte a été créé avec succès, {{name}} !",
+      "accountDetailsTitle": "Détails de Votre Compte",
+      "emailLabel": "E-mail :",
+      "storageLabel": "Stockage :",
+      "statusLabel": "Statut :",
+      "statusActive": "Actif ✓",
+      "storageAmount": "10 Go",
+      "accessCloud": "Accéder à Votre Cloud →",
+      "welcomeEmailSent": "Un e-mail de bienvenue a été envoyé à {{email}}",
+      "returnHome": "← Retour à l'accueil",
+      "gdprNote": "🔒 Vos données sont protégées par le RGPD. En savoir plus dans notre",
+      "gdprPolicyLink": "Politique RGPD"
     }
   },
   "checkout": {
@@ -241,27 +267,41 @@
     "whatNext": "Et maintenant ?",
     "steps": {
       "step1": {
-        "title": "Vérifiez votre e-mail",
-        "description": "Nous avons envoyé vos identifiants de compte et un message de bienvenue à {{email}}. Veuillez vérifier votre boîte de réception (et les spams !)."
+        "title": "Confirmation du paiement :",
+        "description": "Votre paiement a été reçu et est en cours de traitement par Stripe."
       },
       "step2": {
-        "title": "Connectez-vous à Felicloud",
-        "description": "Visitez {{cloudUrl}} et connectez-vous avec vos identifiants.",
-        "action": "Aller sur Felicloud"
+        "title": "Configuration du compte :",
+        "description": "Votre compte Felicloud est en cours de création/mise à niveau automatiquement. Cela prend généralement moins de 2 minutes."
       },
       "step3": {
-        "title": "Téléchargez nos applications",
-        "description": "Installez nos applications bureau et mobile pour synchroniser vos fichiers automatiquement.",
-        "action": "Télécharger les Applications"
+        "title": "E-mail de bienvenue :",
+        "description": "Vous recevrez un e-mail avec vos identifiants de connexion et les instructions pour accéder à votre stockage cloud."
+      },
+      "step4": {
+        "title": "Commencez à utiliser Felicloud :",
+        "description": "Connectez-vous et commencez à téléverser vos fichiers, photos et documents !"
       }
     },
+    "transactionId": "ID de transaction :",
+    "receiptSent": "Un reçu a été envoyé à votre adresse e-mail.",
     "support": {
-      "title": "Besoin d'aide ?",
-      "description": "Notre équipe support est là pour vous aider à démarrer. Contactez-nous à tout moment.",
-      "action": "Contacter le Support"
+      "title": "Vous n'avez pas reçu votre e-mail ?",
+      "description": "Vérifiez votre dossier spam ou contactez le support si vous ne recevez pas vos identifiants dans les 10 minutes."
     },
-    "sessionId": "ID de Session",
-    "backToHome": "Retour à l'Accueil"
+    "buttons": {
+      "accessCloud": "Accéder à Votre Cloud",
+      "returnHome": "Retour à l'Accueil"
+    },
+    "footer": {
+      "needHelp": "Besoin d'aide ? Contactez notre",
+      "supportTeam": "équipe support"
+    },
+    "badges": {
+      "securePayment": "Paiement Sécurisé",
+      "euHosted": "Hébergé en UE",
+      "gdprCompliant": "Conforme RGPD"
+    }
   },
   "languages": {
     "en": "English",
@@ -274,5 +314,321 @@
   "meta": {
     "defaultTitle": "Felicloud - Stockage Cloud Européen Sécurisé",
     "defaultDescription": "Formules de stockage cloud à vie avec conformité RGPD. 10 Go gratuits pour toujours. Serveurs 100% hébergés en UE."
+  },
+  "upgrade": {
+    "pageTitle": "Mettez à Niveau Votre Compte",
+    "pageSubtitle": "Obtenez plus d'espace de stockage et débloquez des fonctionnalités premium. Choisissez la formule qui correspond à vos besoins.",
+    "currentPlan": "Formule Actuelle",
+    "upgradeNow": "Mettre à Niveau Maintenant",
+    "oneTimePayment": "PAIEMENT UNIQUE",
+    "benefits": {
+      "moreStorage": {
+        "title": "Plus de Stockage",
+        "description": "Jusqu'à 2 To ou plus"
+      },
+      "unlimitedSpeed": {
+        "title": "Vitesse Illimitée",
+        "description": "Aucune limitation"
+      },
+      "prioritySupport": {
+        "title": "Support Prioritaire",
+        "description": "Temps de réponse rapide"
+      },
+      "bestValue": {
+        "title": "Meilleur Rapport Qualité-Prix",
+        "description": "Formules à vie disponibles"
+      }
+    },
+    "guarantee": {
+      "title": "Garantie Satisfait ou Remboursé 30 Jours",
+      "description": "Pas satisfait ? Obtenez un remboursement complet, sans questions."
+    },
+    "faq": {
+      "q1": "Vais-je perdre mes données en mettant à niveau ?",
+      "a1": "Non ! Vos données restent exactement où elles sont. La mise à niveau augmente simplement votre quota de stockage instantanément.",
+      "q2": "Puis-je rétrograder plus tard ?",
+      "a2": "Oui, mais vous devrez contacter le support. Nous vous aiderons à migrer vers une formule inférieure si nécessaire.",
+      "q3": "Quels modes de paiement acceptez-vous ?",
+      "a3": "Nous acceptons toutes les principales cartes de crédit, PayPal et les virements bancaires SEPA via Stripe."
+    }
+  },
+  "download": {
+    "pageTitle": "Télécharger Felicloud",
+    "pageSubtitle": "Accédez à vos fichiers depuis n'importe quel appareil. Disponible sur toutes les principales plateformes.",
+    "webAccess": {
+      "name": "Accès Web",
+      "description": "Accédez à Felicloud depuis n'importe quel navigateur web sans rien installer",
+      "features": "Aucune installation requise • Fonctionne sur n'importe quel appareil • Accès instantané",
+      "button": "Accéder Maintenant"
+    },
+    "nativeApps": {
+      "title": "Applications Natives",
+      "subtitle": "Téléchargez nos applications pour une meilleure expérience sur votre appareil",
+      "infoBox": {
+        "title": "À propos des Applications",
+        "description": "Les applications que vous téléchargerez s'appellent Nextcloud, la plateforme open-source qui alimente Felicloud. Ces applications sont 100% compatibles avec notre service et fournissent un accès fluide à vos fichiers.",
+        "setupNote": "Première installation ? Lorsque vous ouvrez l'application, on vous demandera une URL de serveur. Pas d'inquiétude, nous avons tout prévu !",
+        "linkText": "Voir le guide de configuration et l'URL du serveur"
+      }
+    },
+    "platforms": {
+      "windows": {
+        "name": "Windows",
+        "description": "Pour Windows 10 et versions ultérieures"
+      },
+      "macos": {
+        "name": "macOS",
+        "description": "Pour macOS 10.15 et versions ultérieures"
+      },
+      "linux": {
+        "name": "Linux (AppImage)",
+        "description": "Pour toutes les distributions Linux"
+      },
+      "android": {
+        "name": "Android",
+        "description": "Disponible sur Google Play"
+      },
+      "ios": {
+        "name": "iOS",
+        "description": "Disponible sur l'App Store"
+      },
+      "webdav": {
+        "name": "WebDAV",
+        "description": "Connectez n'importe quel client WebDAV"
+      }
+    },
+    "buttons": {
+      "download": "Télécharger",
+      "tutorial": "Tutoriel"
+    },
+    "support": {
+      "title": "Besoin d'aide ?",
+      "description": "Visitez notre centre de support pour les guides d'installation et la configuration système requise",
+      "installationGuides": "Guides d'Installation",
+      "systemRequirements": "Configuration Requise"
+    }
+  },
+  "support": {
+    "heroTitle": "Centre de Support",
+    "heroSubtitle": "Obtenez de l'aide avec Felicloud. Parcourez notre FAQ ou contactez notre équipe support.",
+    "faqTitle": "Questions Fréquemment Posées",
+    "faqSubtitle": "Trouvez des réponses aux questions courantes sur Felicloud",
+    "faq": {
+      "q1": "Comment commencer avec Felicloud ?",
+      "a1": "Commencer est facile ! Inscrivez-vous pour un compte gratuit, téléchargez notre application pour votre appareil et commencez à téléverser vos fichiers. Votre compte gratuit de 10 Go sera activé dans les 24 heures après approbation.",
+      "q2": "Quels appareils sont pris en charge ?",
+      "a2": "Felicloud fonctionne sur Windows, macOS, Linux, Android, iOS et tout navigateur web. Vous pouvez également vous connecter via WebDAV pour une compatibilité maximale avec les applications tierces.",
+      "q3": "Mes données sont-elles sécurisées ?",
+      "a3": "Tous vos fichiers sont protégés par un chiffrement de bout en bout. Les données sont stockées sur des serveurs situés exclusivement en Europe, conformément aux réglementations RGPD. Vous seul avez accès à vos clés de chiffrement.",
+      "q4": "Puis-je mettre à niveau ou rétrograder ma formule ?",
+      "a4": "Oui ! Vous pouvez passer d'un compte gratuit à n'importe quelle formule payante, ou passer d'une formule de stockage à une autre à tout moment. Pour les formules à vie, vous ne payez que la différence lors de la mise à niveau.",
+      "q5": "Quels modes de paiement acceptez-vous ?",
+      "a5": "Nous acceptons toutes les principales cartes de crédit (Visa, Mastercard, Amex), PayPal et les virements bancaires SEPA pour les clients européens.",
+      "q6": "Proposez-vous des remboursements ?",
+      "a6": "Oui ! Nous offrons une garantie satisfait ou remboursé de 30 jours sur toutes les formules payantes. Si vous n'êtes pas satisfait, contactez-nous dans les 30 jours suivant votre achat pour un remboursement complet, sans questions."
+    },
+    "contactTitle": "Vous avez encore besoin d'aide ?",
+    "contactSubtitle": "Notre équipe support est là pour vous aider",
+    "contactButton": "Contacter le Support",
+    "helpCenterButton": "Visiter le Centre d'Aide"
+  },
+  "tutorial": {
+    "heroTitle": "Guide de Configuration WebDAV",
+    "heroSubtitle": "Connectez Felicloud à n'importe quelle application compatible WebDAV",
+    "whatIsWebDAVTitle": "Qu'est-ce que WebDAV ?",
+    "whatIsWebDAVDescription": "WebDAV (Web Distributed Authoring and Versioning) est une extension de HTTP qui vous permet de connecter Felicloud à pratiquement n'importe quelle application prenant en charge le stockage de fichiers. Cela signifie que vous pouvez accéder à vos fichiers directement depuis les explorateurs de fichiers, les applications bureautiques, les lecteurs multimédias et de nombreux autres programmes sans utiliser l'application de bureau Felicloud.",
+    "connectionSettingsTitle": "Paramètres de Connexion",
+    "credentialsTitle": "Vos Identifiants WebDAV",
+    "serverURL": "URL du serveur :",
+    "username": "Nom d'utilisateur :",
+    "password": "Mot de passe :",
+    "noteLabel": "Note :",
+    "noteText": "Remplacez USERNAME par votre véritable nom d'utilisateur Felicloud (généralement votre adresse e-mail).",
+    "platformSetupTitle": "Configuration Spécifique à la Plateforme",
+    "platforms": {
+      "windows": {
+        "title": "Windows",
+        "step1": "Ouvrez l'Explorateur de fichiers et cliquez sur \"Ce PC\" dans la barre latérale gauche",
+        "step2": "Cliquez sur l'onglet \"Ordinateur\" dans le ruban, puis \"Connecter un lecteur réseau\"",
+        "step3": "Choisissez une lettre de lecteur (par exemple, Z:)",
+        "step4": "Entrez l'URL WebDAV dans le champ de dossier",
+        "step5": "Cochez \"Se connecter à l'aide d'informations d'identification différentes\" et cliquez sur \"Terminer\"",
+        "step6": "Entrez votre e-mail et mot de passe Felicloud lorsqu'on vous le demande"
+      },
+      "macos": {
+        "title": "macOS",
+        "step1": "Ouvrez le Finder",
+        "step2": "Appuyez sur Commande+K ou Aller → Se connecter au serveur depuis le menu",
+        "step3": "Entrez l'URL WebDAV",
+        "step4": "Cliquez sur \"Se connecter\"",
+        "step5": "Choisissez \"Utilisateur enregistré\" et entrez vos identifiants",
+        "step6": "Votre stockage Felicloud apparaîtra dans le Finder"
+      },
+      "linux": {
+        "title": "Linux (GNOME/Nautilus)",
+        "step1": "Ouvrez Fichiers (Nautilus)",
+        "step2": "Cliquez sur \"+ Autres emplacements\" dans la barre latérale gauche",
+        "step3": "Dans \"Se connecter au serveur\" en bas, entrez l'URL WebDAV commençant par davs://",
+        "step4": "Cliquez sur \"Se connecter\"",
+        "step5": "Entrez vos identifiants Felicloud lorsqu'on vous le demande"
+      },
+      "mobile": {
+        "title": "Mobile (iOS & Android)",
+        "description": "Utilisez une application compatible WebDAV depuis l'App Store ou Google Play :",
+        "iosLabel": "iOS :",
+        "iosApps": "Documents by Readdle, FE File Explorer",
+        "androidLabel": "Android :",
+        "androidApps": "Total Commander, Solid Explorer, FX File Explorer",
+        "instructions": "Ensuite, ajoutez une nouvelle connexion WebDAV en utilisant les paramètres fournis ci-dessus."
+      }
+    },
+    "applicationsTitle": "Applications Populaires",
+    "applications": {
+      "office": {
+        "title": "Microsoft Office",
+        "description": "Ouvrez et enregistrez des documents directement sur Felicloud depuis Word, Excel et PowerPoint en utilisant Fichier → Ouvrir → Ajouter un emplacement → WebDAV"
+      },
+      "libreoffice": {
+        "title": "LibreOffice",
+        "description": "Accédez à Felicloud via Fichier → Ouvrir à distance → Ajouter une connexion WebDAV avec vos identifiants"
+      },
+      "cyberduck": {
+        "title": "Cyberduck / Transmit",
+        "description": "Clients de transfert de fichiers professionnels avec prise en charge complète de WebDAV pour une gestion avancée des fichiers"
+      },
+      "media": {
+        "title": "Lecteurs Multimédias",
+        "description": "Diffusez des médias directement depuis Felicloud en utilisant VLC, Kodi ou d'autres lecteurs avec prise en charge WebDAV"
+      }
+    },
+    "troubleshootingTitle": "Dépannage",
+    "troubleshooting": {
+      "connection": {
+        "title": "Connexion refusée ou délai d'attente",
+        "description": "Assurez-vous d'utiliser HTTPS (pas HTTP) et que votre pare-feu ne bloque pas le port 443. Essayez d'utiliser davs:// au lieu de https:// sur Linux."
+      },
+      "auth": {
+        "title": "Échec de l'authentification",
+        "description": "Vérifiez votre e-mail et mot de passe. Si vous avez activé la 2FA, vous devrez peut-être générer un mot de passe spécifique à l'application depuis les paramètres de votre compte Felicloud."
+      },
+      "performance": {
+        "title": "Performances lentes",
+        "description": "Les performances WebDAV dépendent de votre connexion internet. Pour de meilleures performances, utilisez l'application native Felicloud qui inclut la mise en cache locale et la synchronisation optimisée."
+      }
+    },
+    "supportCTA": {
+      "title": "Vous avez encore besoin d'aide ?",
+      "subtitle": "Notre équipe support est là pour vous aider à vous connecter",
+      "button": "Contacter le Support"
+    }
+  },
+  "about": {
+    "heroTitle": "À Propos de Felicloud",
+    "heroSubtitle": "Stockage cloud européen fondé sur la confidentialité, la sécurité et la transparence",
+    "storyTitle": "Notre Histoire",
+    "storyParagraph1": "Felicloud a été fondé avec une mission simple : fournir un stockage cloud sécurisé et privé qui respecte vos droits et libertés.",
+    "storyParagraph2": "Nous croyons que vos données vous appartiennent, et à vous seul. C'est pourquoi nous avons construit Felicloud sur les principes de la protection de la vie privée par conception, la transparence et les valeurs européennes.",
+    "storyParagraph3": "Contrairement aux grandes entreprises technologiques qui profitent de vos données, nous avons un modèle commercial simple : vous payez pour le stockage, et nous fournissons le meilleur service possible. Pas de publicités, pas de pistage, pas d'agenda caché.",
+    "organizationTitle": "Membre d'un Groupe de Confiance",
+    "organizationTagline": "Felicloud est un projet",
+    "organizationProject": "projet",
+    "organizationMember": "Membre du",
+    "organizationDescription": "FELIDATA se consacre à fournir des solutions de données européennes axées sur la confidentialité. En tant que partie du Groupe BTJT, nous bénéficions d'années d'expertise en gestion de données, sécurité et conformité européenne, garantissant que Felicloud répond aux plus hauts standards de qualité et de fiabilité.",
+    "valuesTitle": "Nos Valeurs",
+    "privacyFirstTitle": "Vie Privée d'Abord",
+    "privacyFirstDescription": "Vos données sont chiffrées de bout en bout. Nous ne pouvons pas voir vos fichiers, et nous ne le pourrons jamais. Conforme RGPD par conception.",
+    "europeanTitle": "100% Européen",
+    "europeanDescription": "Tous nos serveurs sont situés en Europe, soumis aux lois strictes de protection des données européennes. Pas de Cloud Act américain, pas de surveillance étrangère.",
+    "openSourceTitle": "Open Source",
+    "openSourceDescription": "Construit sur Nextcloud, une plateforme open-source. Transparent, auditable et piloté par la communauté. Pas de boîtes noires.",
+    "fairPricingTitle": "Tarification Équitable",
+    "fairPricingDescription": "Formules à vie sans frais récurrents. Vous possédez votre stockage pour toujours. Pas d'augmentation de prix, pas de pièges d'abonnement.",
+    "technologyTitle": "Technologie",
+    "technologyParagraph1": "Felicloud est propulsé par Nextcloud, la plateforme cloud auto-hébergée la plus populaire au monde. Avec plus de 400 000 déploiements dans le monde, Nextcloud est approuvé par les gouvernements, les universités et les entreprises.",
+    "technologyParagraph2": "Notre infrastructure est hébergée dans des centres de données européens avec certification ISO 27001, alimentation et refroidissement redondants, et surveillance 24h/24 et 7j/7.",
+    "technologyParagraph3": "Nous utilisons un chiffrement standard de l'industrie (AES-256) et des protocoles sécurisés (TLS 1.3) pour protéger vos données en transit et au repos.",
+    "ctaTitle": "Rejoignez le Mouvement",
+    "ctaSubtitle": "Reprenez le contrôle de vos données. Commencez avec 10 Go gratuits.",
+    "ctaButton": "Commencer"
+  },
+  "help": {
+    "heroTitle": "Centre d'Aide",
+    "heroSubtitle": "Tout ce que vous devez savoir sur l'utilisation de Felicloud",
+    "searchPlaceholder": "Rechercher des articles d'aide...",
+    "searchButton": "Rechercher",
+    "gettingStartedTitle": "Démarrage",
+    "gettingStartedTopic1": "Créer votre compte",
+    "gettingStartedTopic2": "Installer les applications Felicloud",
+    "gettingStartedTopic3": "Téléverser vos premiers fichiers",
+    "gettingStartedTopic4": "Se connecter via WebDAV",
+    "accountBillingTitle": "Compte & Facturation",
+    "accountBillingTopic1": "Gérer votre abonnement",
+    "accountBillingTopic2": "Mettre à niveau votre formule",
+    "accountBillingTopic3": "Modes de paiement",
+    "accountBillingTopic4": "Politique de remboursement",
+    "securityPrivacyTitle": "Sécurité & Confidentialité",
+    "securityPrivacyTopic1": "Comment fonctionne le chiffrement",
+    "securityPrivacyTopic2": "Authentification à deux facteurs",
+    "securityPrivacyTopic3": "Conformité RGPD",
+    "securityPrivacyTopic4": "Localisation des données",
+    "fileManagementTitle": "Gestion des Fichiers",
+    "fileManagementTopic1": "Organiser les fichiers",
+    "fileManagementTopic2": "Partager des fichiers et dossiers",
+    "fileManagementTopic3": "Historique des versions",
+    "fileManagementTopic4": "Récupération des fichiers supprimés",
+    "appsSyncTitle": "Applications & Synchronisation",
+    "appsSyncTopic1": "Configuration de l'application de bureau",
+    "appsSyncTopic2": "Fonctionnalités de l'application mobile",
+    "appsSyncTopic3": "Synchronisation sélective",
+    "appsSyncTopic4": "Résolution des problèmes de synchronisation",
+    "advancedFeaturesTitle": "Fonctionnalités Avancées",
+    "advancedFeaturesTopic1": "Accès API",
+    "advancedFeaturesTopic2": "Intégrations tierces",
+    "advancedFeaturesTopic3": "Domaines personnalisés",
+    "advancedFeaturesTopic4": "Automatisation",
+    "popularArticlesTitle": "Articles Populaires",
+    "popularArticle1": "Comment configurer l'authentification à deux facteurs",
+    "popularArticle2": "Comprendre votre quota de stockage et les limites de trafic",
+    "popularArticle3": "Partager des fichiers et dossiers avec d'autres",
+    "popularArticle4": "Installer le client de synchronisation de bureau",
+    "popularArticle5": "Connecter Felicloud via WebDAV",
+    "popularArticle6": "Récupérer des fichiers supprimés",
+    "contactSupportTitle": "Vous ne trouvez pas ce que vous cherchez ?",
+    "contactSupportSubtitle": "Notre équipe support est prête à vous aider avec toutes vos questions",
+    "contactSupportButton": "Contacter le Support"
+  },
+  "blog": {
+    "heroTitle": "Blog Felicloud",
+    "heroSubtitle": "Conseils, mises à jour et informations sur le stockage cloud, la confidentialité et comment tirer le meilleur parti de Felicloud",
+    "categoryAll": "Tout",
+    "categoryGettingStarted": "Démarrage",
+    "categoryPrivacy": "Confidentialité",
+    "categoryFeatures": "Fonctionnalités",
+    "categoryUpdates": "Mises à jour",
+    "categoryTips": "Conseils & Astuces",
+    "post1Title": "Débuter avec Felicloud : Un Guide Complet",
+    "post1Excerpt": "Apprenez à configurer votre compte Felicloud et à commencer à synchroniser vos fichiers sur tous vos appareils en quelques minutes.",
+    "post1Date": "17 novembre 2024",
+    "post1Author": "Équipe Felicloud",
+    "post1Category": "Démarrage",
+    "post1ReadTime": "5 min de lecture",
+    "post2Title": "Pourquoi l'Hébergement Cloud Européen Compte pour Votre Confidentialité",
+    "post2Excerpt": "Découvrez les avantages du stockage cloud conforme au RGPD et pourquoi l'hébergement dans l'UE protège vos données.",
+    "post2Date": "15 novembre 2024",
+    "post2Author": "Équipe Felicloud",
+    "post2Category": "Confidentialité",
+    "post2ReadTime": "7 min de lecture",
+    "post3Title": "Top 5 des Fonctionnalités que Vous Ne Saviez Pas que Felicloud Avait",
+    "post3Excerpt": "Explorez les fonctionnalités avancées qui font de Felicloud plus qu'un simple stockage cloud - des calendriers aux documents collaboratifs.",
+    "post3Date": "12 novembre 2024",
+    "post3Author": "Équipe Felicloud",
+    "post3Category": "Fonctionnalités",
+    "post3ReadTime": "6 min de lecture",
+    "readMore": "Lire la suite",
+    "comingSoon": "Plus d'articles bientôt ! Restez à l'écoute pour des tutoriels, des guides de confidentialité et des mises à jour de produits.",
+    "newsletterTitle": "Abonnez-vous à notre newsletter",
+    "newsletterSubtitle": "Recevez les derniers articles de blog, mises à jour de produits et conseils de stockage cloud directement dans votre boîte de réception.",
+    "newsletterPlaceholder": "Entrez votre e-mail",
+    "newsletterButton": "S'abonner"
   }
 }
