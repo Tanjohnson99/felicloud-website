@@ -1,65 +1,80 @@
+'use client';
+
+import { useTranslation } from '@/lib/hooks/useTranslation';
+
 export default function HelpCenterPage() {
+  const { t } = useTranslation('pt');
+
   const categories = [
     {
-      title: 'Getting Started',
+      title: t('help.gettingStartedTitle'),
       icon: '🚀',
       topics: [
-        'Creating your account',
-        'Installing Felicloud apps',
-        'Uploading your first files',
-        'Connecting via WebDAV',
+        t('help.gettingStartedTopic1'),
+        t('help.gettingStartedTopic2'),
+        t('help.gettingStartedTopic3'),
+        t('help.gettingStartedTopic4'),
       ],
     },
     {
-      title: 'Account & Billing',
+      title: t('help.accountBillingTitle'),
       icon: '💳',
       topics: [
-        'Managing your subscription',
-        'Upgrading your plan',
-        'Payment methods',
-        'Refund policy',
+        t('help.accountBillingTopic1'),
+        t('help.accountBillingTopic2'),
+        t('help.accountBillingTopic3'),
+        t('help.accountBillingTopic4'),
       ],
     },
     {
-      title: 'Security & Privacy',
+      title: t('help.securityPrivacyTitle'),
       icon: '🔒',
       topics: [
-        'How encryption works',
-        'Two-factor authentication',
-        'GDPR compliance',
-        'Data location',
+        t('help.securityPrivacyTopic1'),
+        t('help.securityPrivacyTopic2'),
+        t('help.securityPrivacyTopic3'),
+        t('help.securityPrivacyTopic4'),
       ],
     },
     {
-      title: 'File Management',
+      title: t('help.fileManagementTitle'),
       icon: '📁',
       topics: [
-        'Organizing files',
-        'Sharing files and folders',
-        'Version history',
-        'Deleted files recovery',
+        t('help.fileManagementTopic1'),
+        t('help.fileManagementTopic2'),
+        t('help.fileManagementTopic3'),
+        t('help.fileManagementTopic4'),
       ],
     },
     {
-      title: 'Apps & Sync',
+      title: t('help.appsSyncTitle'),
       icon: '📱',
       topics: [
-        'Desktop app setup',
-        'Mobile app features',
-        'Selective sync',
-        'Troubleshooting sync issues',
+        t('help.appsSyncTopic1'),
+        t('help.appsSyncTopic2'),
+        t('help.appsSyncTopic3'),
+        t('help.appsSyncTopic4'),
       ],
     },
     {
-      title: 'Advanced Features',
+      title: t('help.advancedFeaturesTitle'),
       icon: '⚙️',
       topics: [
-        'API access',
-        'Third-party integrations',
-        'Custom domains',
-        'Automation',
+        t('help.advancedFeaturesTopic1'),
+        t('help.advancedFeaturesTopic2'),
+        t('help.advancedFeaturesTopic3'),
+        t('help.advancedFeaturesTopic4'),
       ],
     },
+  ];
+
+  const popularArticles = [
+    t('help.popularArticle1'),
+    t('help.popularArticle2'),
+    t('help.popularArticle3'),
+    t('help.popularArticle4'),
+    t('help.popularArticle5'),
+    t('help.popularArticle6'),
   ];
 
   return (
@@ -69,10 +84,10 @@ export default function HelpCenterPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Help Center
+              {t('help.heroTitle')}
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Everything you need to know about using Felicloud
+              {t('help.heroSubtitle')}
             </p>
           </div>
 
@@ -81,11 +96,11 @@ export default function HelpCenterPage() {
             <div className="relative">
               <input
                 type="text"
-                placeholder="Search for help articles..."
+                placeholder={t('help.searchPlaceholder')}
                 className="w-full rounded-lg border border-gray-300 px-6 py-4 text-gray-900 placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
               />
               <button className="absolute right-2 top-2 rounded-lg bg-primary px-6 py-2 text-white hover:bg-primary-dark transition-colors">
-                Search
+                {t('help.searchButton')}
               </button>
             </div>
           </div>
@@ -135,20 +150,13 @@ export default function HelpCenterPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Popular Articles
+              {t('help.popularArticlesTitle')}
             </h2>
           </div>
 
           <div className="mx-auto mt-16 max-w-3xl">
             <div className="space-y-4">
-              {[
-                'How to set up two-factor authentication',
-                'Understanding your storage quota and traffic limits',
-                'Sharing files and folders with others',
-                'Installing the desktop sync client',
-                'Connecting Felicloud via WebDAV',
-                'Recovering deleted files',
-              ].map((article, index) => (
+              {popularArticles.map((article, index) => (
                 <a
                   key={index}
                   href="#"
@@ -179,17 +187,17 @@ export default function HelpCenterPage() {
           <div className="rounded-3xl bg-primary px-6 py-16 sm:px-16">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                Can't find what you're looking for?
+                {t('help.contactSupportTitle')}
               </h2>
               <p className="mt-6 text-lg leading-8 text-blue-100">
-                Our support team is ready to help you with any questions
+                {t('help.contactSupportSubtitle')}
               </p>
               <div className="mt-10">
                 <a
                   href="/pt/support"
                   className="rounded-lg bg-white px-8 py-3 font-semibold text-primary hover:bg-gray-100 transition-colors shadow-lg inline-block"
                 >
-                  Contact Support
+                  {t('help.contactSupportButton')}
                 </a>
               </div>
             </div>

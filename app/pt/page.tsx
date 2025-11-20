@@ -7,11 +7,11 @@ import { CTA } from '@/components/sections/cta';
 export default function HomePage() {
   return (
     <>
-      <Hero lang="pt" />
-      <Features lang="pt" />
-      <SocialProof lang="pt" />
-      <Comparison lang="pt" />
-      <CTA lang="pt" />
+      <Hero lang="en" />
+      <Features lang="en" />
+      <SocialProof lang="en" />
+      <Comparison lang="en" />
+      <CTA lang="en" />
     </>
   );
 }

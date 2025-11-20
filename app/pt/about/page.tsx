@@ -1,4 +1,10 @@
+'use client';
+
+import { useTranslation } from '@/lib/hooks/useTranslation';
+
 export default function AboutPage() {
+  const { t } = useTranslation('pt');
+
   return (
     <div className="bg-white">
       {/* Hero */}
@@ -6,10 +12,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              About Felicloud
+              {t('about.heroTitle')}
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              European cloud storage built on privacy, security, and transparency
+              {t('about.heroSubtitle')}
             </p>
           </div>
         </div>
@@ -20,17 +26,17 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Our Story
+              {t('about.storyTitle')}
             </h2>
             <div className="mt-6 space-y-6 text-lg text-gray-600">
               <p>
-                Felicloud was founded with a simple mission: provide secure, private cloud storage that respects your rights and freedoms.
+                {t('about.storyParagraph1')}
               </p>
               <p>
-                We believe that your data belongs to you, and only you. That's why we built Felicloud on the principles of privacy-by-design, transparency, and European values.
+                {t('about.storyParagraph2')}
               </p>
               <p>
-                Unlike big tech companies that profit from your data, we have a simple business model: you pay for storage, and we provide the best service possible. No ads, no tracking, no hidden agendas.
+                {t('about.storyParagraph3')}
               </p>
             </div>
           </div>
@@ -42,20 +48,18 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
-              Part of a Trusted Group
+              {t('about.organizationTitle')}
             </h2>
             <div className="rounded-2xl bg-white p-8 shadow-xl border-2 border-primary/20">
               <p className="text-xl text-gray-900 font-semibold mb-4">
-                Felicloud is a <span className="text-primary">FELIDATA</span> project
+                {t('about.organizationTagline')} <span className="text-primary">FELIDATA</span> {t('about.organizationProject')}
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                Member of the <span className="font-bold text-gray-900">BTJT Group</span>
+                {t('about.organizationMember')} <span className="font-bold text-gray-900">BTJT Group</span>
               </p>
               <div className="border-t border-gray-200 pt-6 mt-6">
                 <p className="text-gray-600">
-                  FELIDATA is dedicated to providing privacy-focused, European data solutions. As part of BTJT Group,
-                  we benefit from years of expertise in data management, security, and European compliance, ensuring
-                  that Felicloud meets the highest standards of quality and reliability.
+                  {t('about.organizationDescription')}
                 </p>
               </div>
             </div>
@@ -68,33 +72,33 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Our Values
+              {t('about.valuesTitle')}
             </h2>
           </div>
           <div className="mx-auto mt-16 max-w-5xl">
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
               <div className="rounded-2xl bg-white p-8 shadow-lg">
-                <h3 className="text-xl font-bold text-gray-900">Privacy First</h3>
+                <h3 className="text-xl font-bold text-gray-900">{t('about.privacyFirstTitle')}</h3>
                 <p className="mt-4 text-gray-600">
-                  Your data is encrypted end-to-end. We can't see your files, and we never will. GDPR compliant by design.
+                  {t('about.privacyFirstDescription')}
                 </p>
               </div>
               <div className="rounded-2xl bg-white p-8 shadow-lg">
-                <h3 className="text-xl font-bold text-gray-900">100% European</h3>
+                <h3 className="text-xl font-bold text-gray-900">{t('about.europeanTitle')}</h3>
                 <p className="mt-4 text-gray-600">
-                  All our servers are located in Europe, subject to strict European data protection laws. No US cloud act, no foreign surveillance.
+                  {t('about.europeanDescription')}
                 </p>
               </div>
               <div className="rounded-2xl bg-white p-8 shadow-lg">
-                <h3 className="text-xl font-bold text-gray-900">Open Source</h3>
+                <h3 className="text-xl font-bold text-gray-900">{t('about.openSourceTitle')}</h3>
                 <p className="mt-4 text-gray-600">
-                  Built on Nextcloud, an open-source platform. Transparent, auditable, and community-driven. No black boxes.
+                  {t('about.openSourceDescription')}
                 </p>
               </div>
               <div className="rounded-2xl bg-white p-8 shadow-lg">
-                <h3 className="text-xl font-bold text-gray-900">Fair Pricing</h3>
+                <h3 className="text-xl font-bold text-gray-900">{t('about.fairPricingTitle')}</h3>
                 <p className="mt-4 text-gray-600">
-                  Lifetime plans with no recurring fees. You own your storage forever. No price hikes, no subscription traps.
+                  {t('about.fairPricingDescription')}
                 </p>
               </div>
             </div>
@@ -107,17 +111,17 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Technology
+              {t('about.technologyTitle')}
             </h2>
             <div className="mt-6 space-y-6 text-lg text-gray-600">
               <p>
-                Felicloud is powered by Nextcloud, the world's most popular self-hosted cloud platform. With over 400,000 deployments worldwide, Nextcloud is trusted by governments, universities, and enterprises.
+                {t('about.technologyParagraph1')}
               </p>
               <p>
-                Our infrastructure is hosted in European data centers with ISO 27001 certification, redundant power and cooling, and 24/7 monitoring.
+                {t('about.technologyParagraph2')}
               </p>
               <p>
-                We use industry-standard encryption (AES-256) and secure protocols (TLS 1.3) to protect your data in transit and at rest.
+                {t('about.technologyParagraph3')}
               </p>
             </div>
           </div>
@@ -129,15 +133,15 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Join the Movement
+              {t('about.ctaTitle')}
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">
-              Take back control of your data. Start with 10 GB free.
+              {t('about.ctaSubtitle')}
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a href="/pt/signup/">
                 <button className="rounded-lg bg-white px-8 py-4 text-lg font-semibold text-primary shadow-xl hover:bg-gray-100 transition-colors">
-                  Get Started
+                  {t('about.ctaButton')}
                 </button>
               </a>
             </div>

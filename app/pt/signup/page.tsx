@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useTranslation } from '@/lib/hooks/useTranslation';
 
 export default function SignupPage() {
+  const { t } = useTranslation('pt');
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -35,16 +37,16 @@ export default function SignupPage() {
 
     // Full name validation
     if (!formData.fullName) {
-      newErrors.fullName = 'Full name is required';
+      newErrors.fullName = t('signup.errors.fullNameRequired');
     } else if (formData.fullName.trim().length < 2) {
-      newErrors.fullName = 'Full name must be at least 2 characters';
+      newErrors.fullName = t('signup.errors.fullNameTooShort');
     }
 
     // Email validation
     if (!formData.email) {
-      newErrors.email = 'Email is required';
+      newErrors.email = t('signup.errors.emailRequired');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Invalid email address';
+      newErrors.email = t('signup.errors.invalidEmail');
     }
 
     setErrors(newErrors);
@@ -110,12 +112,12 @@ export default function SignupPage() {
               </p>
 
               <div className="mt-8 rounded-lg bg-blue-50 p-6">
-                <h2 className="text-lg font-semibold text-blue-900 mb-2">Next Steps:</h2>
+                <h2 className="text-lg font-semibold text-blue-900 mb-2">{t('signup.steps.title')}</h2>
                 <ol className="text-left text-sm text-blue-800 space-y-2 list-decimal list-inside">
-                  <li>Check your inbox (and spam folder!)</li>
-                  <li>Click the verification link</li>
-                  <li>Set your password and accept the terms</li>
-                  <li>Access your free 10 GB cloud!</li>
+                  <li>{t('signup.steps.step1')}</li>
+                  <li>{t('signup.steps.step2')}</li>
+                  <li>{t('signup.steps.step3')}</li>
+                  <li>{t('signup.steps.step4')}</li>
                 </ol>
               </div>
 
@@ -130,7 +132,7 @@ export default function SignupPage() {
                   href="/"
                   className="text-sm font-semibold text-primary hover:text-primary/80"
                 >
-                  ← Back to homepage
+                  ← {t('common.backTo').replace('{{page}}', 'homepage')}
                 </Link>
               </div>
             </div>
@@ -147,10 +149,10 @@ export default function SignupPage() {
         <div className="mx-auto max-w-2xl px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Create your free account
+              {t('signup.pageTitle')}
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Get 10 GB of secure cloud storage for free. No credit card required.
+              {t('signup.pageSubtitle')}
             </p>
             <p className="mt-2 text-sm leading-6 text-gray-500 italic">
               Once your free account is created, you can upgrade to a larger plan anytime.
@@ -167,7 +169,7 @@ export default function SignupPage() {
             {/* Full Name */}
             <div>
               <label htmlFor="fullName" className="block text-sm font-semibold text-gray-900 mb-2">
-                Full Name <span className="text-red-500">*</span>
+                {t('signup.form.fullName')} <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -177,7 +179,7 @@ export default function SignupPage() {
                 value={formData.fullName}
                 onChange={handleChange}
                 className={`block w-full rounded-lg border-2 ${errors.fullName ? 'border-red-500' : 'border-gray-300'} px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-0 transition-colors`}
-                placeholder="John Doe"
+                placeholder={t('signup.form.fullNamePlaceholder')}
               />
               {errors.fullName && <p className="mt-2 text-sm text-red-600">{errors.fullName}</p>}
             </div>
@@ -185,7 +187,7 @@ export default function SignupPage() {
             {/* Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
-                Email Address <span className="text-red-500">*</span>
+                {t('signup.form.email')} <span className="text-red-500">*</span>
               </label>
               <input
                 type="email"
@@ -195,7 +197,7 @@ export default function SignupPage() {
                 value={formData.email}
                 onChange={handleChange}
                 className={`block w-full rounded-lg border-2 ${errors.email ? 'border-red-500' : 'border-gray-300'} px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-0 transition-colors`}
-                placeholder="john@example.com"
+                placeholder={t('signup.form.emailPlaceholder')}
               />
               {errors.email && <p className="mt-2 text-sm text-red-600">{errors.email}</p>}
               <p className="mt-2 text-sm text-gray-500">
@@ -210,19 +212,19 @@ export default function SignupPage() {
                 disabled={isSubmitting}
                 className="w-full rounded-lg bg-primary px-4 py-3 text-base font-semibold text-white shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                {isSubmitting ? 'Sending...' : 'Continue'}
+                {isSubmitting ? t('common.processing') : t('common.continue')}
               </button>
             </div>
 
             {/* Login Link */}
             <div className="text-center">
               <p className="text-sm text-gray-600">
-                Already have an account?{' '}
+                {t('signup.alreadyHaveAccount')}{' '}
                 <a
                   href={process.env.NEXT_PUBLIC_NEXTCLOUD_URL || 'https://cloud.felicloud.com'}
                   className="font-semibold text-primary hover:text-primary/80"
                 >
-                  Sign in
+                  {t('common.signIn')}
                 </a>
               </p>
             </div>
@@ -233,11 +235,11 @@ export default function SignupPage() {
             <p className="text-xs text-gray-600 text-center">
               By continuing, you agree to our{' '}
               <Link href="/pt/legal/terms" className="font-semibold text-primary hover:underline">
-                Terms of Service
+                {t('footer.termsOfService')}
               </Link>{' '}
               and{' '}
               <Link href="/pt/legal/privacy" className="font-semibold text-primary hover:underline">
-                Privacy Policy
+                {t('footer.privacyPolicy')}
               </Link>
             </p>
           </div>

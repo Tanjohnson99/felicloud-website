@@ -2,8 +2,11 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useTranslation } from '@/lib/hooks/useTranslation';
 
 export default function ContactPage() {
+  const { t } = useTranslation('en');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -38,10 +41,10 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Contact Us
+              {t('contact.pageTitle')}
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Have a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+              {t('contact.pageDescription')}
             </p>
           </div>
         </div>
@@ -53,11 +56,11 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             {/* Contact Form */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('contact.form.title')}</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-gray-900">
-                    Name
+                    {t('contact.form.name')}
                   </label>
                   <input
                     type="text"
@@ -72,7 +75,7 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-gray-900">
-                    Email
+                    {t('contact.form.email')}
                   </label>
                   <input
                     type="email"
@@ -87,7 +90,7 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-semibold text-gray-900">
-                    Subject
+                    {t('contact.form.subject')}
                   </label>
                   <select
                     name="subject"
@@ -97,18 +100,18 @@ export default function ContactPage() {
                     onChange={handleChange}
                     className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-primary focus:ring-2 focus:ring-primary/20"
                   >
-                    <option value="">Select a subject</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="support">Technical Support</option>
-                    <option value="billing">Billing Question</option>
-                    <option value="sales">Sales & Partnership</option>
-                    <option value="other">Other</option>
+                    <option value="">{t('contact.form.subjectPlaceholder')}</option>
+                    <option value="general">{t('contact.form.subjectOptions.general')}</option>
+                    <option value="support">{t('contact.form.subjectOptions.support')}</option>
+                    <option value="billing">{t('contact.form.subjectOptions.billing')}</option>
+                    <option value="sales">{t('contact.form.subjectOptions.sales')}</option>
+                    <option value="other">{t('contact.form.subjectOptions.other')}</option>
                   </select>
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-gray-900">
-                    Message
+                    {t('contact.form.message')}
                   </label>
                   <textarea
                     name="message"
@@ -124,7 +127,7 @@ export default function ContactPage() {
                 {status === 'sent' && (
                   <div className="rounded-lg bg-green-50 border border-green-200 p-4">
                     <p className="text-sm text-green-800">
-                      ✓ Thank you! Your message has been sent successfully. We'll get back to you soon.
+                      {t('contact.form.successMessage')}
                     </p>
                   </div>
                 )}
@@ -132,7 +135,7 @@ export default function ContactPage() {
                 {status === 'error' && (
                   <div className="rounded-lg bg-red-50 border border-red-200 p-4">
                     <p className="text-sm text-red-800">
-                      ✗ There was an error sending your message. Please try again.
+                      {t('contact.form.errorMessage')}
                     </p>
                   </div>
                 )}
@@ -142,19 +145,19 @@ export default function ContactPage() {
                   disabled={status === 'sending'}
                   className="w-full rounded-lg bg-primary px-6 py-3 text-base font-semibold text-white hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-lg"
                 >
-                  {status === 'sending' ? 'Sending...' : 'Send Message'}
+                  {status === 'sending' ? t('contact.form.sendingButton') : t('contact.form.sendButton')}
                 </button>
               </form>
             </div>
 
             {/* Contact Info */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in touch</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('contact.info.title')}</h2>
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Support</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{t('contact.info.support.title')}</h3>
                   <p className="text-gray-600 mb-2">
-                    For technical support and general questions
+                    {t('contact.info.support.description')}
                   </p>
                   <a href="mailto:support@felicloud.com" className="text-primary hover:text-primary/80 font-semibold">
                     support@felicloud.com
@@ -162,9 +165,9 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Sales</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{t('contact.info.sales.title')}</h3>
                   <p className="text-gray-600 mb-2">
-                    For business inquiries and partnerships
+                    {t('contact.info.sales.description')}
                   </p>
                   <a href="mailto:sales@felicloud.com" className="text-primary hover:text-primary/80 font-semibold">
                     sales@felicloud.com
@@ -172,29 +175,29 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Office Hours</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{t('contact.info.officeHours.title')}</h3>
                   <p className="text-gray-600">
-                    Monday - Friday: 9:00 AM - 6:00 PM (CET)<br />
-                    Saturday - Sunday: Closed
+                    {t('contact.info.officeHours.weekdays')}<br />
+                    {t('contact.info.officeHours.weekends')}
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Quick Links</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{t('contact.info.quickLinks.title')}</h3>
                   <ul className="space-y-2">
                     <li>
                       <Link href="/en/help" className="text-primary hover:text-primary/80">
-                        Help Center
+                        {t('contact.info.quickLinks.helpCenter')}
                       </Link>
                     </li>
                     <li>
                       <Link href="/en/support" className="text-primary hover:text-primary/80">
-                        Support Documentation
+                        {t('contact.info.quickLinks.supportDocs')}
                       </Link>
                     </li>
                     <li>
                       <Link href="/en/legal/privacy" className="text-primary hover:text-primary/80">
-                        Privacy Policy
+                        {t('contact.info.quickLinks.privacy')}
                       </Link>
                     </li>
                   </ul>
@@ -203,7 +206,7 @@ export default function ContactPage() {
 
               {/* Social Media */}
               <div className="mt-12">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Follow Us</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('contact.info.social.title')}</h3>
                 <div className="flex gap-4">
                   <a
                     href="https://facebook.com/felicloud"

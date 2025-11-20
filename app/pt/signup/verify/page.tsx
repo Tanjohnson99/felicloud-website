@@ -3,8 +3,10 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { useTranslation } from '@/lib/hooks/useTranslation';
 
 function VerifyContent() {
+  const { t } = useTranslation('pt');
   const searchParams = useSearchParams();
   const token = searchParams.get('token');
 
@@ -46,30 +48,30 @@ function VerifyContent() {
 
     // Password validation (Nextcloud requirements)
     if (!formData.password) {
-      newErrors.password = 'Password is required';
+      newErrors.password = t('signup.errors.passwordRequired');
     } else if (formData.password.length < 10) {
-      newErrors.password = 'Password must be at least 10 characters';
+      newErrors.password = t('signup.errors.passwordTooShort');
     } else if (!/[a-z]/.test(formData.password)) {
-      newErrors.password = 'Password must contain at least one lowercase letter';
+      newErrors.password = t('signup.errors.passwordNoLowercase');
     } else if (!/[A-Z]/.test(formData.password)) {
-      newErrors.password = 'Password must contain at least one uppercase letter';
+      newErrors.password = t('signup.errors.passwordNoUppercase');
     } else if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(formData.password)) {
-      newErrors.password = 'Password must contain at least one special character (!@#$%^&* etc.)';
+      newErrors.password = t('signup.errors.passwordNoSpecial');
     }
 
     // Confirm password validation
     if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = 'Passwords do not match';
+      newErrors.confirmPassword = t('signup.errors.passwordsDoNotMatch');
     }
 
     // Terms validation
     if (!formData.acceptTerms) {
-      newErrors.acceptTerms = 'You must accept the Terms of Service';
+      newErrors.acceptTerms = t('signup.errors.mustAcceptTerms');
     }
 
     // Privacy validation
     if (!formData.acceptPrivacy) {
-      newErrors.acceptPrivacy = 'You must accept the Privacy Policy';
+      newErrors.acceptPrivacy = t('signup.errors.mustAcceptPrivacy');
     }
 
     setErrors(newErrors);
@@ -85,7 +87,7 @@ function VerifyContent() {
     }
 
     if (!token) {
-      setSubmitError('Invalid verification link. Please request a new one.');
+      setSubmitError(t('signup.errors.invalidVerificationLink'));
       return;
     }
 
@@ -108,7 +110,7 @@ function VerifyContent() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to create account');
+        throw new Error(data.error || t('signup.errors.accountCreationFailed'));
       }
 
       setUserData({
@@ -119,7 +121,7 @@ function VerifyContent() {
       setSubmitSuccess(true);
     } catch (error) {
       console.error('Signup verification error:', error);
-      setSubmitError(error instanceof Error ? error.message : 'Failed to create account. Please try again.');
+      setSubmitError(error instanceof Error ? error.message : t('signup.errors.accountCreationFailedRetry'));
     } finally {
       setIsSubmitting(false);
     }
@@ -139,11 +141,11 @@ function VerifyContent() {
               </div>
 
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                Invalid Link
+                {t('signup.verification.invalidLinkTitle')}
               </h1>
 
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                This verification link is invalid or missing.
+                {t('signup.verification.invalidLinkMessage')}
               </p>
 
               <div className="mt-10">
@@ -151,7 +153,7 @@ function VerifyContent() {
                   href="/pt/signup"
                   className="rounded-lg bg-primary px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-primary/90"
                 >
-                  Request a new verification email
+                  {t('signup.verification.requestNewLink')}
                 </Link>
               </div>
             </div>
@@ -175,19 +177,21 @@ function VerifyContent() {
               </div>
 
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                🎉 Account Created!
+                {t('signup.verification.accountCreatedEmoji')} {t('signup.verification.accountCreatedTitle')}
               </h1>
 
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Your account has been successfully created, <strong>{userData.fullName}</strong>!
+                {t('signup.verification.accountCreatedMessage').replace('{{name}}', userData.fullName)}
               </p>
 
               <div className="mt-8 rounded-lg bg-green-50 p-6">
-                <h2 className="text-lg font-semibold text-green-900 mb-2">Your Account Details</h2>
+                <h2 className="text-lg font-semibold text-green-900 mb-2">
+                  {t('signup.verification.accountDetailsTitle')}
+                </h2>
                 <div className="text-left text-sm text-green-800 space-y-2">
-                  <p><strong>Email:</strong> {userData.email}</p>
-                  <p><strong>Storage:</strong> 10 GB</p>
-                  <p><strong>Status:</strong> Active ✓</p>
+                  <p><strong>{t('signup.verification.emailLabel')}</strong> {userData.email}</p>
+                  <p><strong>{t('signup.verification.storageLabel')}</strong> {t('signup.verification.storageAmount')}</p>
+                  <p><strong>{t('signup.verification.statusLabel')}</strong> {t('signup.verification.statusActive')}</p>
                 </div>
               </div>
 
@@ -196,13 +200,13 @@ function VerifyContent() {
                   href={userData.nextcloudUrl || 'https://cloud.felicloud.com'}
                   className="inline-block rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-primary/90"
                 >
-                  Access Your Cloud →
+                  {t('signup.verification.accessCloud')}
                 </a>
               </div>
 
               <div className="mt-6">
                 <p className="text-sm text-gray-600">
-                  A welcome email has been sent to <strong>{userData.email}</strong>
+                  {t('signup.verification.welcomeEmailSent').replace('{{email}}', userData.email)}
                 </p>
               </div>
 
@@ -211,7 +215,7 @@ function VerifyContent() {
                   href="/"
                   className="text-sm font-semibold text-primary hover:text-primary/80"
                 >
-                  ← Return to homepage
+                  {t('signup.verification.returnHome')}
                 </Link>
               </div>
             </div>
@@ -228,10 +232,10 @@ function VerifyContent() {
         <div className="mx-auto max-w-2xl px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Finalize Your Account
+              {t('signup.verification.title')}
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Almost there! Create your password and accept our terms.
+              {t('signup.verification.subtitle')}
             </p>
           </div>
 
@@ -245,7 +249,7 @@ function VerifyContent() {
             {/* Password */}
             <div>
               <label htmlFor="password" className="block text-sm font-semibold text-gray-900 mb-2">
-                Password <span className="text-red-500">*</span>
+                {t('signup.verification.passwordLabel')} <span className="text-red-500">*</span>
               </label>
               <input
                 type="password"
@@ -255,18 +259,18 @@ function VerifyContent() {
                 value={formData.password}
                 onChange={handleChange}
                 className={`block w-full rounded-lg border-2 ${errors.password ? 'border-red-500' : 'border-gray-300'} px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-0 transition-colors`}
-                placeholder="••••••••••"
+                placeholder={t('signup.verification.passwordPlaceholder')}
               />
               {errors.password && <p className="mt-2 text-sm text-red-600">{errors.password}</p>}
               <p className="mt-2 text-sm text-gray-500">
-                Must contain: 10+ characters, uppercase, lowercase, and special character (!@#$%^&* etc.)
+                {t('signup.verification.requirements')}
               </p>
             </div>
 
             {/* Confirm Password */}
             <div>
               <label htmlFor="confirmPassword" className="block text-sm font-semibold text-gray-900 mb-2">
-                Confirm Password <span className="text-red-500">*</span>
+                {t('signup.verification.confirmPasswordLabel')} <span className="text-red-500">*</span>
               </label>
               <input
                 type="password"
@@ -276,7 +280,7 @@ function VerifyContent() {
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 className={`block w-full rounded-lg border-2 ${errors.confirmPassword ? 'border-red-500' : 'border-gray-300'} px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-0 transition-colors`}
-                placeholder="••••••••••"
+                placeholder={t('signup.verification.confirmPasswordPlaceholder')}
               />
               {errors.confirmPassword && <p className="mt-2 text-sm text-red-600">{errors.confirmPassword}</p>}
             </div>
@@ -296,13 +300,13 @@ function VerifyContent() {
                 </div>
                 <div className="ml-3 text-sm leading-6">
                   <label htmlFor="acceptTerms" className="text-gray-900">
-                    I accept the{' '}
+                    {t('signup.terms.agreeToTerms').replace('I agree to the', 'I accept the')}{' '}
                     <Link
                       href="/pt/legal/terms"
                       target="_blank"
                       className="font-semibold text-primary hover:underline"
                     >
-                      Terms of Service
+                      {t('footer.termsOfService')}
                     </Link>
                     <span className="text-red-500"> *</span>
                   </label>
@@ -323,13 +327,13 @@ function VerifyContent() {
                 </div>
                 <div className="ml-3 text-sm leading-6">
                   <label htmlFor="acceptPrivacy" className="text-gray-900">
-                    I accept the{' '}
+                    {t('signup.terms.agreeToPrivacy').replace('I agree to the', 'I accept the')}{' '}
                     <Link
                       href="/pt/legal/privacy"
                       target="_blank"
                       className="font-semibold text-primary hover:underline"
                     >
-                      Privacy Policy
+                      {t('footer.privacyPolicy')}
                     </Link>
                     <span className="text-red-500"> *</span>
                   </label>
@@ -345,7 +349,7 @@ function VerifyContent() {
                 disabled={isSubmitting}
                 className="w-full rounded-lg bg-primary px-4 py-3 text-base font-semibold text-white shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                {isSubmitting ? 'Creating Account...' : 'Create Free Account'}
+                {isSubmitting ? t('signup.verification.creatingAccount') : t('signup.verification.createAccountButton')}
               </button>
             </div>
           </form>
@@ -353,9 +357,9 @@ function VerifyContent() {
           {/* GDPR Note */}
           <div className="mt-8 rounded-lg bg-gray-50 p-4">
             <p className="text-xs text-gray-600 text-center">
-              🔒 Your data is protected under GDPR. Learn more in our{' '}
+              {t('signup.verification.gdprNote')}{' '}
               <Link href="/pt/legal/gdpr" className="font-semibold text-primary hover:underline">
-                GDPR Policy
+                {t('signup.verification.gdprPolicyLink')}
               </Link>
             </p>
           </div>
@@ -366,8 +370,10 @@ function VerifyContent() {
 }
 
 export default function VerifyPage() {
+  const { t } = useTranslation('pt');
+
   return (
-    <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+    <Suspense fallback={<div className="flex items-center justify-center min-h-screen">{t('common.loading')}</div>}>
       <VerifyContent />
     </Suspense>
   );

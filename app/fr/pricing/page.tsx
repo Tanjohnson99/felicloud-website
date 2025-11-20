@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useTranslation } from '@/lib/hooks/useTranslation';
 
 export default function PricingPage() {
+  const { t } = useTranslation('fr');
   const [selectedPlan, setSelectedPlan] = useState<'monthly' | 'annual' | 'lifetime'>('lifetime');
 
   return (
@@ -13,10 +15,10 @@ export default function PricingPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Simple, Transparent Pricing
+              {t('pricing.pageTitle')}
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Choose the plan that fits your needs. All plans include unlimited transfer speed and EU hosting.
+              {t('pricing.pageSubtitle')}
             </p>
           </div>
         </div>
@@ -36,36 +38,36 @@ export default function PricingPage() {
               </div>
 
               <h2 className="text-center text-4xl font-bold text-white mb-4">
-                Start Free, Stay Free Forever
+                {t('pricing.startFree')}
               </h2>
 
               <p className="text-center text-xl text-blue-50 max-w-3xl mx-auto mb-8">
-                Get 10 GB of secure, encrypted cloud storage - completely free, no credit card required
+                {t('pricing.freePlanDescription')}
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-10">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl font-bold text-white mb-2">10 GB</div>
-                  <div className="text-blue-100 text-sm">Lifetime Storage</div>
+                  <div className="text-3xl font-bold text-white mb-2">{t('pricing.features.storage').replace('{{amount}}', '10 GB')}</div>
+                  <div className="text-blue-100 text-sm">{t('common.lifetime')}</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl font-bold text-white mb-2">50 GB</div>
-                  <div className="text-blue-100 text-sm">Monthly Traffic</div>
+                  <div className="text-3xl font-bold text-white mb-2">{t('pricing.features.traffic').replace('{{amount}}', '50 GB')}</div>
+                  <div className="text-blue-100 text-sm">/ {t('common.month')}</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl font-bold text-white mb-2">Unlimited</div>
-                  <div className="text-blue-100 text-sm">Transfer Speed</div>
+                  <div className="text-3xl font-bold text-white mb-2">{t('pricing.features.unlimitedDevices')}</div>
+                  <div className="text-blue-100 text-sm">Speed</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                   <div className="text-3xl font-bold text-white mb-2">100% EU</div>
-                  <div className="text-blue-100 text-sm">Hosted Servers</div>
+                  <div className="text-blue-100 text-sm">{t('pricing.euHosted')}</div>
                 </div>
               </div>
 
               <div className="text-center">
                 <Link href="/fr/signup">
                   <button className="inline-flex items-center justify-center rounded-xl bg-white px-10 py-5 text-xl font-bold text-primary hover:bg-gray-50 transition-all shadow-2xl hover:scale-105 transform">
-                    Create Free Account
+                    {t('pricing.createFreeAccount')}
                     <svg className="ml-3 h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
@@ -73,7 +75,7 @@ export default function PricingPage() {
                 </Link>
 
                 <p className="mt-6 text-sm text-blue-100">
-                  ⚠️ Free accounts are subject to approval and may take up to 24 hours to activate
+                  {t('pricing.freeApprovalNote')}
                 </p>
               </div>
             </div>
@@ -85,8 +87,8 @@ export default function PricingPage() {
       <section className="py-12 overflow-x-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Need More Space?</h2>
-            <p className="text-base sm:text-lg text-gray-600 mb-8">Choose from our flexible plans</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">{t('pricing.needMoreSpace')}</h2>
+            <p className="text-base sm:text-lg text-gray-600 mb-8">{t('pricing.chooseBilling')}</p>
 
             <div className="inline-flex rounded-xl border-2 border-gray-200 p-1.5 sm:p-2 bg-gray-50 max-w-full">
               <button
@@ -97,7 +99,7 @@ export default function PricingPage() {
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
               >
-                Monthly
+                {t('pricing.monthly')}
               </button>
               <button
                 onClick={() => setSelectedPlan('annual')}
@@ -107,8 +109,8 @@ export default function PricingPage() {
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
               >
-                <span>Annual</span>
-                <span className={`ml-1 sm:ml-2 text-xs sm:text-sm font-bold ${selectedPlan === 'annual' ? 'text-green-200' : 'text-green-600'}`}>Save 16%</span>
+                <span>{t('pricing.annual')}</span>
+                <span className={`ml-1 sm:ml-2 text-xs sm:text-sm font-bold ${selectedPlan === 'annual' ? 'text-green-200' : 'text-green-600'}`}>{t('pricing.annualSave').replace('{{percent}}', '16')}</span>
               </button>
               <button
                 onClick={() => setSelectedPlan('lifetime')}
@@ -118,8 +120,8 @@ export default function PricingPage() {
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
               >
-                <span>Lifetime</span>
-                <span className={`ml-1 sm:ml-2 text-xs sm:text-sm font-bold ${selectedPlan === 'lifetime' ? 'text-green-200' : 'text-green-600'}`}>Best Deal!</span>
+                <span>{t('pricing.lifetimeOption')}</span>
+                <span className={`ml-1 sm:ml-2 text-xs sm:text-sm font-bold ${selectedPlan === 'lifetime' ? 'text-green-200' : 'text-green-600'}`}>{t('pricing.bestDeal')}</span>
               </button>
             </div>
           </div>
@@ -135,37 +137,37 @@ export default function PricingPage() {
               {/* 500 GB Monthly */}
               <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
                 <h3 className="text-2xl font-bold text-gray-900">500 GB</h3>
-                <p className="mt-2 text-sm font-semibold text-primary uppercase">Monthly Plan</p>
+                <p className="mt-2 text-sm font-semibold text-primary uppercase">{t('pricing.monthly')}</p>
                 <div className="mt-6">
                   <span className="text-5xl font-bold text-gray-900">€4.99</span>
-                  <span className="text-gray-600 ml-2">/ month</span>
+                  <span className="text-gray-600 ml-2">/ {t('common.month')}</span>
                 </div>
-                <p className="mt-2 text-sm text-gray-500">€59.88 / year</p>
+                <p className="mt-2 text-sm text-gray-500">€59.88 / {t('common.year')}</p>
 
                 <ul className="mt-8 space-y-4">
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">500 GB Storage</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.storage').replace('{{amount}}', '500 GB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">500 GB Traffic / month</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.traffic').replace('{{amount}}', '500 GB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.unlimitedDevices')}</span>
                   </li>
                 </ul>
 
                 <Link href="/fr/checkout?plan=500GB_Monthly&billing=monthly&storage=500GB" className="mt-8 block">
                   <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
-                    Get Started
+                    {t('pricing.getStartedButton')}
                   </button>
                 </Link>
               </div>
@@ -173,40 +175,40 @@ export default function PricingPage() {
               {/* 1 TB Monthly */}
               <div className="relative rounded-2xl border-2 border-primary bg-white p-8 shadow-xl ring-2 ring-primary">
                 <div className="absolute -top-5 left-0 right-0 mx-auto w-fit rounded-full bg-primary px-4 py-1 text-sm font-semibold text-white">
-                  Most Popular
+                  {t('pricing.mostPopular')}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">1 TB</h3>
-                <p className="mt-2 text-sm font-semibold text-primary uppercase">Monthly Plan</p>
+                <p className="mt-2 text-sm font-semibold text-primary uppercase">{t('pricing.monthly')}</p>
                 <div className="mt-6">
                   <span className="text-5xl font-bold text-gray-900">€7.99</span>
-                  <span className="text-gray-600 ml-2">/ month</span>
+                  <span className="text-gray-600 ml-2">/ {t('common.month')}</span>
                 </div>
-                <p className="mt-2 text-sm text-gray-500">€95.88 / year</p>
+                <p className="mt-2 text-sm text-gray-500">€95.88 / {t('common.year')}</p>
 
                 <ul className="mt-8 space-y-4">
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">1 TB Storage</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.storage').replace('{{amount}}', '1 TB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">1 TB Traffic / month</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.traffic').replace('{{amount}}', '1 TB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.unlimitedDevices')}</span>
                   </li>
                 </ul>
 
                 <Link href="/fr/checkout?plan=1TB_Monthly&billing=monthly&storage=1TB" className="mt-8 block">
                   <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold cursor-pointer">
-                    Get Started
+                    {t('pricing.getStartedButton')}
                   </button>
                 </Link>
               </div>
@@ -214,37 +216,37 @@ export default function PricingPage() {
               {/* 2 TB Monthly */}
               <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
                 <h3 className="text-2xl font-bold text-gray-900">2 TB</h3>
-                <p className="mt-2 text-sm font-semibold text-primary uppercase">Monthly Plan</p>
+                <p className="mt-2 text-sm font-semibold text-primary uppercase">{t('pricing.monthly')}</p>
                 <div className="mt-6">
                   <span className="text-5xl font-bold text-gray-900">€9.99</span>
-                  <span className="text-gray-600 ml-2">/ month</span>
+                  <span className="text-gray-600 ml-2">/ {t('common.month')}</span>
                 </div>
-                <p className="mt-2 text-sm text-gray-500">€119.88 / year</p>
+                <p className="mt-2 text-sm text-gray-500">€119.88 / {t('common.year')}</p>
 
                 <ul className="mt-8 space-y-4">
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">2 TB Storage</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.storage').replace('{{amount}}', '2 TB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">2 TB Traffic / month</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.traffic').replace('{{amount}}', '2 TB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.unlimitedDevices')}</span>
                   </li>
                 </ul>
 
                 <Link href="/fr/checkout?plan=2TB_Monthly&billing=monthly&storage=2TB" className="mt-8 block">
                   <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
-                    Get Started
+                    {t('pricing.getStartedButton')}
                   </button>
                 </Link>
               </div>
@@ -257,42 +259,42 @@ export default function PricingPage() {
               {/* 500 GB Annual */}
               <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="absolute -top-4 right-4 rounded-full bg-green-500 px-3 py-1 text-xs font-bold text-white">
-                  Save 16%
+                  {t('pricing.annualSave').replace('{{percent}}', '16')}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">500 GB</h3>
-                <p className="mt-2 text-sm font-semibold text-primary uppercase">Annual Plan</p>
+                <p className="mt-2 text-sm font-semibold text-primary uppercase">{t('pricing.annual')}</p>
                 <div className="mt-6">
                   <div className="flex items-baseline gap-3">
                     <span className="text-5xl font-bold text-gray-900">€49.99</span>
                     <span className="text-xl text-gray-400 line-through">€59.88</span>
                   </div>
                 </div>
-                <p className="mt-2 text-sm text-green-600 font-semibold">Yearly Payment</p>
+                <p className="mt-2 text-sm text-green-600 font-semibold">{t('pricing.annual')}</p>
 
                 <ul className="mt-8 space-y-4">
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">500 GB Storage</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.storage').replace('{{amount}}', '500 GB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">500 GB Traffic / month</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.traffic').replace('{{amount}}', '500 GB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.unlimitedDevices')}</span>
                   </li>
                 </ul>
 
                 <Link href="/fr/checkout?plan=500GB_Annual&billing=annual&storage=500GB" className="mt-8 block">
                   <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
-                    Get Started
+                    {t('pricing.getStartedButton')}
                   </button>
                 </Link>
               </div>
@@ -300,45 +302,45 @@ export default function PricingPage() {
               {/* 1 TB Annual */}
               <div className="relative rounded-2xl border-2 border-primary bg-white p-8 shadow-xl ring-2 ring-primary">
                 <div className="absolute -top-5 left-0 right-0 mx-auto w-fit rounded-full bg-primary px-4 py-1 text-sm font-semibold text-white">
-                  Most Popular
+                  {t('pricing.mostPopular')}
                 </div>
                 <div className="absolute -top-4 right-4 rounded-full bg-green-500 px-3 py-1 text-xs font-bold text-white">
-                  Save 16%
+                  {t('pricing.annualSave').replace('{{percent}}', '16')}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">1 TB</h3>
-                <p className="mt-2 text-sm font-semibold text-primary uppercase">Annual Plan</p>
+                <p className="mt-2 text-sm font-semibold text-primary uppercase">{t('pricing.annual')}</p>
                 <div className="mt-6">
                   <div className="flex items-baseline gap-3">
                     <span className="text-5xl font-bold text-gray-900">€79.99</span>
                     <span className="text-xl text-gray-400 line-through">€95.88</span>
                   </div>
                 </div>
-                <p className="mt-2 text-sm text-green-600 font-semibold">Yearly Payment</p>
+                <p className="mt-2 text-sm text-green-600 font-semibold">{t('pricing.annual')}</p>
 
                 <ul className="mt-8 space-y-4">
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">1 TB Storage</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.storage').replace('{{amount}}', '1 TB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">1 TB Traffic / month</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.traffic').replace('{{amount}}', '1 TB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.unlimitedDevices')}</span>
                   </li>
                 </ul>
 
                 <Link href="/fr/checkout?plan=1TB_Annual&billing=annual&storage=1TB" className="mt-8 block">
                   <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold cursor-pointer">
-                    Get Started
+                    {t('pricing.getStartedButton')}
                   </button>
                 </Link>
               </div>
@@ -346,42 +348,42 @@ export default function PricingPage() {
               {/* 2 TB Annual */}
               <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="absolute -top-4 right-4 rounded-full bg-green-500 px-3 py-1 text-xs font-bold text-white">
-                  Save 16%
+                  {t('pricing.annualSave').replace('{{percent}}', '16')}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">2 TB</h3>
-                <p className="mt-2 text-sm font-semibold text-primary uppercase">Annual Plan</p>
+                <p className="mt-2 text-sm font-semibold text-primary uppercase">{t('pricing.annual')}</p>
                 <div className="mt-6">
                   <div className="flex items-baseline gap-3">
                     <span className="text-5xl font-bold text-gray-900">€99.99</span>
                     <span className="text-xl text-gray-400 line-through">€119.88</span>
                   </div>
                 </div>
-                <p className="mt-2 text-sm text-green-600 font-semibold">Yearly Payment</p>
+                <p className="mt-2 text-sm text-green-600 font-semibold">{t('pricing.annual')}</p>
 
                 <ul className="mt-8 space-y-4">
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">2 TB Storage</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.storage').replace('{{amount}}', '2 TB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">2 TB Traffic / month</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.traffic').replace('{{amount}}', '2 TB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.unlimitedDevices')}</span>
                   </li>
                 </ul>
 
                 <Link href="/fr/checkout?plan=2TB_Annual&billing=annual&storage=2TB" className="mt-8 block">
                   <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
-                    Get Started
+                    {t('pricing.getStartedButton')}
                   </button>
                 </Link>
               </div>
@@ -394,10 +396,10 @@ export default function PricingPage() {
               {/* 500 GB Lifetime */}
               <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="absolute -top-4 right-4 rounded-full bg-green-500 px-3 py-1 text-xs font-bold text-white">
-                  Save 74%
+                  {t('pricing.annualSave').replace('{{percent}}', '74')}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">500 GB</h3>
-                <p className="mt-2 text-sm font-semibold text-primary uppercase">Lifetime</p>
+                <p className="mt-2 text-sm font-semibold text-primary uppercase">{t('pricing.lifetimeOption')}</p>
                 <div className="mt-6">
                   <div className="flex items-baseline gap-3">
                     <span className="text-5xl font-bold text-gray-900">€79</span>
@@ -411,25 +413,25 @@ export default function PricingPage() {
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">500 GB Storage</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.storage').replace('{{amount}}', '500 GB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">500 GB Traffic / month</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.traffic').replace('{{amount}}', '500 GB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.unlimitedDevices')}</span>
                   </li>
                 </ul>
 
                 <Link href="/fr/checkout?plan=500GB_Lifetime&billing=lifetime&storage=500GB" className="mt-8 block">
                   <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
-                    Get Started
+                    {t('pricing.getStartedButton')}
                   </button>
                 </Link>
               </div>
@@ -437,13 +439,13 @@ export default function PricingPage() {
               {/* 1 TB Lifetime */}
               <div className="relative rounded-2xl border-2 border-primary bg-white p-8 shadow-xl ring-2 ring-primary">
                 <div className="absolute -top-5 left-0 right-0 mx-auto w-fit rounded-full bg-primary px-4 py-1 text-sm font-semibold text-white">
-                  Most Popular
+                  {t('pricing.mostPopular')}
                 </div>
                 <div className="absolute -top-4 right-4 rounded-full bg-green-500 px-3 py-1 text-xs font-bold text-white">
-                  Save 58%
+                  {t('pricing.annualSave').replace('{{percent}}', '58')}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">1 TB</h3>
-                <p className="mt-2 text-sm font-semibold text-primary uppercase">Lifetime</p>
+                <p className="mt-2 text-sm font-semibold text-primary uppercase">{t('pricing.lifetimeOption')}</p>
                 <div className="mt-6">
                   <div className="flex items-baseline gap-3">
                     <span className="text-5xl font-bold text-gray-900">€199</span>
@@ -457,25 +459,25 @@ export default function PricingPage() {
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">1 TB Storage</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.storage').replace('{{amount}}', '1 TB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">1 TB Traffic / month</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.traffic').replace('{{amount}}', '1 TB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.unlimitedDevices')}</span>
                   </li>
                 </ul>
 
                 <Link href="/fr/checkout?plan=1TB_Lifetime&billing=lifetime&storage=1TB" className="mt-8 block">
                   <button className="w-full rounded-lg bg-primary px-6 py-3 text-center text-white hover:bg-primary-dark transition-colors shadow-lg font-semibold cursor-pointer">
-                    Get Started
+                    {t('pricing.getStartedButton')}
                   </button>
                 </Link>
               </div>
@@ -483,10 +485,10 @@ export default function PricingPage() {
               {/* 2 TB Lifetime */}
               <div className="relative rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="absolute -top-4 right-4 rounded-full bg-green-500 px-3 py-1 text-xs font-bold text-white">
-                  Save 38%
+                  {t('pricing.annualSave').replace('{{percent}}', '38')}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">2 TB</h3>
-                <p className="mt-2 text-sm font-semibold text-primary uppercase">Lifetime</p>
+                <p className="mt-2 text-sm font-semibold text-primary uppercase">{t('pricing.lifetimeOption')}</p>
                 <div className="mt-6">
                   <div className="flex items-baseline gap-3">
                     <span className="text-5xl font-bold text-gray-900">€369</span>
@@ -500,25 +502,25 @@ export default function PricingPage() {
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">2 TB Storage</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.storage').replace('{{amount}}', '2 TB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">2 TB Traffic / month</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.traffic').replace('{{amount}}', '2 TB')}</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="ml-3 text-gray-600">Unlimited Speed</span>
+                    <span className="ml-3 text-gray-600">{t('pricing.features.unlimitedDevices')}</span>
                   </li>
                 </ul>
 
                 <Link href="/fr/checkout?plan=2TB_Lifetime&billing=lifetime&storage=2TB" className="mt-8 block">
                   <button className="w-full rounded-lg bg-gray-900 px-6 py-3 text-center text-white hover:bg-gray-800 transition-colors font-semibold cursor-pointer">
-                    Get Started
+                    {t('pricing.getStartedButton')}
                   </button>
                 </Link>
               </div>
@@ -532,33 +534,33 @@ export default function PricingPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Frequently Asked Questions
+              {t('pricing.faq.title')}
             </h2>
           </div>
           <div className="mx-auto mt-16 max-w-3xl">
             <div className="space-y-8">
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">What does "lifetime" mean?</h3>
+                <h3 className="text-lg font-semibold text-gray-900">{t('pricing.faq.q1')}</h3>
                 <p className="mt-2 text-gray-600">
-                  Lifetime means you pay once and can use your storage forever. No recurring fees, no expiration date.
+                  {t('pricing.faq.a1')}
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">Can I upgrade my plan later?</h3>
+                <h3 className="text-lg font-semibold text-gray-900">{t('pricing.faq.q2')}</h3>
                 <p className="mt-2 text-gray-600">
-                  Yes! You can upgrade from Free to a paid plan, or between different storage tiers at any time.
+                  {t('pricing.faq.a2')}
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">What payment methods do you accept?</h3>
+                <h3 className="text-lg font-semibold text-gray-900">{t('pricing.faq.q3')}</h3>
                 <p className="mt-2 text-gray-600">
-                  We accept all major credit cards, PayPal, and SEPA bank transfers for European customers.
+                  {t('pricing.faq.a3')}
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">Is there a money-back guarantee?</h3>
+                <h3 className="text-lg font-semibold text-gray-900">{t('pricing.faq.q4')}</h3>
                 <p className="mt-2 text-gray-600">
-                  Yes! We offer a 30-day money-back guarantee on all paid plans. No questions asked.
+                  {t('pricing.faq.a4')}
                 </p>
               </div>
             </div>

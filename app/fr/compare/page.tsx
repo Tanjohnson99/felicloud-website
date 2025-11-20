@@ -1,4 +1,10 @@
+'use client';
+
+import { useTranslation } from '@/lib/hooks/useTranslation';
+
 export default function ComparePage() {
+  const { t } = useTranslation('fr');
+
   return (
     <div className="bg-white">
       {/* Hero */}
@@ -6,10 +12,10 @@ export default function ComparePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              How Felicloud Compares
+              {t('comparison.heroTitle')}
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              See how we stack up against the competition in privacy, pricing, and features
+              {t('comparison.heroSubtitle')}
             </p>
           </div>
         </div>
@@ -23,22 +29,22 @@ export default function ComparePage() {
               <thead>
                 <tr className="border-b-2 border-gray-200">
                   <th className="py-4 px-6 text-left font-bold text-gray-900 bg-white sticky left-0 z-10">
-                    Feature
+                    {t('comparison.tableHeaderFeature')}
                   </th>
                   <th className="py-4 px-6 text-center font-bold text-primary bg-primary/5">
-                    Felicloud
+                    {t('comparison.felicloud')}
                   </th>
                   <th className="py-4 px-6 text-center font-semibold text-gray-700">
-                    Google Drive
+                    {t('comparison.googleDrive')}
                   </th>
                   <th className="py-4 px-6 text-center font-semibold text-gray-700">
-                    Dropbox
+                    {t('comparison.dropbox')}
                   </th>
                   <th className="py-4 px-6 text-center font-semibold text-gray-700">
-                    pCloud
+                    {t('comparison.pCloud')}
                   </th>
                   <th className="py-4 px-6 text-center font-semibold text-gray-700">
-                    MEGA
+                    {t('comparison.mega')}
                   </th>
                 </tr>
               </thead>
@@ -46,7 +52,7 @@ export default function ComparePage() {
                 {/* Free Storage */}
                 <tr className="border-b border-gray-100 hover:bg-gray-50">
                   <td className="py-4 px-6 font-medium text-gray-900 bg-white sticky left-0">
-                    Free Storage
+                    {t('comparison.freeStorage')}
                   </td>
                   <td className="py-4 px-6 text-center font-semibold text-primary bg-primary/5">
                     10 GB
@@ -68,7 +74,7 @@ export default function ComparePage() {
                 {/* Lifetime Plans */}
                 <tr className="border-b border-gray-100 hover:bg-gray-50">
                   <td className="py-4 px-6 font-medium text-gray-900 bg-white sticky left-0">
-                    Lifetime Plans
+                    {t('comparison.lifetimePlans')}
                   </td>
                   <td className="py-4 px-6 text-center bg-primary/5">
                     <svg className="h-6 w-6 text-green-600 mx-auto" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -100,7 +106,7 @@ export default function ComparePage() {
                 {/* End-to-End Encryption */}
                 <tr className="border-b border-gray-100 hover:bg-gray-50">
                   <td className="py-4 px-6 font-medium text-gray-900 bg-white sticky left-0">
-                    End-to-End Encryption
+                    {t('comparison.endToEndEncryption')}
                   </td>
                   <td className="py-4 px-6 text-center bg-primary/5">
                     <svg className="h-6 w-6 text-green-600 mx-auto" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -108,13 +114,13 @@ export default function ComparePage() {
                     </svg>
                   </td>
                   <td className="py-4 px-6 text-center">
-                    <span className="text-xs text-gray-500">Optional</span>
+                    <span className="text-xs text-gray-500">{t('comparison.optional')}</span>
                   </td>
                   <td className="py-4 px-6 text-center">
-                    <span className="text-xs text-gray-500">Paid only</span>
+                    <span className="text-xs text-gray-500">{t('comparison.paidOnly')}</span>
                   </td>
                   <td className="py-4 px-6 text-center">
-                    <span className="text-xs text-gray-500">Paid add-on</span>
+                    <span className="text-xs text-gray-500">{t('comparison.paidAddOn')}</span>
                   </td>
                   <td className="py-4 px-6 text-center">
                     <svg className="h-6 w-6 text-green-600 mx-auto" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -126,29 +132,29 @@ export default function ComparePage() {
                 {/* Server Location */}
                 <tr className="border-b border-gray-100 hover:bg-gray-50">
                   <td className="py-4 px-6 font-medium text-gray-900 bg-white sticky left-0">
-                    Server Location
+                    {t('comparison.serverLocation')}
                   </td>
                   <td className="py-4 px-6 text-center font-semibold text-primary bg-primary/5">
-                    🇪🇺 EU Only
+                    {t('comparison.serverEUOnly')}
                   </td>
                   <td className="py-4 px-6 text-center text-gray-600">
-                    🇺🇸 USA
+                    {t('comparison.serverUSA')}
                   </td>
                   <td className="py-4 px-6 text-center text-gray-600">
-                    🇺🇸 USA
+                    {t('comparison.serverUSA')}
                   </td>
                   <td className="py-4 px-6 text-center text-gray-600">
-                    🇪🇺 EU/🇺🇸 USA
+                    {t('comparison.serverEUUSA')}
                   </td>
                   <td className="py-4 px-6 text-center text-gray-600">
-                    🇳🇿 NZ
+                    {t('comparison.serverNZ')}
                   </td>
                 </tr>
 
                 {/* GDPR Compliant */}
                 <tr className="border-b border-gray-100 hover:bg-gray-50">
                   <td className="py-4 px-6 font-medium text-gray-900 bg-white sticky left-0">
-                    GDPR Compliant
+                    {t('comparison.gdprCompliant')}
                   </td>
                   <td className="py-4 px-6 text-center bg-primary/5">
                     <svg className="h-6 w-6 text-green-600 mx-auto" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -156,10 +162,10 @@ export default function ComparePage() {
                     </svg>
                   </td>
                   <td className="py-4 px-6 text-center">
-                    <span className="text-xs text-gray-500">Partial</span>
+                    <span className="text-xs text-gray-500">{t('comparison.partial')}</span>
                   </td>
                   <td className="py-4 px-6 text-center">
-                    <span className="text-xs text-gray-500">Partial</span>
+                    <span className="text-xs text-gray-500">{t('comparison.partial')}</span>
                   </td>
                   <td className="py-4 px-6 text-center">
                     <svg className="h-6 w-6 text-green-600 mx-auto" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -176,7 +182,7 @@ export default function ComparePage() {
                 {/* Open Source */}
                 <tr className="border-b border-gray-100 hover:bg-gray-50">
                   <td className="py-4 px-6 font-medium text-gray-900 bg-white sticky left-0">
-                    Open Source
+                    {t('comparison.openSource')}
                   </td>
                   <td className="py-4 px-6 text-center bg-primary/5">
                     <svg className="h-6 w-6 text-green-600 mx-auto" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -208,7 +214,7 @@ export default function ComparePage() {
                 {/* File Versioning */}
                 <tr className="border-b border-gray-100 hover:bg-gray-50">
                   <td className="py-4 px-6 font-medium text-gray-900 bg-white sticky left-0">
-                    File Versioning
+                    {t('comparison.fileVersioning')}
                   </td>
                   <td className="py-4 px-6 text-center bg-primary/5">
                     <svg className="h-6 w-6 text-green-600 mx-auto" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -231,14 +237,14 @@ export default function ComparePage() {
                     </svg>
                   </td>
                   <td className="py-4 px-6 text-center">
-                    <span className="text-xs text-gray-500">Limited</span>
+                    <span className="text-xs text-gray-500">{t('comparison.limited')}</span>
                   </td>
                 </tr>
 
                 {/* Collaboration Tools */}
                 <tr className="border-b border-gray-100 hover:bg-gray-50">
                   <td className="py-4 px-6 font-medium text-gray-900 bg-white sticky left-0">
-                    Collaboration Tools
+                    {t('comparison.collaborationTools')}
                   </td>
                   <td className="py-4 px-6 text-center bg-primary/5">
                     <svg className="h-6 w-6 text-green-600 mx-auto" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -256,17 +262,17 @@ export default function ComparePage() {
                     </svg>
                   </td>
                   <td className="py-4 px-6 text-center">
-                    <span className="text-xs text-gray-500">Limited</span>
+                    <span className="text-xs text-gray-500">{t('comparison.limited')}</span>
                   </td>
                   <td className="py-4 px-6 text-center">
-                    <span className="text-xs text-gray-500">Limited</span>
+                    <span className="text-xs text-gray-500">{t('comparison.limited')}</span>
                   </td>
                 </tr>
 
                 {/* Office Suite */}
                 <tr className="border-b border-gray-100 hover:bg-gray-50">
                   <td className="py-4 px-6 font-medium text-gray-900 bg-white sticky left-0">
-                    Online Office Suite
+                    {t('comparison.onlineOfficeSuite')}
                   </td>
                   <td className="py-4 px-6 text-center bg-primary/5">
                     <svg className="h-6 w-6 text-green-600 mx-auto" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -279,7 +285,7 @@ export default function ComparePage() {
                     </svg>
                   </td>
                   <td className="py-4 px-6 text-center">
-                    <span className="text-xs text-gray-500">Partner</span>
+                    <span className="text-xs text-gray-500">{t('comparison.partner')}</span>
                   </td>
                   <td className="py-4 px-6 text-center">
                     <svg className="h-6 w-6 text-red-600 mx-auto" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -296,7 +302,7 @@ export default function ComparePage() {
                 {/* Calendar & Contacts */}
                 <tr className="border-b border-gray-100 hover:bg-gray-50">
                   <td className="py-4 px-6 font-medium text-gray-900 bg-white sticky left-0">
-                    Calendar & Contacts
+                    {t('comparison.calendarContacts')}
                   </td>
                   <td className="py-4 px-6 text-center bg-primary/5">
                     <svg className="h-6 w-6 text-green-600 mx-auto" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -328,7 +334,7 @@ export default function ComparePage() {
                 {/* Video Calls */}
                 <tr className="border-b border-gray-100 hover:bg-gray-50">
                   <td className="py-4 px-6 font-medium text-gray-900 bg-white sticky left-0">
-                    Video Calls
+                    {t('comparison.videoCalls')}
                   </td>
                   <td className="py-4 px-6 text-center bg-primary/5">
                     <svg className="h-6 w-6 text-green-600 mx-auto" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -360,27 +366,27 @@ export default function ComparePage() {
                 {/* Price for 1TB/Year */}
                 <tr className="border-b-2 border-gray-200 hover:bg-gray-50">
                   <td className="py-4 px-6 font-medium text-gray-900 bg-white sticky left-0">
-                    1 TB Lifetime Price
+                    {t('comparison.lifetimePrice1TB')}
                   </td>
                   <td className="py-4 px-6 text-center font-bold text-primary bg-primary/5">
                     €299<br/>
-                    <span className="text-xs font-normal">one-time</span>
+                    <span className="text-xs font-normal">{t('comparison.oneTime')}</span>
                   </td>
                   <td className="py-4 px-6 text-center text-gray-600">
                     ~€2,000<br/>
-                    <span className="text-xs">over 10 years</span>
+                    <span className="text-xs">{t('comparison.over10Years')}</span>
                   </td>
                   <td className="py-4 px-6 text-center text-gray-600">
                     ~€1,200<br/>
-                    <span className="text-xs">over 10 years</span>
+                    <span className="text-xs">{t('comparison.over10Years')}</span>
                   </td>
                   <td className="py-4 px-6 text-center text-gray-600">
                     €499<br/>
-                    <span className="text-xs">one-time</span>
+                    <span className="text-xs">{t('comparison.oneTime')}</span>
                   </td>
                   <td className="py-4 px-6 text-center text-gray-600">
                     ~€1,000<br/>
-                    <span className="text-xs">over 10 years</span>
+                    <span className="text-xs">{t('comparison.over10Years')}</span>
                   </td>
                 </tr>
               </tbody>
@@ -390,7 +396,7 @@ export default function ComparePage() {
           {/* Note */}
           <div className="mt-8 text-center">
             <p className="text-sm text-gray-500">
-              * Prices and features accurate as of 2024. Subject to change by providers.
+              {t('comparison.priceDisclaimer')}
             </p>
           </div>
         </div>
@@ -401,10 +407,10 @@ export default function ComparePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Why Choose Felicloud?
+              {t('comparison.whyChooseTitle')}
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              We're different because we put your privacy and ownership first
+              {t('comparison.whyChooseSubtitle')}
             </p>
           </div>
 
@@ -416,10 +422,10 @@ export default function ComparePage() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                European Values
+                {t('comparison.europeanValuesTitle')}
               </h3>
               <p className="text-gray-600">
-                100% EU-hosted with strict GDPR compliance. Your data never leaves Europe and is protected by the world's strongest privacy laws.
+                {t('comparison.europeanValuesDescription')}
               </p>
             </div>
 
@@ -430,10 +436,10 @@ export default function ComparePage() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Lifetime Pricing
+                {t('comparison.lifetimePricingTitle')}
               </h3>
               <p className="text-gray-600">
-                Pay once, own forever. No monthly subscriptions, no price hikes, no surprises. Save thousands compared to subscription services.
+                {t('comparison.lifetimePricingDescription')}
               </p>
             </div>
 
@@ -444,10 +450,10 @@ export default function ComparePage() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Open Source
+                {t('comparison.openSourceTitle')}
               </h3>
               <p className="text-gray-600">
-                Built on Nextcloud - fully open source and auditable. No black boxes, no hidden tracking. See exactly what our software does.
+                {t('comparison.openSourceDescription')}
               </p>
             </div>
 
@@ -458,10 +464,10 @@ export default function ComparePage() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                True Encryption
+                {t('comparison.trueEncryptionTitle')}
               </h3>
               <p className="text-gray-600">
-                End-to-end encryption standard for all accounts. Your files are encrypted before they leave your device. We can't see them, period.
+                {t('comparison.trueEncryptionDescription')}
               </p>
             </div>
 
@@ -472,10 +478,10 @@ export default function ComparePage() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Complete Platform
+                {t('comparison.completePlatformTitle')}
               </h3>
               <p className="text-gray-600">
-                Not just storage - get calendar, contacts, tasks, notes, video calls, chat, and more. Everything you need in one place.
+                {t('comparison.completePlatformDescription')}
               </p>
             </div>
 
@@ -486,10 +492,10 @@ export default function ComparePage() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                No Vendor Lock-In
+                {t('comparison.noVendorLockInTitle')}
               </h3>
               <p className="text-gray-600">
-                Your data, your way. Export anytime with standard protocols. WebDAV, CalDAV, CardDAV support means easy migration.
+                {t('comparison.noVendorLockInDescription')}
               </p>
             </div>
           </div>
@@ -501,20 +507,20 @@ export default function ComparePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Ready to Make the Switch?
+              {t('comparison.ctaTitle')}
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">
-              Join thousands who've chosen privacy and control over their data
+              {t('comparison.ctaSubtitle')}
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a href="/fr/signup/">
                 <button className="rounded-lg bg-white px-8 py-4 text-lg font-semibold text-primary shadow-xl hover:bg-gray-100 transition-colors">
-                  Start Free
+                  {t('comparison.startFree')}
                 </button>
               </a>
               <a href="/fr/pricing/">
                 <button className="rounded-lg bg-primary-dark px-8 py-4 text-lg font-semibold text-white shadow-xl hover:bg-primary transition-colors border-2 border-white">
-                  View Pricing
+                  {t('comparison.viewPricing')}
                 </button>
               </a>
             </div>

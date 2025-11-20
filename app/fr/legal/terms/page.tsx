@@ -1,126 +1,132 @@
+'use client';
+
+import { useTranslation } from '@/lib/hooks/useTranslation';
+
 export default function TermsPage() {
+  const { t } = useTranslation('fr');
+
   return (
     <div className="bg-white">
       <section className="py-20 sm:py-32">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            Terms of Service
+            {t('legal.terms.title')}
           </h1>
           <p className="mt-4 text-lg text-gray-600">
-            Last updated: January 2024
+            {t('legal.terms.lastUpdated')}
           </p>
 
           <div className="mt-12 space-y-8 text-gray-600">
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">1. Agreement to Terms</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.terms.section1.title')}</h2>
               <p className="mt-4">
-                By accessing and using Felicloud, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to these terms, please do not use our services.
+                {t('legal.terms.section1.content')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">2. Use License</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.terms.section2.title')}</h2>
               <p className="mt-4">
-                Felicloud grants you a personal, non-transferable, non-exclusive license to use our cloud storage service subject to these terms.
+                {t('legal.terms.section2.content')}
               </p>
               <ul className="mt-4 list-disc list-inside space-y-2">
-                <li>You may upload, store, and share files within your storage quota</li>
-                <li>You must not use the service for illegal activities</li>
-                <li>You must not share copyrighted material without permission</li>
-                <li>You must not attempt to harm our infrastructure or other users</li>
+                <li>{t('legal.terms.section2.items.0')}</li>
+                <li>{t('legal.terms.section2.items.1')}</li>
+                <li>{t('legal.terms.section2.items.2')}</li>
+                <li>{t('legal.terms.section2.items.3')}</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">3. Account Responsibilities</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.terms.section3.title')}</h2>
               <p className="mt-4">
-                You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.
+                {t('legal.terms.section3.content')}
               </p>
               <p className="mt-4">
-                You agree to notify us immediately of any unauthorized use of your account.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-gray-900">4. Lifetime Plans</h2>
-              <p className="mt-4">
-                "Lifetime" means that your paid storage plan will remain active for as long as Felicloud operates as a service, subject to these terms.
-              </p>
-              <p className="mt-4">
-                We reserve the right to modify storage quotas or features with reasonable notice, but will always provide equivalent or better value.
+                {t('legal.terms.section3.notify')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">5. Acceptable Use</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.terms.section4.title')}</h2>
               <p className="mt-4">
-                You agree not to use Felicloud to:
+                {t('legal.terms.section4.content')}
+              </p>
+              <p className="mt-4">
+                {t('legal.terms.section4.modifications')}
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.terms.section5.title')}</h2>
+              <p className="mt-4">
+                {t('legal.terms.section5.content')}
               </p>
               <ul className="mt-4 list-disc list-inside space-y-2">
-                <li>Store or distribute malware, viruses, or harmful code</li>
-                <li>Harass, abuse, or harm others</li>
-                <li>Violate any laws or regulations</li>
-                <li>Infringe on intellectual property rights</li>
-                <li>Send spam or unsolicited communications</li>
+                <li>{t('legal.terms.section5.items.0')}</li>
+                <li>{t('legal.terms.section5.items.1')}</li>
+                <li>{t('legal.terms.section5.items.2')}</li>
+                <li>{t('legal.terms.section5.items.3')}</li>
+                <li>{t('legal.terms.section5.items.4')}</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">6. Data Privacy</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.terms.section6.title')}</h2>
               <p className="mt-4">
-                Your privacy is important to us. Please review our{' '}
+                {t('legal.terms.section6.content')}{' '}
                 <a href="/fr/legal/privacy/" className="text-primary hover:underline">
-                  Privacy Policy
+                  {t('legal.terms.section6.privacyLink')}
                 </a>{' '}
-                to understand how we collect, use, and protect your data.
+                {t('legal.terms.section6.contentEnd')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">7. Service Availability</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.terms.section7.title')}</h2>
               <p className="mt-4">
-                We strive to provide 99.9% uptime but do not guarantee uninterrupted service. We may perform maintenance with advance notice when possible.
+                {t('legal.terms.section7.content')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">8. Termination</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.terms.section8.title')}</h2>
               <p className="mt-4">
-                We may suspend or terminate your account if you violate these terms. You may close your account at any time.
+                {t('legal.terms.section8.content')}
               </p>
               <p className="mt-4">
-                For lifetime plan refunds, please see our 30-day money-back guarantee policy.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-gray-900">9. Limitation of Liability</h2>
-              <p className="mt-4">
-                Felicloud is provided "as is" without warranties of any kind. We are not liable for any data loss, damages, or losses arising from your use of the service.
-              </p>
-              <p className="mt-4">
-                We strongly recommend maintaining local backups of important files.
+                {t('legal.terms.section8.refunds')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">10. Governing Law</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.terms.section9.title')}</h2>
               <p className="mt-4">
-                These terms are governed by the laws of the European Union and the jurisdiction where Felicloud operates.
+                {t('legal.terms.section9.content')}
+              </p>
+              <p className="mt-4">
+                {t('legal.terms.section9.backups')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">11. Changes to Terms</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.terms.section10.title')}</h2>
               <p className="mt-4">
-                We may update these terms from time to time. We will notify you of significant changes via email or service notifications.
+                {t('legal.terms.section10.content')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">12. Contact</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.terms.section11.title')}</h2>
               <p className="mt-4">
-                If you have questions about these terms, please contact us at: legal@felicloud.com
+                {t('legal.terms.section11.content')}
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.terms.section12.title')}</h2>
+              <p className="mt-4">
+                {t('legal.terms.section12.content')}
               </p>
             </section>
           </div>

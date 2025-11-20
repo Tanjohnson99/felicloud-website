@@ -13,7 +13,7 @@ export default function EnLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt">
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -24,9 +24,9 @@ export default function EnLayout({
       </head>
       <body className="font-sans">
         <div className="flex min-h-screen flex-col">
-          <Header lang="pt" />
+          <Header lang="en" />
           <main className="flex-1">{children}</main>
-          <Footer lang="pt" />
+          <Footer lang="en" />
         </div>
       </body>
     </html>

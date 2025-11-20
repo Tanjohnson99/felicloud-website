@@ -3,8 +3,10 @@
 import { useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useTranslation } from '@/lib/hooks/useTranslation';
 
 function CheckoutContent() {
+  const { t } = useTranslation('fr');
   const searchParams = useSearchParams();
   const router = useRouter();
   const [email, setEmail] = useState('');
@@ -25,7 +27,7 @@ function CheckoutContent() {
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setError('Please enter a valid email address');
+      setError(t('checkout.errors.invalidEmail'));
       return;
     }
 
@@ -106,7 +108,7 @@ function CheckoutContent() {
           <svg className="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
           </svg>
-          Back to Pricing
+          {t('checkout.backToPricing')}
         </Link>
 
         {/* Main card */}
@@ -119,10 +121,10 @@ function CheckoutContent() {
               </svg>
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-              Get {planDisplay} Storage
+              {t('checkout.pageTitle').replace('{{planDisplay}}', planDisplay)}
             </h1>
             <p className="text-lg text-gray-600">
-              Enter your email to continue with your {billing} plan
+              {t('checkout.pageSubtitle')}
             </p>
           </div>
 
@@ -130,7 +132,7 @@ function CheckoutContent() {
           <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-6 mb-8 border border-primary/20">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-1">Selected Plan</p>
+                <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-1">{t('checkout.selectedPlan')}</p>
                 <p className="text-2xl font-bold text-gray-900">{planDisplay} {billing.charAt(0).toUpperCase() + billing.slice(1)}</p>
               </div>
               <div className="flex items-center gap-2">
@@ -145,14 +147,14 @@ function CheckoutContent() {
           <form onSubmit={handleContinue} className="space-y-6">
             <div>
               <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
-                Email Address
+                {t('checkout.form.emailLabel')}
               </label>
               <input
                 type="email"
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="your.email@example.com"
+                placeholder={t('checkout.form.emailPlaceholder')}
                 required
                 className="block w-full rounded-lg border border-gray-300 px-4 py-3.5 text-gray-900 placeholder-gray-400 focus:border-primary focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all"
               />
@@ -177,11 +179,11 @@ function CheckoutContent() {
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  Processing...
+                  {t('common.processing')}
                 </>
               ) : (
                 <>
-                  Continue
+                  {t('common.continue')}
                   <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
@@ -197,8 +199,7 @@ function CheckoutContent() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
               </svg>
               <p>
-                We'll check if you already have a Felicloud account. If you're new, we'll create your account.
-                If you're upgrading, we'll help you change your plan.
+                {t('checkout.form.emailNote')}
               </p>
             </div>
           </div>
@@ -209,19 +210,19 @@ function CheckoutContent() {
               <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
               </svg>
-              <span>Secure Checkout</span>
+              <span>{t('checkout.trustBadges.secureCheckout')}</span>
             </div>
             <div className="flex items-center gap-1.5">
               <svg className="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
               </svg>
-              <span>EU Hosted</span>
+              <span>{t('checkout.trustBadges.euHosted')}</span>
             </div>
             <div className="flex items-center gap-1.5">
               <svg className="w-4 h-4 text-purple-600" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
               </svg>
-              <span>GDPR Compliant</span>
+              <span>{t('checkout.trustBadges.gdprCompliant')}</span>
             </div>
           </div>
 
@@ -231,7 +232,7 @@ function CheckoutContent() {
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
               </svg>
-              <span>Payments securely processed by <strong>Stripe</strong>, trusted by millions worldwide</span>
+              <span>{t('checkout.secureNote')}</span>
             </p>
           </div>
         </div>
@@ -239,7 +240,7 @@ function CheckoutContent() {
         {/* Alternative option */}
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-600">
-            Already have an account?{' '}
+            {t('signup.alreadyHaveAccount')}{' '}
             <a href="https://cloud.felicloud.com" className="font-semibold text-primary hover:text-primary/80 transition-colors cursor-pointer">
               Sign in to upgrade
             </a>
@@ -251,6 +252,8 @@ function CheckoutContent() {
 }
 
 export default function CheckoutPage() {
+  const { t } = useTranslation('fr');
+
   return (
     <Suspense fallback={
       <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen py-12 sm:py-20">
@@ -258,7 +261,7 @@ export default function CheckoutPage() {
           <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 sm:p-12">
             <div className="text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
-              <p className="mt-4 text-gray-600">Loading...</p>
+              <p className="mt-4 text-gray-600">{t('common.loading')}</p>
             </div>
           </div>
         </div>
