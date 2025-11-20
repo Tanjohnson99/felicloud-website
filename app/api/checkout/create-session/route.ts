@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
 
     // Determine success and cancel URLs
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://felicloud.com';
-    const successUrl = `${baseUrl}/en/success?session_id={CHECKOUT_SESSION_ID}`;
+    const successUrl = `${baseUrl}/en/payment/success?session_id={CHECKOUT_SESSION_ID}`;
     const cancelUrl = `${baseUrl}/en/pricing`;
 
     // Prepare metadata (sent to webhook)

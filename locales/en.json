@@ -7,7 +7,15 @@
     "getStarted": "Get Started",
     "learnMore": "Learn More",
     "language": "Language",
-    "copyright": "© 2024 Felicloud. All rights reserved."
+    "copyright": "© 2024 Felicloud. All rights reserved.",
+    "loading": "Loading...",
+    "processing": "Processing...",
+    "continue": "Continue",
+    "back": "Back",
+    "backTo": "Back to {{page}}",
+    "month": "month",
+    "year": "year",
+    "lifetime": "lifetime"
   },
   "nav": {
     "features": "Features",
@@ -112,6 +120,148 @@
     "title": "Start Your Lifetime Cloud Today",
     "subtitle": "Join thousands of users who trust Felicloud with their data",
     "button": "Get Started Free"
+  },
+  "pricing": {
+    "pageTitle": "Simple, Transparent Pricing",
+    "pageSubtitle": "Choose the plan that fits your needs. No hidden fees, ever.",
+    "freeForever": "Free Forever",
+    "startFree": "Start Free, Stay Free Forever",
+    "freePlanDescription": "Get 10 GB of secure, encrypted cloud storage with no credit card required. Perfect for trying out Felicloud.",
+    "createFreeAccount": "Create Free Account",
+    "freeApprovalNote": "⚠️ Free accounts are subject to approval and may take up to 24 hours to activate",
+    "needMoreSpace": "Need More Space?",
+    "chooseBilling": "Choose your billing cycle",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "annualSave": "Save {{percent}}%",
+    "lifetimeOption": "Lifetime",
+    "mostPopular": "Most Popular",
+    "bestDeal": "Best Deal!",
+    "getStartedButton": "Get Started",
+    "features": {
+      "storage": "{{amount}} Storage",
+      "traffic": "{{amount}} Traffic / month",
+      "sync": "Full sync & share",
+      "encryption": "End-to-end encryption",
+      "support": "{{type}} support",
+      "emailSupport": "Email",
+      "prioritySupport": "Priority",
+      "premiumSupport": "Premium",
+      "unlimitedDevices": "Unlimited devices",
+      "versionHistory": "Version history",
+      "twoFactor": "Two-factor auth",
+      "apps": "Mobile & desktop apps",
+      "collaboration": "Collaboration tools"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "How does the free plan work?",
+      "a1": "Our free plan gives you 10 GB of secure cloud storage forever. There's no time limit, no credit card required. Perfect for trying out Felicloud risk-free.",
+      "q2": "What's included in lifetime plans?",
+      "a2": "Lifetime plans include one-time payment for permanent access to your storage. You'll never pay again! This includes all future updates, security patches, and feature additions.",
+      "q3": "Can I upgrade or downgrade later?",
+      "a3": "Yes! You can upgrade your plan at any time. If you're on a monthly or annual plan, you can switch between them. Contact our support team for assistance.",
+      "q4": "Where are your servers located?",
+      "a4": "All our servers are located in European Union data centers. We're fully GDPR compliant and subject to strict European privacy laws."
+    },
+    "secureCheckout": "Secure Checkout",
+    "euHosted": "EU Hosted",
+    "gdprCompliant": "GDPR Compliant"
+  },
+  "signup": {
+    "pageTitle": "Create Your Free Account",
+    "pageSubtitle": "Get 10 GB of secure cloud storage for free. No credit card required.",
+    "form": {
+      "fullName": "Full name",
+      "fullNamePlaceholder": "John Doe",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "createAccountButton": "Create your free account"
+    },
+    "steps": {
+      "title": "How it works",
+      "step1": "Check your inbox (and spam folder!)",
+      "step2": "Click the verification link",
+      "step3": "Set your password and accept the terms",
+      "step4": "Access your free 10 GB cloud!"
+    },
+    "alreadyHaveAccount": "Already have an account?",
+    "terms": {
+      "agreeToTerms": "I agree to the Terms of Service",
+      "agreeToPrivacy": "I agree to the Privacy Policy",
+      "mustAcceptTerms": "You must accept the Terms of Service and Privacy Policy"
+    },
+    "errors": {
+      "fullNameRequired": "Full name is required",
+      "fullNameTooShort": "Full name must be at least 2 characters",
+      "emailRequired": "Email is required",
+      "invalidEmail": "Invalid email address",
+      "passwordRequired": "Password is required",
+      "passwordTooShort": "Password must be at least 10 characters",
+      "passwordNoLowercase": "Password must contain at least one lowercase letter",
+      "passwordNoUppercase": "Password must contain at least one uppercase letter",
+      "passwordNoSpecial": "Password must contain at least one special character"
+    },
+    "verification": {
+      "title": "Set Your Password",
+      "subtitle": "Create a secure password for your Felicloud account",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Enter a strong password",
+      "requirements": "Password requirements",
+      "requirement10Chars": "At least 10 characters",
+      "requirementLowercase": "One lowercase letter",
+      "requirementUppercase": "One uppercase letter",
+      "requirementSpecial": "One special character (!@#$%^&*)",
+      "createAccountButton": "Create My Account"
+    }
+  },
+  "checkout": {
+    "pageTitle": "Get {{planDisplay}} Storage",
+    "pageSubtitle": "Enter your email to continue to secure checkout",
+    "backToPricing": "Back to Pricing",
+    "selectedPlan": "Selected Plan",
+    "form": {
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "you@example.com",
+      "emailNote": "We'll check if you already have a Felicloud account or create a new one"
+    },
+    "trustBadges": {
+      "secureCheckout": "Secure Checkout",
+      "euHosted": "EU Hosted",
+      "gdprCompliant": "GDPR Compliant"
+    },
+    "secureNote": "Payments securely processed by Stripe. Your payment information is encrypted and never stored on our servers.",
+    "errors": {
+      "invalidEmail": "Please enter a valid email address"
+    }
+  },
+  "paymentSuccess": {
+    "title": "Payment Successful! 🎉",
+    "subtitle": "Thank you for your purchase. Your account is being set up.",
+    "whatNext": "What happens next?",
+    "steps": {
+      "step1": {
+        "title": "Check your email",
+        "description": "We've sent your account credentials and welcome message to {{email}}. Please check your inbox (and spam folder!)."
+      },
+      "step2": {
+        "title": "Sign in to Felicloud",
+        "description": "Visit {{cloudUrl}} and sign in with your credentials.",
+        "action": "Go to Felicloud"
+      },
+      "step3": {
+        "title": "Download our apps",
+        "description": "Install our desktop and mobile apps to sync your files automatically.",
+        "action": "Download Apps"
+      }
+    },
+    "support": {
+      "title": "Need help?",
+      "description": "Our support team is here to help you get started. Contact us anytime.",
+      "action": "Contact Support"
+    },
+    "sessionId": "Session ID",
+    "backToHome": "Back to Home"
   },
   "languages": {
     "en": "English",
