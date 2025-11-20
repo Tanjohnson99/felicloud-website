@@ -630,5 +630,412 @@
     "newsletterSubtitle": "Receba as últimas publicações do blog, atualizações de produtos e dicas de armazenamento cloud no seu e-mail.",
     "newsletterPlaceholder": "Introduza o seu e-mail",
     "newsletterButton": "Subscrever"
+  },
+  "legal": {
+    "terms": {
+      "title": "Termos de Serviço",
+      "lastUpdated": "Última atualização: 20 de novembro de 2024",
+      "section1": {
+        "title": "1. Aceitação dos Termos",
+        "content": "Ao aceder e utilizar os serviços da Felicloud, concorda em ficar vinculado por estes Termos de Serviço e todas as leis e regulamentações aplicáveis. Se não concordar com algum destes termos, está proibido de utilizar ou aceder aos nossos serviços. Os materiais e serviços contidos nesta plataforma estão protegidos pelas leis aplicáveis de direitos de autor e marcas comerciais."
+      },
+      "section2": {
+        "title": "2. Registo de Conta e Elegibilidade",
+        "content": "Para utilizar os serviços Felicloud, deve criar uma conta fornecendo informações precisas, atuais e completas. É responsável por manter a confidencialidade das suas credenciais de conta e por todas as atividades que ocorram sob a sua conta. Concorda em:",
+        "items": [
+          "Fornecer informações precisas e verdadeiras durante o registo",
+          "Manter a segurança da sua palavra-passe e conta",
+          "Notificar-nos imediatamente de qualquer utilização não autorizada da sua conta",
+          "Ter pelo menos 16 anos de idade ou ter consentimento parental/tutor para utilizar os nossos serviços"
+        ]
+      },
+      "section3": {
+        "title": "3. Descrição e Modificações do Serviço",
+        "content": "A Felicloud fornece serviços de armazenamento cloud seguro baseados na tecnologia Nextcloud. Oferecemos vários planos de armazenamento incluindo subscrições gratuitas e pagas com diferentes funcionalidades e capacidades de armazenamento. As funcionalidades, preços e disponibilidade do serviço podem variar consoante o tipo de plano.",
+        "notify": "Reservamo-nos o direito de modificar, suspender ou descontinuar qualquer aspeto dos nossos serviços a qualquer momento, com ou sem aviso prévio. Faremos esforços razoáveis para notificar os utilizadores de alterações significativas através de e-mail ou notificações do serviço."
+      },
+      "section4": {
+        "title": "4. Conteúdo do Utilizador e Propriedade dos Dados",
+        "content": "Mantém todos os direitos de propriedade sobre o conteúdo e os dados que carrega para a Felicloud. Ao utilizar os nossos serviços, concede-nos uma licença limitada para armazenar, processar e transmitir o seu conteúdo exclusivamente com o propósito de lhe fornecer os nossos serviços. Não reivindicamos qualquer propriedade sobre o seu conteúdo.",
+        "modifications": "Nunca acederemos, visualizaremos ou partilharemos o seu conteúdo privado, exceto conforme exigido por lei, com a sua permissão explícita, ou conforme necessário para fornecer suporte técnico mediante o seu pedido. Os seus dados são encriptados e protegidos de acordo com a nossa Política de Privacidade."
+      },
+      "section5": {
+        "title": "5. Política de Utilização Aceitável",
+        "content": "Concorda em utilizar os serviços Felicloud apenas para fins legais e de acordo com estes Termos. Concorda em não:",
+        "items": [
+          "Carregar ou transmitir qualquer conteúdo ilegal, prejudicial, ameaçador, abusivo, assediante, difamatório ou de outra forma censurável",
+          "Violar quaisquer direitos de propriedade intelectual ou outros direitos proprietários de qualquer parte",
+          "Transmitir qualquer malware, vírus ou qualquer código de natureza destrutiva",
+          "Tentar obter acesso não autorizado aos nossos sistemas, redes ou contas de outros utilizadores",
+          "Utilizar os nossos serviços para enviar spam, tentativas de phishing ou comunicações comerciais não solicitadas"
+        ]
+      },
+      "section6": {
+        "title": "6. Privacidade e Proteção de Dados",
+        "content": "A sua privacidade é importante para nós. A nossa recolha, utilização e proteção dos seus dados pessoais é regida pela nossa",
+        "privacyLink": "Política de Privacidade",
+        "contentEnd": "que está incorporada nestes Termos por referência. Ao utilizar a Felicloud, consente as práticas de dados descritas na nossa Política de Privacidade."
+      },
+      "section7": {
+        "title": "7. Termos de Pagamento e Faturação",
+        "content": "As subscrições pagas são faturadas antecipadamente numa base mensal, anual ou única, dependendo do plano selecionado. Todas as taxas são não reembolsáveis, exceto conforme exigido por lei ou conforme explicitamente indicado na nossa política de reembolso. Reservamo-nos o direito de alterar os nossos preços com 30 dias de aviso prévio. As alterações de preços não afetarão os detentores de planos vitalícios existentes. O processamento de pagamentos é tratado de forma segura através da Stripe, e não armazenamos os detalhes do seu cartão de pagamento."
+      },
+      "section8": {
+        "title": "8. Cancelamento e Rescisão",
+        "content": "Pode cancelar a sua subscrição a qualquer momento através das definições da sua conta. Após o cancelamento, manterá acesso às suas funcionalidades pagas até ao final do seu período de faturação atual. Reservamo-nos o direito de suspender ou rescindir a sua conta se violar estes Termos de Serviço ou se envolver em atividade fraudulenta.",
+        "refunds": "Os reembolsos para planos pagos estão disponíveis dentro de 30 dias após a compra, sujeitos à nossa política de garantia de devolução do dinheiro. Os planos vitalícios também são elegíveis para este período de reembolso de 30 dias. Para solicitar um reembolso, contacte a nossa equipa de suporte em support@felicloud.com."
+      },
+      "section9": {
+        "title": "9. Disponibilidade do Serviço e Cópias de Segurança",
+        "content": "Embora nos esforcemos para fornecer 99,9% de disponibilidade, não garantimos acesso ininterrupto aos nossos serviços. Podemos experienciar períodos de inatividade para manutenção, atualizações ou devido a circunstâncias fora do nosso controlo. Não somos responsáveis por qualquer perda ou dano resultante de interrupções de serviço.",
+        "backups": "Embora mantenhamos cópias de segurança regulares dos nossos sistemas, é responsável por manter as suas próprias cópias de segurança dos seus dados. Recomendamos transferir regularmente ficheiros importantes e manter cópias locais como precaução adicional."
+      },
+      "section10": {
+        "title": "10. Limitação de Responsabilidade",
+        "content": "Na máxima extensão permitida por lei, a Felicloud não será responsável por quaisquer danos indiretos, incidentais, especiais, consequenciais ou punitivos, ou qualquer perda de lucros ou receitas, sejam incorridos direta ou indiretamente, ou qualquer perda de dados, uso, boa vontade ou outras perdas intangíveis resultantes do seu uso ou incapacidade de usar os nossos serviços. A nossa responsabilidade total não excederá o valor que nos pagou nos doze meses anteriores ao evento que dá origem à responsabilidade."
+      },
+      "section11": {
+        "title": "11. Lei Aplicável e Resolução de Litígios",
+        "content": "Estes Termos serão regidos e interpretados de acordo com as leis da União Europeia e as leis de Portugal, sem considerar as disposições sobre conflitos de leis. Quaisquer litígios decorrentes destes Termos ou da sua utilização dos nossos serviços serão resolvidos através de negociações de boa fé. Se as negociações falharem, os litígios estarão sujeitos à jurisdição exclusiva dos tribunais de Portugal."
+      },
+      "section12": {
+        "title": "12. Informações de Contacto",
+        "content": "Se tiver alguma questão sobre estes Termos de Serviço, por favor contacte-nos em: legal@felicloud.com. Para questões gerais de suporte, por favor visite o nosso Centro de Ajuda ou contacte support@felicloud.com."
+      }
+    },
+    "privacy": {
+      "title": "Política de Privacidade",
+      "lastUpdated": "Última atualização: 20 de novembro de 2024",
+      "commitment": {
+        "title": "O Nosso Compromisso com a Sua Privacidade",
+        "content": "Na Felicloud, a sua privacidade é a nossa máxima prioridade. Estamos comprometidos em proteger os seus dados pessoais e ser transparentes sobre as informações que recolhemos e como as utilizamos. Esta Política de Privacidade explica as nossas práticas de dados e os seus direitos ao abrigo do Regulamento Geral sobre a Proteção de Dados (RGPD) e outras leis aplicáveis de proteção de dados."
+      },
+      "section1": {
+        "title": "1. Informações que Recolhemos",
+        "account": {
+          "title": "Informações da Conta",
+          "intro": "Quando cria uma conta Felicloud, recolhemos:",
+          "items": [
+            "O seu nome e endereço de e-mail",
+            "Palavra-passe (encriptada e nunca armazenada em texto simples)",
+            "Data de criação da conta e detalhes do plano de subscrição",
+            "Informações de pagamento (processadas e armazenadas de forma segura pela Stripe, não nos nossos servidores)"
+          ]
+        },
+        "usage": {
+          "title": "Dados de Utilização",
+          "intro": "Recolhemos informações técnicas limitadas para fornecer e melhorar os nossos serviços:",
+          "items": [
+            "Endereço IP e informações do dispositivo (para segurança e autenticação)",
+            "Tipo de navegador e sistema operativo (para compatibilidade)",
+            "Estatísticas de utilização de armazenamento e metadados de ficheiros (nomes de ficheiros, tamanhos, datas de modificação)"
+          ]
+        },
+        "files": {
+          "title": "Os Seus Ficheiros e Conteúdo",
+          "content": "Os seus ficheiros são encriptados e armazenados de forma segura nos nossos servidores. Não acedemos, visualizamos, analisamos ou examinamos o conteúdo dos seus ficheiros. O conteúdo dos ficheiros é acessível apenas a si e a qualquer pessoa com quem escolha explicitamente partilhar. Os metadados dos ficheiros (nomes, tamanhos, datas) são recolhidos para a funcionalidade do serviço, mas o conteúdo dos ficheiros permanece privado."
+        }
+      },
+      "section2": {
+        "title": "2. Como Utilizamos as Suas Informações",
+        "intro": "Utilizamos os seus dados pessoais apenas para os seguintes propósitos:",
+        "items": [
+          "Para fornecer, manter e melhorar os serviços Felicloud",
+          "Para processar pagamentos e gerir a sua subscrição",
+          "Para comunicar consigo sobre a sua conta, atualizações de serviço e pedidos de suporte",
+          "Para garantir segurança, prevenir fraude e proteger contra abuso",
+          "Para cumprir obrigações legais e fazer cumprir os nossos Termos de Serviço"
+        ],
+        "commitment": "Não utilizamos os seus dados para publicidade, análise de marketing ou qualquer propósito não diretamente relacionado com o fornecimento dos nossos serviços."
+      },
+      "section3": {
+        "title": "3. Armazenamento e Segurança de Dados",
+        "location": "Todos os seus dados são armazenados exclusivamente em servidores localizados dentro da União Europeia. Utilizamos centros de dados com certificação ISO 27001 e mantemos medidas rigorosas de segurança física e digital.",
+        "measures": "Implementamos práticas de segurança conformes com os padrões da indústria para proteger os seus dados:",
+        "items": [
+          "Encriptação de ponta a ponta para transferências de ficheiros (TLS 1.3)",
+          "Armazenamento encriptado usando encriptação AES-256",
+          "Opções de autenticação de dois fatores para segurança de conta reforçada",
+          "Auditorias de segurança regulares e testes de penetração",
+          "Controlos de acesso rigorosos e acordos de confidencialidade de funcionários"
+        ]
+      },
+      "section4": {
+        "title": "4. Os Seus Direitos ao Abrigo do RGPD",
+        "intro": "Como utilizador na União Europeia, tem os seguintes direitos relativamente aos seus dados pessoais:",
+        "rights": {
+          "access": {
+            "title": "Direito de Acesso:",
+            "content": "Solicitar uma cópia de todos os dados pessoais que detemos sobre si"
+          },
+          "rectification": {
+            "title": "Direito de Retificação:",
+            "content": "Solicitar a correção de dados imprecisos ou incompletos"
+          },
+          "erasure": {
+            "title": "Direito ao Apagamento:",
+            "content": "Solicitar a eliminação dos seus dados pessoais e conta"
+          },
+          "portability": {
+            "title": "Direito à Portabilidade dos Dados:",
+            "content": "Solicitar os seus dados num formato estruturado e legível por máquina"
+          },
+          "object": {
+            "title": "Direito de Oposição:",
+            "content": "Opor-se a certos tipos de processamento de dados"
+          },
+          "restrict": {
+            "title": "Direito de Limitação do Processamento:",
+            "content": "Solicitar a limitação de como processamos os seus dados"
+          }
+        },
+        "contact": "Para exercer qualquer um destes direitos, por favor contacte o nosso Encarregado de Proteção de Dados em privacy@felicloud.com. Responderemos ao seu pedido dentro de 30 dias."
+      },
+      "section5": {
+        "title": "5. Partilha de Dados e Terceiros",
+        "intro": "Não vendemos, alugamos ou comercializamos as suas informações pessoais a terceiros. Apenas partilhamos dados com prestadores de serviços de confiança que nos ajudam a operar os nossos serviços:",
+        "items": [
+          "Stripe (processamento de pagamentos) - processa pagamentos de forma segura e está em conformidade com PCI-DSS",
+          "Fornecedores de infraestrutura sediados na UE (alojamento de servidores) - alojam os nossos servidores dentro da UE ao abrigo de acordos rigorosos de processamento de dados",
+          "Fornecedores de serviços de e-mail (apenas e-mails transacionais) - enviam notificações relacionadas com a conta"
+        ]
+      },
+      "section6": {
+        "title": "6. Cookies e Rastreamento",
+        "intro": "Utilizamos cookies mínimos para fornecer funcionalidade essencial:",
+        "items": [
+          "Cookies de autenticação (para mantê-lo ligado)",
+          "Cookies de segurança (para prevenir fraude e proteger a sua conta)"
+        ],
+        "noTracking": "Não utilizamos cookies de rastreamento, cookies publicitários ou serviços de análise de terceiros. Não rastreamos o seu comportamento através de sites ou construímos perfis de utilizador para fins publicitários."
+      },
+      "section7": {
+        "title": "7. Transferências Internacionais de Dados",
+        "intro": "Os seus dados são armazenados exclusivamente na União Europeia e não são transferidos para fora da UE. No caso raro de precisarmos de transferir dados internacionalmente, garantimos que:",
+        "items": [
+          "As transferências são feitas apenas para países com proteção de dados adequada (conforme determinado pela Comissão Europeia)",
+          "Salvaguardas apropriadas, como Cláusulas Contratuais Tipo, estão em vigor"
+        ],
+        "compliance": "Estamos comprometidos em manter a conformidade com o RGPD e os padrões europeus de proteção de dados em todos os momentos."
+      },
+      "section8": {
+        "title": "8. Retenção de Dados",
+        "content": "Retemos os seus dados pessoais apenas pelo tempo necessário para fornecer os nossos serviços e cumprir obrigações legais. Os dados da conta são retidos enquanto a sua conta estiver ativa. Após a eliminação da conta, eliminaremos os seus dados pessoais e ficheiros dentro de 30 dias, exceto os dados que somos obrigados a reter para fins legais, fiscais ou regulamentares (normalmente 7 anos para registos de faturação)."
+      },
+      "section9": {
+        "title": "9. Privacidade de Crianças",
+        "content": "A Felicloud não se destina a crianças com menos de 16 anos de idade. Não recolhemos intencionalmente informações pessoais de crianças. Se acredita que recolhemos inadvertidamente dados de uma criança, por favor contacte-nos imediatamente em privacy@felicloud.com, e eliminaremos essas informações prontamente."
+      },
+      "section10": {
+        "title": "10. Contacte-nos",
+        "intro": "Se tiver alguma questão ou preocupação sobre esta Política de Privacidade ou as nossas práticas de dados, por favor contacte-nos:",
+        "email": "E-mail: privacy@felicloud.com",
+        "dpo": "Encarregado de Proteção de Dados: dpo@felicloud.com"
+      }
+    },
+    "gdpr": {
+      "title": "Conformidade RGPD",
+      "subtitle": "Os Seus Direitos sobre os Dados e o Nosso Compromisso com a Proteção de Dados Europeia",
+      "intro": {
+        "title": "Introdução ao RGPD",
+        "content": "O Regulamento Geral sobre a Proteção de Dados (RGPD) é uma lei abrangente de proteção de dados que entrou em vigor a 25 de maio de 2018. Estabelece requisitos rigorosos sobre como as organizações recolhem, processam, armazenam e protegem dados pessoais de indivíduos na União Europeia. Na Felicloud, a conformidade com o RGPD não é apenas uma obrigação legal—é uma parte fundamental do nosso compromisso em proteger a sua privacidade e respeitar os seus direitos."
+      },
+      "section1": {
+        "title": "1. Base Legal para o Processamento de Dados",
+        "intro": "Ao abrigo do RGPD, devemos ter uma base legal para processar os seus dados pessoais. Processamos os seus dados com base nos seguintes fundamentos legais:",
+        "items": {
+          "contract": {
+            "title": "Necessidade Contratual:",
+            "content": "O processamento dos seus dados é necessário para executar o nosso contrato consigo (fornecimento de serviços de armazenamento cloud)"
+          },
+          "legitimate": {
+            "title": "Interesses Legítimos:",
+            "content": "Temos interesses legítimos em garantir a segurança, prevenir fraude e melhorar os nossos serviços"
+          },
+          "legal": {
+            "title": "Obrigação Legal:",
+            "content": "Processamos certos dados para cumprir requisitos legais e regulamentares (por exemplo, leis fiscais, combate ao branqueamento de capitais)"
+          },
+          "consent": {
+            "title": "Consentimento:",
+            "content": "Para funcionalidades opcionais como comunicações de marketing, obtemos o seu consentimento explícito"
+          }
+        }
+      },
+      "section2": {
+        "title": "2. Princípios de Minimização de Dados",
+        "intro": "O RGPD exige que recolhamos apenas a quantidade mínima de dados pessoais necessária. De acordo com este princípio:",
+        "items": [
+          "Recolhemos apenas informações essenciais necessárias para fornecer os nossos serviços",
+          "Não rastreamos o seu comportamento de navegação nem construímos perfis publicitários",
+          "Não partilhamos os seus dados com terceiros para fins de marketing",
+          "Eliminamos automaticamente dados desnecessários quando já não são necessários"
+        ],
+        "commitment": "A nossa filosofia é simples: menos dados recolhidos significa menos risco para a sua privacidade."
+      },
+      "section3": {
+        "title": "3. Os Seus Direitos RGPD Explicados",
+        "intro": "O RGPD concede-lhe direitos abrangentes sobre os seus dados pessoais. Aqui está o que cada direito significa na prática:",
+        "rights": {
+          "access": {
+            "title": "Direito de Acesso (Artigo 15)",
+            "content": "Pode solicitar uma cópia completa de todos os dados pessoais que detemos sobre si, incluindo informações sobre como os utilizamos, com quem os partilhamos e por quanto tempo os mantemos. Forneceremos estas informações num formato claro e estruturado dentro de 30 dias."
+          },
+          "rectification": {
+            "title": "Direito de Retificação (Artigo 16)",
+            "content": "Se algum dos seus dados pessoais estiver impreciso ou incompleto, tem o direito de os corrigir. Pode atualizar a maioria das informações diretamente nas definições da sua conta, ou contactar-nos para assistência."
+          },
+          "erasure": {
+            "title": "Direito ao Apagamento / 'Direito a Ser Esquecido' (Artigo 17)",
+            "content": "Pode solicitar a eliminação dos seus dados pessoais. Eliminaremos a sua conta e todos os dados associados dentro de 30 dias, exceto quando temos obrigação legal de reter certas informações (por exemplo, registos de faturação para fins fiscais)."
+          },
+          "portability": {
+            "title": "Direito à Portabilidade dos Dados (Artigo 20)",
+            "content": "Pode solicitar os seus dados num formato comummente utilizado e legível por máquina (como JSON ou CSV) para poder transferi-los para outro fornecedor de serviços. Isto inclui as informações da sua conta e metadados de ficheiros."
+          },
+          "object": {
+            "title": "Direito de Oposição (Artigo 21)",
+            "content": "Pode opor-se a certos tipos de processamento de dados, particularmente processamento baseado em interesses legítimos. Por exemplo, pode optar por não receber comunicações de marketing a qualquer momento."
+          },
+          "restrict": {
+            "title": "Direito de Limitação do Processamento (Artigo 18)",
+            "content": "Em certas circunstâncias, pode solicitar que limitemos a forma como processamos os seus dados enquanto investigamos uma preocupação ou disputa que tenha levantado."
+          }
+        },
+        "contact": "Para exercer qualquer um destes direitos, por favor contacte o nosso Encarregado de Proteção de Dados em dpo@felicloud.com. Levamos todos os pedidos de direitos a sério e responderemos prontamente."
+      },
+      "section4": {
+        "title": "4. Residência de Dados na UE",
+        "intro": "Um dos nossos compromissos fundamentais é que todos os seus dados permanecem dentro da União Europeia. Isto proporciona-lhe a proteção de dados mais forte disponível no mundo.",
+        "locations": "Os nossos servidores estão localizados em centros de dados dentro dos Estados-Membros da UE, especificamente:",
+        "items": [
+          "Centros de dados principais: França e Alemanha",
+          "Infraestrutura de backup: Países Baixos e Finlândia"
+        ],
+        "cloudAct": "Ao manter todos os dados dentro da UE, as suas informações estão protegidas de leis de vigilância estrangeiras como o US CLOUD Act. Os seus dados estão sujeitos exclusivamente à jurisdição europeia e às normas de proteção de dados."
+      },
+      "section5": {
+        "title": "5. Medidas de Segurança e Proteção de Dados por Conceção",
+        "intro": "O RGPD exige que implementemos medidas técnicas e organizacionais apropriadas para proteger os seus dados. Empregamos múltiplas camadas de segurança:",
+        "items": [
+          "Encriptação de ponta a ponta usando encriptação AES-256 padrão da indústria",
+          "Transmissão encriptada de todos os dados usando protocolo TLS 1.3",
+          "Auditorias de segurança regulares e testes de penetração por empresas de segurança independentes",
+          "Controlos de acesso rigorosos - apenas pessoal autorizado pode aceder a sistemas, e ninguém pode aceder ao conteúdo dos seus ficheiros",
+          "Formação de funcionários sobre proteção de dados e confidencialidade",
+          "Plano de resposta a incidentes para abordar qualquer potencial violação de dados dentro de 72 horas conforme exigido pelo RGPD"
+        ]
+      },
+      "section6": {
+        "title": "6. Acordos de Processamento de Dados",
+        "intro": "Quando utilizamos prestadores de serviços terceiros (conhecidos como 'subcontratantes' ao abrigo do RGPD), garantimos que cumprem requisitos rigorosos:",
+        "items": [
+          "Todos os fornecedores estão localizados na UE ou têm mecanismos adequados de proteção de dados",
+          "Temos Acordos de Processamento de Dados (DPA) formais em vigor com todos os subcontratantes",
+          "Os subcontratantes são contratualmente obrigados a implementar medidas de segurança apropriadas e a processar dados apenas de acordo com as nossas instruções"
+        ],
+        "encryption": "Examinamos cuidadosamente todos os prestadores de serviços para garantir que mantêm a conformidade com o RGPD e mantêm os mesmos padrões elevados de proteção de dados que nós."
+      },
+      "section7": {
+        "title": "7. Transferências Internacionais de Dados (Nenhuma)",
+        "intro": "Ao contrário de muitos fornecedores de cloud, não transferimos os seus dados para fora da União Europeia. No entanto, por transparência, explicamos quais salvaguardas seriam necessárias se tais transferências fossem necessárias:",
+        "items": [
+          "Cláusulas Contratuais Tipo (CCT) aprovadas pela Comissão Europeia",
+          "Decisões de adequação confirmando que o país destinatário fornece proteção de dados adequada"
+        ],
+        "agreements": "O nosso compromisso é evitar transferências internacionais completamente, mantendo toda a infraestrutura dentro da UE, proporcionando-lhe o mais alto nível de proteção."
+      },
+      "section8": {
+        "title": "8. Autoridade de Controlo e Reclamações",
+        "intro": "Tem o direito de apresentar uma reclamação junto de uma autoridade de controlo de proteção de dados se acreditar que violámos os seus direitos RGPD. A autoridade de controlo no seu país é responsável por tratar essas reclamações.",
+        "link": "Pode encontrar a sua autoridade local de proteção de dados em:",
+        "linkText": "Comité Europeu para a Proteção de Dados - Lista de Membros"
+      },
+      "section9": {
+        "title": "9. Encarregado de Proteção de Dados",
+        "intro": "Nomeámos um Encarregado de Proteção de Dados (EPD) para supervisionar a nossa conformidade com o RGPD e tratar questões de proteção de dados. Pode contactar o nosso EPD diretamente com quaisquer questões ou preocupações:",
+        "email": "E-mail: dpo@felicloud.com"
+      },
+      "section10": {
+        "title": "10. Transparência e Responsabilidade",
+        "intro": "O RGPD exige que as organizações demonstrem conformidade através de documentação e transparência. Mantemos:",
+        "items": [
+          "Registos de todas as atividades de processamento de dados",
+          "Avaliações de Impacto sobre a Proteção de Dados (AIPD) para processamento de alto risco",
+          "Auditorias internas regulares das práticas de proteção de dados",
+          "Esta declaração pública de conformidade com o RGPD descrevendo os nossos compromissos e práticas"
+        ]
+      },
+      "questions": {
+        "title": "Questões sobre o RGPD?",
+        "intro": "Estamos comprometidos com a transparência e em ajudá-lo a compreender os seus direitos de proteção de dados. Se tiver alguma questão sobre o RGPD, as nossas práticas de conformidade ou como protegemos os seus dados, não hesite em contactar-nos.",
+        "email": "Contacto: dpo@felicloud.com",
+        "response": "Responderemos a todas as perguntas dentro de 48 horas e trataremos pedidos de direitos dentro do prazo de 30 dias exigido pelo RGPD."
+      }
+    },
+    "ip": {
+      "title": "Política de Propriedade Intelectual",
+      "lastUpdated": "Última atualização: 20 de novembro de 2024",
+      "section1": {
+        "title": "1. Propriedade do Conteúdo",
+        "content": "Mantém a propriedade total e todos os direitos de propriedade intelectual sobre qualquer conteúdo, ficheiros, documentos, fotos, vídeos e outros materiais que carregue para a Felicloud. Ao utilizar os nossos serviços, não nos transfere quaisquer direitos de propriedade. Não reivindicamos quaisquer direitos de propriedade intelectual sobre o conteúdo que cria, armazena ou partilha através da nossa plataforma. O seu conteúdo é seu, e permanece seu."
+      },
+      "section2": {
+        "title": "2. Propriedade Intelectual da Felicloud",
+        "intro": "A plataforma Felicloud, incluindo o seu software, design do site, marca, logótipos e documentação, está protegida pelas leis de propriedade intelectual. Os seguintes elementos são propriedade ou licenciados à Felicloud:",
+        "items": [
+          "O nome Felicloud, logótipo e materiais de marca",
+          "Design do site, layout e elementos da interface do utilizador",
+          "Materiais de marketing, documentação e conteúdo de suporte",
+          "Código de software personalizado e funcionalidades proprietárias que desenvolvemos",
+          "Infraestrutura e arquitetura do serviço (excluindo os componentes open-source Nextcloud)",
+          "Todas as marcas comerciais, marcas de serviço e nomes comerciais associados à Felicloud"
+        ]
+      },
+      "section3": {
+        "title": "3. Componentes de Código Aberto",
+        "intro": "A Felicloud é construída sobre o Nextcloud, uma plataforma de código aberto licenciada sob a GNU Affero General Public License (AGPL). Respeitamos e cumprimos todas as licenças de código aberto. Especificamente:",
+        "items": [
+          "O software Nextcloud permanece de código aberto e está licenciado sob AGPL v3",
+          "Quaisquer modificações que fazemos ao código principal do Nextcloud são disponibilizadas em conformidade com a AGPL",
+          "Contribuímos de volta para a comunidade Nextcloud quando apropriado",
+          "Os utilizadores têm os mesmos direitos ao software Nextcloud conforme concedidos pela licença AGPL",
+          "As nossas adições proprietárias e integrações personalizadas são separadas do núcleo de código aberto"
+        ]
+      },
+      "section4": {
+        "title": "4. Licença para Utilizar os Nossos Serviços",
+        "content": "Sujeito à sua conformidade com estes Termos de Serviço, concedemos-lhe uma licença limitada, não exclusiva, intransmissível e revogável para aceder e utilizar os serviços Felicloud para os seus fins pessoais ou comerciais. Esta licença não inclui o direito de revender os nossos serviços, copiar o nosso software ou marca, ou utilizar a nossa plataforma para fornecer serviços similares a terceiros sem a nossa autorização por escrito."
+      },
+      "section5": {
+        "title": "5. Violação de Direitos de Autor e DMCA",
+        "content": "A Felicloud respeita os direitos de propriedade intelectual de outros e espera que os nossos utilizadores façam o mesmo. Não monitorizamos o conteúdo dos ficheiros dos utilizadores devido aos nossos compromissos de encriptação e privacidade. No entanto, se acreditar que conteúdo acessível através da Felicloud viola os seus direitos de autor, pode submeter um aviso de acordo com o Digital Millennium Copyright Act (DMCA) ou leis europeias equivalentes de direitos de autor. Após receber um aviso válido, investigaremos e tomaremos as medidas apropriadas, que podem incluir a remoção do conteúdo alegadamente infrator e/ou a suspensão da conta do utilizador que o carregou."
+      },
+      "section6": {
+        "title": "6. Submeter uma Reclamação de Direitos de Autor",
+        "intro": "Se acreditar que a sua obra protegida por direitos de autor foi violada, por favor forneça à nossa equipa jurídica as seguintes informações:",
+        "department": "Departamento de Conformidade de Direitos de Autor",
+        "email": "E-mail: legal@felicloud.com",
+        "subject": "Assunto: Aviso de Violação de Direitos de Autor - DMCA"
+      },
+      "section7": {
+        "title": "7. Contra-Notificação",
+        "content": "Se acreditar que o conteúdo que carregou foi removido ou desativado devido a um erro ou identificação incorreta, pode submeter uma contra-notificação à nossa equipa jurídica. Após receber uma contra-notificação válida, encaminhá-la-emos à parte que submeteu a reclamação original e poderemos restaurar o conteúdo a menos que o reclamante intente uma ação legal solicitando uma ordem judicial."
+      },
+      "section8": {
+        "title": "8. Política de Marcas Comerciais",
+        "content": "O nome e logótipo Felicloud são marcas comerciais da Felicloud. Não pode utilizar as nossas marcas comerciais sem o nosso consentimento prévio por escrito. Isto inclui utilizar o nosso nome ou logótipo de forma que possa causar confusão sobre a origem de produtos ou serviços, ou de forma que difame ou desacredite a Felicloud."
+      },
+      "section9": {
+        "title": "9. Conteúdo Gerado pelo Utilizador e Partilha",
+        "content": "Quando partilha ficheiros ou pastas com outros utilizadores através das funcionalidades de partilha da Felicloud, concede a esses utilizadores permissão para aceder e utilizar o conteúdo partilhado de acordo com as permissões que define (apenas visualização, transferência, edição, etc.). É responsável por garantir que tem o direito de partilhar qualquer conteúdo e que a partilha não viola quaisquer direitos de propriedade intelectual de terceiros."
+      },
+      "cta": {
+        "title": "Questões sobre Propriedade Intelectual?",
+        "intro": "Se tiver questões sobre propriedade intelectual, direitos de autor ou questões de licenciamento relacionadas com a Felicloud, por favor contacte a nossa equipa jurídica em",
+        "email": "legal@felicloud.com",
+        "button": "Contactar Equipa Jurídica"
+      }
+    }
   }
 }
