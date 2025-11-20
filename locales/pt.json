@@ -1,12 +1,268 @@
 {
-  "common": {},
-  "nav": {},
-  "footer": {},
-  "hero": {},
-  "features": {},
-  "comparison": {},
-  "socialProof": {},
-  "cta": {},
+  "common": {
+    "brandName": "Felicloud",
+    "tagline": "Armazenamento Cloud Europeu Seguro",
+    "signIn": "Iniciar Sessão",
+    "signUp": "Registar",
+    "getStarted": "Começar",
+    "learnMore": "Saber Mais",
+    "language": "Idioma",
+    "copyright": "© 2024 Felicloud. Todos os direitos reservados.",
+    "loading": "A carregar...",
+    "processing": "A processar...",
+    "continue": "Continuar",
+    "back": "Voltar",
+    "backTo": "Voltar para {{page}}",
+    "month": "mês",
+    "year": "ano",
+    "lifetime": "vitalício"
+  },
+  "nav": {
+    "features": "Funcionalidades",
+    "pricing": "Preços",
+    "download": "Transferir",
+    "about": "Sobre",
+    "contact": "Contacto",
+    "blog": "Blog",
+    "help": "Ajuda",
+    "support": "Suporte"
+  },
+  "footer": {
+    "product": "Produto",
+    "support": "Suporte",
+    "company": "Empresa",
+    "legal": "Legal",
+    "termsOfService": "Termos de Serviço",
+    "privacyPolicy": "Política de Privacidade",
+    "gdpr": "RGPD",
+    "socialMediaDescription": "Siga-nos nas redes sociais",
+    "helpCenter": "Centro de Ajuda",
+    "contactSupport": "Contactar Suporte",
+    "downloadApps": "Transferir Aplicações",
+    "faq": "Perguntas Frequentes"
+  },
+  "hero": {
+    "title": "Armazenamento Cloud Europeu em que Pode Confiar",
+    "subtitle": "Sincronização segura de ficheiros, cópia de segurança de fotos e gestão de documentos baseada em Nextcloud",
+    "cta": "10 GB Grátis para Sempre",
+    "viewPricing": "Ver Preços",
+    "fileSyncTitle": "Sincronização e Partilha",
+    "fileSyncDescription": "Aceda aos seus ficheiros de qualquer lugar. Sincronização automática em todos os dispositivos com partilha segura e controlo total.",
+    "fileSyncFeature1": "Sincronização em tempo real",
+    "fileSyncFeature2": "Acesso de qualquer lugar",
+    "fileSyncFeature3": "Encriptação de ponta a ponta",
+    "photoBackupTitle": "Cópia de Segurança de Fotos e Vídeos",
+    "photoBackupDescription": "Carregamento automático de fotos e vídeos de todos os seus dispositivos. Nunca perca uma memória com a nossa cópia de segurança cloud.",
+    "photoBackupFeature1": "Carregamento automático do telemóvel",
+    "photoBackupFeature2": "Vista cronológica e álbuns",
+    "photoBackupFeature3": "Reconhecimento facial",
+    "documentManagementTitle": "Gestão Documental",
+    "documentManagementDescription": "Organize, edite e colabore em documentos. Trabalhe em conjunto em tempo real com histórico completo de versões.",
+    "documentManagementFeature1": "Edição online de documentos",
+    "documentManagementFeature2": "Organização perfeita",
+    "documentManagementFeature3": "Colaboração em tempo real",
+    "securityTitle": "Construído com Segurança em Mente",
+    "securityE2ETitle": "Encriptação de Ponta a Ponta",
+    "securityE2EDescription": "Os seus ficheiros são encriptados antes do envio",
+    "security2FATitle": "Autenticação de Dois Fatores",
+    "security2FADescription": "Camada extra de segurança",
+    "securityEUTitle": "100% Alojado na UE",
+    "securityEUDescription": "Conforme RGPD por conceção"
+  },
+  "features": {
+    "title": "Porquê Escolher a Felicloud?",
+    "subtitle": "Seguro, privado e construído para a sua liberdade",
+    "militaryGradeTitle": "Encriptação de Nível Militar",
+    "militaryGradeDescription": "Os seus ficheiros estão protegidos com encriptação de ponta a ponta. Só você tem acesso aos seus dados.",
+    "euHostedTitle": "100% Alojado na UE",
+    "euHostedDescription": "Todos os servidores localizados na Europa. Conforme RGPD e sujeito às rigorosas leis europeias de privacidade.",
+    "allDevicesTitle": "Todos os Seus Dispositivos",
+    "allDevicesDescription": "Aceda aos seus ficheiros em qualquer lugar: telemóvel, computador, web. Sincronização automática em todas as plataformas.",
+    "unlimitedSpeedTitle": "Velocidade Ilimitada",
+    "unlimitedSpeedDescription": "Sem limitações, sem restrições de largura de banda. Carregue e transfira à velocidade máxima.",
+    "lifetimePlansTitle": "Planos Vitalícios",
+    "lifetimePlansDescription": "Pague uma vez, use para sempre. Sem taxas recorrentes, sem surpresas.",
+    "openSourceTitle": "Código Aberto",
+    "openSourceDescription": "Baseado em Nextcloud. Transparente, auditável e orientado pela comunidade."
+  },
+  "comparison": {
+    "title": "Felicloud vs Os Outros",
+    "felicloud": "Felicloud",
+    "googleDrive": "Google Drive",
+    "dropbox": "Dropbox",
+    "privacyFirst": "Privacidade em Primeiro",
+    "euHosting": "Alojamento UE",
+    "lifetimePlans": "Planos Vitalícios",
+    "openSource": "Código Aberto",
+    "noTracking": "Sem Rastreamento"
+  },
+  "socialProof": {
+    "title": "Confiado por milhares de utilizadores na Europa",
+    "subtitle": "Junte-se à nossa crescente comunidade de utilizadores que valorizam privacidade e segurança",
+    "activeUsers": "Utilizadores Ativos",
+    "uptimeSLA": "Disponibilidade SLA",
+    "countries": "Países",
+    "dataStored": "Dados Armazenados",
+    "testimonial1Quote": "A Felicloud é exatamente o que procurava. Segura, privada e alojada na Europa. O plano vitalício é imbatível!",
+    "testimonial1Author": "Marie Dubois",
+    "testimonial1Role": "Designer Freelancer",
+    "testimonial2Quote": "Mudámos do Google Drive para a Felicloud para conformidade RGPD. A migração foi perfeita e o suporte foi excelente.",
+    "testimonial2Author": "Thomas Schmidt",
+    "testimonial2Role": "Gestor de TI",
+    "testimonial3Quote": "O melhor investimento em armazenamento cloud que fiz. Um pagamento, acesso vitalício. Sem arrependimentos!",
+    "testimonial3Author": "Sofia Romano",
+    "testimonial3Role": "Fotógrafa",
+    "gdprCompliant": "Conforme RGPD",
+    "e2eEncryption": "Encriptação de Ponta a Ponta",
+    "euHosted": "100% Alojado na UE"
+  },
+  "cta": {
+    "title": "Comece o Seu Cloud Vitalício Hoje",
+    "subtitle": "Junte-se a milhares de utilizadores que confiam os seus dados à Felicloud",
+    "button": "Começar Gratuitamente"
+  },
+  "pricing": {
+    "pageTitle": "Preços Simples e Transparentes",
+    "pageSubtitle": "Escolha o plano que se adequa às suas necessidades. Sem taxas escondidas, nunca.",
+    "freeForever": "Grátis para Sempre",
+    "startFree": "Comece Grátis, Fique Grátis para Sempre",
+    "freePlanDescription": "Obtenha 10 GB de armazenamento cloud seguro e encriptado sem cartão de crédito. Perfeito para experimentar a Felicloud.",
+    "createFreeAccount": "Criar Conta Gratuita",
+    "freeApprovalNote": "⚠️ As contas gratuitas estão sujeitas a aprovação e podem demorar até 24 horas a serem ativadas",
+    "needMoreSpace": "Precisa de Mais Espaço?",
+    "chooseBilling": "Escolha o seu ciclo de faturação",
+    "monthly": "Mensal",
+    "annual": "Anual",
+    "annualSave": "Poupe {{percent}}%",
+    "lifetimeOption": "Vitalício",
+    "mostPopular": "Mais Popular",
+    "bestDeal": "Melhor Oferta!",
+    "getStartedButton": "Começar",
+    "features": {
+      "storage": "{{amount}} de Armazenamento",
+      "traffic": "{{amount}} de Tráfego / mês",
+      "sync": "Sincronização e partilha completas",
+      "encryption": "Encriptação de ponta a ponta",
+      "support": "Suporte {{type}}",
+      "emailSupport": "E-mail",
+      "prioritySupport": "Prioritário",
+      "premiumSupport": "Premium",
+      "unlimitedDevices": "Dispositivos ilimitados",
+      "versionHistory": "Histórico de versões",
+      "twoFactor": "Autenticação de dois fatores",
+      "apps": "Aplicações móveis e desktop",
+      "collaboration": "Ferramentas de colaboração"
+    },
+    "faq": {
+      "title": "Perguntas Frequentes",
+      "q1": "Como funciona o plano gratuito?",
+      "a1": "O nosso plano gratuito oferece-lhe 10 GB de armazenamento cloud seguro para sempre. Não há limite de tempo, não é necessário cartão de crédito. Perfeito para experimentar a Felicloud sem riscos.",
+      "q2": "O que está incluído nos planos vitalícios?",
+      "a2": "Os planos vitalícios incluem um pagamento único para acesso permanente ao seu armazenamento. Nunca mais pagará! Isto inclui todas as futuras atualizações, correções de segurança e adições de funcionalidades.",
+      "q3": "Posso mudar de plano mais tarde?",
+      "a3": "Sim! Pode atualizar o seu plano a qualquer momento. Se estiver num plano mensal ou anual, pode alternar entre eles. Contacte a nossa equipa de suporte para obter ajuda.",
+      "q4": "Onde estão localizados os vossos servidores?",
+      "a4": "Todos os nossos servidores estão localizados em centros de dados da União Europeia. Somos totalmente conformes com o RGPD e sujeitos às rigorosas leis europeias de privacidade."
+    },
+    "secureCheckout": "Checkout Seguro",
+    "euHosted": "Alojado na UE",
+    "gdprCompliant": "Conforme RGPD"
+  },
+  "signup": {
+    "pageTitle": "Crie a Sua Conta Gratuita",
+    "pageSubtitle": "Obtenha 10 GB de armazenamento cloud seguro gratuitamente. Sem cartão de crédito.",
+    "form": {
+      "fullName": "Nome completo",
+      "fullNamePlaceholder": "João Silva",
+      "email": "Endereço de e-mail",
+      "emailPlaceholder": "voce@exemplo.com",
+      "createAccountButton": "Criar a minha conta gratuita"
+    },
+    "steps": {
+      "title": "Como funciona",
+      "step1": "Verifique a sua caixa de entrada (e pasta de spam!)",
+      "step2": "Clique no link de verificação",
+      "step3": "Defina a sua palavra-passe e aceite os termos",
+      "step4": "Aceda aos seus 10 GB cloud gratuitos!"
+    },
+    "alreadyHaveAccount": "Já tem uma conta?",
+    "terms": {
+      "agreeToTerms": "Concordo com os Termos de Serviço",
+      "agreeToPrivacy": "Concordo com a Política de Privacidade",
+      "mustAcceptTerms": "Deve aceitar os Termos de Serviço e a Política de Privacidade"
+    },
+    "errors": {
+      "fullNameRequired": "O nome completo é obrigatório",
+      "fullNameTooShort": "O nome completo deve ter pelo menos 2 caracteres",
+      "emailRequired": "O e-mail é obrigatório",
+      "invalidEmail": "Endereço de e-mail inválido",
+      "passwordRequired": "A palavra-passe é obrigatória",
+      "passwordTooShort": "A palavra-passe deve ter pelo menos 10 caracteres",
+      "passwordNoLowercase": "A palavra-passe deve conter pelo menos uma letra minúscula",
+      "passwordNoUppercase": "A palavra-passe deve conter pelo menos uma letra maiúscula",
+      "passwordNoSpecial": "A palavra-passe deve conter pelo menos um caractere especial"
+    },
+    "verification": {
+      "title": "Defina a Sua Palavra-Passe",
+      "subtitle": "Crie uma palavra-passe segura para a sua conta Felicloud",
+      "passwordLabel": "Palavra-passe",
+      "passwordPlaceholder": "Introduza uma palavra-passe forte",
+      "requirements": "Requisitos da palavra-passe",
+      "requirement10Chars": "Pelo menos 10 caracteres",
+      "requirementLowercase": "Uma letra minúscula",
+      "requirementUppercase": "Uma letra maiúscula",
+      "requirementSpecial": "Um caractere especial (!@#$%^&*)",
+      "createAccountButton": "Criar a Minha Conta"
+    }
+  },
+  "checkout": {
+    "pageTitle": "Obtenha {{planDisplay}} de Armazenamento",
+    "pageSubtitle": "Introduza o seu e-mail para continuar para o checkout seguro",
+    "backToPricing": "Voltar aos Preços",
+    "selectedPlan": "Plano Selecionado",
+    "form": {
+      "emailLabel": "Endereço de E-mail",
+      "emailPlaceholder": "voce@exemplo.com",
+      "emailNote": "Verificaremos se já tem uma conta Felicloud ou criaremos uma nova"
+    },
+    "trustBadges": {
+      "secureCheckout": "Checkout Seguro",
+      "euHosted": "Alojado na UE",
+      "gdprCompliant": "Conforme RGPD"
+    },
+    "secureNote": "Pagamentos processados de forma segura pela Stripe. As suas informações de pagamento são encriptadas e nunca armazenadas nos nossos servidores.",
+    "errors": {
+      "invalidEmail": "Por favor, introduza um endereço de e-mail válido"
+    }
+  },
+  "paymentSuccess": {
+    "title": "Pagamento Bem-Sucedido! 🎉",
+    "subtitle": "Obrigado pela sua compra. A sua conta está a ser configurada.",
+    "whatNext": "O que acontece a seguir?",
+    "steps": {
+      "step1": {
+        "title": "Verifique o seu e-mail",
+        "description": "Enviámos as suas credenciais de conta e mensagem de boas-vindas para {{email}}. Por favor, verifique a sua caixa de entrada (e pasta de spam!)."
+      },
+      "step2": {
+        "title": "Inicie sessão na Felicloud",
+        "description": "Visite {{cloudUrl}} e inicie sessão com as suas credenciais.",
+        "action": "Ir para a Felicloud"
+      },
+      "step3": {
+        "title": "Transfira as nossas aplicações",
+        "description": "Instale as nossas aplicações desktop e móveis para sincronizar os seus ficheiros automaticamente.",
+        "action": "Transferir Aplicações"
+      }
+    },
+    "support": {
+      "title": "Precisa de ajuda?",
+      "description": "A nossa equipa de suporte está aqui para o ajudar a começar. Contacte-nos a qualquer momento.",
+      "action": "Contactar Suporte"
+    },
+    "sessionId": "ID da Sessão",
+    "backToHome": "Voltar ao Início"
+  },
   "languages": {
     "en": "English",
     "fr": "Français",
@@ -15,5 +271,8 @@
     "it": "Italiano",
     "de": "Deutsch"
   },
-  "meta": {}
+  "meta": {
+    "defaultTitle": "Felicloud - Armazenamento Cloud Europeu Seguro",
+    "defaultDescription": "Planos de armazenamento cloud vitalícios com conformidade RGPD. 10 GB grátis para sempre. Servidores 100% alojados na UE."
+  }
 }
