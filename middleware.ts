@@ -39,35 +39,75 @@ function shouldSkipCsrfValidation(request: NextRequest): boolean {
  * Validate CSRF protection for API routes
  */
 function validateCsrf(request: NextRequest): { valid: boolean; error?: string } {
-  // Get expected origin
+  const isDevelopment = process.env.NODE_ENV === 'development';
+
+  // Get expected origin - use request origin as fallback
   const expectedOrigin = process.env.NEXT_PUBLIC_APP_URL
     ? new URL(process.env.NEXT_PUBLIC_APP_URL).origin
     : request.nextUrl.origin;
 
   const origin = request.headers.get('origin');
   const referer = request.headers.get('referer');
+  const host = request.headers.get('host');
 
-  // Validate Origin header
-  if (origin && origin !== expectedOrigin) {
-    console.warn(`⚠️ CSRF: Origin mismatch. Expected: ${expectedOrigin}, Got: ${origin}`);
-    return { valid: false, error: 'CSRF validation failed: Origin mismatch' };
+  // In development, be more lenient with localhost origins
+  if (isDevelopment && origin) {
+    const isLocalhost = origin.includes('localhost') || origin.includes('127.0.0.1');
+    const expectedIsLocalhost = expectedOrigin.includes('localhost') || expectedOrigin.includes('127.0.0.1');
+
+    if (isLocalhost && expectedIsLocalhost) {
+      return { valid: true };
+    }
   }
 
-  // Validate Referer header (if present)
-  if (referer) {
+  // Check if origin matches expected origin or host header
+  if (origin) {
+    const originMatches = origin === expectedOrigin;
+    const originMatchesHost = host && origin === `https://${host}`;
+    const originMatchesHostHttp = host && origin === `http://${host}`;
+
+    if (!originMatches && !originMatchesHost && !originMatchesHostHttp) {
+      console.warn(`⚠️ CSRF: Origin mismatch. Expected: ${expectedOrigin}, Got: ${origin}, Host: ${host}`);
+
+      // In production, if NEXT_PUBLIC_APP_URL is not set, allow if origin matches host
+      if (!process.env.NEXT_PUBLIC_APP_URL && (originMatchesHost || originMatchesHostHttp)) {
+        console.log(`✅ CSRF: Allowing request - origin matches host header`);
+        return { valid: true };
+      }
+
+      return { valid: false, error: 'CSRF validation failed: Origin mismatch' };
+    }
+  }
+
+  // Validate Referer header (if present and no Origin was provided)
+  if (!origin && referer) {
     try {
       const refererUrl = new URL(referer);
-      if (refererUrl.origin !== expectedOrigin) {
-        console.warn(`⚠️ CSRF: Referer mismatch. Expected: ${expectedOrigin}, Got: ${refererUrl.origin}`);
+      const refererMatches = refererUrl.origin === expectedOrigin;
+      const refererMatchesHost = host && (
+        refererUrl.origin === `https://${host}` ||
+        refererUrl.origin === `http://${host}`
+      );
+
+      if (!refererMatches && !refererMatchesHost) {
+        console.warn(`⚠️ CSRF: Referer mismatch. Expected: ${expectedOrigin}, Got: ${refererUrl.origin}, Host: ${host}`);
+
+        // In production, if NEXT_PUBLIC_APP_URL is not set, allow if referer matches host
+        if (!process.env.NEXT_PUBLIC_APP_URL && refererMatchesHost) {
+          console.log(`✅ CSRF: Allowing request - referer matches host header`);
+          return { valid: true };
+        }
+
         return { valid: false, error: 'CSRF validation failed: Referer mismatch' };
       }
     } catch {
-      return { valid: false, error: 'CSRF validation failed: Invalid Referer' };
+      // Invalid referer URL - continue to check if we have neither origin nor referer
     }
   }
 
   // If neither Origin nor Referer is present for a state-changing request, reject
   if (!origin && !referer) {
+    console.warn(`⚠️ CSRF: Missing both Origin and Referer headers`);
     return { valid: false, error: 'CSRF validation failed: Missing Origin and Referer headers' };
   }
 
