@@ -25,56 +25,56 @@ export default function PricingPage() {
       {/* Free Plan Banner - Featured */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-secondary p-12 shadow-2xl">
+          <div className="relative overflow-hidden rounded-3xl border-2 border-gray-100 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/20 p-12 shadow-xl">
             {/* Decorative elements */}
-            <div className="absolute top-0 right-0 -mt-4 -mr-4 h-32 w-32 rounded-full bg-white/10 blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 -mb-8 -ml-8 h-40 w-40 rounded-full bg-white/5 blur-3xl"></div>
+            <div className="absolute top-0 right-0 -mt-4 -mr-4 h-32 w-32 rounded-full bg-primary/5 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 -mb-8 -ml-8 h-40 w-40 rounded-full bg-purple-500/5 blur-3xl"></div>
 
             <div className="relative">
               <div className="flex items-center justify-center mb-6">
-                <span className="text-6xl">🎉</span>
+                <div className="rounded-2xl bg-gradient-to-br from-primary to-purple-600 p-4 shadow-lg">
+                  <svg className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                  </svg>
+                </div>
               </div>
 
-              <h2 className="text-center text-4xl font-bold text-white mb-4">
+              <h2 className="text-center text-4xl font-bold text-gray-900 mb-4">
                 Start Free, Stay Free Forever
               </h2>
 
-              <p className="text-center text-xl text-blue-50 max-w-3xl mx-auto mb-8">
+              <p className="text-center text-xl text-gray-600 max-w-3xl mx-auto mb-10">
                 Get 10 GB of secure, encrypted cloud storage - completely free, no credit card required
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-10">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl font-bold text-white mb-2">10 GB</div>
-                  <div className="text-blue-100 text-sm">Lifetime Storage</div>
+                <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div className="text-3xl font-bold text-primary mb-2">10 GB</div>
+                  <div className="text-gray-600 text-sm font-medium">Lifetime Storage</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl font-bold text-white mb-2">50 GB</div>
-                  <div className="text-blue-100 text-sm">Monthly Traffic</div>
+                <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div className="text-3xl font-bold text-primary mb-2">50 GB</div>
+                  <div className="text-gray-600 text-sm font-medium">Traffic per Month</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl font-bold text-white mb-2">Unlimited</div>
-                  <div className="text-blue-100 text-sm">Transfer Speed</div>
+                <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div className="text-3xl font-bold text-primary mb-2">Unlimited</div>
+                  <div className="text-gray-600 text-sm font-medium">Transfer Speed</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl font-bold text-white mb-2">100% EU</div>
-                  <div className="text-blue-100 text-sm">Hosted Servers</div>
+                <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                  <div className="text-3xl font-bold text-primary mb-2">🇪🇺 100%</div>
+                  <div className="text-gray-600 text-sm font-medium">EU Hosted</div>
                 </div>
               </div>
 
               <div className="text-center">
                 <Link href="/en/signup">
-                  <button className="inline-flex items-center justify-center rounded-xl bg-white px-10 py-5 text-xl font-bold text-primary hover:bg-gray-50 transition-all shadow-2xl hover:scale-105 transform">
+                  <button className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-primary to-purple-600 px-10 py-5 text-xl font-bold text-white hover:from-primary-dark hover:to-purple-700 transition-all shadow-xl hover:shadow-2xl hover:scale-105 transform cursor-pointer">
                     Create Free Account
                     <svg className="ml-3 h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
                   </button>
                 </Link>
-
-                <p className="mt-6 text-sm text-blue-100">
-                  ⚠️ Free accounts are subject to approval and may take up to 24 hours to activate
-                </p>
               </div>
             </div>
           </div>

@@ -17,6 +17,7 @@ export function Header({ lang = 'en' }: HeaderProps) {
   const navigation = [
     { name: t('nav.features'), href: `/${lang}/features` },
     { name: t('nav.pricing'), href: `/${lang}/pricing` },
+    { name: t('nav.business'), href: `/${lang}/business`, badge: 'New' },
     { name: t('nav.download'), href: `/${lang}/download` },
     { name: t('nav.about'), href: `/${lang}/about` },
   ];
@@ -77,9 +78,14 @@ export function Header({ lang = 'en' }: HeaderProps) {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-900 hover:text-primary transition-colors cursor-pointer"
+              className="text-sm font-semibold leading-6 text-gray-900 hover:text-primary transition-colors cursor-pointer relative"
             >
               {item.name}
+              {item.badge && (
+                <span className="absolute -top-2 -right-8 inline-flex items-center rounded-full bg-gradient-to-r from-primary to-purple-600 px-2 py-0.5 text-xs font-bold text-white shadow-sm">
+                  {item.badge}
+                </span>
+              )}
             </Link>
           ))}
         </div>
@@ -141,10 +147,17 @@ export function Header({ lang = 'en' }: HeaderProps) {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer relative"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {item.name}
+                <span className="flex items-center justify-between">
+                  {item.name}
+                  {item.badge && (
+                    <span className="inline-flex items-center rounded-full bg-gradient-to-r from-primary to-purple-600 px-2 py-0.5 text-xs font-bold text-white shadow-sm ml-2">
+                      {item.badge}
+                    </span>
+                  )}
+                </span>
               </Link>
             ))}
 
