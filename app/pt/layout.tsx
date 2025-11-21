@@ -3,17 +3,17 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
 export const metadata = {
-  title: 'Felicloud - Secure European Cloud Storage',
-  description: 'Lifetime cloud storage plans with GDPR compliance. 10 GB free forever. 100% EU hosted servers.',
+  title: 'Felicloud - Armazenamento Cloud Europeu Seguro',
+  description: 'Planos de armazenamento cloud vitalícios com conformidade RGPD. 10 GB grátis para sempre. Servidores 100% alojados na UE.',
 };
 
-export default function EnLayout({
+export default function PtLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="pt">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -24,9 +24,9 @@ export default function EnLayout({
       </head>
       <body className="font-sans">
         <div className="flex min-h-screen flex-col">
-          <Header lang="en" />
+          <Header lang="pt" />
           <main className="flex-1">{children}</main>
-          <Footer lang="en" />
+          <Footer lang="pt" />
         </div>
       </body>
     </html>
