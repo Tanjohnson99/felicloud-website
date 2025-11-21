@@ -41,70 +41,44 @@ export default function PricingPage() {
                 </div>
               </div>
 
-              <h2 className="text-center text-4xl font-bold text-white mb-4">
+              <h2 className="text-center text-4xl font-bold text-gray-900 mb-4">
                 {t('pricing.startFree')}
               </h2>
 
-              <p className="text-center text-xl text-blue-50 max-w-3xl mx-auto mb-8">
-                {t('pricing.freePlanDescription')}
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-10">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl font-bold text-white mb-2">{t('pricing.features.storage').replace('{{amount}}', '10 GB')}</div>
-                  <div className="text-blue-100 text-sm">{t('common.lifetime')}</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl font-bold text-white mb-2">{t('pricing.features.traffic').replace('{{amount}}', '50 GB')}</div>
-                  <div className="text-blue-100 text-sm">/ {t('common.month')}</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl font-bold text-white mb-2">{t('pricing.features.unlimitedDevices')}</div>
-                  <div className="text-blue-100 text-sm">Speed</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl font-bold text-white mb-2">100% EU</div>
-                  <div className="text-blue-100 text-sm">{t('pricing.euHosted')}</div>
-              <h2 className="text-center text-4xl font-bold text-gray-900 mb-4">
-                Start Free, Stay Free Forever
-              </h2>
-
               <p className="text-center text-xl text-gray-600 max-w-3xl mx-auto mb-10">
-                Get 10 GB of secure, encrypted cloud storage - completely free, no credit card required
+                {t('pricing.freePlanDescription')}
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-10">
                 <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
                   <div className="text-3xl font-bold text-primary mb-2">10 GB</div>
-                  <div className="text-gray-600 text-sm font-medium">Lifetime Storage</div>
+                  <div className="text-gray-600 text-sm font-medium">{t('common.lifetime')}</div>
                 </div>
                 <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
                   <div className="text-3xl font-bold text-primary mb-2">50 GB</div>
-                  <div className="text-gray-600 text-sm font-medium">Traffic per Month</div>
+                  <div className="text-gray-600 text-sm font-medium">/ {t('common.month')}</div>
                 </div>
                 <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-                  <div className="text-3xl font-bold text-primary mb-2">Unlimited</div>
-                  <div className="text-gray-600 text-sm font-medium">Transfer Speed</div>
+                  <div className="text-3xl font-bold text-primary mb-2">{t('pricing.features.unlimitedDevices')}</div>
+                  <div className="text-gray-600 text-sm font-medium">Speed</div>
                 </div>
                 <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
                   <div className="text-3xl font-bold text-primary mb-2">🇪🇺 100%</div>
-                  <div className="text-gray-600 text-sm font-medium">EU Hosted</div>
+                  <div className="text-gray-600 text-sm font-medium">{t('pricing.euHosted')}</div>
                 </div>
               </div>
 
               <div className="text-center">
                 <Link href="/en/signup">
-                  <button className="inline-flex items-center justify-center rounded-xl bg-white px-10 py-5 text-xl font-bold text-primary hover:bg-gray-50 transition-all shadow-2xl hover:scale-105 transform">
-                    {t('pricing.createFreeAccount')}
                   <button className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-primary to-purple-600 px-10 py-5 text-xl font-bold text-white hover:from-primary-dark hover:to-purple-700 transition-all shadow-xl hover:shadow-2xl hover:scale-105 transform cursor-pointer">
-                    Create Free Account
+                    {t('pricing.createFreeAccount')}
                     <svg className="ml-3 h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
                   </button>
                 </Link>
 
-                <p className="mt-6 text-sm text-blue-100">
+                <p className="mt-6 text-sm text-gray-600">
                   {t('pricing.freeApprovalNote')}
                 </p>
               </div>
