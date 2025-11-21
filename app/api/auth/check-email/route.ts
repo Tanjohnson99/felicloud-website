@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { checkUserExists } from '@/lib/services/nextcloud';
+import { rateLimiters } from '@/lib/utils/rate-limit';
 
 /**
  * POST /api/auth/check-email
@@ -18,9 +19,22 @@ import { checkUserExists } from '@/lib/services/nextcloud';
  *   "email": string,
  *   "accountType": "free" | "paid" | null  // null if doesn't exist
  * }
+ *
+ * Security: Rate limited to 10 requests per minute per IP
  */
 export async function POST(request: NextRequest) {
   try {
+    // Apply rate limiting (10 requests per minute)
+    const rateLimitResult = await rateLimiters.emailCheck.check(request);
+    if (!rateLimitResult.success) {
+      const response = NextResponse.json(
+        { error: rateLimitResult.error },
+        { status: 429 }
+      );
+      rateLimiters.emailCheck.addHeaders(response.headers, rateLimitResult);
+      return response;
+    }
+
     const body = await request.json();
     const { email } = body;
 

@@ -1,168 +1,174 @@
+'use client';
+
+import { useTranslation } from '@/lib/hooks/useTranslation';
+
 export default function PrivacyPage() {
+  const { t } = useTranslation('en');
+
   return (
     <div className="bg-white">
       <section className="py-20 sm:py-32">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            Privacy Policy
+            {t('legal.privacy.title')}
           </h1>
           <p className="mt-4 text-lg text-gray-600">
-            Last updated: January 2024
+            {t('legal.privacy.lastUpdated')}
           </p>
 
           <div className="mt-12 space-y-8 text-gray-600">
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">Our Commitment to Privacy</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.privacy.commitment.title')}</h2>
               <p className="mt-4">
-                At Felicloud, your privacy is our top priority. We believe your data belongs to you, and only you. This policy explains what data we collect, why we collect it, and how we protect it.
+                {t('legal.privacy.commitment.content')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">1. Data We Collect</h2>
-              <h3 className="mt-4 text-xl font-semibold text-gray-900">Account Information</h3>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.privacy.section1.title')}</h2>
+              <h3 className="mt-4 text-xl font-semibold text-gray-900">{t('legal.privacy.section1.account.title')}</h3>
               <p className="mt-2">
-                When you create an account, we collect:
+                {t('legal.privacy.section1.account.intro')}
               </p>
               <ul className="mt-4 list-disc list-inside space-y-2">
-                <li>Email address (for account access and communication)</li>
-                <li>Name (optional, for personalization)</li>
-                <li>Password (encrypted and never stored in plain text)</li>
-                <li>Payment information (processed by secure third-party providers, we don't store card details)</li>
+                <li>{t('legal.privacy.section1.account.items.0')}</li>
+                <li>{t('legal.privacy.section1.account.items.1')}</li>
+                <li>{t('legal.privacy.section1.account.items.2')}</li>
+                <li>{t('legal.privacy.section1.account.items.3')}</li>
               </ul>
 
-              <h3 className="mt-6 text-xl font-semibold text-gray-900">Usage Data</h3>
+              <h3 className="mt-6 text-xl font-semibold text-gray-900">{t('legal.privacy.section1.usage.title')}</h3>
               <p className="mt-2">
-                We collect minimal usage data to operate and improve our service:
+                {t('legal.privacy.section1.usage.intro')}
               </p>
               <ul className="mt-4 list-disc list-inside space-y-2">
-                <li>Storage usage (to enforce quotas)</li>
-                <li>Login times and IP addresses (for security)</li>
-                <li>Error logs (to fix bugs and improve reliability)</li>
+                <li>{t('legal.privacy.section1.usage.items.0')}</li>
+                <li>{t('legal.privacy.section1.usage.items.1')}</li>
+                <li>{t('legal.privacy.section1.usage.items.2')}</li>
               </ul>
 
-              <h3 className="mt-6 text-xl font-semibold text-gray-900">Your Files</h3>
+              <h3 className="mt-6 text-xl font-semibold text-gray-900">{t('legal.privacy.section1.files.title')}</h3>
               <p className="mt-2">
-                Your files are encrypted end-to-end. We cannot see, read, or access your file contents. We only store encrypted data.
+                {t('legal.privacy.section1.files.content')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">2. How We Use Your Data</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.privacy.section2.title')}</h2>
               <p className="mt-4">
-                We use your data only for:
+                {t('legal.privacy.section2.intro')}
               </p>
               <ul className="mt-4 list-disc list-inside space-y-2">
-                <li>Providing and maintaining our cloud storage service</li>
-                <li>Communicating important service updates</li>
-                <li>Processing payments for lifetime plans</li>
-                <li>Preventing fraud and abuse</li>
-                <li>Improving our service and fixing bugs</li>
+                <li>{t('legal.privacy.section2.items.0')}</li>
+                <li>{t('legal.privacy.section2.items.1')}</li>
+                <li>{t('legal.privacy.section2.items.2')}</li>
+                <li>{t('legal.privacy.section2.items.3')}</li>
+                <li>{t('legal.privacy.section2.items.4')}</li>
               </ul>
               <p className="mt-4 font-semibold">
-                We never sell your data. We never use your data for advertising. We never share your data with third parties except as required by law.
+                {t('legal.privacy.section2.commitment')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">3. Data Storage and Security</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.privacy.section3.title')}</h2>
               <p className="mt-4">
-                All data is stored in European data centers subject to strict EU data protection laws.
+                {t('legal.privacy.section3.location')}
               </p>
               <p className="mt-4">
-                Security measures include:
+                {t('legal.privacy.section3.measures')}
               </p>
               <ul className="mt-4 list-disc list-inside space-y-2">
-                <li>End-to-end encryption (AES-256)</li>
-                <li>TLS 1.3 for data in transit</li>
-                <li>Regular security audits</li>
-                <li>ISO 27001 certified infrastructure</li>
-                <li>Two-factor authentication (optional)</li>
+                <li>{t('legal.privacy.section3.items.0')}</li>
+                <li>{t('legal.privacy.section3.items.1')}</li>
+                <li>{t('legal.privacy.section3.items.2')}</li>
+                <li>{t('legal.privacy.section3.items.3')}</li>
+                <li>{t('legal.privacy.section3.items.4')}</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">4. Your Rights (GDPR)</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.privacy.section4.title')}</h2>
               <p className="mt-4">
-                Under GDPR, you have the right to:
+                {t('legal.privacy.section4.intro')}
               </p>
               <ul className="mt-4 list-disc list-inside space-y-2">
-                <li><strong>Access:</strong> Request a copy of all your personal data</li>
-                <li><strong>Rectification:</strong> Correct inaccurate data</li>
-                <li><strong>Erasure:</strong> Delete your account and all associated data</li>
-                <li><strong>Portability:</strong> Export your data in a standard format</li>
-                <li><strong>Object:</strong> Object to processing of your data</li>
-                <li><strong>Restrict:</strong> Restrict how we use your data</li>
+                <li><strong>{t('legal.privacy.section4.rights.access.title')}</strong> {t('legal.privacy.section4.rights.access.content')}</li>
+                <li><strong>{t('legal.privacy.section4.rights.rectification.title')}</strong> {t('legal.privacy.section4.rights.rectification.content')}</li>
+                <li><strong>{t('legal.privacy.section4.rights.erasure.title')}</strong> {t('legal.privacy.section4.rights.erasure.content')}</li>
+                <li><strong>{t('legal.privacy.section4.rights.portability.title')}</strong> {t('legal.privacy.section4.rights.portability.content')}</li>
+                <li><strong>{t('legal.privacy.section4.rights.object.title')}</strong> {t('legal.privacy.section4.rights.object.content')}</li>
+                <li><strong>{t('legal.privacy.section4.rights.restrict.title')}</strong> {t('legal.privacy.section4.rights.restrict.content')}</li>
               </ul>
               <p className="mt-4">
-                To exercise these rights, contact us at: privacy@felicloud.com
+                {t('legal.privacy.section4.contact')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">5. Data Retention</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.privacy.section5.title')}</h2>
               <p className="mt-4">
-                We retain your data as long as your account is active. When you delete your account:
+                {t('legal.privacy.section5.intro')}
               </p>
               <ul className="mt-4 list-disc list-inside space-y-2">
-                <li>All files are permanently deleted within 30 days</li>
-                <li>Account data is deleted within 90 days</li>
-                <li>Backups are purged within 180 days</li>
+                <li>{t('legal.privacy.section5.items.0')}</li>
+                <li>{t('legal.privacy.section5.items.1')}</li>
+                <li>{t('legal.privacy.section5.items.2')}</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">6. Cookies</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.privacy.section6.title')}</h2>
               <p className="mt-4">
-                We use only essential cookies required for the service to function:
+                {t('legal.privacy.section6.intro')}
               </p>
               <ul className="mt-4 list-disc list-inside space-y-2">
-                <li>Session cookies (to keep you logged in)</li>
-                <li>Security cookies (to prevent CSRF attacks)</li>
+                <li>{t('legal.privacy.section6.items.0')}</li>
+                <li>{t('legal.privacy.section6.items.1')}</li>
               </ul>
               <p className="mt-4">
-                We do not use tracking cookies or analytics cookies.
+                {t('legal.privacy.section6.noTracking')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">7. Third-Party Services</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.privacy.section7.title')}</h2>
               <p className="mt-4">
-                We use minimal third-party services:
+                {t('legal.privacy.section7.intro')}
               </p>
               <ul className="mt-4 list-disc list-inside space-y-2">
-                <li>Payment processors (Stripe, PayPal) - for billing only</li>
-                <li>Email service (for transactional emails only)</li>
+                <li>{t('legal.privacy.section7.items.0')}</li>
+                <li>{t('legal.privacy.section7.items.1')}</li>
               </ul>
               <p className="mt-4">
-                All third parties are GDPR compliant and bound by strict data processing agreements.
+                {t('legal.privacy.section7.compliance')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">8. Children's Privacy</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.privacy.section8.title')}</h2>
               <p className="mt-4">
-                Felicloud is not intended for children under 16. We do not knowingly collect data from children.
+                {t('legal.privacy.section8.content')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">9. Changes to This Policy</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.privacy.section9.title')}</h2>
               <p className="mt-4">
-                We may update this policy from time to time. We will notify you of significant changes via email.
+                {t('legal.privacy.section9.content')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900">10. Contact Us</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('legal.privacy.section10.title')}</h2>
               <p className="mt-4">
-                For privacy questions or to exercise your rights:
+                {t('legal.privacy.section10.intro')}
               </p>
               <p className="mt-2">
-                Email: privacy@felicloud.com
+                {t('legal.privacy.section10.email')}
               </p>
               <p className="mt-2">
-                Data Protection Officer: dpo@felicloud.com
+                {t('legal.privacy.section10.dpo')}
               </p>
             </section>
           </div>

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { headers } from 'next/headers';
+import { randomInt } from 'crypto';
 import Stripe from 'stripe';
 import {
   createNextcloudUser,
@@ -268,13 +269,15 @@ function parseStorageToBytes(storage: string): number {
 }
 
 /**
- * Generate a random password that meets Nextcloud requirements
+ * Generate a cryptographically secure random password that meets Nextcloud requirements
  * Requirements:
  * - At least one lowercase letter
  * - At least one uppercase letter
  * - At least one numeric character
  * - At least one special character
  * @returns Random password string (16 characters)
+ *
+ * Security: Uses crypto.randomInt() for cryptographically secure random generation
  */
 function generateRandomPassword(): string {
   const lowercase = 'abcdefghijklmnopqrstuvwxyz';
@@ -282,19 +285,25 @@ function generateRandomPassword(): string {
   const numbers = '0123456789';
   const special = '!@#$%^&*';
 
-  // Guarantee at least one of each required type
+  // Guarantee at least one of each required type using crypto.randomInt
   let password = '';
-  password += lowercase.charAt(Math.floor(Math.random() * lowercase.length));
-  password += uppercase.charAt(Math.floor(Math.random() * uppercase.length));
-  password += numbers.charAt(Math.floor(Math.random() * numbers.length));
-  password += special.charAt(Math.floor(Math.random() * special.length));
+  password += lowercase.charAt(randomInt(0, lowercase.length));
+  password += uppercase.charAt(randomInt(0, uppercase.length));
+  password += numbers.charAt(randomInt(0, numbers.length));
+  password += special.charAt(randomInt(0, special.length));
 
   // Fill the rest with random characters from all sets
   const allChars = lowercase + uppercase + numbers + special;
   for (let i = password.length; i < 16; i++) {
-    password += allChars.charAt(Math.floor(Math.random() * allChars.length));
+    password += allChars.charAt(randomInt(0, allChars.length));
   }
 
-  // Shuffle the password to avoid predictable pattern (always starting with lowercase)
-  return password.split('').sort(() => Math.random() - 0.5).join('');
+  // Shuffle the password using Fisher-Yates algorithm with crypto.randomInt
+  const passwordArray = password.split('');
+  for (let i = passwordArray.length - 1; i > 0; i--) {
+    const j = randomInt(0, i + 1);
+    [passwordArray[i], passwordArray[j]] = [passwordArray[j], passwordArray[i]];
+  }
+
+  return passwordArray.join('');
 }

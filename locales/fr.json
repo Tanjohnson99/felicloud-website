@@ -1,12 +1,386 @@
 {
-  "common": {},
-  "nav": {},
-  "footer": {},
-  "hero": {},
-  "features": {},
-  "comparison": {},
-  "socialProof": {},
-  "cta": {},
+  "common": {
+    "brandName": "Felicloud",
+    "tagline": "Stockage Cloud Européen Sécurisé",
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire",
+    "getStarted": "Commencer",
+    "learnMore": "En savoir plus",
+    "language": "Langue",
+    "copyright": "© 2024 Felicloud. Tous droits réservés.",
+    "loading": "Chargement...",
+    "processing": "Traitement en cours...",
+    "continue": "Continuer",
+    "back": "Retour",
+    "backTo": "Retour à {{page}}",
+    "month": "mois",
+    "year": "an",
+    "lifetime": "à vie"
+  },
+  "nav": {
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "download": "Télécharger",
+    "about": "À propos",
+    "contact": "Contact",
+    "blog": "Blog",
+    "help": "Aide",
+    "support": "Support"
+  },
+  "footer": {
+    "product": "Produit",
+    "support": "Support",
+    "company": "Entreprise",
+    "legal": "Mentions légales",
+    "termsOfService": "Conditions d'utilisation",
+    "privacyPolicy": "Politique de confidentialité",
+    "gdpr": "RGPD",
+    "socialMediaDescription": "Suivez-nous sur les réseaux sociaux",
+    "helpCenter": "Centre d'aide",
+    "contactSupport": "Contacter le support",
+    "downloadApps": "Télécharger les applications",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "title": "Stockage Cloud Européen de Confiance",
+    "subtitle": "Synchronisation sécurisée de fichiers, sauvegarde de photos et gestion documentaire propulsée par Nextcloud",
+    "cta": "10 Go Gratuits à Vie",
+    "viewPricing": "Voir les tarifs",
+    "fileSyncTitle": "Synchronisation & Partage",
+    "fileSyncDescription": "Accédez à vos fichiers partout. Synchronisation automatique sur tous vos appareils avec partage sécurisé et contrôle total.",
+    "fileSyncFeature1": "Synchronisation en temps réel",
+    "fileSyncFeature2": "Accès depuis n'importe où",
+    "fileSyncFeature3": "Chiffrement de bout en bout",
+    "photoBackupTitle": "Sauvegarde Photos & Vidéos",
+    "photoBackupDescription": "Upload automatique de vos photos et vidéos depuis tous vos appareils. Ne perdez jamais un souvenir avec notre sauvegarde cloud sécurisée.",
+    "photoBackupFeature1": "Upload automatique mobile",
+    "photoBackupFeature2": "Vue chronologique et albums",
+    "photoBackupFeature3": "Reconnaissance faciale",
+    "documentManagementTitle": "Gestion Documentaire",
+    "documentManagementDescription": "Organisez, éditez et collaborez sur vos documents. Travaillez ensemble en temps réel avec historique complet des versions.",
+    "documentManagementFeature1": "Édition en ligne de documents",
+    "documentManagementFeature2": "Organisation parfaite",
+    "documentManagementFeature3": "Collaboration en temps réel",
+    "securityTitle": "Conçu avec la Sécurité à l'Esprit",
+    "securityE2ETitle": "Chiffrement de Bout en Bout",
+    "securityE2EDescription": "Vos fichiers sont chiffrés avant l'envoi",
+    "security2FATitle": "Authentification à Deux Facteurs",
+    "security2FADescription": "Couche supplémentaire de sécurité",
+    "securityEUTitle": "100% Hébergé en UE",
+    "securityEUDescription": "Conforme RGPD par conception"
+  },
+  "features": {
+    "title": "Pourquoi Choisir Felicloud ?",
+    "subtitle": "Sécurisé, privé et conçu pour votre liberté",
+    "militaryGradeTitle": "Chiffrement de Niveau Militaire",
+    "militaryGradeDescription": "Vos fichiers sont protégés par un chiffrement de bout en bout. Vous seul avez accès à vos données.",
+    "euHostedTitle": "100% Hébergé en UE",
+    "euHostedDescription": "Tous les serveurs situés en Europe. Conforme RGPD et soumis aux lois strictes de protection européennes.",
+    "allDevicesTitle": "Tous Vos Appareils",
+    "allDevicesDescription": "Accédez à vos fichiers partout : mobile, ordinateur, web. Synchronisation automatique sur toutes les plateformes.",
+    "unlimitedSpeedTitle": "Vitesse Illimitée",
+    "unlimitedSpeedDescription": "Aucune limitation, aucune restriction de bande passante. Uploadez et téléchargez à vitesse maximale.",
+    "lifetimePlansTitle": "Formules à Vie",
+    "lifetimePlansDescription": "Payez une fois, utilisez pour toujours. Aucun frais récurrent, aucune surprise.",
+    "openSourceTitle": "Open Source",
+    "openSourceDescription": "Propulsé par Nextcloud. Transparent, auditable et piloté par la communauté.",
+    "heroTitle": "Toutes les fonctionnalités dont vous avez besoin",
+    "heroSubtitle": "Découvrez tout ce que Felicloud a à offrir - du stockage de fichiers basique aux outils de collaboration avancés",
+    "coreFeaturesTitle": "Fonctionnalités principales",
+    "coreFeaturesSubtitle": "Tout ce dont vous avez besoin pour un stockage et un partage de fichiers sécurisés",
+    "fileSyncDescription": "Gardez vos fichiers synchronisés sur tous vos appareils avec des mises à jour automatiques en temps réel et un partage sécurisé",
+    "fileSyncFeature2": "Synchronisation sélective des dossiers",
+    "fileSyncFeature3": "Résolution des conflits",
+    "photosTitle": "Photos et vidéos",
+    "photosDescription": "Sauvegardez automatiquement vos photos et vidéos avec des vues chronologiques, des albums et une organisation intelligente",
+    "photosFeature3": "Sauvegarde en qualité originale",
+    "documentFeature3": "Contrôle de version",
+    "securityTitle": "Sécurité et confidentialité",
+    "securitySubtitle": "Vos données protégées avec une sécurité de niveau militaire",
+    "securityE2EDescription": "Tous vos fichiers sont chiffrés avec AES-256 avant de quitter votre appareil",
+    "security2FATitle": "Authentification à deux facteurs",
+    "security2FADescription": "Ajoutez une couche de sécurité supplémentaire avec TOTP ou des clés de sécurité",
+    "passwordProtectionTitle": "Protection par mot de passe",
+    "passwordProtectionDescription": "Protégez les liens partagés avec des mots de passe et des dates d'expiration",
+    "gdprCompliantTitle": "Conforme RGPD",
+    "gdprCompliantDescription": "Conformité totale aux réglementations européennes de protection des données",
+    "productivityTitle": "Productivité et collaboration",
+    "productivitySubtitle": "Travaillez plus intelligemment avec des outils de productivité intégrés",
+    "calendarTitle": "Calendrier",
+    "calendarDescription": "Gérez votre emploi du temps avec un calendrier complet qui se synchronise sur tous les appareils",
+    "contactsTitle": "Contacts",
+    "contactsDescription": "Stockez et organisez vos contacts en toute sécurité avec le support CardDAV",
+    "tasksTitle": "Tâches",
+    "tasksDescription": "Créez, organisez et suivez vos listes de tâches et projets",
+    "notesTitle": "Notes",
+    "notesDescription": "Prenez des notes avec support Markdown et synchronisation instantanée",
+    "officeSuiteTitle": "Suite bureautique",
+    "officeSuiteDescription": "Éditez des documents, feuilles de calcul et présentations directement dans votre navigateur",
+    "videoCallsTitle": "Appels vidéo",
+    "videoCallsDescription": "Visioconférence sécurisée et chiffrée intégrée à votre cloud",
+    "chatTitle": "Chat",
+    "chatDescription": "Chat d'équipe et messagerie avec chiffrement de bout en bout",
+    "emailTitle": "E-mail",
+    "emailDescription": "Client e-mail complet intégré à votre stockage cloud",
+    "passwordManagerTitle": "Gestionnaire de mots de passe",
+    "passwordManagerDescription": "Stockez et gérez vos mots de passe en toute sécurité avec intégration navigateur",
+    "additionalFeaturesTitle": "Fonctionnalités supplémentaires",
+    "additionalFeaturesSubtitle": "Encore plus de moyens d'améliorer votre productivité",
+    "fileVersioningTitle": "Versions de fichiers",
+    "fileVersioningDescription": "Historique automatique des versions pour tous vos fichiers avec restauration facile",
+    "trashRecoveryTitle": "Récupération de la corbeille",
+    "trashRecoveryDescription": "Récupérez les fichiers supprimés de la corbeille jusqu'à 30 jours",
+    "fullTextSearchTitle": "Recherche en texte intégral",
+    "fullTextSearchDescription": "Recherchez à l'intérieur des documents pour trouver exactement ce dont vous avez besoin",
+    "tagsTitle": "Étiquettes et labels",
+    "tagsDescription": "Organisez les fichiers avec des étiquettes personnalisées pour une meilleure gestion",
+    "fileCommentsTitle": "Commentaires de fichiers",
+    "fileCommentsDescription": "Ajoutez des commentaires et annotations aux fichiers pour la collaboration en équipe",
+    "activityFeedTitle": "Fil d'activité",
+    "activityFeedDescription": "Visualisez toutes les activités et modifications de fichiers en temps réel",
+    "webdavTitle": "Accès WebDAV",
+    "webdavDescription": "Connectez-vous depuis n'importe quelle application compatible WebDAV",
+    "musicPlayerTitle": "Lecteur de musique",
+    "musicPlayerDescription": "Diffusez votre collection musicale de n'importe où",
+    "offlineAccessTitle": "Accès hors ligne",
+    "offlineAccessDescription": "Accédez à vos fichiers même lorsque vous êtes hors ligne",
+    "selectiveSyncTitle": "Synchronisation sélective",
+    "selectiveSyncDescription": "Choisissez quels dossiers synchroniser pour économiser de l'espace disque",
+    "externalStorageTitle": "Stockage externe",
+    "externalStorageDescription": "Connectez des fournisseurs de stockage externes et services cloud",
+    "notificationsTitle": "Notifications",
+    "notificationsDescription": "Restez informé avec des notifications en temps réel sur tous les appareils",
+    "interfaceTitle": "Interface belle et intuitive",
+    "interfaceSubtitle": "Une interface moderne conçue pour la productivité et la facilité d'utilisation",
+    "interfacePlaceholder": "Capture d'écran de l'interface",
+    "interfacePlaceholderSubtext": "Design épuré et moderne optimisé pour tous les appareils",
+    "filesInterfacePlaceholder": "Aperçu de l'interface des fichiers",
+    "fileManagementTitle": "Gestion des fichiers",
+    "fileManagementDescription": "Organisez vos fichiers avec des dossiers, des étiquettes et une recherche puissante",
+    "photosGalleryPlaceholder": "Aperçu de la galerie photo",
+    "photoGalleryTitle": "Galerie photo",
+    "photoGalleryDescription": "Belle expérience de visualisation de photos avec chronologie et albums",
+    "ctaTitle": "Prêt à découvrir Felicloud ?",
+    "ctaSubtitle": "Commencez avec 10 Go gratuits et découvrez toutes ces fonctionnalités dès aujourd'hui"
+  },
+  "comparison": {
+    "title": "Felicloud vs Les Autres",
+    "felicloud": "Felicloud",
+    "googleDrive": "Google Drive",
+    "dropbox": "Dropbox",
+    "privacyFirst": "Vie Privée d'Abord",
+    "euHosting": "Hébergement UE",
+    "lifetimePlans": "Formules à Vie",
+    "openSource": "Open Source",
+    "noTracking": "Sans Pistage"
+  },
+  "socialProof": {
+    "title": "La confiance de milliers d'utilisateurs en Europe",
+    "subtitle": "Rejoignez notre communauté grandissante d'utilisateurs qui valorisent la confidentialité et la sécurité",
+    "activeUsers": "Utilisateurs Actifs",
+    "uptimeSLA": "Disponibilité SLA",
+    "countries": "Pays",
+    "dataStored": "Données Stockées",
+    "testimonial1Quote": "Felicloud est exactement ce que je cherchais. Sécurisé, privé et hébergé en Europe. La formule à vie est imbattable !",
+    "testimonial1Author": "Marie Dubois",
+    "testimonial1Role": "Designer Freelance",
+    "testimonial2Quote": "Nous sommes passés de Google Drive à Felicloud pour la conformité RGPD. La migration a été fluide et le support excellent.",
+    "testimonial2Author": "Thomas Schmidt",
+    "testimonial2Role": "Responsable IT",
+    "testimonial3Quote": "Le meilleur investissement cloud que j'ai fait. Un paiement, accès à vie. Aucun regret !",
+    "testimonial3Author": "Sofia Romano",
+    "testimonial3Role": "Photographe",
+    "gdprCompliant": "Conforme RGPD",
+    "e2eEncryption": "Chiffrement de Bout en Bout",
+    "euHosted": "100% Hébergé en UE"
+  },
+  "cta": {
+    "title": "Démarrez Votre Cloud à Vie Aujourd'hui",
+    "subtitle": "Rejoignez les milliers d'utilisateurs qui font confiance à Felicloud pour leurs données",
+    "button": "Commencer Gratuitement"
+  },
+  "pricing": {
+    "pageTitle": "Tarifs Simples et Transparents",
+    "pageSubtitle": "Choisissez la formule qui correspond à vos besoins. Aucun frais caché, jamais.",
+    "freeForever": "Gratuit pour Toujours",
+    "startFree": "Commencez Gratuit, Restez Gratuit pour Toujours",
+    "freePlanDescription": "Obtenez 10 Go de stockage cloud sécurisé et chiffré sans carte bancaire. Parfait pour essayer Felicloud.",
+    "createFreeAccount": "Créer un Compte Gratuit",
+    "freeApprovalNote": "⚠️ Les comptes gratuits sont soumis à approbation et peuvent prendre jusqu'à 24 heures pour être activés",
+    "needMoreSpace": "Besoin de Plus d'Espace ?",
+    "chooseBilling": "Choisissez votre cycle de facturation",
+    "monthly": "Mensuel",
+    "annual": "Annuel",
+    "annualSave": "Économisez {{percent}} %",
+    "lifetimeOption": "À Vie",
+    "mostPopular": "Plus Populaire",
+    "bestDeal": "Meilleure Offre !",
+    "getStartedButton": "Commencer",
+    "features": {
+      "storage": "{{amount}} de Stockage",
+      "traffic": "{{amount}} de Trafic / mois",
+      "sync": "Synchronisation & partage complets",
+      "encryption": "Chiffrement de bout en bout",
+      "support": "Support {{type}}",
+      "emailSupport": "E-mail",
+      "prioritySupport": "Prioritaire",
+      "premiumSupport": "Premium",
+      "unlimitedDevices": "Appareils illimités",
+      "versionHistory": "Historique des versions",
+      "twoFactor": "Authentification à deux facteurs",
+      "apps": "Applications mobile & bureau",
+      "collaboration": "Outils de collaboration"
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "q1": "Comment fonctionne la formule gratuite ?",
+      "a1": "Notre formule gratuite vous offre 10 Go de stockage cloud sécurisé pour toujours. Il n'y a pas de limite de temps, aucune carte bancaire requise. Parfait pour essayer Felicloud sans risque.",
+      "q2": "Qu'est-ce qui est inclus dans les formules à vie ?",
+      "a2": "Les formules à vie incluent un paiement unique pour un accès permanent à votre stockage. Vous ne paierez plus jamais ! Cela inclut toutes les futures mises à jour, correctifs de sécurité et ajouts de fonctionnalités.",
+      "q3": "Puis-je changer de formule plus tard ?",
+      "a3": "Oui ! Vous pouvez mettre à niveau votre formule à tout moment. Si vous êtes sur une formule mensuelle ou annuelle, vous pouvez basculer entre elles. Contactez notre équipe support pour obtenir de l'aide.",
+      "q4": "Où sont situés vos serveurs ?",
+      "a4": "Tous nos serveurs sont situés dans des centres de données de l'Union européenne. Nous sommes entièrement conformes au RGPD et soumis aux lois strictes de protection de la vie privée européennes."
+    },
+    "secureCheckout": "Paiement Sécurisé",
+    "euHosted": "Hébergé en UE",
+    "gdprCompliant": "Conforme RGPD"
+  },
+  "signup": {
+    "pageTitle": "Créez Votre Compte Gratuit",
+    "pageSubtitle": "Obtenez 10 Go de stockage cloud sécurisé gratuitement. Aucune carte bancaire requise.",
+    "form": {
+      "fullName": "Nom complet",
+      "fullNamePlaceholder": "Jean Dupont",
+      "email": "Adresse e-mail",
+      "emailPlaceholder": "vous@exemple.com",
+      "createAccountButton": "Créer mon compte gratuit"
+    },
+    "steps": {
+      "title": "Comment ça marche",
+      "step1": "Vérifiez votre boîte de réception (et les spams !)",
+      "step2": "Cliquez sur le lien de vérification",
+      "step3": "Définissez votre mot de passe et acceptez les conditions",
+      "step4": "Accédez à vos 10 Go de cloud gratuits !"
+    },
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "terms": {
+      "agreeToTerms": "J'accepte les Conditions d'utilisation",
+      "agreeToPrivacy": "J'accepte la Politique de confidentialité",
+      "mustAcceptTerms": "Vous devez accepter les Conditions d'utilisation et la Politique de confidentialité"
+    },
+    "errors": {
+      "fullNameRequired": "Le nom complet est requis",
+      "fullNameTooShort": "Le nom complet doit contenir au moins 2 caractères",
+      "emailRequired": "L'adresse e-mail est requise",
+      "invalidEmail": "Adresse e-mail invalide",
+      "passwordRequired": "Le mot de passe est requis",
+      "passwordTooShort": "Le mot de passe doit contenir au moins 10 caractères",
+      "passwordNoLowercase": "Le mot de passe doit contenir au moins une lettre minuscule",
+      "passwordNoUppercase": "Le mot de passe doit contenir au moins une lettre majuscule",
+      "passwordNoSpecial": "Le mot de passe doit contenir au moins un caractère spécial (!@#$%^&* etc.)",
+      "passwordsDoNotMatch": "Les mots de passe ne correspondent pas",
+      "mustAcceptTerms": "Vous devez accepter les Conditions d'utilisation",
+      "mustAcceptPrivacy": "Vous devez accepter la Politique de confidentialité",
+      "invalidVerificationLink": "Lien de vérification invalide. Veuillez en demander un nouveau.",
+      "accountCreationFailed": "Échec de la création du compte",
+      "accountCreationFailedRetry": "Échec de la création du compte. Veuillez réessayer."
+    },
+    "verification": {
+      "title": "Finalisez Votre Compte",
+      "subtitle": "Vous y êtes presque ! Créez votre mot de passe et acceptez nos conditions.",
+      "passwordLabel": "Mot de passe",
+      "passwordPlaceholder": "••••••••••",
+      "confirmPasswordLabel": "Confirmez le mot de passe",
+      "confirmPasswordPlaceholder": "••••••••••",
+      "requirements": "Doit contenir : 10+ caractères, majuscule, minuscule et caractère spécial (!@#$%^&* etc.)",
+      "requirement10Chars": "Au moins 10 caractères",
+      "requirementLowercase": "Une lettre minuscule",
+      "requirementUppercase": "Une lettre majuscule",
+      "requirementSpecial": "Un caractère spécial (!@#$%^&*)",
+      "createAccountButton": "Créer un Compte Gratuit",
+      "creatingAccount": "Création du compte...",
+      "invalidLinkTitle": "Lien Invalide",
+      "invalidLinkMessage": "Ce lien de vérification est invalide ou manquant.",
+      "requestNewLink": "Demander un nouvel e-mail de vérification",
+      "accountCreatedTitle": "Compte Créé !",
+      "accountCreatedEmoji": "🎉",
+      "accountCreatedMessage": "Votre compte a été créé avec succès, {{name}} !",
+      "accountDetailsTitle": "Détails de Votre Compte",
+      "emailLabel": "E-mail :",
+      "storageLabel": "Stockage :",
+      "statusLabel": "Statut :",
+      "statusActive": "Actif ✓",
+      "storageAmount": "10 Go",
+      "accessCloud": "Accéder à Votre Cloud →",
+      "welcomeEmailSent": "Un e-mail de bienvenue a été envoyé à {{email}}",
+      "returnHome": "← Retour à l'accueil",
+      "gdprNote": "🔒 Vos données sont protégées par le RGPD. En savoir plus dans notre",
+      "gdprPolicyLink": "Politique RGPD"
+    }
+  },
+  "checkout": {
+    "pageTitle": "Obtenez {{planDisplay}} de Stockage",
+    "pageSubtitle": "Entrez votre e-mail pour continuer vers le paiement sécurisé",
+    "backToPricing": "Retour aux Tarifs",
+    "selectedPlan": "Formule Sélectionnée",
+    "form": {
+      "emailLabel": "Adresse E-mail",
+      "emailPlaceholder": "vous@exemple.com",
+      "emailNote": "Nous vérifierons si vous avez déjà un compte Felicloud ou en créerons un nouveau"
+    },
+    "trustBadges": {
+      "secureCheckout": "Paiement Sécurisé",
+      "euHosted": "Hébergé en UE",
+      "gdprCompliant": "Conforme RGPD"
+    },
+    "secureNote": "Paiements traités en toute sécurité par Stripe. Vos informations de paiement sont chiffrées et ne sont jamais stockées sur nos serveurs.",
+    "errors": {
+      "invalidEmail": "Veuillez entrer une adresse e-mail valide"
+    }
+  },
+  "paymentSuccess": {
+    "title": "Paiement Réussi ! 🎉",
+    "subtitle": "Merci pour votre achat. Votre compte est en cours de configuration.",
+    "whatNext": "Et maintenant ?",
+    "steps": {
+      "step1": {
+        "title": "Confirmation du paiement :",
+        "description": "Votre paiement a été reçu et est en cours de traitement par Stripe."
+      },
+      "step2": {
+        "title": "Configuration du compte :",
+        "description": "Votre compte Felicloud est en cours de création/mise à niveau automatiquement. Cela prend généralement moins de 2 minutes."
+      },
+      "step3": {
+        "title": "E-mail de bienvenue :",
+        "description": "Vous recevrez un e-mail avec vos identifiants de connexion et les instructions pour accéder à votre stockage cloud."
+      },
+      "step4": {
+        "title": "Commencez à utiliser Felicloud :",
+        "description": "Connectez-vous et commencez à téléverser vos fichiers, photos et documents !"
+      }
+    },
+    "transactionId": "ID de transaction :",
+    "receiptSent": "Un reçu a été envoyé à votre adresse e-mail.",
+    "support": {
+      "title": "Vous n'avez pas reçu votre e-mail ?",
+      "description": "Vérifiez votre dossier spam ou contactez le support si vous ne recevez pas vos identifiants dans les 10 minutes."
+    },
+    "buttons": {
+      "accessCloud": "Accéder à Votre Cloud",
+      "returnHome": "Retour à l'Accueil"
+    },
+    "footer": {
+      "needHelp": "Besoin d'aide ? Contactez notre",
+      "supportTeam": "équipe support"
+    },
+    "badges": {
+      "securePayment": "Paiement Sécurisé",
+      "euHosted": "Hébergé en UE",
+      "gdprCompliant": "Conforme RGPD"
+    }
+  },
   "languages": {
     "en": "English",
     "fr": "Français",
@@ -15,5 +389,779 @@
     "it": "Italiano",
     "de": "Deutsch"
   },
-  "meta": {}
+  "meta": {
+    "defaultTitle": "Felicloud - Stockage Cloud Européen Sécurisé",
+    "defaultDescription": "Formules de stockage cloud à vie avec conformité RGPD. 10 Go gratuits pour toujours. Serveurs 100% hébergés en UE."
+  },
+  "upgrade": {
+    "pageTitle": "Mettez à Niveau Votre Compte",
+    "pageSubtitle": "Obtenez plus d'espace de stockage et débloquez des fonctionnalités premium. Choisissez la formule qui correspond à vos besoins.",
+    "currentPlan": "Formule Actuelle",
+    "upgradeNow": "Mettre à Niveau Maintenant",
+    "oneTimePayment": "PAIEMENT UNIQUE",
+    "benefits": {
+      "moreStorage": {
+        "title": "Plus de Stockage",
+        "description": "Jusqu'à 2 To ou plus"
+      },
+      "unlimitedSpeed": {
+        "title": "Vitesse Illimitée",
+        "description": "Aucune limitation"
+      },
+      "prioritySupport": {
+        "title": "Support Prioritaire",
+        "description": "Temps de réponse rapide"
+      },
+      "bestValue": {
+        "title": "Meilleur Rapport Qualité-Prix",
+        "description": "Formules à vie disponibles"
+      }
+    },
+    "guarantee": {
+      "title": "Garantie Satisfait ou Remboursé 30 Jours",
+      "description": "Pas satisfait ? Obtenez un remboursement complet, sans questions."
+    },
+    "faq": {
+      "q1": "Vais-je perdre mes données en mettant à niveau ?",
+      "a1": "Non ! Vos données restent exactement où elles sont. La mise à niveau augmente simplement votre quota de stockage instantanément.",
+      "q2": "Puis-je rétrograder plus tard ?",
+      "a2": "Oui, mais vous devrez contacter le support. Nous vous aiderons à migrer vers une formule inférieure si nécessaire.",
+      "q3": "Quels modes de paiement acceptez-vous ?",
+      "a3": "Nous acceptons toutes les principales cartes de crédit, PayPal et les virements bancaires SEPA via Stripe."
+    }
+  },
+  "download": {
+    "pageTitle": "Télécharger Felicloud",
+    "pageSubtitle": "Accédez à vos fichiers depuis n'importe quel appareil. Disponible sur toutes les principales plateformes.",
+    "webAccess": {
+      "name": "Accès Web",
+      "description": "Accédez à Felicloud depuis n'importe quel navigateur web sans rien installer",
+      "features": "Aucune installation requise • Fonctionne sur n'importe quel appareil • Accès instantané",
+      "button": "Accéder Maintenant"
+    },
+    "nativeApps": {
+      "title": "Applications Natives",
+      "subtitle": "Téléchargez nos applications pour une meilleure expérience sur votre appareil",
+      "infoBox": {
+        "title": "À propos des Applications",
+        "description": "Les applications que vous téléchargerez s'appellent Nextcloud, la plateforme open-source qui alimente Felicloud. Ces applications sont 100% compatibles avec notre service et fournissent un accès fluide à vos fichiers.",
+        "setupNote": "Première installation ? Lorsque vous ouvrez l'application, on vous demandera une URL de serveur. Pas d'inquiétude, nous avons tout prévu !",
+        "linkText": "Voir le guide de configuration et l'URL du serveur"
+      }
+    },
+    "platforms": {
+      "windows": {
+        "name": "Windows",
+        "description": "Pour Windows 10 et versions ultérieures"
+      },
+      "macos": {
+        "name": "macOS",
+        "description": "Pour macOS 10.15 et versions ultérieures"
+      },
+      "linux": {
+        "name": "Linux (AppImage)",
+        "description": "Pour toutes les distributions Linux"
+      },
+      "android": {
+        "name": "Android",
+        "description": "Disponible sur Google Play"
+      },
+      "ios": {
+        "name": "iOS",
+        "description": "Disponible sur l'App Store"
+      },
+      "webdav": {
+        "name": "WebDAV",
+        "description": "Connectez n'importe quel client WebDAV"
+      }
+    },
+    "buttons": {
+      "download": "Télécharger",
+      "tutorial": "Tutoriel"
+    },
+    "support": {
+      "title": "Besoin d'aide ?",
+      "description": "Visitez notre centre de support pour les guides d'installation et la configuration système requise",
+      "installationGuides": "Guides d'Installation",
+      "systemRequirements": "Configuration Requise"
+    }
+  },
+  "support": {
+    "heroTitle": "Centre de Support",
+    "heroSubtitle": "Obtenez de l'aide avec Felicloud. Parcourez notre FAQ ou contactez notre équipe support.",
+    "faqTitle": "Questions Fréquemment Posées",
+    "faqSubtitle": "Trouvez des réponses aux questions courantes sur Felicloud",
+    "faq": {
+      "q1": "Comment commencer avec Felicloud ?",
+      "a1": "Commencer est facile ! Inscrivez-vous pour un compte gratuit, téléchargez notre application pour votre appareil et commencez à téléverser vos fichiers. Votre compte gratuit de 10 Go sera activé dans les 24 heures après approbation.",
+      "q2": "Quels appareils sont pris en charge ?",
+      "a2": "Felicloud fonctionne sur Windows, macOS, Linux, Android, iOS et tout navigateur web. Vous pouvez également vous connecter via WebDAV pour une compatibilité maximale avec les applications tierces.",
+      "q3": "Mes données sont-elles sécurisées ?",
+      "a3": "Tous vos fichiers sont protégés par un chiffrement de bout en bout. Les données sont stockées sur des serveurs situés exclusivement en Europe, conformément aux réglementations RGPD. Vous seul avez accès à vos clés de chiffrement.",
+      "q4": "Puis-je mettre à niveau ou rétrograder ma formule ?",
+      "a4": "Oui ! Vous pouvez passer d'un compte gratuit à n'importe quelle formule payante, ou passer d'une formule de stockage à une autre à tout moment. Pour les formules à vie, vous ne payez que la différence lors de la mise à niveau.",
+      "q5": "Quels modes de paiement acceptez-vous ?",
+      "a5": "Nous acceptons toutes les principales cartes de crédit (Visa, Mastercard, Amex), PayPal et les virements bancaires SEPA pour les clients européens.",
+      "q6": "Proposez-vous des remboursements ?",
+      "a6": "Oui ! Nous offrons une garantie satisfait ou remboursé de 30 jours sur toutes les formules payantes. Si vous n'êtes pas satisfait, contactez-nous dans les 30 jours suivant votre achat pour un remboursement complet, sans questions."
+    },
+    "contactTitle": "Vous avez encore besoin d'aide ?",
+    "contactSubtitle": "Notre équipe support est là pour vous aider",
+    "contactButton": "Contacter le Support",
+    "helpCenterButton": "Visiter le Centre d'Aide"
+  },
+  "tutorial": {
+    "heroTitle": "Guide de Configuration WebDAV",
+    "heroSubtitle": "Connectez Felicloud à n'importe quelle application compatible WebDAV",
+    "whatIsWebDAVTitle": "Qu'est-ce que WebDAV ?",
+    "whatIsWebDAVDescription": "WebDAV (Web Distributed Authoring and Versioning) est une extension de HTTP qui vous permet de connecter Felicloud à pratiquement n'importe quelle application prenant en charge le stockage de fichiers. Cela signifie que vous pouvez accéder à vos fichiers directement depuis les explorateurs de fichiers, les applications bureautiques, les lecteurs multimédias et de nombreux autres programmes sans utiliser l'application de bureau Felicloud.",
+    "connectionSettingsTitle": "Paramètres de Connexion",
+    "credentialsTitle": "Vos Identifiants WebDAV",
+    "serverURL": "URL du serveur :",
+    "username": "Nom d'utilisateur :",
+    "password": "Mot de passe :",
+    "noteLabel": "Note :",
+    "noteText": "Remplacez USERNAME par votre véritable nom d'utilisateur Felicloud (généralement votre adresse e-mail).",
+    "platformSetupTitle": "Configuration Spécifique à la Plateforme",
+    "platforms": {
+      "windows": {
+        "title": "Windows",
+        "step1": "Ouvrez l'Explorateur de fichiers et cliquez sur \"Ce PC\" dans la barre latérale gauche",
+        "step2": "Cliquez sur l'onglet \"Ordinateur\" dans le ruban, puis \"Connecter un lecteur réseau\"",
+        "step3": "Choisissez une lettre de lecteur (par exemple, Z:)",
+        "step4": "Entrez l'URL WebDAV dans le champ de dossier",
+        "step5": "Cochez \"Se connecter à l'aide d'informations d'identification différentes\" et cliquez sur \"Terminer\"",
+        "step6": "Entrez votre e-mail et mot de passe Felicloud lorsqu'on vous le demande"
+      },
+      "macos": {
+        "title": "macOS",
+        "step1": "Ouvrez le Finder",
+        "step2": "Appuyez sur Commande+K ou Aller → Se connecter au serveur depuis le menu",
+        "step3": "Entrez l'URL WebDAV",
+        "step4": "Cliquez sur \"Se connecter\"",
+        "step5": "Choisissez \"Utilisateur enregistré\" et entrez vos identifiants",
+        "step6": "Votre stockage Felicloud apparaîtra dans le Finder"
+      },
+      "linux": {
+        "title": "Linux (GNOME/Nautilus)",
+        "step1": "Ouvrez Fichiers (Nautilus)",
+        "step2": "Cliquez sur \"+ Autres emplacements\" dans la barre latérale gauche",
+        "step3": "Dans \"Se connecter au serveur\" en bas, entrez l'URL WebDAV commençant par davs://",
+        "step4": "Cliquez sur \"Se connecter\"",
+        "step5": "Entrez vos identifiants Felicloud lorsqu'on vous le demande"
+      },
+      "mobile": {
+        "title": "Mobile (iOS & Android)",
+        "description": "Utilisez une application compatible WebDAV depuis l'App Store ou Google Play :",
+        "iosLabel": "iOS :",
+        "iosApps": "Documents by Readdle, FE File Explorer",
+        "androidLabel": "Android :",
+        "androidApps": "Total Commander, Solid Explorer, FX File Explorer",
+        "instructions": "Ensuite, ajoutez une nouvelle connexion WebDAV en utilisant les paramètres fournis ci-dessus."
+      }
+    },
+    "applicationsTitle": "Applications Populaires",
+    "applications": {
+      "office": {
+        "title": "Microsoft Office",
+        "description": "Ouvrez et enregistrez des documents directement sur Felicloud depuis Word, Excel et PowerPoint en utilisant Fichier → Ouvrir → Ajouter un emplacement → WebDAV"
+      },
+      "libreoffice": {
+        "title": "LibreOffice",
+        "description": "Accédez à Felicloud via Fichier → Ouvrir à distance → Ajouter une connexion WebDAV avec vos identifiants"
+      },
+      "cyberduck": {
+        "title": "Cyberduck / Transmit",
+        "description": "Clients de transfert de fichiers professionnels avec prise en charge complète de WebDAV pour une gestion avancée des fichiers"
+      },
+      "media": {
+        "title": "Lecteurs Multimédias",
+        "description": "Diffusez des médias directement depuis Felicloud en utilisant VLC, Kodi ou d'autres lecteurs avec prise en charge WebDAV"
+      }
+    },
+    "troubleshootingTitle": "Dépannage",
+    "troubleshooting": {
+      "connection": {
+        "title": "Connexion refusée ou délai d'attente",
+        "description": "Assurez-vous d'utiliser HTTPS (pas HTTP) et que votre pare-feu ne bloque pas le port 443. Essayez d'utiliser davs:// au lieu de https:// sur Linux."
+      },
+      "auth": {
+        "title": "Échec de l'authentification",
+        "description": "Vérifiez votre e-mail et mot de passe. Si vous avez activé la 2FA, vous devrez peut-être générer un mot de passe spécifique à l'application depuis les paramètres de votre compte Felicloud."
+      },
+      "performance": {
+        "title": "Performances lentes",
+        "description": "Les performances WebDAV dépendent de votre connexion internet. Pour de meilleures performances, utilisez l'application native Felicloud qui inclut la mise en cache locale et la synchronisation optimisée."
+      }
+    },
+    "supportCTA": {
+      "title": "Vous avez encore besoin d'aide ?",
+      "subtitle": "Notre équipe support est là pour vous aider à vous connecter",
+      "button": "Contacter le Support"
+    }
+  },
+  "about": {
+    "heroTitle": "À Propos de Felicloud",
+    "heroSubtitle": "Stockage cloud européen fondé sur la confidentialité, la sécurité et la transparence",
+    "storyTitle": "Notre Histoire",
+    "storyParagraph1": "Felicloud a été fondé avec une mission simple : fournir un stockage cloud sécurisé et privé qui respecte vos droits et libertés.",
+    "storyParagraph2": "Nous croyons que vos données vous appartiennent, et à vous seul. C'est pourquoi nous avons construit Felicloud sur les principes de la protection de la vie privée par conception, la transparence et les valeurs européennes.",
+    "storyParagraph3": "Contrairement aux grandes entreprises technologiques qui profitent de vos données, nous avons un modèle commercial simple : vous payez pour le stockage, et nous fournissons le meilleur service possible. Pas de publicités, pas de pistage, pas d'agenda caché.",
+    "organizationTitle": "Membre d'un Groupe de Confiance",
+    "organizationTagline": "Felicloud est un projet",
+    "organizationProject": "projet",
+    "organizationMember": "Membre du",
+    "organizationDescription": "FELIDATA se consacre à fournir des solutions de données européennes axées sur la confidentialité. En tant que partie du Groupe BTJT, nous bénéficions d'années d'expertise en gestion de données, sécurité et conformité européenne, garantissant que Felicloud répond aux plus hauts standards de qualité et de fiabilité.",
+    "valuesTitle": "Nos Valeurs",
+    "privacyFirstTitle": "Vie Privée d'Abord",
+    "privacyFirstDescription": "Vos données sont chiffrées de bout en bout. Nous ne pouvons pas voir vos fichiers, et nous ne le pourrons jamais. Conforme RGPD par conception.",
+    "europeanTitle": "100% Européen",
+    "europeanDescription": "Tous nos serveurs sont situés en Europe, soumis aux lois strictes de protection des données européennes. Pas de Cloud Act américain, pas de surveillance étrangère.",
+    "openSourceTitle": "Open Source",
+    "openSourceDescription": "Construit sur Nextcloud, une plateforme open-source. Transparent, auditable et piloté par la communauté. Pas de boîtes noires.",
+    "fairPricingTitle": "Tarification Équitable",
+    "fairPricingDescription": "Formules à vie sans frais récurrents. Vous possédez votre stockage pour toujours. Pas d'augmentation de prix, pas de pièges d'abonnement.",
+    "technologyTitle": "Technologie",
+    "technologyParagraph1": "Felicloud est propulsé par Nextcloud, la plateforme cloud auto-hébergée la plus populaire au monde. Avec plus de 400 000 déploiements dans le monde, Nextcloud est approuvé par les gouvernements, les universités et les entreprises.",
+    "technologyParagraph2": "Notre infrastructure est hébergée dans des centres de données européens avec certification ISO 27001, alimentation et refroidissement redondants, et surveillance 24h/24 et 7j/7.",
+    "technologyParagraph3": "Nous utilisons un chiffrement standard de l'industrie (AES-256) et des protocoles sécurisés (TLS 1.3) pour protéger vos données en transit et au repos.",
+    "ctaTitle": "Rejoignez le Mouvement",
+    "ctaSubtitle": "Reprenez le contrôle de vos données. Commencez avec 10 Go gratuits.",
+    "ctaButton": "Commencer"
+  },
+  "help": {
+    "heroTitle": "Centre d'Aide",
+    "heroSubtitle": "Tout ce que vous devez savoir sur l'utilisation de Felicloud",
+    "searchPlaceholder": "Rechercher des articles d'aide...",
+    "searchButton": "Rechercher",
+    "gettingStartedTitle": "Démarrage",
+    "gettingStartedTopic1": "Créer votre compte",
+    "gettingStartedTopic2": "Installer les applications Felicloud",
+    "gettingStartedTopic3": "Téléverser vos premiers fichiers",
+    "gettingStartedTopic4": "Se connecter via WebDAV",
+    "accountBillingTitle": "Compte & Facturation",
+    "accountBillingTopic1": "Gérer votre abonnement",
+    "accountBillingTopic2": "Mettre à niveau votre formule",
+    "accountBillingTopic3": "Modes de paiement",
+    "accountBillingTopic4": "Politique de remboursement",
+    "securityPrivacyTitle": "Sécurité & Confidentialité",
+    "securityPrivacyTopic1": "Comment fonctionne le chiffrement",
+    "securityPrivacyTopic2": "Authentification à deux facteurs",
+    "securityPrivacyTopic3": "Conformité RGPD",
+    "securityPrivacyTopic4": "Localisation des données",
+    "fileManagementTitle": "Gestion des Fichiers",
+    "fileManagementTopic1": "Organiser les fichiers",
+    "fileManagementTopic2": "Partager des fichiers et dossiers",
+    "fileManagementTopic3": "Historique des versions",
+    "fileManagementTopic4": "Récupération des fichiers supprimés",
+    "appsSyncTitle": "Applications & Synchronisation",
+    "appsSyncTopic1": "Configuration de l'application de bureau",
+    "appsSyncTopic2": "Fonctionnalités de l'application mobile",
+    "appsSyncTopic3": "Synchronisation sélective",
+    "appsSyncTopic4": "Résolution des problèmes de synchronisation",
+    "advancedFeaturesTitle": "Fonctionnalités Avancées",
+    "advancedFeaturesTopic1": "Accès API",
+    "advancedFeaturesTopic2": "Intégrations tierces",
+    "advancedFeaturesTopic3": "Domaines personnalisés",
+    "advancedFeaturesTopic4": "Automatisation",
+    "popularArticlesTitle": "Articles Populaires",
+    "popularArticle1": "Comment configurer l'authentification à deux facteurs",
+    "popularArticle2": "Comprendre votre quota de stockage et les limites de trafic",
+    "popularArticle3": "Partager des fichiers et dossiers avec d'autres",
+    "popularArticle4": "Installer le client de synchronisation de bureau",
+    "popularArticle5": "Connecter Felicloud via WebDAV",
+    "popularArticle6": "Récupérer des fichiers supprimés",
+    "contactSupportTitle": "Vous ne trouvez pas ce que vous cherchez ?",
+    "contactSupportSubtitle": "Notre équipe support est prête à vous aider avec toutes vos questions",
+    "contactSupportButton": "Contacter le Support"
+  },
+  "blog": {
+    "heroTitle": "Blog Felicloud",
+    "heroSubtitle": "Conseils, mises à jour et informations sur le stockage cloud, la confidentialité et comment tirer le meilleur parti de Felicloud",
+    "categoryAll": "Tout",
+    "categoryGettingStarted": "Démarrage",
+    "categoryPrivacy": "Confidentialité",
+    "categoryFeatures": "Fonctionnalités",
+    "categoryUpdates": "Mises à jour",
+    "categoryTips": "Conseils & Astuces",
+    "post1Title": "Débuter avec Felicloud : Un Guide Complet",
+    "post1Excerpt": "Apprenez à configurer votre compte Felicloud et à commencer à synchroniser vos fichiers sur tous vos appareils en quelques minutes.",
+    "post1Date": "17 novembre 2024",
+    "post1Author": "Équipe Felicloud",
+    "post1Category": "Démarrage",
+    "post1ReadTime": "5 min de lecture",
+    "post2Title": "Pourquoi l'Hébergement Cloud Européen Compte pour Votre Confidentialité",
+    "post2Excerpt": "Découvrez les avantages du stockage cloud conforme au RGPD et pourquoi l'hébergement dans l'UE protège vos données.",
+    "post2Date": "15 novembre 2024",
+    "post2Author": "Équipe Felicloud",
+    "post2Category": "Confidentialité",
+    "post2ReadTime": "7 min de lecture",
+    "post3Title": "Top 5 des Fonctionnalités que Vous Ne Saviez Pas que Felicloud Avait",
+    "post3Excerpt": "Explorez les fonctionnalités avancées qui font de Felicloud plus qu'un simple stockage cloud - des calendriers aux documents collaboratifs.",
+    "post3Date": "12 novembre 2024",
+    "post3Author": "Équipe Felicloud",
+    "post3Category": "Fonctionnalités",
+    "post3ReadTime": "6 min de lecture",
+    "readMore": "Lire la suite",
+    "comingSoon": "Plus d'articles bientôt ! Restez à l'écoute pour des tutoriels, des guides de confidentialité et des mises à jour de produits.",
+    "newsletterTitle": "Abonnez-vous à notre newsletter",
+    "newsletterSubtitle": "Recevez les derniers articles de blog, mises à jour de produits et conseils de stockage cloud directement dans votre boîte de réception.",
+    "newsletterPlaceholder": "Entrez votre e-mail",
+    "newsletterButton": "S'abonner"
+  },
+  "legal": {
+    "terms": {
+      "title": "Conditions Générales d'Utilisation",
+      "lastUpdated": "Dernière mise à jour : 20 novembre 2024",
+      "section1": {
+        "title": "1. Acceptation des Conditions",
+        "content": "En accédant et en utilisant les services de Felicloud, vous acceptez d'être lié par ces Conditions Générales d'Utilisation et toutes les lois et réglementations applicables. Si vous n'acceptez pas l'une de ces conditions, il vous est interdit d'utiliser ou d'accéder à nos services. Les contenus et services contenus sur cette plateforme sont protégés par les lois applicables en matière de droits d'auteur et de marques déposées."
+      },
+      "section2": {
+        "title": "2. Inscription et Éligibilité au Compte",
+        "content": "Pour utiliser les services Felicloud, vous devez créer un compte en fournissant des informations exactes, actuelles et complètes. Vous êtes responsable du maintien de la confidentialité de vos identifiants de compte et de toutes les activités qui se produisent sous votre compte. Vous vous engagez à :",
+        "items": [
+          "Fournir des informations exactes et véridiques lors de l'inscription",
+          "Maintenir la sécurité de votre mot de passe et de votre compte",
+          "Nous notifier immédiatement de toute utilisation non autorisée de votre compte",
+          "Avoir au moins 16 ans ou disposer du consentement parental/tuteur pour utiliser nos services"
+        ]
+      },
+      "section3": {
+        "title": "3. Description et Modifications du Service",
+        "content": "Felicloud fournit des services de stockage cloud sécurisés propulsés par la technologie Nextcloud. Nous proposons divers plans de stockage incluant des abonnements gratuits et payants avec différentes fonctionnalités et capacités de stockage. Les fonctionnalités, tarifs et disponibilité du service peuvent varier selon le type de plan.",
+        "notify": "Nous nous réservons le droit de modifier, suspendre ou interrompre tout aspect de nos services à tout moment, avec ou sans préavis. Nous ferons des efforts raisonnables pour notifier les utilisateurs de changements significatifs par e-mail ou notifications de service."
+      },
+      "section4": {
+        "title": "4. Contenu Utilisateur et Propriété des Données",
+        "content": "Vous conservez tous les droits de propriété sur le contenu et les données que vous téléversez sur Felicloud. En utilisant nos services, vous nous accordez une licence limitée pour stocker, traiter et transmettre votre contenu uniquement dans le but de vous fournir nos services. Nous ne revendiquons aucune propriété sur votre contenu.",
+        "modifications": "Nous n'accéderons jamais, ne visualiserons jamais et ne partagerons jamais votre contenu privé sauf si la loi l'exige, avec votre permission explicite, ou si nécessaire pour fournir une assistance technique à votre demande. Vos données sont chiffrées et protégées conformément à notre Politique de Confidentialité."
+      },
+      "section5": {
+        "title": "5. Politique d'Utilisation Acceptable",
+        "content": "Vous acceptez d'utiliser les services Felicloud uniquement à des fins légales et conformément à ces Conditions. Vous vous engagez à ne pas :",
+        "items": [
+          "Téléverser ou transmettre tout contenu illégal, nuisible, menaçant, abusif, harcelant, diffamatoire ou autrement répréhensible",
+          "Violer les droits de propriété intellectuelle ou autres droits de propriété de toute partie",
+          "Transmettre des logiciels malveillants, virus ou tout code de nature destructrice",
+          "Tenter d'obtenir un accès non autorisé à nos systèmes, réseaux ou comptes d'autres utilisateurs",
+          "Utiliser nos services pour envoyer du spam, des tentatives de phishing ou des communications commerciales non sollicitées"
+        ]
+      },
+      "section6": {
+        "title": "6. Vie Privée et Protection des Données",
+        "content": "Votre vie privée est importante pour nous. Notre collecte, utilisation et protection de vos données personnelles sont régies par notre",
+        "privacyLink": "Politique de Confidentialité",
+        "contentEnd": "qui est incorporée dans ces Conditions par référence. En utilisant Felicloud, vous consentez aux pratiques de données décrites dans notre Politique de Confidentialité."
+      },
+      "section7": {
+        "title": "7. Conditions de Paiement et Facturation",
+        "content": "Les abonnements payants sont facturés à l'avance sur une base mensuelle, annuelle ou unique selon le plan sélectionné. Tous les frais sont non remboursables sauf si la loi l'exige ou tel qu'explicitement indiqué dans notre politique de remboursement. Nous nous réservons le droit de modifier nos tarifs avec un préavis de 30 jours. Les changements de prix n'affecteront pas les détenteurs de plans à vie existants. Le traitement des paiements est géré de manière sécurisée par Stripe, et nous ne stockons pas les détails de votre carte de paiement."
+      },
+      "section8": {
+        "title": "8. Annulation et Résiliation",
+        "content": "Vous pouvez annuler votre abonnement à tout moment via les paramètres de votre compte. Lors de l'annulation, vous conserverez l'accès à vos fonctionnalités payantes jusqu'à la fin de votre période de facturation actuelle. Nous nous réservons le droit de suspendre ou de résilier votre compte si vous violez ces Conditions Générales d'Utilisation ou vous engagez dans une activité frauduleuse.",
+        "refunds": "Les remboursements pour les plans payants sont disponibles dans les 30 jours suivant l'achat, sous réserve de notre politique de garantie satisfait ou remboursé. Les plans à vie sont également éligibles à cette période de remboursement de 30 jours. Pour demander un remboursement, contactez notre équipe support à support@felicloud.com."
+      },
+      "section9": {
+        "title": "9. Disponibilité du Service et Sauvegardes",
+        "content": "Bien que nous nous efforcions de fournir une disponibilité de 99,9%, nous ne garantissons pas un accès ininterrompu à nos services. Nous pouvons rencontrer des temps d'arrêt pour la maintenance, les mises à niveau ou en raison de circonstances indépendantes de notre volonté. Nous ne sommes pas responsables de toute perte ou dommage résultant d'interruptions de service.",
+        "backups": "Bien que nous maintenions des sauvegardes régulières de nos systèmes, vous êtes responsable de la maintenance de vos propres copies de sauvegarde de vos données. Nous recommandons de télécharger régulièrement les fichiers importants et de conserver des copies locales comme précaution supplémentaire."
+      },
+      "section10": {
+        "title": "10. Limitation de Responsabilité",
+        "content": "Dans la mesure maximale autorisée par la loi, Felicloud ne sera pas responsable de tout dommage indirect, accessoire, spécial, consécutif ou punitif, ou de toute perte de profits ou de revenus, qu'ils soient encourus directement ou indirectement, ou de toute perte de données, d'utilisation, de bonne volonté ou d'autres pertes intangibles résultant de votre utilisation ou de votre incapacité à utiliser nos services. Notre responsabilité totale ne dépassera pas le montant que vous nous avez payé au cours des douze mois précédant l'événement donnant lieu à la responsabilité."
+      },
+      "section11": {
+        "title": "11. Droit Applicable et Résolution des Litiges",
+        "content": "Ces Conditions seront régies et interprétées conformément aux lois de l'Union européenne et aux lois du Portugal, sans égard aux dispositions relatives aux conflits de lois. Tout litige découlant de ces Conditions ou de votre utilisation de nos services sera résolu par des négociations de bonne foi. Si les négociations échouent, les litiges seront soumis à la juridiction exclusive des tribunaux du Portugal."
+      },
+      "section12": {
+        "title": "12. Informations de Contact",
+        "content": "Si vous avez des questions concernant ces Conditions Générales d'Utilisation, veuillez nous contacter à : legal@felicloud.com. Pour les demandes générales de support, veuillez visiter notre Centre d'Aide ou contacter support@felicloud.com."
+      }
+    },
+    "privacy": {
+      "title": "Politique de Confidentialité",
+      "lastUpdated": "Dernière mise à jour : 20 novembre 2024",
+      "commitment": {
+        "title": "Notre Engagement envers Votre Vie Privée",
+        "content": "Chez Felicloud, votre vie privée est notre priorité absolue. Nous nous engageons à protéger vos données personnelles et à être transparents sur les informations que nous collectons et la manière dont nous les utilisons. Cette Politique de Confidentialité explique nos pratiques en matière de données et vos droits en vertu du Règlement Général sur la Protection des Données (RGPD) et d'autres lois applicables en matière de protection des données."
+      },
+      "section1": {
+        "title": "1. Informations que Nous Collectons",
+        "account": {
+          "title": "Informations de Compte",
+          "intro": "Lorsque vous créez un compte Felicloud, nous collectons :",
+          "items": [
+            "Votre nom et adresse e-mail",
+            "Mot de passe (chiffré et jamais stocké en texte brut)",
+            "Date de création du compte et détails du plan d'abonnement",
+            "Informations de paiement (traitées et stockées de manière sécurisée par Stripe, pas sur nos serveurs)"
+          ]
+        },
+        "usage": {
+          "title": "Données d'Utilisation",
+          "intro": "Nous collectons des informations techniques limitées pour fournir et améliorer nos services :",
+          "items": [
+            "Adresse IP et informations sur l'appareil (pour la sécurité et l'authentification)",
+            "Type de navigateur et système d'exploitation (pour la compatibilité)",
+            "Statistiques d'utilisation du stockage et métadonnées de fichiers (noms de fichiers, tailles, dates de modification)"
+          ]
+        },
+        "files": {
+          "title": "Vos Fichiers et Contenu",
+          "content": "Vos fichiers sont chiffrés et stockés en toute sécurité sur nos serveurs. Nous n'accédons pas, ne visualisons pas, n'analysons pas et n'analysons pas le contenu de vos fichiers. Le contenu des fichiers n'est accessible qu'à vous et à toute personne avec qui vous choisissez explicitement de partager. Les métadonnées des fichiers (noms, tailles, dates) sont collectées pour la fonctionnalité du service mais le contenu des fichiers reste privé."
+        }
+      },
+      "section2": {
+        "title": "2. Comment Nous Utilisons Vos Informations",
+        "intro": "Nous utilisons vos données personnelles uniquement aux fins suivantes :",
+        "items": [
+          "Pour fournir, maintenir et améliorer les services Felicloud",
+          "Pour traiter les paiements et gérer votre abonnement",
+          "Pour communiquer avec vous concernant votre compte, les mises à jour de service et les demandes de support",
+          "Pour assurer la sécurité, prévenir la fraude et protéger contre les abus",
+          "Pour se conformer aux obligations légales et faire respecter nos Conditions Générales d'Utilisation"
+        ],
+        "commitment": "Nous n'utilisons pas vos données à des fins publicitaires, d'analyse marketing ou toute autre fin non directement liée à la fourniture de nos services."
+      },
+      "section3": {
+        "title": "3. Stockage et Sécurité des Données",
+        "location": "Toutes vos données sont stockées exclusivement sur des serveurs situés au sein de l'Union européenne. Nous utilisons des centres de données certifiés ISO 27001 et maintenons des mesures de sécurité physiques et numériques strictes.",
+        "measures": "Nous mettons en œuvre des pratiques de sécurité conformes aux normes de l'industrie pour protéger vos données :",
+        "items": [
+          "Chiffrement de bout en bout pour les transferts de fichiers (TLS 1.3)",
+          "Stockage chiffré utilisant le chiffrement AES-256",
+          "Options d'authentification à deux facteurs pour une sécurité de compte renforcée",
+          "Audits de sécurité réguliers et tests de pénétration",
+          "Contrôles d'accès stricts et accords de confidentialité des employés"
+        ]
+      },
+      "section4": {
+        "title": "4. Vos Droits en Vertu du RGPD",
+        "intro": "En tant qu'utilisateur dans l'Union européenne, vous disposez des droits suivants concernant vos données personnelles :",
+        "rights": {
+          "access": {
+            "title": "Droit d'Accès :",
+            "content": "Demander une copie de toutes les données personnelles que nous détenons à votre sujet"
+          },
+          "rectification": {
+            "title": "Droit de Rectification :",
+            "content": "Demander la correction de données inexactes ou incomplètes"
+          },
+          "erasure": {
+            "title": "Droit à l'Effacement :",
+            "content": "Demander la suppression de vos données personnelles et de votre compte"
+          },
+          "portability": {
+            "title": "Droit à la Portabilité des Données :",
+            "content": "Demander vos données dans un format structuré et lisible par machine"
+          },
+          "object": {
+            "title": "Droit d'Opposition :",
+            "content": "S'opposer à certains types de traitement de données"
+          },
+          "restrict": {
+            "title": "Droit de Limitation du Traitement :",
+            "content": "Demander la limitation de la façon dont nous traitons vos données"
+          }
+        },
+        "contact": "Pour exercer l'un de ces droits, veuillez contacter notre Délégué à la Protection des Données à privacy@felicloud.com. Nous répondrons à votre demande dans les 30 jours."
+      },
+      "section5": {
+        "title": "5. Partage de Données et Tiers",
+        "intro": "Nous ne vendons pas, ne louons pas et n'échangeons pas vos informations personnelles avec des tiers. Nous ne partageons des données qu'avec des prestataires de services de confiance qui nous aident à exploiter nos services :",
+        "items": [
+          "Stripe (traitement des paiements) - traite les paiements de manière sécurisée et est conforme PCI-DSS",
+          "Fournisseurs d'infrastructure basés dans l'UE (hébergement de serveurs) - hébergent nos serveurs au sein de l'UE dans le cadre d'accords stricts de traitement de données",
+          "Fournisseurs de services de messagerie (e-mails transactionnels uniquement) - envoient des notifications liées au compte"
+        ]
+      },
+      "section6": {
+        "title": "6. Cookies et Suivi",
+        "intro": "Nous utilisons des cookies minimaux pour fournir des fonctionnalités essentielles :",
+        "items": [
+          "Cookies d'authentification (pour vous garder connecté)",
+          "Cookies de sécurité (pour prévenir la fraude et protéger votre compte)"
+        ],
+        "noTracking": "Nous n'utilisons pas de cookies de suivi, de cookies publicitaires ou de services d'analyse tiers. Nous ne suivons pas votre comportement sur les sites Web et ne construisons pas de profils d'utilisateurs à des fins publicitaires."
+      },
+      "section7": {
+        "title": "7. Transferts Internationaux de Données",
+        "intro": "Vos données sont stockées exclusivement dans l'Union européenne et ne sont pas transférées en dehors de l'UE. Dans le cas rare où nous aurions besoin de transférer des données à l'international, nous nous assurons que :",
+        "items": [
+          "Les transferts ne sont effectués que vers des pays offrant une protection adéquate des données (tel que déterminé par la Commission européenne)",
+          "Des garanties appropriées telles que les Clauses Contractuelles Types sont en place"
+        ],
+        "compliance": "Nous nous engageons à maintenir la conformité RGPD et les normes européennes de protection des données à tout moment."
+      },
+      "section8": {
+        "title": "8. Conservation des Données",
+        "content": "Nous ne conservons vos données personnelles que le temps nécessaire pour fournir nos services et nous conformer aux obligations légales. Les données de compte sont conservées tant que votre compte est actif. Lors de la suppression du compte, nous supprimerons vos données personnelles et fichiers dans les 30 jours, à l'exception des données que nous sommes tenus de conserver à des fins légales, fiscales ou réglementaires (généralement 7 ans pour les registres de facturation)."
+      },
+      "section9": {
+        "title": "9. Confidentialité des Enfants",
+        "content": "Felicloud n'est pas destiné aux enfants de moins de 16 ans. Nous ne collectons pas sciemment d'informations personnelles auprès d'enfants. Si vous pensez que nous avons collecté par inadvertance des données d'un enfant, veuillez nous contacter immédiatement à privacy@felicloud.com, et nous supprimerons ces informations rapidement."
+      },
+      "section10": {
+        "title": "10. Nous Contacter",
+        "intro": "Si vous avez des questions ou des préoccupations concernant cette Politique de Confidentialité ou nos pratiques en matière de données, veuillez nous contacter :",
+        "email": "E-mail : privacy@felicloud.com",
+        "dpo": "Délégué à la Protection des Données : dpo@felicloud.com"
+      }
+    },
+    "gdpr": {
+      "title": "Conformité RGPD",
+      "subtitle": "Vos Droits sur les Données et Notre Engagement envers la Protection des Données Européennes",
+      "intro": {
+        "title": "Introduction au RGPD",
+        "content": "Le Règlement Général sur la Protection des Données (RGPD) est une loi complète sur la protection des données entrée en vigueur le 25 mai 2018. Il établit des exigences strictes sur la manière dont les organisations collectent, traitent, stockent et protègent les données personnelles des individus dans l'Union européenne. Chez Felicloud, la conformité RGPD n'est pas seulement une obligation légale—c'est une partie fondamentale de notre engagement à protéger votre vie privée et à respecter vos droits."
+      },
+      "section1": {
+        "title": "1. Base Juridique du Traitement des Données",
+        "intro": "En vertu du RGPD, nous devons avoir une base légale pour traiter vos données personnelles. Nous traitons vos données sur les bases juridiques suivantes :",
+        "items": {
+          "contract": {
+            "title": "Nécessité Contractuelle :",
+            "content": "Le traitement de vos données est nécessaire pour exécuter notre contrat avec vous (fourniture de services de stockage cloud)"
+          },
+          "legitimate": {
+            "title": "Intérêts Légitimes :",
+            "content": "Nous avons des intérêts légitimes à assurer la sécurité, prévenir la fraude et améliorer nos services"
+          },
+          "legal": {
+            "title": "Obligation Légale :",
+            "content": "Nous traitons certaines données pour nous conformer aux exigences légales et réglementaires (par ex., lois fiscales, lutte contre le blanchiment d'argent)"
+          },
+          "consent": {
+            "title": "Consentement :",
+            "content": "Pour les fonctionnalités optionnelles comme les communications marketing, nous obtenons votre consentement explicite"
+          }
+        }
+      },
+      "section2": {
+        "title": "2. Principes de Minimisation des Données",
+        "intro": "Le RGPD exige que nous ne collections que le minimum de données personnelles nécessaires. Conformément à ce principe :",
+        "items": [
+          "Nous ne collectons que les informations essentielles nécessaires pour fournir nos services",
+          "Nous ne suivons pas votre comportement de navigation ni ne construisons de profils publicitaires",
+          "Nous ne partageons pas vos données avec des tiers à des fins marketing",
+          "Nous supprimons automatiquement les données inutiles lorsqu'elles ne sont plus nécessaires"
+        ],
+        "commitment": "Notre philosophie est simple : moins de données collectées signifie moins de risque pour votre vie privée."
+      },
+      "section3": {
+        "title": "3. Vos Droits RGPD Expliqués",
+        "intro": "Le RGPD vous accorde des droits complets sur vos données personnelles. Voici ce que chaque droit signifie en pratique :",
+        "rights": {
+          "access": {
+            "title": "Droit d'Accès (Article 15)",
+            "content": "Vous pouvez demander une copie complète de toutes les données personnelles que nous détenons à votre sujet, y compris des informations sur la façon dont nous les utilisons, avec qui nous les partageons et combien de temps nous les conservons. Nous fournirons ces informations dans un format clair et structuré dans les 30 jours."
+          },
+          "rectification": {
+            "title": "Droit de Rectification (Article 16)",
+            "content": "Si l'une de vos données personnelles est inexacte ou incomplète, vous avez le droit de la faire corriger. Vous pouvez mettre à jour la plupart des informations directement dans les paramètres de votre compte, ou nous contacter pour obtenir de l'aide."
+          },
+          "erasure": {
+            "title": "Droit à l'Effacement / 'Droit à l'Oubli' (Article 17)",
+            "content": "Vous pouvez demander la suppression de vos données personnelles. Nous supprimerons votre compte et toutes les données associées dans les 30 jours, sauf lorsque nous avons une obligation légale de conserver certaines informations (par ex., registres de facturation à des fins fiscales)."
+          },
+          "portability": {
+            "title": "Droit à la Portabilité des Données (Article 20)",
+            "content": "Vous pouvez demander vos données dans un format couramment utilisé et lisible par machine (tel que JSON ou CSV) afin de pouvoir les transférer vers un autre fournisseur de services. Cela inclut vos informations de compte et les métadonnées de fichiers."
+          },
+          "object": {
+            "title": "Droit d'Opposition (Article 21)",
+            "content": "Vous pouvez vous opposer à certains types de traitement de données, en particulier le traitement basé sur des intérêts légitimes. Par exemple, vous pouvez vous désabonner des communications marketing à tout moment."
+          },
+          "restrict": {
+            "title": "Droit de Limitation du Traitement (Article 18)",
+            "content": "Dans certaines circonstances, vous pouvez demander que nous limitions la façon dont nous traitons vos données pendant que nous enquêtons sur une préoccupation ou un litige que vous avez soulevé."
+          }
+        },
+        "contact": "Pour exercer l'un de ces droits, veuillez contacter notre Délégué à la Protection des Données à dpo@felicloud.com. Nous prenons toutes les demandes de droits au sérieux et répondrons rapidement."
+      },
+      "section4": {
+        "title": "4. Résidence des Données dans l'UE",
+        "intro": "L'un de nos engagements fondamentaux est que toutes vos données restent au sein de l'Union européenne. Cela vous offre la protection des données la plus forte disponible dans le monde.",
+        "locations": "Nos serveurs sont situés dans des centres de données au sein des États membres de l'UE, spécifiquement :",
+        "items": [
+          "Centres de données principaux : France et Allemagne",
+          "Infrastructure de sauvegarde : Pays-Bas et Finlande"
+        ],
+        "cloudAct": "En conservant toutes les données au sein de l'UE, vos informations sont protégées contre les lois de surveillance étrangères telles que le US CLOUD Act. Vos données sont soumises exclusivement à la juridiction européenne et aux normes de protection des données."
+      },
+      "section5": {
+        "title": "5. Mesures de Sécurité et Protection des Données par Conception",
+        "intro": "Le RGPD exige que nous mettions en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données. Nous employons plusieurs couches de sécurité :",
+        "items": [
+          "Chiffrement de bout en bout utilisant le chiffrement AES-256 conforme aux normes de l'industrie",
+          "Transmission chiffrée de toutes les données utilisant le protocole TLS 1.3",
+          "Audits de sécurité réguliers et tests de pénétration par des sociétés de sécurité indépendantes",
+          "Contrôles d'accès stricts - seul le personnel autorisé peut accéder aux systèmes, et personne ne peut accéder au contenu de vos fichiers",
+          "Formation des employés sur la protection des données et la confidentialité",
+          "Plan de réponse aux incidents pour traiter toute violation potentielle de données dans les 72 heures comme l'exige le RGPD"
+        ]
+      },
+      "section6": {
+        "title": "6. Accords de Traitement des Données",
+        "intro": "Lorsque nous utilisons des prestataires de services tiers (appelés 'sous-traitants' en vertu du RGPD), nous nous assurons qu'ils répondent à des exigences strictes :",
+        "items": [
+          "Tous les fournisseurs sont situés dans l'UE ou disposent de mécanismes adéquats de protection des données",
+          "Nous avons mis en place des Accords de Traitement des Données (DPA) formels avec tous les sous-traitants",
+          "Les sous-traitants sont contractuellement tenus de mettre en œuvre des mesures de sécurité appropriées et de traiter les données uniquement selon nos instructions"
+        ],
+        "encryption": "Nous vérifions soigneusement tous les prestataires de services pour nous assurer qu'ils maintiennent la conformité RGPD et respectent les mêmes normes élevées de protection des données que nous."
+      },
+      "section7": {
+        "title": "7. Transferts Internationaux de Données (Aucun)",
+        "intro": "Contrairement à de nombreux fournisseurs de cloud, nous ne transférons pas vos données en dehors de l'Union européenne. Cependant, par souci de transparence, nous expliquons quelles garanties seraient nécessaires si de tels transferts étaient nécessaires :",
+        "items": [
+          "Clauses Contractuelles Types (CCT) approuvées par la Commission européenne",
+          "Décisions d'adéquation confirmant que le pays destinataire offre une protection adéquate des données"
+        ],
+        "agreements": "Notre engagement est d'éviter complètement les transferts internationaux en maintenant toute l'infrastructure au sein de l'UE, vous offrant le plus haut niveau de protection."
+      },
+      "section8": {
+        "title": "8. Autorité de Contrôle et Réclamations",
+        "intro": "Vous avez le droit de déposer une plainte auprès d'une autorité de contrôle de la protection des données si vous pensez que nous avons violé vos droits RGPD. L'autorité de contrôle de votre pays est responsable du traitement de ces plaintes.",
+        "link": "Vous pouvez trouver votre autorité locale de protection des données à :",
+        "linkText": "Comité européen de la protection des données - Liste des membres"
+      },
+      "section9": {
+        "title": "9. Délégué à la Protection des Données",
+        "intro": "Nous avons nommé un Délégué à la Protection des Données (DPO) pour superviser notre conformité RGPD et traiter les questions de protection des données. Vous pouvez contacter notre DPO directement pour toute question ou préoccupation :",
+        "email": "E-mail : dpo@felicloud.com"
+      },
+      "section10": {
+        "title": "10. Transparence et Responsabilité",
+        "intro": "Le RGPD exige que les organisations démontrent leur conformité par la documentation et la transparence. Nous maintenons :",
+        "items": [
+          "Des registres de toutes les activités de traitement de données",
+          "Des Analyses d'Impact relatives à la Protection des Données (AIPD) pour les traitements à haut risque",
+          "Des audits internes réguliers des pratiques de protection des données",
+          "Cette déclaration publique de conformité RGPD décrivant nos engagements et pratiques"
+        ]
+      },
+      "questions": {
+        "title": "Questions sur le RGPD ?",
+        "intro": "Nous nous engageons à la transparence et à vous aider à comprendre vos droits en matière de protection des données. Si vous avez des questions sur le RGPD, nos pratiques de conformité ou la manière dont nous protégeons vos données, n'hésitez pas à nous contacter.",
+        "email": "Contact : dpo@felicloud.com",
+        "response": "Nous répondrons à toutes les demandes dans les 48 heures et traiterons les demandes de droits dans le délai de 30 jours imposé par le RGPD."
+      }
+    },
+    "ip": {
+      "title": "Politique de Propriété Intellectuelle",
+      "lastUpdated": "Dernière mise à jour : 20 novembre 2024",
+      "section1": {
+        "title": "1. Propriété du Contenu",
+        "content": "Vous conservez la pleine propriété et tous les droits de propriété intellectuelle sur tout contenu, fichiers, documents, photos, vidéos et autres matériaux que vous téléversez sur Felicloud. En utilisant nos services, vous ne nous transférez aucun droit de propriété. Nous ne revendiquons aucun droit de propriété intellectuelle sur le contenu que vous créez, stockez ou partagez via notre plateforme. Votre contenu est le vôtre, et il le reste."
+      },
+      "section2": {
+        "title": "2. Propriété Intellectuelle de Felicloud",
+        "intro": "La plateforme Felicloud, y compris son logiciel, la conception du site Web, la marque, les logos et la documentation, est protégée par les lois sur la propriété intellectuelle. Les éléments suivants sont détenus par ou sous licence à Felicloud :",
+        "items": [
+          "Le nom Felicloud, le logo et les matériaux de marque",
+          "La conception du site Web, la mise en page et les éléments de l'interface utilisateur",
+          "Les matériaux marketing, la documentation et le contenu de support",
+          "Le code logiciel personnalisé et les fonctionnalités propriétaires que nous développons",
+          "L'infrastructure et l'architecture du service (à l'exclusion des composants open-source Nextcloud)",
+          "Toutes les marques déposées, marques de service et noms commerciaux associés à Felicloud"
+        ]
+      },
+      "section3": {
+        "title": "3. Composants Open Source",
+        "intro": "Felicloud est construit sur Nextcloud, une plateforme open-source sous licence GNU Affero General Public License (AGPL). Nous respectons et nous conformons à toutes les licences open-source. Spécifiquement :",
+        "items": [
+          "Le logiciel Nextcloud reste open source et est sous licence AGPL v3",
+          "Toute modification que nous apportons au code principal de Nextcloud est rendue disponible conformément à l'AGPL",
+          "Nous contribuons à la communauté Nextcloud le cas échéant",
+          "Les utilisateurs ont les mêmes droits sur le logiciel Nextcloud que ceux accordés par la licence AGPL",
+          "Nos ajouts propriétaires et intégrations personnalisées sont séparés du noyau open-source"
+        ]
+      },
+      "section4": {
+        "title": "4. Licence d'Utilisation de Nos Services",
+        "content": "Sous réserve de votre conformité avec ces Conditions Générales d'Utilisation, nous vous accordons une licence limitée, non exclusive, non transférable et révocable pour accéder et utiliser les services Felicloud à des fins personnelles ou professionnelles. Cette licence n'inclut pas le droit de revendre nos services, copier notre logiciel ou notre marque, ou utiliser notre plateforme pour fournir des services similaires à des tiers sans notre autorisation écrite."
+      },
+      "section5": {
+        "title": "5. Violation du Droit d'Auteur et DMCA",
+        "content": "Felicloud respecte les droits de propriété intellectuelle des autres et attend de ses utilisateurs qu'ils fassent de même. Nous ne surveillons pas le contenu des fichiers utilisateurs en raison de nos engagements en matière de chiffrement et de confidentialité. Cependant, si vous pensez qu'un contenu accessible via Felicloud viole vos droits d'auteur, vous pouvez soumettre un avis conformément au Digital Millennium Copyright Act (DMCA) ou aux lois européennes équivalentes sur le droit d'auteur. Après réception d'un avis valide, nous enquêterons et prendrons les mesures appropriées, qui peuvent inclure la suppression du contenu prétendument contrefaisant et/ou la suspension du compte de l'utilisateur qui l'a téléversé."
+      },
+      "section6": {
+        "title": "6. Soumettre une Plainte pour Violation du Droit d'Auteur",
+        "intro": "Si vous pensez que votre œuvre protégée par le droit d'auteur a été violée, veuillez fournir à notre équipe juridique les informations suivantes :",
+        "department": "Département de Conformité au Droit d'Auteur",
+        "email": "E-mail : legal@felicloud.com",
+        "subject": "Objet : Avis de Violation du Droit d'Auteur - DMCA"
+      },
+      "section7": {
+        "title": "7. Contre-Notification",
+        "content": "Si vous pensez que le contenu que vous avez téléversé a été supprimé ou désactivé en raison d'une erreur ou d'une mauvaise identification, vous pouvez soumettre une contre-notification à notre équipe juridique. Après réception d'une contre-notification valide, nous la transmettrons à la partie qui a soumis la plainte initiale et pourrons restaurer le contenu sauf si le plaignant engage une action en justice demandant une ordonnance du tribunal."
+      },
+      "section8": {
+        "title": "8. Politique des Marques Déposées",
+        "content": "Le nom et le logo Felicloud sont des marques déposées de Felicloud. Vous ne pouvez pas utiliser nos marques sans notre consentement écrit préalable. Cela inclut l'utilisation de notre nom ou logo d'une manière qui pourrait créer une confusion quant à la source des produits ou services, ou d'une manière qui dénigre ou discrédite Felicloud."
+      },
+      "section9": {
+        "title": "9. Contenu Généré par l'Utilisateur et Partage",
+        "content": "Lorsque vous partagez des fichiers ou des dossiers avec d'autres utilisateurs via les fonctionnalités de partage de Felicloud, vous accordez à ces utilisateurs la permission d'accéder et d'utiliser le contenu partagé selon les autorisations que vous définissez (lecture seule, téléchargement, édition, etc.). Vous êtes responsable de vous assurer que vous avez le droit de partager tout contenu et que le partage ne viole aucun droit de propriété intellectuelle de tiers."
+      },
+      "cta": {
+        "title": "Questions sur la Propriété Intellectuelle ?",
+        "intro": "Si vous avez des questions sur la propriété intellectuelle, le droit d'auteur ou les questions de licence liées à Felicloud, veuillez contacter notre équipe juridique à",
+        "email": "legal@felicloud.com",
+        "button": "Contacter l'Équipe Juridique"
+      }
+    }
+  },
+  "contact": {
+    "pageTitle": "Contactez-nous",
+    "pageDescription": "Une question ou besoin d'aide ? Contactez notre équipe.",
+    "form": {
+      "title": "Envoyez-nous un message",
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Sélectionnez un sujet",
+      "subjectOptions": {
+        "general": "Demande générale",
+        "support": "Support technique",
+        "billing": "Facturation et paiements",
+        "sales": "Question commerciale",
+        "other": "Autre"
+      },
+      "message": "Message",
+      "successMessage": "Merci pour votre message ! Nous vous répondrons dans les 24 heures.",
+      "errorMessage": "Échec de l'envoi du message. Veuillez réessayer.",
+      "sendingButton": "Envoi en cours...",
+      "sendButton": "Envoyer le message"
+    },
+    "info": {
+      "title": "Informations de contact",
+      "support": {
+        "title": "Support technique",
+        "description": "Besoin d'aide avec votre compte ou avez des questions techniques ?"
+      },
+      "sales": {
+        "title": "Ventes et tarification",
+        "description": "Questions sur les forfaits, la facturation ou des solutions personnalisées ?"
+      },
+      "officeHours": {
+        "title": "Horaires de bureau",
+        "weekdays": "Lundi - Vendredi : 9h00 - 18h00 (CET)",
+        "weekends": "Samedi - Dimanche : Fermé"
+      },
+      "quickLinks": {
+        "title": "Liens rapides",
+        "helpCenter": "Centre d'aide",
+        "supportDocs": "Documentation de support",
+        "privacy": "Politique de confidentialité"
+      },
+      "social": {
+        "title": "Suivez-nous"
+      }
+    }
+  }
 }

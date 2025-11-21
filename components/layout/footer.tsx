@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { useTranslation } from '@/lib/hooks/useTranslation';
 
@@ -10,17 +11,26 @@ interface FooterProps {
 
 export function Footer({ lang = 'en' }: FooterProps) {
   const { t } = useTranslation(lang);
+  const pathname = usePathname();
+
+  // Helper function to get the current path in a different language
+  const getLocalizedPath = (newLang: string) => {
+    if (!pathname) return `/${newLang}`;
+    // Replace the current language with the new one
+    // e.g., /en/pricing -> /fr/pricing
+    const pathWithoutLang = pathname.replace(/^\/(en|fr|pt)(\/|$)/, '/');
+    return `/${newLang}${pathWithoutLang === '/' ? '' : pathWithoutLang}`;
+  };
 
   // Only show languages that have routes available
-  // TODO: Add other languages when their routes are created
   const languages = [
-    { code: 'en', name: t('languages.en'), href: '/en' },
-    // Uncomment when ready:
-    // { code: 'fr', name: t('languages.fr'), href: '/fr' },
-    // { code: 'pt', name: t('languages.pt'), href: '/pt' },
-    // { code: 'es', name: t('languages.es'), href: '/es' },
-    // { code: 'it', name: t('languages.it'), href: '/it' },
-    // { code: 'de', name: t('languages.de'), href: '/de' },
+    { code: 'en', name: t('languages.en'), href: getLocalizedPath('en') },
+    { code: 'fr', name: t('languages.fr'), href: getLocalizedPath('fr') },
+    { code: 'pt', name: t('languages.pt'), href: getLocalizedPath('pt') },
+    // TODO: Add other languages when their routes are created
+    // { code: 'es', name: t('languages.es'), href: getLocalizedPath('es') },
+    // { code: 'it', name: t('languages.it'), href: getLocalizedPath('it') },
+    // { code: 'de', name: t('languages.de'), href: getLocalizedPath('de') },
   ];
 
   return (
@@ -111,7 +121,7 @@ export function Footer({ lang = 'en' }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href={`/${lang}/faq`} className="text-sm text-gray-600 hover:text-primary transition-colors">
+                <Link href={`/${lang}/help`} className="text-sm text-gray-600 hover:text-primary transition-colors">
                   {t('footer.faq')}
                 </Link>
               </li>
