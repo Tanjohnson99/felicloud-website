@@ -121,7 +121,7 @@ export function Footer({ lang = 'en' }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href={`/${lang}/faq`} className="text-sm text-gray-600 hover:text-primary transition-colors">
+                <Link href={`/${lang}/help`} className="text-sm text-gray-600 hover:text-primary transition-colors">
                   {t('footer.faq')}
                 </Link>
               </li>
